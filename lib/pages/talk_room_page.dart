@@ -183,6 +183,13 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                 Container(
                   color: Colors.white,
                   height: 60,
+                  child: Row(
+                    children: const [
+                      Expanded(
+                        child: TextField(),
+                      ),
+                    ],
+                  ),
                 ),
                 Container(
                   color: Colors.white,
