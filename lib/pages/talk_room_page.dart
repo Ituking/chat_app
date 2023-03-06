@@ -37,6 +37,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
           itemCount: messageList.length,
           itemBuilder: (context, index) {
             return Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
               textDirection: messageList[index].isMe
                   ? TextDirection.rtl
                   : TextDirection.ltr,
