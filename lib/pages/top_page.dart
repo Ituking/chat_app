@@ -1,3 +1,4 @@
+import 'package:chat_app/model/user.dart';
 import 'package:flutter/material.dart';
 
 class TopPage extends StatefulWidget {
@@ -8,6 +9,18 @@ class TopPage extends StatefulWidget {
 }
 
 class _TopPageState extends State<TopPage> {
+  List<User> userList = [
+    User(
+        name: "Emma",
+        uid: "0001",
+        imagePath: "photo-1472396961693-142e6e269027.jpeg",
+        lastMessage: "Hello."),
+    User(
+        name: "John",
+        uid: "0002",
+        imagePath: "photo-1472396961693-142e6e269027.jpeg",
+        lastMessage: "Thanks."),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
