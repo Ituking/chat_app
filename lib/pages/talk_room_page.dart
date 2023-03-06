@@ -15,12 +15,23 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
     Message(
       message: "Hello.",
       isMe: true,
-      sendTime: DateTime(2023, 3, 6, 8, 16),
+      sendTime: DateTime(2023, 3, 6, 12, 16),
     ),
     Message(
       message: "Hello.",
       isMe: false,
       sendTime: DateTime(2023, 3, 6, 10, 58),
+    ),
+    Message(
+      message: "She never gave me their numbers.",
+      isMe: true,
+      sendTime: DateTime(2023, 3, 6, 08, 02),
+    ),
+    Message(
+      message:
+          "Might head out with some friends today will be home late if I do.",
+      isMe: false,
+      sendTime: DateTime(2023, 3, 6, 07, 23),
     ),
   ];
   @override
@@ -43,6 +54,8 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                   : TextDirection.ltr,
               children: [
                 Container(
+                  constraints: BoxConstraints(
+                      maxWidth: MediaQuery.of(context).size.width * 0.6),
                   decoration: BoxDecoration(
                     color: messageList[index].isMe
                         ? const Color.fromARGB(194, 158, 158, 158)
