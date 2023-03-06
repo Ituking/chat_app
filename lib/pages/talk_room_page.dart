@@ -175,6 +175,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                   );
                 }),
             Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
                   color: Colors.white,
