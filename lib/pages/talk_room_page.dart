@@ -15,12 +15,12 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
     Message(
       message: "Hello.",
       isMe: true,
-      sendTime: DateTime(2023, 3, 6, 10, 58),
+      sendTime: DateTime(2023, 3, 6, 8, 16),
     ),
     Message(
       message: "Hello.",
       isMe: false,
-      sendTime: DateTime(2023, 3, 6, 12, 24),
+      sendTime: DateTime(2023, 3, 6, 10, 58),
     ),
   ];
   @override
@@ -31,6 +31,8 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
         title: Text(widget.name),
       ),
       body: ListView.builder(
+          physics: const RangeMaintainingScrollPhysics(),
+          shrinkWrap: true,
           reverse: true,
           itemCount: messageList.length,
           itemBuilder: (context, index) {
