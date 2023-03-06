@@ -44,7 +44,11 @@ class _TopPageState extends State<TopPage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const TalkRoomPage()),
+                  MaterialPageRoute(
+                    builder: (context) => const TalkRoomPage(
+                      name: "Emma",
+                    ),
+                  ),
                 );
               },
               child: SizedBox(
