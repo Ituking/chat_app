@@ -125,40 +125,54 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
       appBar: AppBar(
         title: Text(widget.name),
       ),
-      body: ListView.builder(
-          physics: const RangeMaintainingScrollPhysics(),
-          shrinkWrap: true,
-          reverse: true,
-          itemCount: messageList.length,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: EdgeInsets.only(
-                  top: 10, left: 10, right: 10, bottom: index == 0 ? 10 : 0),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                textDirection: messageList[index].isMe
-                    ? TextDirection.rtl
-                    : TextDirection.ltr,
-                children: [
-                  Container(
-                    constraints: BoxConstraints(
-                        maxWidth: MediaQuery.of(context).size.width * 0.6),
-                    decoration: BoxDecoration(
-                      color: messageList[index].isMe
-                          ? const Color.fromARGB(194, 158, 158, 158)
-                          : const Color.fromARGB(255, 14, 229, 161),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                    child: Text(messageList[index].message),
+      body: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          ListView.builder(
+              physics: const RangeMaintainingScrollPhysics(),
+              shrinkWrap: true,
+              reverse: true,
+              itemCount: messageList.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: EdgeInsets.only(
+                      top: 10,
+                      left: 10,
+                      right: 10,
+                      bottom: index == 0 ? 10 : 0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    textDirection: messageList[index].isMe
+                        ? TextDirection.rtl
+                        : TextDirection.ltr,
+                    children: [
+                      Container(
+                        constraints: BoxConstraints(
+                            maxWidth: MediaQuery.of(context).size.width * 0.6),
+                        decoration: BoxDecoration(
+                          color: messageList[index].isMe
+                              ? const Color.fromARGB(194, 158, 158, 158)
+                              : const Color.fromARGB(255, 14, 229, 161),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 6),
+                        child: Text(
+                          messageList[index].message,
+                        ),
+                      ),
+                      Text(intl.DateFormat('HH:mm')
+                          .format(messageList[index].sendTime)),
+                    ],
                   ),
-                  Text(intl.DateFormat('HH:mm')
-                      .format(messageList[index].sendTime)),
-                ],
-              ),
-            );
-          }),
+                );
+              }),
+          Container(
+            color: Colors.white,
+            height: 60,
+          ),
+        ],
+      ),
     );
   }
 }
