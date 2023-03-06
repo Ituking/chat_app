@@ -51,6 +51,8 @@ class _TopPageState extends State<TopPage> {
                     ),
                   ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
                       Text("Emma"),
                       Text("Hello."),
