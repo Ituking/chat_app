@@ -154,7 +154,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                           decoration: BoxDecoration(
                             color: messageList[index].isMe
                                 ? const Color.fromARGB(194, 158, 158, 158)
-                                : const Color.fromARGB(255, 14, 229, 161),
+                                : const Color.fromARGB(255, 15, 196, 139),
                             borderRadius: BorderRadius.circular(15),
                           ),
                           padding: const EdgeInsets.symmetric(
