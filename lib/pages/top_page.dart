@@ -10,6 +10,13 @@ class TopPage extends StatefulWidget {
 class _TopPageState extends State<TopPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("ChatApp"),
+      ),
+      body: const Center(
+        child: Text("Main"),
+      ),
+    );
   }
 }
