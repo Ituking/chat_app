@@ -1,5 +1,4 @@
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter/material.dart';
 
 class TalkRoomPage extends StatefulWidget {
   const TalkRoomPage({super.key});
@@ -11,6 +10,10 @@ class TalkRoomPage extends StatefulWidget {
 class _TalkRoomPageState extends State<TalkRoomPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("title"),
+      ),
+    );
   }
 }
