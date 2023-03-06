@@ -33,6 +33,90 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
       isMe: false,
       sendTime: DateTime(2023, 3, 6, 07, 23),
     ),
+    Message(
+      message: "Hello.",
+      isMe: true,
+      sendTime: DateTime(2023, 3, 6, 12, 16),
+    ),
+    Message(
+      message: "Hello.",
+      isMe: false,
+      sendTime: DateTime(2023, 3, 6, 10, 58),
+    ),
+    Message(
+      message: "She never gave me their numbers.",
+      isMe: true,
+      sendTime: DateTime(2023, 3, 6, 08, 02),
+    ),
+    Message(
+      message:
+          "Might head out with some friends today will be home late if I do.",
+      isMe: false,
+      sendTime: DateTime(2023, 3, 6, 07, 23),
+    ),
+    Message(
+      message: "Hello.",
+      isMe: true,
+      sendTime: DateTime(2023, 3, 6, 12, 16),
+    ),
+    Message(
+      message: "Hello.",
+      isMe: false,
+      sendTime: DateTime(2023, 3, 6, 10, 58),
+    ),
+    Message(
+      message: "She never gave me their numbers.",
+      isMe: true,
+      sendTime: DateTime(2023, 3, 6, 08, 02),
+    ),
+    Message(
+      message:
+          "Might head out with some friends today will be home late if I do.",
+      isMe: false,
+      sendTime: DateTime(2023, 3, 6, 07, 23),
+    ),
+    Message(
+      message: "Hello.",
+      isMe: true,
+      sendTime: DateTime(2023, 3, 6, 12, 16),
+    ),
+    Message(
+      message: "Hello.",
+      isMe: false,
+      sendTime: DateTime(2023, 3, 6, 10, 58),
+    ),
+    Message(
+      message: "She never gave me their numbers.",
+      isMe: true,
+      sendTime: DateTime(2023, 3, 6, 08, 02),
+    ),
+    Message(
+      message:
+          "Might head out with some friends today will be home late if I do.",
+      isMe: false,
+      sendTime: DateTime(2023, 3, 6, 07, 23),
+    ),
+    Message(
+      message: "Hello.",
+      isMe: true,
+      sendTime: DateTime(2023, 3, 6, 12, 16),
+    ),
+    Message(
+      message: "Hello.",
+      isMe: false,
+      sendTime: DateTime(2023, 3, 6, 10, 58),
+    ),
+    Message(
+      message: "She never gave me their numbers.",
+      isMe: true,
+      sendTime: DateTime(2023, 3, 6, 08, 02),
+    ),
+    Message(
+      message:
+          "Might head out with some friends today will be home late if I do.",
+      isMe: false,
+      sendTime: DateTime(2023, 3, 6, 07, 23),
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -47,28 +131,32 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
           reverse: true,
           itemCount: messageList.length,
           itemBuilder: (context, index) {
-            return Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              textDirection: messageList[index].isMe
-                  ? TextDirection.rtl
-                  : TextDirection.ltr,
-              children: [
-                Container(
-                  constraints: BoxConstraints(
-                      maxWidth: MediaQuery.of(context).size.width * 0.6),
-                  decoration: BoxDecoration(
-                    color: messageList[index].isMe
-                        ? const Color.fromARGB(194, 158, 158, 158)
-                        : const Color.fromARGB(255, 14, 229, 161),
-                    borderRadius: BorderRadius.circular(15),
+            return Padding(
+              padding: EdgeInsets.only(
+                  top: 10, left: 10, right: 10, bottom: index == 0 ? 10 : 0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                textDirection: messageList[index].isMe
+                    ? TextDirection.rtl
+                    : TextDirection.ltr,
+                children: [
+                  Container(
+                    constraints: BoxConstraints(
+                        maxWidth: MediaQuery.of(context).size.width * 0.6),
+                    decoration: BoxDecoration(
+                      color: messageList[index].isMe
+                          ? const Color.fromARGB(194, 158, 158, 158)
+                          : const Color.fromARGB(255, 14, 229, 161),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                    child: Text(messageList[index].message),
                   ),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                  child: Text(messageList[index].message),
-                ),
-                Text(intl.DateFormat('HH:mm')
-                    .format(messageList[index].sendTime)),
-              ],
+                  Text(intl.DateFormat('HH:mm')
+                      .format(messageList[index].sendTime)),
+                ],
+              ),
             );
           }),
     );
