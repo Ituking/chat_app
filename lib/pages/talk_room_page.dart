@@ -39,6 +39,8 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                   : TextDirection.ltr,
               children: [
                 Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                   color: messageList[index].isMe
                       ? const Color.fromARGB(194, 158, 158, 158)
                       : const Color.fromARGB(255, 14, 229, 161),
