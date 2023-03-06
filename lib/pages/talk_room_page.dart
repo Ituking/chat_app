@@ -184,9 +184,13 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                   color: Colors.white,
                   height: 60,
                   child: Row(
-                    children: const [
-                      Expanded(
+                    children: [
+                      const Expanded(
                         child: TextField(),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.send),
                       ),
                     ],
                   ),
