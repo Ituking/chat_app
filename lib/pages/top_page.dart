@@ -45,8 +45,8 @@ class _TopPageState extends State<TopPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const TalkRoomPage(
-                      name: "Emma",
+                    builder: (context) => TalkRoomPage(
+                      name: userList[index].name,
                     ),
                   ),
                 );
