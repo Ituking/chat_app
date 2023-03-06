@@ -121,7 +121,6 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(widget.name),
       ),
@@ -161,6 +160,11 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                               horizontal: 10, vertical: 6),
                           child: Text(
                             messageList[index].message,
+                            style: TextStyle(
+                              color: messageList[index].isMe
+                                  ? Colors.black
+                                  : const Color.fromARGB(230, 255, 255, 255),
+                            ),
                           ),
                         ),
                         Text(intl.DateFormat('HH:mm')
