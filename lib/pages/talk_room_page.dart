@@ -31,6 +31,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
         title: Text(widget.name),
       ),
       body: ListView.builder(
+          reverse: true,
           itemCount: messageList.length,
           itemBuilder: (context, index) {
             return Row(
