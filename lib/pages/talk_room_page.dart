@@ -1,6 +1,6 @@
 import 'package:chat_app/model/message.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:intl/intl.dart' as intl;
 
 class TalkRoomPage extends StatefulWidget {
   final String name;
@@ -34,6 +34,9 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
           itemCount: messageList.length,
           itemBuilder: (context, index) {
             return Row(
+              textDirection: messageList[index].isMe
+                  ? TextDirection.rtl
+                  : TextDirection.ltr,
               children: [
                 Container(
                   color: messageList[index].isMe
@@ -41,7 +44,8 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                       : const Color.fromARGB(255, 14, 229, 161),
                   child: Text(messageList[index].message),
                 ),
-                Text(DateFormat('HH:mm').format(messageList[index].sendTime)),
+                Text(intl.DateFormat('HH:mm')
+                    .format(messageList[index].sendTime)),
               ],
             );
           }),
