@@ -174,9 +174,17 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                     ),
                   );
                 }),
-            Container(
-              color: Colors.white,
-              height: 60,
+            Column(
+              children: [
+                Container(
+                  color: Colors.white,
+                  height: 60,
+                ),
+                Container(
+                  color: Colors.white,
+                  height: MediaQuery.of(context).padding.bottom,
+                ),
+              ],
             ),
           ],
         ),
