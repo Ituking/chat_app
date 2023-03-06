@@ -34,7 +34,12 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
           itemBuilder: (context, index) {
             return Row(
               children: [
-                Text(messageList[index].message),
+                Container(
+                  color: messageList[index].isMe
+                      ? const Color.fromARGB(194, 158, 158, 158)
+                      : const Color.fromARGB(255, 14, 229, 161),
+                  child: Text(messageList[index].message),
+                ),
                 Text(DateFormat('HH:mm').format(messageList[index].sendTime)),
               ],
             );
