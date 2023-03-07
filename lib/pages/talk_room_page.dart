@@ -186,9 +186,12 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                   child: Row(
                     children: [
                       const Expanded(
-                        child: TextField(
-                          decoration:
-                              InputDecoration(border: OutlineInputBorder()),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: TextField(
+                            decoration:
+                                InputDecoration(border: OutlineInputBorder()),
+                          ),
                         ),
                       ),
                       IconButton(
