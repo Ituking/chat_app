@@ -24,6 +24,9 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
               ),
             ],
           ),
+          const SizedBox(
+            height: 50,
+          ),
           Row(
             children: [
               const SizedBox(width: 150, child: Text("Profile Image")),
