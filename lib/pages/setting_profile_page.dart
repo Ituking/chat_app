@@ -18,7 +18,7 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
         children: [
           Row(
             children: const [
-              Text("Name"),
+              SizedBox(width: 150, child: Text("Name")),
               Expanded(
                 child: TextField(),
               ),
@@ -26,7 +26,7 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
           ),
           Row(
             children: [
-              const Text("Profile Image"),
+              const SizedBox(width: 150, child: Text("Profile Image")),
               ElevatedButton(
                 onPressed: () {},
                 child: const Text("Select Image"),
