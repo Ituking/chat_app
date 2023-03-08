@@ -14,6 +14,18 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
       appBar: AppBar(
         title: const Text("Setting"),
       ),
+      body: Column(
+        children: [
+          Row(
+            children: const [
+              Text("Name"),
+              Expanded(
+                child: TextField(),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
