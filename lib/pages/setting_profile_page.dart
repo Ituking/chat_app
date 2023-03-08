@@ -10,6 +10,10 @@ class SettingProfilePage extends StatefulWidget {
 class _SettingProfilePageState extends State<SettingProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Setting"),
+      ),
+    );
   }
 }
