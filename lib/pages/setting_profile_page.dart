@@ -38,6 +38,7 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
                 ),
               ],
             ),
+            ElevatedButton(onPressed: () {}, child: const Text("Edit")),
           ],
         ),
       ),
