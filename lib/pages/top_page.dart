@@ -1,4 +1,5 @@
 import 'package:chat_app/model/user.dart';
+import 'package:chat_app/pages/setting_profile_page.dart';
 import 'package:chat_app/pages/talk_room_page.dart';
 import 'package:flutter/material.dart';
 
@@ -38,7 +39,14 @@ class _TopPageState extends State<TopPage> {
         title: const Text("ChatApp"),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SettingProfilePage(),
+                ),
+              );
+            },
             icon: const Icon(Icons.settings),
           ),
         ],
