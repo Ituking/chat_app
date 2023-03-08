@@ -38,6 +38,9 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
                 ),
               ],
             ),
+            const SizedBox(
+              height: 450,
+            ),
             ElevatedButton(onPressed: () {}, child: const Text("Edit")),
           ],
         ),
