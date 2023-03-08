@@ -14,29 +14,32 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
       appBar: AppBar(
         title: const Text("Setting"),
       ),
-      body: Column(
-        children: [
-          Row(
-            children: const [
-              SizedBox(width: 150, child: Text("Name")),
-              Expanded(
-                child: TextField(),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          Row(
-            children: [
-              const SizedBox(width: 150, child: Text("Profile Image")),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text("Select Image"),
-              ),
-            ],
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            Row(
+              children: const [
+                SizedBox(width: 150, child: Text("Name")),
+                Expanded(
+                  child: TextField(),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Row(
+              children: [
+                const SizedBox(width: 150, child: Text("Profile Image")),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text("Select Image"),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
