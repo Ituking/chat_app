@@ -130,7 +130,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
           alignment: Alignment.bottomCenter,
           children: [
             Padding(
-              padding: const EdgeInsets.only(bottom: 100),
+              padding: const EdgeInsets.only(bottom: 60),
               child: ListView.builder(
                   physics: const RangeMaintainingScrollPhysics(),
                   shrinkWrap: true,
@@ -205,7 +205,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                 ),
                 Container(
                   color: Colors.white,
-                  height: MediaQuery.of(context).padding.bottom,
+                  height: MediaQuery.of(context).padding.bottom * 0.0,
                 ),
               ],
             ),
