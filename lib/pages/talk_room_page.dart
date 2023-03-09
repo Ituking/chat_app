@@ -155,8 +155,8 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                                     MediaQuery.of(context).size.width * 0.6),
                             decoration: BoxDecoration(
                               color: messageList[index].isMe
-                                  ? const Color.fromARGB(194, 158, 158, 158)
-                                  : const Color.fromARGB(255, 12, 151, 107),
+                                  ? Colors.blueGrey
+                                  : Colors.green,
                               borderRadius: BorderRadius.circular(15),
                             ),
                             padding: const EdgeInsets.symmetric(
@@ -165,8 +165,8 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                               messageList[index].message,
                               style: TextStyle(
                                 color: messageList[index].isMe
-                                    ? Colors.black
-                                    : const Color.fromARGB(230, 255, 255, 255),
+                                    ? Colors.white
+                                    : Colors.white,
                               ),
                             ),
                           ),
