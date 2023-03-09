@@ -41,7 +41,14 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
             const SizedBox(
               height: 450,
             ),
-            ElevatedButton(onPressed: () {}, child: const Text("Edit")),
+            SizedBox(
+              width: 200,
+              height: 50,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Text("Edit"),
+              ),
+            ),
           ],
         ),
       ),
