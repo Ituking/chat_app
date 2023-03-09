@@ -32,9 +32,14 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
             Row(
               children: [
                 const SizedBox(width: 150, child: Text("Profile Image")),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text("Select Image"),
+                Expanded(
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: const Text("Select Image"),
+                    ),
+                  ),
                 ),
               ],
             ),
