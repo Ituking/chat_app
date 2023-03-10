@@ -32,7 +32,7 @@ class UserFirestore {
       if (kDebugMode) {
         print("FAILED ===== $e");
       }
+      return null;
     }
-    return null;
   }
 }
