@@ -16,6 +16,10 @@ class UserFirestore {
       if (kDebugMode) {
         print("SUCCESS");
       }
-    } catch (e) {}
+    } catch (e) {
+      if (kDebugMode) {
+        print("FAILED ===== $e");
+      }
+    }
   }
 }
