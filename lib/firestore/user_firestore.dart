@@ -24,7 +24,9 @@ class UserFirestore {
   }
 
   static Future<void> fetchUsers() async {
-    try {} catch (e) {
+    try {
+      final snapshot = await _userCollection.get();
+    } catch (e) {
       if (kDebugMode) {
         print("FAILED ===== $e");
       }
