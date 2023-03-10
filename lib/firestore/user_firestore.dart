@@ -26,6 +26,12 @@ class UserFirestore {
   static Future<void> fetchUsers() async {
     try {
       final snapshot = await _userCollection.get();
+      for (var element in snapshot.docs) {
+        if (kDebugMode) {
+          print(
+              "DocumentId: ${element.id} ===== Name: ${element.data()["name"]}");
+        }
+      }
     } catch (e) {
       if (kDebugMode) {
         print("FAILED ===== $e");
