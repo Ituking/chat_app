@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 
 class UserFirestore {
-  static final FirebaseFirestore _firebaseFirestore =
+  static final FirebaseFirestore _firebaseFirestoreInstance =
       FirebaseFirestore.instance;
   static final _userCollection = _firebaseFirestoreInstance.collection('user');
 
