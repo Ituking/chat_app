@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserFirestore {
-  static FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
-
-  static Future<void> createUser() async {}
+  static final FirebaseFirestore _firebaseFirestore =
+      FirebaseFirestore.instance;
+  static final _userCollection = _firebaseFirestoreInstance.collection('user');
 }
