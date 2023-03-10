@@ -10,6 +10,13 @@ class RoomFireStore {
     try {
       final docs = await UserFirestore.fetchUsers();
       if (docs == null) return;
+      docs.forEach((element) async {
+        if (element.id == myUid) return;
+        await _roomCollection.add({
+          'joined_user_id': [element.id, myUid],
+          'created_time': Timestamp.now(),
+        });
+      });
     } catch (e) {}
   }
 }
