@@ -24,6 +24,10 @@ class UserFirestore {
   }
 
   static Future<void> fetchUsers() async {
-    try {} catch (e) {}
+    try {} catch (e) {
+      if (kDebugMode) {
+        print("FAILED ===== $e");
+      }
+    }
   }
 }
