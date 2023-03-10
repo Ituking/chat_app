@@ -6,7 +6,7 @@ class RoomFireStore {
       FirebaseFirestore.instance;
   static final _roomCollection = _firebaseFirestoreInstance.collection('room');
 
-  static Future<void> createRoom() async {
+  static Future<void> createRoom(String myUid) async {
     try {
       final docs = await UserFirestore.fetchUsers();
       if (docs == null) return;
