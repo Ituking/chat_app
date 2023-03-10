@@ -22,4 +22,6 @@ class UserFirestore {
       }
     }
   }
+
+  static Future<void> fetchUsers() async {}
 }
