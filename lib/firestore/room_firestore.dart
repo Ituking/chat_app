@@ -9,6 +9,7 @@ class RoomFireStore {
   static Future<void> createRoom() async {
     try {
       final docs = await UserFirestore.fetchUsers();
+      if (docs == null) return;
     } catch (e) {}
   }
 }
