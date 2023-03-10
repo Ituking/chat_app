@@ -23,5 +23,7 @@ class UserFirestore {
     }
   }
 
-  static Future<void> fetchUsers() async {}
+  static Future<void> fetchUsers() async {
+    try {} catch (e) {}
+  }
 }
