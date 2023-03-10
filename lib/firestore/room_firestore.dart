@@ -1,5 +1,6 @@
 import 'package:chat_app/firestore/user_firestore.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 
 class RoomFireStore {
   static final FirebaseFirestore _firebaseFirestoreInstance =
@@ -17,6 +18,10 @@ class RoomFireStore {
           'created_time': Timestamp.now(),
         });
       }
-    } catch (e) {}
+    } catch (e) {
+      if (kDebugMode) {
+        print("FAILED ===== $e");
+      }
+    }
   }
 }
