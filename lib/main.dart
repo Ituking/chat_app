@@ -1,3 +1,4 @@
+import 'package:chat_app/firestore/room_firestore.dart';
 import 'package:chat_app/firestore/user_firestore.dart';
 import 'package:chat_app/pages/top_page.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -10,7 +11,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await UserFirestore.createUser();
+  final myUid = await UserFirestore.createUser();
+  if (myUid != null) RoomFireStore.createRoom(myUid);
   runApp(const MyApp());
 }
 
