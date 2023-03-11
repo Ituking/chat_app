@@ -50,5 +50,7 @@ class UserFirestore {
     }
   }
 
-  static Future<User> fetchMyProfile() async {}
+  static Future<User> fetchMyProfile() async {
+    try {} catch (e) {}
+  }
 }
