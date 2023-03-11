@@ -1,3 +1,5 @@
+import 'package:chat_app/firestore/room_firestore.dart';
+import 'package:chat_app/utils/shared_prefs.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 
@@ -28,6 +30,10 @@ class UserFirestore {
 
   static Future<void> createUser() async {
     final myUid = await UserFirestore.insertNewAccount();
+    if (myUid != null) {
+      await RoomFireStore.createRoom(myUid);
+      await SharedPrefs.setUid(myUid);
+    }
   }
 
   static Future<List<QueryDocumentSnapshot>?> fetchUsers() async {
