@@ -26,6 +26,10 @@ class UserFirestore {
     return null;
   }
 
+  static Future<void> createUser() async {
+    final myUid = await UserFirestore.insertNewAccount();
+  }
+
   static Future<List<QueryDocumentSnapshot>?> fetchUsers() async {
     try {
       final snapshot = await _userCollection.get();
