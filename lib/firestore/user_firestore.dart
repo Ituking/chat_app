@@ -1,4 +1,5 @@
 import 'package:chat_app/firestore/room_firestore.dart';
+import 'package:chat_app/model/user.dart';
 import 'package:chat_app/utils/shared_prefs.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
@@ -48,4 +49,6 @@ class UserFirestore {
       return null;
     }
   }
+
+  static Future<User> fetchMyProfile() async {}
 }
