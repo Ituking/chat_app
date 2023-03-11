@@ -54,6 +54,13 @@ class UserFirestore {
     try {
       String uid = SharedPrefs.fetchUid()!;
       final myProfile = await _userCollection.doc(uid).get();
+      User user = User(
+        name: myProfile.data()!['name'],
+        imagePath: myProfile.data()!['image_path'],
+        uid: uid,
+      );
+
+      return user;
     } catch (e) {}
   }
 }
