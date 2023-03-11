@@ -50,7 +50,10 @@ class UserFirestore {
     }
   }
 
-  static Future<User> fetchMyProfile() async {
-    try {} catch (e) {}
+  static Future<User?> fetchMyProfile() async {
+    try {
+      String uid = SharedPrefs.fetchUid()!;
+      final myProfile = await _userCollection.doc(uid).get();
+    } catch (e) {}
   }
 }
