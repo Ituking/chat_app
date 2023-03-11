@@ -6,7 +6,7 @@ class UserFirestore {
       FirebaseFirestore.instance;
   static final _userCollection = _firebaseFirestoreInstance.collection('user');
 
-  static Future<String?> createUser() async {
+  static Future<String?> insertNewAccount() async {
     try {
       final newDoc = await _userCollection.add({
         'name': "Noname",

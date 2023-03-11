@@ -13,7 +13,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await SharedPrefs.setPrefsInstance();
-  final myUid = await UserFirestore.createUser();
+  final myUid = await UserFirestore.insertNewAccount();
   if (myUid != null) {
     RoomFireStore.createRoom(myUid);
     SharedPrefs.setUid(myUid);
