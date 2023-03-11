@@ -6,4 +6,8 @@ class SharedPrefs {
   static Future<void> setPrefsInstance() async {
     _preferences ??= await SharedPreferences.getInstance();
   }
+
+  static Future<void> setUid(String uid) async {
+    await _preferences!.setString('uid', uid);
+  }
 }
