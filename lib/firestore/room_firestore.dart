@@ -33,7 +33,9 @@ class RoomFireStore {
       final snapshot =
           _roomCollection.where('joined_user_ids', arrayContains: myUid).get();
       List<TalkRoom> talkRooms = [];
-      for (var doc in snapshot.docs) {}
+      for (var doc in snapshot.docs) {
+        final talkRoom = TalkRoom(roomId: doc.id, talkUser: talkUser)
+      }
     } catch ($e) {}
   }
 }
