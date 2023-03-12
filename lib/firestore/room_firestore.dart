@@ -1,4 +1,5 @@
 import 'package:chat_app/firestore/user_firestore.dart';
+import 'package:chat_app/model/talk_room.dart';
 import 'package:chat_app/utils/shared_prefs.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
@@ -31,6 +32,7 @@ class RoomFireStore {
       String myUid = SharedPrefs.fetchUid()!;
       final snapshot =
           _roomCollection.where('joined_user_ids', arrayContains: myUid).get();
+      List<TalkRoom> talkRooms = [];
     } catch ($e) {}
   }
 }
