@@ -24,4 +24,6 @@ class RoomFireStore {
       }
     }
   }
+
+  static Future<void> fetchJoinedRooms() async {}
 }
