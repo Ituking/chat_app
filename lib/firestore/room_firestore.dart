@@ -49,6 +49,9 @@ class RoomFireStore {
           lastMessage: doc.data()['last_message'],
         );
         talkRooms.add(talkRoom);
+        if (kDebugMode) {
+          print(talkRooms.length);
+        }
       }
     } catch ($e) {}
   }
