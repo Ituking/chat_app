@@ -48,6 +48,7 @@ class RoomFireStore {
           talkUser: talkUser,
           lastMessage: doc.data()['last_message'],
         );
+        talkRooms.add(talkRoom);
       }
     } catch ($e) {}
   }
