@@ -42,6 +42,7 @@ class RoomFireStore {
           talkUserUid = id;
         }
         User? talkUser = await UserFirestore.fetchProfile(talkUserUid);
+        if (talkUser == null) return;
         final talkRoom = TalkRoom(roomId: doc.id, talkUser: talkUser);
       }
     } catch ($e) {}
