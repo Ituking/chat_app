@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:chat_app/firestore/user_firestore.dart';
 import 'package:chat_app/model/talk_room.dart';
 import 'package:chat_app/model/user.dart';
@@ -53,6 +55,10 @@ class RoomFireStore {
           print(talkRooms.length);
         }
       }
-    } catch ($e) {}
+    } catch ($e) {
+      if (kDebugMode) {
+        print("FAILED ===== $e");
+      }
+    }
   }
 }
