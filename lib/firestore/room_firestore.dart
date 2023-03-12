@@ -33,8 +33,9 @@ class RoomFireStore {
   static Future<void> fetchJoinedRooms() async {
     try {
       String myUid = SharedPrefs.fetchUid()!;
-      final snapshot =
-          _roomCollection.where('joined_user_ids', arrayContains: myUid).get();
+      final snapshot = await _roomCollection
+          .where('joined_user_ids', arrayContains: myUid)
+          .get();
       List<TalkRoom> talkRooms = [];
       for (var doc in snapshot.docs) {
         List<dynamic> userIds = doc.data()['joined_user_ids'];
