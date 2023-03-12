@@ -1,6 +1,8 @@
 import 'package:chat_app/firestore/user_firestore.dart';
+import 'package:chat_app/utils/shared_prefs.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RoomFireStore {
   static final FirebaseFirestore _firebaseFirestoreInstance =
@@ -26,6 +28,8 @@ class RoomFireStore {
   }
 
   static Future<void> fetchJoinedRooms() async {
-    try {} catch ($e) {}
+    try {
+      String myUid = SharedPrefs.fetchUid()!;
+    } catch ($e) {}
   }
 }
