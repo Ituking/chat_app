@@ -35,6 +35,7 @@ class RoomFireStore {
       List<TalkRoom> talkRooms = [];
       for (var doc in snapshot.docs) {
         List<dynamic> userIds = doc.data()['joined_user_ids'];
+        for (var id in userIds) {}
         final talkRoom = TalkRoom(roomId: doc.id, talkUser: talkUser)
       }
     } catch ($e) {}
