@@ -43,7 +43,11 @@ class RoomFireStore {
         }
         User? talkUser = await UserFirestore.fetchProfile(talkUserUid);
         if (talkUser == null) return;
-        final talkRoom = TalkRoom(roomId: doc.id, talkUser: talkUser);
+        final talkRoom = TalkRoom(
+          roomId: doc.id,
+          talkUser: talkUser,
+          lastMessage: doc.data()['last_message'],
+        );
       }
     } catch ($e) {}
   }
