@@ -38,6 +38,7 @@ class RoomFireStore {
         late String talkUserUid;
         for (var id in userIds) {
           if (id == myUid) return;
+          talkUserUid = id;
         }
         final talkRoom = TalkRoom(roomId: doc.id, talkUser: talkUser)
       }
