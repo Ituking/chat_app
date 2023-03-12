@@ -25,5 +25,7 @@ class RoomFireStore {
     }
   }
 
-  static Future<void> fetchJoinedRooms() async {}
+  static Future<void> fetchJoinedRooms() async {
+    try {} catch ($e) {}
+  }
 }
