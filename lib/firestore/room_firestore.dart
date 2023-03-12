@@ -1,5 +1,6 @@
 import 'package:chat_app/firestore/user_firestore.dart';
 import 'package:chat_app/model/talk_room.dart';
+import 'package:chat_app/model/user.dart';
 import 'package:chat_app/utils/shared_prefs.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
@@ -40,7 +41,8 @@ class RoomFireStore {
           if (id == myUid) return;
           talkUserUid = id;
         }
-        final talkRoom = TalkRoom(roomId: doc.id, talkUser: talkUser)
+        User talkUser = await UserFirestore.fetchProfile(talkUserUid);
+        final talkRoom = TalkRoom(roomId: doc.id, talkUser: talkUser);
       }
     } catch ($e) {}
   }
