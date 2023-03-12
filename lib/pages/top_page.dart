@@ -17,19 +17,16 @@ class _TopPageState extends State<TopPage> {
       uid: "0001",
       imagePath:
           "https://images.unsplash.com/photo-1472396961693-142e6e269027?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8Mjl8fE5hdHVyZXxlbnwwfHx8fDE2NzgwODY0NTY&ixlib=rb-4.0.3&q=80&w=400",
-      lastMessage: "Hello.",
     ),
     User(
       name: "John",
       uid: "0002",
-      lastMessage: "Thanks.",
     ),
     User(
       name: "Michael",
       uid: "0003",
       imagePath:
           "https://images.unsplash.com/photo-1472396961693-142e6e269027?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8Mjl8fE5hdHVyZXxlbnwwfHx8fDE2NzgwODY0NTY&ixlib=rb-4.0.3&q=80&w=400",
-      lastMessage: "Welcome.",
     ),
   ];
   @override
@@ -88,9 +85,9 @@ class _TopPageState extends State<TopPage> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Text(
-                          userList[index].lastMessage,
-                          style: const TextStyle(
+                        const Text(
+                          "Hello.",
+                          style: TextStyle(
                             color: Colors.grey,
                           ),
                         ),
