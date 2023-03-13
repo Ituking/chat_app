@@ -11,6 +11,9 @@ class RoomFireStore {
   static final FirebaseFirestore _firebaseFirestoreInstance =
       FirebaseFirestore.instance;
   static final _roomCollection = _firebaseFirestoreInstance.collection('room');
+  static final joinedRoomSnapshot = _roomCollection
+      .where('joined_user_id', arrayContains: SharedPrefs.fetchUid())
+      .snapshots();
 
   static Future<void> createRoom(String myUid) async {
     try {
