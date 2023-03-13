@@ -33,30 +33,18 @@ class RoomFireStore {
   static Future<void> fetchJoinedRooms() async {
     try {
       String myUid = SharedPrefs.fetchUid()!;
-      if (kDebugMode) {
-        print(myUid);
-      }
       final snapshot = await _roomCollection
           .where('joined_user_id', arrayContains: myUid)
           .get();
       List<TalkRoom> talkRooms = [];
       for (var doc in snapshot.docs) {
         List<dynamic> userIds = doc.data()['joined_user_id'];
-        if (kDebugMode) {
-          print(userIds);
-        }
         late String talkUserUid;
         for (var id in userIds) {
           if (id == myUid) continue;
           talkUserUid = id;
         }
-        if (kDebugMode) {
-          print(talkUserUid);
-        }
         User? talkUser = await UserFirestore.fetchProfile(talkUserUid);
-        if (kDebugMode) {
-          print(talkUser);
-        }
         if (talkUser == null) return;
         final talkRoom = TalkRoom(
           roomId: doc.id,
