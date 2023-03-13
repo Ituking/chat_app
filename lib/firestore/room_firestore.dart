@@ -33,15 +33,13 @@ class RoomFireStore {
     }
   }
 
-  static Future<void> fetchJoinedRooms() async {
+  static Future<void> fetchJoinedRooms(QuerySnapshot snapshot) async {
     try {
       String myUid = SharedPrefs.fetchUid()!;
-      final snapshot = await _roomCollection
-          .where('joined_user_id', arrayContains: myUid)
-          .get();
       List<TalkRoom> talkRooms = [];
       for (var doc in snapshot.docs) {
-        List<dynamic> userIds = doc.data()['joined_user_id'];
+        Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+        List<dynamic> userIds = data['joined_user_id'];
         late String talkUserUid;
         for (var id in userIds) {
           if (id == myUid) continue;
@@ -52,7 +50,7 @@ class RoomFireStore {
         final talkRoom = TalkRoom(
           roomId: doc.id,
           talkUser: talkUser,
-          lastMessage: doc.data()['last_message'],
+          lastMessage: data['last_message'],
         );
         talkRooms.add(talkRoom);
       }
