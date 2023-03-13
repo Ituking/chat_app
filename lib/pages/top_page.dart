@@ -1,3 +1,4 @@
+import 'package:chat_app/firestore/room_firestore.dart';
 import 'package:chat_app/model/user.dart';
 import 'package:chat_app/pages/setting_profile_page.dart';
 import 'package:chat_app/pages/talk_room_page.dart';
@@ -50,7 +51,7 @@ class _TopPageState extends State<TopPage> {
         ],
       ),
       body: StreamBuilder<QuerySnapshot>(
-          stream: null,
+          stream: RoomFireStore.joinedRoomSnapshot,
           builder: (context, snapshot) {
             return ListView.builder(
                 itemCount: userList.length,
