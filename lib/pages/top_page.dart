@@ -53,62 +53,66 @@ class _TopPageState extends State<TopPage> {
       body: StreamBuilder<QuerySnapshot>(
           stream: RoomFireStore.joinedRoomSnapshot,
           builder: (context, streamSnapshot) {
-            return FutureBuilder(
-              future: ,
-              builder: (context, futureSnapshot) {
-              return ListView.builder(
-                  itemCount: userList.length,
-                  itemBuilder: (context, index) {
-                    return InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => TalkRoomPage(
-                              name: userList[index].name,
-                            ),
-                          ),
-                        );
-                      },
-                      child: SizedBox(
-                        height: 70,
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0),
-                              child: CircleAvatar(
-                                radius: 30,
-                                backgroundImage: userList[index].imagePath ==
-                                        null
-                                    ? null
-                                    : NetworkImage(userList[index].imagePath!),
+            if (streamSnapshot.hasData) {
+              return FutureBuilder(
+                  future: RoomFireStore.fetchJoinedRooms(streamSnapshot.data!),
+                  builder: (context, futureSnapshot) {
+                    return ListView.builder(
+                        itemCount: userList.length,
+                        itemBuilder: (context, index) {
+                          return InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => TalkRoomPage(
+                                    name: userList[index].name,
+                                  ),
+                                ),
+                              );
+                            },
+                            child: SizedBox(
+                              height: 70,
+                              child: Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 8.0),
+                                    child: CircleAvatar(
+                                      radius: 30,
+                                      backgroundImage:
+                                          userList[index].imagePath == null
+                                              ? null
+                                              : NetworkImage(
+                                                  userList[index].imagePath!),
+                                    ),
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        userList[index].name,
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      const Text(
+                                        "Hello.",
+                                        style: TextStyle(
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
                               ),
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  userList[index].name,
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                const Text(
-                                  "Hello.",
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
+                          );
+                        });
                   });
-            });
+            }
           }),
     );
   }
