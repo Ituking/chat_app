@@ -58,6 +58,10 @@ class _TopPageState extends State<TopPage> {
               return FutureBuilder<List<TalkRoom>?>(
                   future: RoomFireStore.fetchJoinedRooms(streamSnapshot.data!),
                   builder: (context, futureSnapshot) {
+                    if (futureSnapshot.connectionState ==
+                        ConnectionState.waiting) {
+                      return const CircularProgressIndicator();
+                    }
                     if (futureSnapshot.hasData) {
                       List<TalkRoom> talkRooms = futureSnapshot.data!;
                       return ListView.builder(
