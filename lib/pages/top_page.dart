@@ -112,6 +112,8 @@ class _TopPageState extends State<TopPage> {
                           );
                         });
                   });
+            } else {
+              return const CircularProgressIndicator();
             }
           }),
     );
