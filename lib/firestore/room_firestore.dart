@@ -33,7 +33,8 @@ class RoomFireStore {
     }
   }
 
-  static Future<void> fetchJoinedRooms(QuerySnapshot snapshot) async {
+  static Future<List<TalkRoom>?> fetchJoinedRooms(
+      QuerySnapshot snapshot) async {
     try {
       String myUid = SharedPrefs.fetchUid()!;
       List<TalkRoom> talkRooms = [];
@@ -46,7 +47,7 @@ class RoomFireStore {
           talkUserUid = id;
         }
         User? talkUser = await UserFirestore.fetchProfile(talkUserUid);
-        if (talkUser == null) return;
+        if (talkUser == null) return null;
         final talkRoom = TalkRoom(
           roomId: doc.id,
           talkUser: talkUser,
@@ -57,10 +58,12 @@ class RoomFireStore {
       if (kDebugMode) {
         print(talkRooms.length);
       }
+      return talkRooms;
     } catch ($e) {
       if (kDebugMode) {
         print("FAILED ===== $e");
       }
     }
+    return null;
   }
 }
