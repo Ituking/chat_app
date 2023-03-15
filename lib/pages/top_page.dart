@@ -61,69 +61,70 @@ class _TopPageState extends State<TopPage> {
                     if (futureSnapshot.connectionState ==
                         ConnectionState.waiting) {
                       return const CircularProgressIndicator();
-                    }
-                    if (futureSnapshot.hasData) {
-                      List<TalkRoom> talkRooms = futureSnapshot.data!;
-                      return ListView.builder(
-                          itemCount: talkRooms.length,
-                          itemBuilder: (context, index) {
-                            return InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => TalkRoomPage(
-                                      name: talkRooms[index].talkUser.name,
-                                    ),
-                                  ),
-                                );
-                              },
-                              child: SizedBox(
-                                height: 70,
-                                child: Row(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 8.0),
-                                      child: CircleAvatar(
-                                        radius: 30,
-                                        backgroundImage: talkRooms[index]
-                                                    .talkUser
-                                                    .imagePath ==
-                                                null
-                                            ? null
-                                            : NetworkImage(talkRooms[index]
-                                                .talkUser
-                                                .imagePath!),
+                    } else {
+                      if (futureSnapshot.hasData) {
+                        List<TalkRoom> talkRooms = futureSnapshot.data!;
+                        return ListView.builder(
+                            itemCount: talkRooms.length,
+                            itemBuilder: (context, index) {
+                              return InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => TalkRoomPage(
+                                        name: talkRooms[index].talkUser.name,
                                       ),
                                     ),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          talkRooms[index].talkUser.name,
-                                          style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                          ),
+                                  );
+                                },
+                                child: SizedBox(
+                                  height: 70,
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 8.0),
+                                        child: CircleAvatar(
+                                          radius: 30,
+                                          backgroundImage: talkRooms[index]
+                                                      .talkUser
+                                                      .imagePath ==
+                                                  null
+                                              ? null
+                                              : NetworkImage(talkRooms[index]
+                                                  .talkUser
+                                                  .imagePath!),
                                         ),
-                                        Text(
-                                          talkRooms[index].lastMessage ?? "",
-                                          style: const TextStyle(
-                                            color: Colors.grey,
+                                      ),
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            talkRooms[index].talkUser.name,
+                                            style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                                          Text(
+                                            talkRooms[index].lastMessage ?? "",
+                                            style: const TextStyle(
+                                              color: Colors.grey,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            );
-                          });
-                    } else {
-                      return const Text("FAILED");
+                              );
+                            });
+                      } else {
+                        return const Text("FAILED");
+                      }
                     }
                   });
             } else {
