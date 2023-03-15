@@ -57,60 +57,63 @@ class _TopPageState extends State<TopPage> {
               return FutureBuilder(
                   future: RoomFireStore.fetchJoinedRooms(streamSnapshot.data!),
                   builder: (context, futureSnapshot) {
-                    return ListView.builder(
-                        itemCount: userList.length,
-                        itemBuilder: (context, index) {
-                          return InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => TalkRoomPage(
-                                    name: userList[index].name,
-                                  ),
-                                ),
-                              );
-                            },
-                            child: SizedBox(
-                              height: 70,
-                              child: Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 8.0),
-                                    child: CircleAvatar(
-                                      radius: 30,
-                                      backgroundImage:
-                                          userList[index].imagePath == null
-                                              ? null
-                                              : NetworkImage(
-                                                  userList[index].imagePath!),
+                    if (futureSnapshot.hasData) {
+                      return ListView.builder(
+                          itemCount: userList.length,
+                          itemBuilder: (context, index) {
+                            return InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => TalkRoomPage(
+                                      name: userList[index].name,
                                     ),
                                   ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        userList[index].name,
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                );
+                              },
+                              child: SizedBox(
+                                height: 70,
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8.0),
+                                      child: CircleAvatar(
+                                        radius: 30,
+                                        backgroundImage:
+                                            userList[index].imagePath == null
+                                                ? null
+                                                : NetworkImage(
+                                                    userList[index].imagePath!),
                                       ),
-                                      const Text(
-                                        "Hello.",
-                                        style: TextStyle(
-                                          color: Colors.grey,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          userList[index].name,
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                        const Text(
+                                          "Hello.",
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          );
-                        });
+                            );
+                          });
+                    }
                   });
             } else {
               return const CircularProgressIndicator();
