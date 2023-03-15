@@ -1,4 +1,5 @@
 import 'package:chat_app/firestore/room_firestore.dart';
+import 'package:chat_app/model/talk_room.dart';
 import 'package:chat_app/model/user.dart';
 import 'package:chat_app/pages/setting_profile_page.dart';
 import 'package:chat_app/pages/talk_room_page.dart';
@@ -54,12 +55,13 @@ class _TopPageState extends State<TopPage> {
           stream: RoomFireStore.joinedRoomSnapshot,
           builder: (context, streamSnapshot) {
             if (streamSnapshot.hasData) {
-              return FutureBuilder(
+              return FutureBuilder<List<TalkRoom>?>(
                   future: RoomFireStore.fetchJoinedRooms(streamSnapshot.data!),
                   builder: (context, futureSnapshot) {
                     if (futureSnapshot.hasData) {
+                      List<TalkRoom> talkRooms = futureSnapshot.data!;
                       return ListView.builder(
-                          itemCount: userList.length,
+                          itemCount: talkRooms.length,
                           itemBuilder: (context, index) {
                             return InkWell(
                               onTap: () {
@@ -67,7 +69,7 @@ class _TopPageState extends State<TopPage> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => TalkRoomPage(
-                                      name: userList[index].name,
+                                      name: talkRooms[index].talkUser.name,
                                     ),
                                   ),
                                 );
@@ -81,11 +83,14 @@ class _TopPageState extends State<TopPage> {
                                           horizontal: 8.0),
                                       child: CircleAvatar(
                                         radius: 30,
-                                        backgroundImage:
-                                            userList[index].imagePath == null
-                                                ? null
-                                                : NetworkImage(
-                                                    userList[index].imagePath!),
+                                        backgroundImage: talkRooms[index]
+                                                    .talkUser
+                                                    .imagePath ==
+                                                null
+                                            ? null
+                                            : NetworkImage(talkRooms[index]
+                                                .talkUser
+                                                .imagePath!),
                                       ),
                                     ),
                                     Column(
@@ -95,14 +100,14 @@ class _TopPageState extends State<TopPage> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          userList[index].name,
+                                          talkRooms[index].talkUser.name,
                                           style: const TextStyle(
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                        const Text(
-                                          "Hello.",
-                                          style: TextStyle(
+                                        Text(
+                                          talkRooms[index].lastMessage ?? "",
+                                          style: const TextStyle(
                                             color: Colors.grey,
                                           ),
                                         ),
