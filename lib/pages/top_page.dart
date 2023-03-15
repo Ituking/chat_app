@@ -60,7 +60,9 @@ class _TopPageState extends State<TopPage> {
                   builder: (context, futureSnapshot) {
                     if (futureSnapshot.connectionState ==
                         ConnectionState.waiting) {
-                      return const CircularProgressIndicator();
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
                     } else {
                       if (futureSnapshot.hasData) {
                         List<TalkRoom> talkRooms = futureSnapshot.data!;
@@ -123,12 +125,16 @@ class _TopPageState extends State<TopPage> {
                               );
                             });
                       } else {
-                        return const Text("FAILED");
+                        return const Center(
+                          child: Text("FAILED"),
+                        );
                       }
                     }
                   });
             } else {
-              return const CircularProgressIndicator();
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
             }
           }),
     );
