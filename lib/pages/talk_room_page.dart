@@ -25,7 +25,8 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
           alignment: Alignment.bottomCenter,
           children: [
             StreamBuilder<QuerySnapshot>(
-                stream: RoomFireStore.fetchMessageSnapshot(roomId),
+                stream:
+                    RoomFireStore.fetchMessageSnapshot(widget.talkRoom.roomId),
                 builder: (context, snapshot) {
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 60),
