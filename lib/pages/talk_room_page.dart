@@ -81,8 +81,11 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                                       ),
                                     ),
                                   ),
-                                  Text(intl.DateFormat('HH:mm')
-                                      .format(messageList[index].sendTime)),
+                                  Text(
+                                    intl.DateFormat('HH:mm').format(
+                                      message.sendTime.toDate(),
+                                    ),
+                                  ),
                                 ],
                               ),
                             );
