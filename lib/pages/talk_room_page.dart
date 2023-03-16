@@ -39,8 +39,13 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                           itemCount: snapshot.data!.docs.length,
                           itemBuilder: (context, index) {
                             final doc = snapshot.data!.docs[index];
-                            final Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-                            Message message = Message(message: doc.data()['message'], isMe: isMe, sendTime: sendTime)
+                            final Map<String, dynamic> data =
+                                doc.data() as Map<String, dynamic>;
+                            Message message = Message(
+                              message: data['message'],
+                              isMe: isMe,
+                              sendTime: sendTime,
+                            );
                             return Padding(
                               padding: EdgeInsets.only(
                                   top: 10,
