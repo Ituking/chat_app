@@ -91,6 +91,10 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                             );
                           }),
                     );
+                  } else {
+                    return const Center(
+                      child: Text("NO MESSAGE"),
+                    );
                   }
                 }),
             Column(
