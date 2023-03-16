@@ -67,5 +67,7 @@ class RoomFireStore {
     return null;
   }
 
-  QuerySnapshot fetchMessageSnapshot(String roomId) {}
+  Stream<QuerySnapshot> fetchMessageSnapshot(String roomId) {
+    return _roomCollection.doc(roomId).collection('message').snapshots();
+  }
 }
