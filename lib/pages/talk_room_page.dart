@@ -18,7 +18,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(236, 255, 255, 255),
       appBar: AppBar(
-        title: Text(widget.name),
+        title: Text(widget.talkRoom.talkUser.name),
       ),
       body: SafeArea(
         child: Stack(
