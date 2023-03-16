@@ -1,4 +1,5 @@
 import 'package:chat_app/firestore/room_firestore.dart';
+import 'package:chat_app/model/message.dart';
 import 'package:chat_app/model/talk_room.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +39,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                           itemCount: snapshot.data!.docs.length,
                           itemBuilder: (context, index) {
                             final doc = snapshot.data!.docs[index];
+                            Message message = Message(message: doc.data()['message'], isMe: isMe, sendTime: sendTime)
                             return Padding(
                               padding: EdgeInsets.only(
                                   top: 10,
