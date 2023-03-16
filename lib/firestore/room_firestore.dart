@@ -66,4 +66,6 @@ class RoomFireStore {
     }
     return null;
   }
+
+  QuerySnapshot fetchMessageSnapshot(String roomId) {}
 }
