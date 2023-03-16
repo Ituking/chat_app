@@ -28,55 +28,57 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                 stream:
                     RoomFireStore.fetchMessageSnapshot(widget.talkRoom.roomId),
                 builder: (context, snapshot) {
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 60),
-                    child: ListView.builder(
-                        physics: const RangeMaintainingScrollPhysics(),
-                        shrinkWrap: true,
-                        reverse: true,
-                        itemCount: messageList.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: EdgeInsets.only(
-                                top: 10,
-                                left: 10,
-                                right: 10,
-                                bottom: index == 0 ? 10 : 0),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              textDirection: messageList[index].isMe
-                                  ? TextDirection.rtl
-                                  : TextDirection.ltr,
-                              children: [
-                                Container(
-                                  constraints: BoxConstraints(
-                                      maxWidth:
-                                          MediaQuery.of(context).size.width *
-                                              0.6),
-                                  decoration: BoxDecoration(
-                                    color: messageList[index].isMe
-                                        ? Colors.blueGrey
-                                        : Colors.green,
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10, vertical: 6),
-                                  child: Text(
-                                    messageList[index].message,
-                                    style: TextStyle(
+                  if (snapshot.hasData) {
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 60),
+                      child: ListView.builder(
+                          physics: const RangeMaintainingScrollPhysics(),
+                          shrinkWrap: true,
+                          reverse: true,
+                          itemCount: messageList.length,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: EdgeInsets.only(
+                                  top: 10,
+                                  left: 10,
+                                  right: 10,
+                                  bottom: index == 0 ? 10 : 0),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                textDirection: messageList[index].isMe
+                                    ? TextDirection.rtl
+                                    : TextDirection.ltr,
+                                children: [
+                                  Container(
+                                    constraints: BoxConstraints(
+                                        maxWidth:
+                                            MediaQuery.of(context).size.width *
+                                                0.6),
+                                    decoration: BoxDecoration(
                                       color: messageList[index].isMe
-                                          ? Colors.white
-                                          : Colors.white,
+                                          ? Colors.blueGrey
+                                          : Colors.green,
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 10, vertical: 6),
+                                    child: Text(
+                                      messageList[index].message,
+                                      style: TextStyle(
+                                        color: messageList[index].isMe
+                                            ? Colors.white
+                                            : Colors.white,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Text(intl.DateFormat('HH:mm')
-                                    .format(messageList[index].sendTime)),
-                              ],
-                            ),
-                          );
-                        }),
-                  );
+                                  Text(intl.DateFormat('HH:mm')
+                                      .format(messageList[index].sendTime)),
+                                ],
+                              ),
+                            );
+                          }),
+                    );
+                  }
                 }),
             Column(
               mainAxisSize: MainAxisSize.min,
