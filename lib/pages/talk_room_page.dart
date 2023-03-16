@@ -35,7 +35,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                           physics: const RangeMaintainingScrollPhysics(),
                           shrinkWrap: true,
                           reverse: true,
-                          itemCount: messageList.length,
+                          itemCount: snapshot.data!.docs.length,
                           itemBuilder: (context, index) {
                             return Padding(
                               padding: EdgeInsets.only(
