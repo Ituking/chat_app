@@ -37,6 +37,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                           reverse: true,
                           itemCount: snapshot.data!.docs.length,
                           itemBuilder: (context, index) {
+                            final doc = snapshot.data!.docs[index];
                             return Padding(
                               padding: EdgeInsets.only(
                                   top: 10,
