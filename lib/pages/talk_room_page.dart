@@ -42,7 +42,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                             final doc = snapshot.data!.docs[index];
                             final Map<String, dynamic> data =
                                 doc.data() as Map<String, dynamic>;
-                            Message message = Message(
+                            final Message message = Message(
                               message: data['message'],
                               isMe: SharedPrefs.fetchUid() == data['sender_id'],
                               sendTime: data['send_time'],
@@ -55,7 +55,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                                   bottom: index == 0 ? 10 : 0),
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.end,
-                                textDirection: messageList[index].isMe
+                                textDirection: message.isMe
                                     ? TextDirection.rtl
                                     : TextDirection.ltr,
                                 children: [
@@ -65,7 +65,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                                             MediaQuery.of(context).size.width *
                                                 0.6),
                                     decoration: BoxDecoration(
-                                      color: messageList[index].isMe
+                                      color: message.isMe
                                           ? Colors.blueGrey
                                           : Colors.green,
                                       borderRadius: BorderRadius.circular(15),
@@ -73,9 +73,9 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 10, vertical: 6),
                                     child: Text(
-                                      messageList[index].message,
+                                      message.message,
                                       style: TextStyle(
-                                        color: messageList[index].isMe
+                                        color: message.isMe
                                             ? Colors.white
                                             : Colors.white,
                                       ),
