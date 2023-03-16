@@ -1,6 +1,7 @@
 import 'package:chat_app/firestore/room_firestore.dart';
 import 'package:chat_app/model/message.dart';
 import 'package:chat_app/model/talk_room.dart';
+import 'package:chat_app/utils/shared_prefs.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
@@ -43,7 +44,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                                 doc.data() as Map<String, dynamic>;
                             Message message = Message(
                               message: data['message'],
-                              isMe: isMe,
+                              isMe: SharedPrefs.fetchUid() == data['sender_id'],
                               sendTime: data['send_time'],
                             );
                             return Padding(
