@@ -44,7 +44,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                             Message message = Message(
                               message: data['message'],
                               isMe: isMe,
-                              sendTime: sendTime,
+                              sendTime: data['send_time'],
                             );
                             return Padding(
                               padding: EdgeInsets.only(
