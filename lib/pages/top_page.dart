@@ -3,7 +3,6 @@ import 'package:chat_app/model/talk_room.dart';
 import 'package:chat_app/pages/setting_profile_page.dart';
 import 'package:chat_app/pages/talk_room_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class TopPage extends StatefulWidget {
@@ -53,9 +52,6 @@ class _TopPageState extends State<TopPage> {
                             itemBuilder: (context, index) {
                               return InkWell(
                                 onTap: () {
-                                  if (kDebugMode) {
-                                    print(talkRooms[index].roomId);
-                                  }
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
