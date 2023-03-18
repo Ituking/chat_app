@@ -75,8 +75,11 @@ class RoomFireStore {
         .snapshots();
   }
 
-  static Future<void> sendMessage() async {
-    try {} catch ($e) {
+  static Future<void> sendMessage({required String roomId}) async {
+    try {
+      final messageCollection =
+          _roomCollection.doc(roomId).collection('message');
+    } catch ($e) {
       if (kDebugMode) {
         print("FAILED ===== $e");
       }
