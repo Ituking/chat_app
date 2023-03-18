@@ -74,4 +74,6 @@ class RoomFireStore {
         .orderBy('send_time', descending: true)
         .snapshots();
   }
+
+  static Future<void> sendMessage() async {}
 }
