@@ -119,11 +119,12 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                         ),
                       ),
                       IconButton(
-                        onPressed: () {
-                          RoomFireStore.sendMessage(
+                        onPressed: () async {
+                          await RoomFireStore.sendMessage(
                             roomId: widget.talkRoom.roomId,
                             message: controller.text,
                           );
+                          controller.clear();
                         },
                         icon: const Icon(Icons.send),
                       ),
