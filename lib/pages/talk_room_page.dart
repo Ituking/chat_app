@@ -24,7 +24,6 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
       ),
       body: SafeArea(
         child: Stack(
-          alignment: Alignment.bottomCenter,
           children: [
             StreamBuilder<QuerySnapshot>(
                 stream:
@@ -98,7 +97,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                   }
                 }),
             Column(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Container(
                   color: Colors.white,
