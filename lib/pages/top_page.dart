@@ -56,7 +56,7 @@ class _TopPageState extends State<TopPage> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) => TalkRoomPage(
-                                        name: talkRooms[index].talkUser.name,
+                                        talkRoom: talkRooms[index],
                                       ),
                                     ),
                                   );
