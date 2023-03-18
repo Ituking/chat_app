@@ -83,6 +83,7 @@ class RoomFireStore {
       await messageCollection.add({
         'message': message,
         'sender_id': SharedPrefs.fetchUid(),
+        'send_time': Timestamp.now(),
       });
     } catch ($e) {
       if (kDebugMode) {
