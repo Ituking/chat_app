@@ -76,6 +76,10 @@ class RoomFireStore {
   }
 
   static Future<void> sendMessage() async {
-    try {} catch ($e) {}
+    try {} catch ($e) {
+      if (kDebugMode) {
+        print("FAILED ===== $e");
+      }
+    }
   }
 }
