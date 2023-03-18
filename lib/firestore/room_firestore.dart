@@ -80,6 +80,9 @@ class RoomFireStore {
     try {
       final messageCollection =
           _roomCollection.doc(roomId).collection('message');
+      await messageCollection.add({
+        'message': message,
+      });
     } catch ($e) {
       if (kDebugMode) {
         print("FAILED ===== $e");
