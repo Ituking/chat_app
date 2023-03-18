@@ -82,6 +82,7 @@ class RoomFireStore {
           _roomCollection.doc(roomId).collection('message');
       await messageCollection.add({
         'message': message,
+        'sender_id': SharedPrefs.fetchUid(),
       });
     } catch ($e) {
       if (kDebugMode) {
