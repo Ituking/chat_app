@@ -75,7 +75,8 @@ class RoomFireStore {
         .snapshots();
   }
 
-  static Future<void> sendMessage({required String roomId}) async {
+  static Future<void> sendMessage(
+      {required String roomId, required String message}) async {
     try {
       final messageCollection =
           _roomCollection.doc(roomId).collection('message');
