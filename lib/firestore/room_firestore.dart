@@ -75,5 +75,7 @@ class RoomFireStore {
         .snapshots();
   }
 
-  static Future<void> sendMessage() async {}
+  static Future<void> sendMessage() async {
+    try {} catch ($e) {}
+  }
 }
