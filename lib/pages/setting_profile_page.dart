@@ -63,6 +63,7 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
             const SizedBox(
               height: 100,
             ),
+            image == null ? const SizedBox() : Image.file(image!),
             const SizedBox(
               height: 450,
             ),
