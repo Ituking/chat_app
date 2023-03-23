@@ -51,7 +51,9 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
                   child: Container(
                     alignment: Alignment.center,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        selectImage();
+                      },
                       child: const Text("Select Image"),
                     ),
                   ),
