@@ -48,6 +48,6 @@
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<String>Allow Access To Photo Folders</String>
+	<string>Allow Access To Photo Folders</string>
 </dict>
 </plist>
