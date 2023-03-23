@@ -16,6 +16,7 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
 
   Future<void> selectImage() async {
     XFile? pickedImage = await _picker.pickImage(source: ImageSource.gallery);
+    if (pickedImage == null) return;
   }
 
   @override
