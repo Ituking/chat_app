@@ -61,6 +61,9 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
               ],
             ),
             const SizedBox(
+              height: 100,
+            ),
+            const SizedBox(
               height: 450,
             ),
             SizedBox(
