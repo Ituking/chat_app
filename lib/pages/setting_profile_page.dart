@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -16,6 +17,9 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
 
   Future<void> selectImage() async {
     XFile? pickedImage = await _picker.pickImage(source: ImageSource.gallery);
+    if (kDebugMode) {
+      print(pickedImage);
+    }
     if (pickedImage == null) return;
 
     setState(() {
@@ -67,10 +71,10 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
                 ? const SizedBox()
                 : SizedBox(width: 200, height: 200, child: Image.file(image!)),
             const SizedBox(
-              height: 350,
+              height: 150,
             ),
             SizedBox(
-              width: 200,
+              width: 150,
               height: 50,
               child: ElevatedButton(
                 onPressed: () {},
