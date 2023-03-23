@@ -13,6 +13,8 @@ class SettingProfilePage extends StatefulWidget {
 class _SettingProfilePageState extends State<SettingProfilePage> {
   File? image;
   final ImagePicker _picker = ImagePicker();
+
+  Future<void> selectImage() async {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
