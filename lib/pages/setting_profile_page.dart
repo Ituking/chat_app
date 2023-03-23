@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class SettingProfilePage extends StatefulWidget {
   const SettingProfilePage({super.key});
@@ -11,6 +12,7 @@ class SettingProfilePage extends StatefulWidget {
 
 class _SettingProfilePageState extends State<SettingProfilePage> {
   File? image;
+  final ImagePicker _picker = ImagePicker();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
