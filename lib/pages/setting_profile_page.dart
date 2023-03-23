@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 class SettingProfilePage extends StatefulWidget {
@@ -8,6 +10,7 @@ class SettingProfilePage extends StatefulWidget {
 }
 
 class _SettingProfilePageState extends State<SettingProfilePage> {
+  File? image;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
