@@ -14,7 +14,10 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
   File? image;
   final ImagePicker _picker = ImagePicker();
 
-  Future<void> selectImage() async {}
+  Future<void> selectImage() async {
+    XFile? pickedImage = await _picker.pickImage(source: ImageSource.gallery);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
