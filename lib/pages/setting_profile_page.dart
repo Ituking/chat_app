@@ -69,13 +69,19 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
             ),
             image == null
                 ? const SizedBox()
-                : SizedBox(width: 200, height: 200, child: Image.file(image!)),
+                : SizedBox(
+                    width: 350,
+                    height: 200,
+                    child: Image.file(
+                      image!,
+                      fit: BoxFit.cover,
+                    )),
             const SizedBox(
               height: 150,
             ),
             SizedBox(
               width: 150,
-              height: 50,
+              height: 40,
               child: ElevatedButton(
                 onPressed: () {},
                 child: const Text("Edit"),
