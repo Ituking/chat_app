@@ -15,6 +15,7 @@ class SettingProfilePage extends StatefulWidget {
 
 class _SettingProfilePageState extends State<SettingProfilePage> {
   File? image;
+  String imagePath = '';
   final ImagePicker _picker = ImagePicker();
 
   Future<void> selectImage() async {
@@ -43,6 +44,7 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
   Future<void> uploadImage() async {
     final ref = FirebaseStorage.instance.ref('test.png');
     final storedImage = await ref.putFile(image!);
+    imagePath = await storedImage.ref.getDownloadURL();
   }
 
   @override
