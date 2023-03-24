@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
 class SettingProfilePage extends StatefulWidget {
@@ -16,15 +17,26 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
   final ImagePicker _picker = ImagePicker();
 
   Future<void> selectImage() async {
-    XFile? pickedImage = await _picker.pickImage(source: ImageSource.gallery);
-    if (kDebugMode) {
-      print(pickedImage);
-    }
-    if (pickedImage == null) return;
+    try {
+      final XFile? pickedImage =
+          await _picker.pickImage(source: ImageSource.gallery);
+      if (pickedImage == null) return;
 
-    setState(() {
-      image = File(pickedImage.path);
-    });
+      final File imageFile = File(pickedImage.path);
+      final Uint8List imageBytes = await imageFile.readAsBytes();
+      if (imageBytes.isNotEmpty) {
+        setState(() {
+          image = imageFile;
+        });
+      } else {
+        throw PlatformException(
+            code: 'invalid_image',
+            message: 'Cannot load representation of selected image',
+            details: null);
+      }
+    } on PlatformException catch (e) {
+      debugPrint('Image picker error: $e');
+    }
   }
 
   @override
