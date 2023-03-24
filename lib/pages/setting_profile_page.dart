@@ -39,6 +39,8 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
     }
   }
 
+  Future<void> uploadImage() async {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
