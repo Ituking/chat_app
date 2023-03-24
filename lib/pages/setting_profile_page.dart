@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -39,7 +40,9 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
     }
   }
 
-  Future<void> uploadImage() async {}
+  Future<void> uploadImage() async {
+    final ref = FirebaseStorage.instance.ref('test.png');
+  }
 
   @override
   Widget build(BuildContext context) {
