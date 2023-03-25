@@ -42,7 +42,7 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
   }
 
   Future<void> uploadImage() async {
-    final ref = FirebaseStorage.instance.ref('test.png');
+    final ref = FirebaseStorage.instance.ref('${image!.path}.png');
     final storedImage = await ref.putFile(image!);
     imagePath = await storedImage.ref.getDownloadURL();
   }
