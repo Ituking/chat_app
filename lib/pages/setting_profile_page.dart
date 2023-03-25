@@ -45,6 +45,9 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
     if (kDebugMode) {
       print(image!.path);
     }
+    if (kDebugMode) {
+      print(image!.path.substring(image!.path.lastIndexOf('/')));
+    }
     final ref = FirebaseStorage.instance.ref('${image!.path}.png');
     final storedImage = await ref.putFile(image!);
     imagePath = await storedImage.ref.getDownloadURL();
