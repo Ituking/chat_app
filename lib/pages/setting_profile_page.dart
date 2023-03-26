@@ -1,5 +1,8 @@
 import 'dart:io';
 
+import 'package:chat_app/firestore/user_firestore.dart';
+import 'package:chat_app/model/user.dart';
+import 'package:chat_app/utils/shared_prefs.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -108,7 +111,13 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
               width: 150,
               height: 40,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  User newProfile = User(
+                      name: controller.text,
+                      imagePath: imagePath,
+                      uid: SharedPrefs.fetchUid()!);
+                  await UserFirestore.updateUser(newProfile);
+                },
                 child: const Text("Edit"),
               ),
             ),
