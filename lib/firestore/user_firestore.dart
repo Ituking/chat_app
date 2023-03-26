@@ -50,9 +50,13 @@ class UserFirestore {
     }
   }
 
-  static Future<void> updateUser() async {
+  static Future<void> updateUser(User newProfile) async {
     try {
       String myUid = SharedPrefs.fetchUid()!;
+      _userCollection.doc(myUid).update({
+        'name': newProfile.name,
+        'image_path': newProfile.imagePath,
+      });
     } catch (e) {
       if (kDebugMode) {
         print("FAILED ===== $e");
