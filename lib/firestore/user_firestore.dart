@@ -50,6 +50,8 @@ class UserFirestore {
     }
   }
 
+  static Future<void> updateUser() async {}
+
   static Future<User?> fetchProfile(String uid) async {
     try {
       final snapshot = await _userCollection.doc(uid).get();
