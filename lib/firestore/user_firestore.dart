@@ -51,7 +51,9 @@ class UserFirestore {
   }
 
   static Future<void> updateUser() async {
-    try {} catch (e) {
+    try {
+      String myUid = SharedPrefs.fetchUid()!;
+    } catch (e) {
       if (kDebugMode) {
         print("FAILED ===== $e");
       }
