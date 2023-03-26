@@ -50,7 +50,9 @@ class UserFirestore {
     }
   }
 
-  static Future<void> updateUser() async {}
+  static Future<void> updateUser() async {
+    try {} catch (e) {}
+  }
 
   static Future<User?> fetchProfile(String uid) async {
     try {
