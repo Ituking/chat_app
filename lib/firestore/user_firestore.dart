@@ -51,7 +51,11 @@ class UserFirestore {
   }
 
   static Future<void> updateUser() async {
-    try {} catch (e) {}
+    try {} catch (e) {
+      if (kDebugMode) {
+        print("FAILED ===== $e");
+      }
+    }
   }
 
   static Future<User?> fetchProfile(String uid) async {
