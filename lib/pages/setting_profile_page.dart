@@ -60,10 +60,12 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
         child: Column(
           children: [
             Row(
-              children: const [
-                SizedBox(width: 150, child: Text("Name")),
+              children: [
+                const SizedBox(width: 150, child: Text("Name")),
                 Expanded(
-                  child: TextField(),
+                  child: TextField(
+                    controller: controller,
+                  ),
                 ),
               ],
             ),
