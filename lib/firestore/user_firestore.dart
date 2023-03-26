@@ -52,8 +52,7 @@ class UserFirestore {
 
   static Future<void> updateUser(User newProfile) async {
     try {
-      String myUid = SharedPrefs.fetchUid()!;
-      _userCollection.doc(myUid).update({
+      _userCollection.doc(newProfile.uid).update({
         'name': newProfile.name,
         'image_path': newProfile.imagePath,
       });
