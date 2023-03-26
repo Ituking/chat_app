@@ -17,6 +17,7 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
   File? image;
   String imagePath = '';
   final ImagePicker _picker = ImagePicker();
+  final TextEditingController controller = TextEditingController();
 
   Future<void> selectImage() async {
     try {
