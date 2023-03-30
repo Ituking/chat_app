@@ -11,6 +11,8 @@ class SignInPage extends StatefulWidget {
 class _SignInPageState extends State<SignInPage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  Future<void> signInAnonymously() async {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
