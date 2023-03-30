@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatefulWidget {
@@ -13,6 +14,9 @@ class _SignInPageState extends State<SignInPage> {
 
   Future<void> signInAnonymously() async {
     UserCredential userCredential = await _auth.signInAnonymously();
+    if (kDebugMode) {
+      print(userCredential);
+    }
   }
 
   @override
@@ -21,8 +25,13 @@ class _SignInPageState extends State<SignInPage> {
       appBar: AppBar(
         title: const Text("Welcome"),
       ),
-      body: const Center(
-        child: Text("Welcome"),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            signInAnonymously();
+          },
+          child: const Text("Anonymous Login"),
+        ),
       ),
     );
   }
