@@ -14,6 +14,9 @@ class _SignInPageState extends State<SignInPage> {
       appBar: AppBar(
         title: const Text("Welcome"),
       ),
+      body: const Center(
+        child: Text("Welcome"),
+      ),
     );
   }
 }
