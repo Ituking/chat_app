@@ -37,16 +37,20 @@ class RoomFireStore {
       QuerySnapshot snapshot) async {
     try {
       String myUid = SharedPrefs.fetchUid()!;
+      print(myUid);
       List<TalkRoom> talkRooms = [];
       for (var doc in snapshot.docs) {
         Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
         List<dynamic> userIds = data['joined_user_id'];
+        print(userIds);
         late String talkUserUid;
         for (var id in userIds) {
           if (id == myUid) continue;
           talkUserUid = id;
         }
+        print(talkUserUid);
         User? talkUser = await UserFirestore.fetchProfile(talkUserUid);
+        print(talkUser);
         if (talkUser == null) return null;
         final talkRoom = TalkRoom(
           roomId: doc.id,
