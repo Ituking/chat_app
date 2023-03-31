@@ -54,6 +54,12 @@ class _SignInPageState extends State<SignInPage> {
               },
               child: const Text("Create Account"),
             ),
+            ElevatedButton(
+              onPressed: () {
+                signInFromEmail();
+              },
+              child: const Text("Email Login"),
+            ),
           ],
         ),
       ),
