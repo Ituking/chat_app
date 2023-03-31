@@ -20,10 +20,6 @@ class _SignInPageState extends State<SignInPage> {
   }
 
   Future<void> createUserFromEmail(String email, String password) async {
-    UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
     if (kDebugMode) {
       print("Completed user creation from Email");
     }
