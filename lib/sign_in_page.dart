@@ -47,6 +47,7 @@ class _SignInPageState extends State<SignInPage> {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
               onPressed: () {
