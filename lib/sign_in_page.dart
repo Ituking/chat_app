@@ -46,11 +46,15 @@ class _SignInPageState extends State<SignInPage> {
         title: const Text("Welcome"),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            signInAnonymously();
-          },
-          child: const Text("Anonymous Login"),
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                createUserFromEmail();
+              },
+              child: const Text("Create Account"),
+            ),
+          ],
         ),
       ),
     );
