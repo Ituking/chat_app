@@ -59,7 +59,7 @@ class _SignInPageState extends State<SignInPage> {
               onPressed: () {
                 signInFromEmail();
               },
-              child: const Text("Email Login"),
+              child: const Text("Login by Email"),
             ),
           ],
         ),
