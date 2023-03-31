@@ -34,6 +34,9 @@ class _SignInPageState extends State<SignInPage> {
       email: "test@test.com",
       password: "testtest",
     );
+    if (kDebugMode) {
+      print(userCredential.user);
+    }
   }
 
   @override
