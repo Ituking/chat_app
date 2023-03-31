@@ -19,16 +19,16 @@ class _SignInPageState extends State<SignInPage> {
     }
   }
 
-  Future<void> createUserFromEmail() async {
+  Future<void> createUserFromEmail(String email, String password) async {
     if (kDebugMode) {
       print("Completed user creation from Email");
     }
   }
 
-  Future<void> signInFromEmail() async {
+  Future<void> signInFromEmail(String email, String password) async {
     UserCredential userCredential = await _auth.signInWithEmailAndPassword(
-      email: "test@test.com",
-      password: "testtest",
+      email: email,
+      password: password,
     );
     if (kDebugMode) {
       print(userCredential.user);
@@ -47,13 +47,13 @@ class _SignInPageState extends State<SignInPage> {
           children: [
             ElevatedButton(
               onPressed: () {
-                createUserFromEmail();
+                createUserFromEmail('email', 'password');
               },
               child: const Text("Create Account"),
             ),
             ElevatedButton(
               onPressed: () {
-                signInFromEmail();
+                signInFromEmail('email', 'password');
               },
               child: const Text("Login by Email"),
             ),
