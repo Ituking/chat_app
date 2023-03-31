@@ -29,7 +29,12 @@ class _SignInPageState extends State<SignInPage> {
     }
   }
 
-  Future<void> signInFromEmail() async {}
+  Future<void> signInFromEmail() async {
+    UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+      email: "test@test.com",
+      password: "testtest",
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
