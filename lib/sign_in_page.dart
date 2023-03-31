@@ -19,6 +19,8 @@ class _SignInPageState extends State<SignInPage> {
     }
   }
 
+  Future<void> createUserFromEmail() async {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
