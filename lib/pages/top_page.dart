@@ -118,6 +118,20 @@ class _TopPageState extends State<TopPage> {
               );
             }
           }),
+      bottomNavigationBar: BottomNavigationBar(items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.wechat),
+          label: "Chats",
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person),
+          label: "Person",
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.settings),
+          label: "Setting",
+        ),
+      ]),
     );
   }
 }
