@@ -1,4 +1,5 @@
 import 'package:chat_app/firestore/user_firestore.dart';
+import 'package:chat_app/pages/top_page.dart';
 import 'package:chat_app/utils/shared_prefs.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -30,30 +31,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      initialRoute:
-          FirebaseAuth.instance.currentUser == null ? '/sign-in' : '/profile',
-      routes: {
-        '/sign-in': (context) {
-          return SignInScreen(
-            providerConfigs: providerConfigs,
-            actions: [
-              AuthStateChangeAction<SignedIn>((context, state) {
-                Navigator.pushReplacementNamed(context, '/profile');
-              }),
-            ],
-          );
-        },
-        '/profile': (context) {
-          return ProfileScreen(
-            providerConfigs: providerConfigs,
-            actions: [
-              SignedOutAction((context) {
-                Navigator.pushReplacementNamed(context, '/sign-in');
-              }),
-            ],
-          );
-        },
-      },
+      home: const TopPage(),
     );
   }
 }
