@@ -8,6 +8,8 @@ class Screen extends StatefulWidget {
 }
 
 class _ScreenState extends State<Screen> {
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
