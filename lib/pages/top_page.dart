@@ -14,6 +14,10 @@ class TopPage extends StatefulWidget {
 
 class _TopPageState extends State<TopPage> {
   int selectedIndex = 0;
+  List<Widget> pageList = [
+    const TopPage(),
+    const SettingProfilePage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
