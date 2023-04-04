@@ -1,12 +1,12 @@
 class Post {
   String id;
-  String content;
+  String? imagePath;
   String postAccountId;
   DateTime? postTime;
 
   Post({
     required this.id,
-    required this.content,
+    this.imagePath,
     required this.postAccountId,
     required this.postTime,
   });
