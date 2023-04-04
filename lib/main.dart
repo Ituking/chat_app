@@ -1,6 +1,6 @@
 import 'package:chat_app/firestore/user_firestore.dart';
 import 'package:chat_app/pages/top_page.dart';
-import 'package:chat_app/screens/tab_bar.dart';
+import 'package:chat_app/screens/bottom_tab_bar.dart';
 import 'package:chat_app/utils/shared_prefs.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
