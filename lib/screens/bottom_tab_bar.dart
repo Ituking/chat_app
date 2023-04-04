@@ -1,4 +1,5 @@
 import 'package:chat_app/pages/setting_profile_page.dart';
+import 'package:chat_app/pages/time_line_page.dart';
 import 'package:chat_app/pages/top_page.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,7 @@ class BottomTabBar extends StatefulWidget {
 class _BottomTabBarState extends State<BottomTabBar> {
   int selectedIndex = 0;
   List<Widget> pageList = [
+    const TimeLinePage(),
     const TopPage(),
     const SettingProfilePage(),
   ];
