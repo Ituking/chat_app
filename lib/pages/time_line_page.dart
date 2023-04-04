@@ -28,8 +28,12 @@ class _TimeLinePageState extends State<TimeLinePage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text("TimeLine"),
+      ),
+      body: const Center(
         child: Text("TimeLine"),
       ),
     );
