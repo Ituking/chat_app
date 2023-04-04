@@ -35,8 +35,10 @@ class _TimeLinePageState extends State<TimeLinePage> {
       ),
       body: GridView.builder(
         padding: const EdgeInsets.all(4),
-        gridDelegate:
-            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          crossAxisSpacing: 4,
+        ),
         itemBuilder: (BuildContext context, int index) {
           return const Image(
             image: NetworkImage(
