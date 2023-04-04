@@ -33,8 +33,16 @@ class _TimeLinePageState extends State<TimeLinePage> {
         centerTitle: true,
         title: const Text("TimeLine"),
       ),
-      body: const Center(
-        child: Text("TimeLine"),
+      body: GridView.builder(
+        gridDelegate:
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+        itemBuilder: (BuildContext context, int index) {
+          return const Image(
+            image: NetworkImage(
+                "https://images.unsplash.com/photo-1542233637-20456b09d882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"),
+            fit: BoxFit.cover,
+          );
+        },
       ),
     );
   }
