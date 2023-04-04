@@ -38,6 +38,7 @@ class _TimeLinePageState extends State<TimeLinePage> {
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           crossAxisSpacing: 4,
+          childAspectRatio: 0.7,
         ),
         itemBuilder: (BuildContext context, int index) {
           return const Image(
