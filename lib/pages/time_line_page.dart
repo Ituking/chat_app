@@ -1,5 +1,4 @@
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter/material.dart';
 
 class TimeLinePage extends StatefulWidget {
   const TimeLinePage({super.key});
@@ -11,6 +10,10 @@ class TimeLinePage extends StatefulWidget {
 class _TimeLinePageState extends State<TimeLinePage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      body: Center(
+        child: Text("TimeLine"),
+      ),
+    );
   }
 }
