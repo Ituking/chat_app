@@ -2,14 +2,14 @@ import 'package:chat_app/pages/setting_profile_page.dart';
 import 'package:chat_app/pages/top_page.dart';
 import 'package:flutter/material.dart';
 
-class TabBar extends StatefulWidget {
-  const TabBar({super.key});
+class BottomTabBar extends StatefulWidget {
+  const BottomTabBar({super.key});
 
   @override
-  State<TabBar> createState() => _TabBarState();
+  State<BottomTabBar> createState() => _BottomTabBarState();
 }
 
-class _TabBarState extends State<TabBar> {
+class _BottomTabBarState extends State<BottomTabBar> {
   int selectedIndex = 0;
   List<Widget> pageList = [
     const TopPage(),
