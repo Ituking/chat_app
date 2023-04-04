@@ -34,6 +34,7 @@ class _TimeLinePageState extends State<TimeLinePage> {
         title: const Text("TimeLine"),
       ),
       body: GridView.builder(
+        padding: const EdgeInsets.all(4),
         gridDelegate:
             const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
         itemBuilder: (BuildContext context, int index) {
