@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const TimeLinePage(),
+      home: const BottomTabBar(),
     );
   }
 }
