@@ -1,4 +1,5 @@
 import 'package:chat_app/firestore/user_firestore.dart';
+import 'package:chat_app/pages/time_line_page.dart';
 import 'package:chat_app/pages/top_page.dart';
 import 'package:chat_app/screens/bottom_tab_bar.dart';
 import 'package:chat_app/utils/shared_prefs.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const BottomTabBar(),
+      home: const TimeLinePage(),
     );
   }
 }
