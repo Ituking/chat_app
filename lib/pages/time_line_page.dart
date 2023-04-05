@@ -31,7 +31,7 @@ class _TimeLinePageState extends State<TimeLinePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
+        centerTitle: false,
         title: const Text("TimeLine"),
       ),
       body: GestureDetector(

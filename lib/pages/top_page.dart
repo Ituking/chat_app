@@ -17,7 +17,8 @@ class _TopPageState extends State<TopPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("ChatApp"),
+        centerTitle: false,
+        title: const Text("Chats"),
         actions: [
           IconButton(
             onPressed: () {

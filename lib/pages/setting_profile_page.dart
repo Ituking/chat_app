@@ -56,6 +56,7 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: false,
         title: const Text("Setting"),
       ),
       body: Padding(
