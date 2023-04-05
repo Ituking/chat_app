@@ -1,3 +1,4 @@
+import 'package:chat_app/pages/home_page.dart';
 import 'package:chat_app/pages/setting_profile_page.dart';
 import 'package:chat_app/pages/time_line_page.dart';
 import 'package:chat_app/pages/top_page.dart';
@@ -13,6 +14,7 @@ class BottomTabBar extends StatefulWidget {
 class _BottomTabBarState extends State<BottomTabBar> {
   int selectedIndex = 0;
   List<Widget> pageList = [
+    const HomePage(),
     const TimeLinePage(),
     const TopPage(),
     const SettingProfilePage(),
@@ -24,6 +26,10 @@ class _BottomTabBarState extends State<BottomTabBar> {
       body: pageList[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.photo_size_select_actual_rounded),
             label: "Media",
