@@ -37,6 +37,13 @@ class _HomePageState extends State<HomePage> {
                   radius: 22,
                   foregroundImage: NetworkImage(userPosts[index].imagePath!),
                 ),
+                Column(
+                  children: [
+                    Text(
+                      DateFormat('M/d/yy').format(userPosts[index].postTime!),
+                    ),
+                  ],
+                ),
               ],
             ),
           );
