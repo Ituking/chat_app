@@ -25,6 +25,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
     return Scaffold(
       body: pageList[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
