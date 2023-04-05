@@ -26,7 +26,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.photo_size_select_actual_rounded),
-            label: "TimeLine",
+            label: "Media",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.wechat),
