@@ -43,9 +43,17 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Column(
                   children: [
-                    Text(postedUser[index].name),
+                    Text(
+                      postedUser[index].name,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     Text(
                       DateFormat('M/d/yy').format(userPosts[index].postTime!),
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w200,
+                      ),
                     ),
                   ],
                 ),
