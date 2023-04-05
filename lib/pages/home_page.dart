@@ -1,4 +1,5 @@
 import 'package:chat_app/model/post.dart';
+import 'package:chat_app/model/user.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -10,6 +11,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<User> postedUser = [
+    User(name: "Emma", uid: "0001"),
+  ];
   List<Post> userPosts = [
     Post(
       id: "0001",
@@ -39,6 +43,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Column(
                   children: [
+                    Text(postedUser[index].name),
                     Text(
                       DateFormat('M/d/yy').format(userPosts[index].postTime!),
                     ),
