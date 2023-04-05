@@ -44,6 +44,7 @@ class _TimeLinePageState extends State<TimeLinePage> {
           padding: const EdgeInsets.all(4),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
+            mainAxisSpacing: 4,
             crossAxisSpacing: 4,
             childAspectRatio: 0.7,
           ),
