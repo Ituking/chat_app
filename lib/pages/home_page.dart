@@ -15,8 +15,28 @@ class _HomePageState extends State<HomePage> {
         centerTitle: false,
         title: const Text("Home"),
       ),
-      body: const Center(
-        child: Text("HOME"),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: const BoxDecoration(
+                    color: Colors.grey,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: 400,
+            color: Colors.grey,
+          ),
+        ],
       ),
     );
   }
