@@ -25,9 +25,10 @@ class _HomePageState extends State<HomePage> {
         centerTitle: false,
         title: const Text("Home"),
       ),
-      body: Column(
-        children: [
-          Padding(
+      body: ListView.builder(
+        itemCount: userPosts.length,
+        itemBuilder: (context, index) {
+          return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: const [
@@ -37,15 +38,14 @@ class _HomePageState extends State<HomePage> {
                     "https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
                   ),
                 ),
-                Text("Emma"),
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text("Emma"),
+                ),
               ],
             ),
-          ),
-          Container(
-            height: 400,
-            color: Colors.grey,
-          ),
-        ],
+          );
+        },
       ),
     );
   }
