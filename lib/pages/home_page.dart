@@ -9,7 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Post> UserPosts = [
+  List<Post> userPosts = [
     Post(
       id: "0001",
       postAccountId: "0001",
@@ -29,19 +29,6 @@ class _HomePageState extends State<HomePage> {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Container(
-                  width: 50,
-                  height: 50,
-                  decoration: const BoxDecoration(
-                    color: Colors.grey,
-                    shape: BoxShape.circle,
-                  ),
-                ),
-                const Text("Emma"),
-              ],
-            ),
           ),
           Container(
             height: 400,
