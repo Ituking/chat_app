@@ -46,15 +46,19 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
-          Container(
+          SizedBox(
             height: 350,
-            color: Colors.red,
             child: Column(
-              children: const [
-                ListTile(
+              children: [
+                const ListTile(
                   leading: CircleAvatar(),
                   title: Text("Emma"),
                   subtitle: Text("Tue Oct 01 2022 12:40"),
+                ),
+                Expanded(
+                  child: Container(
+                    color: Colors.blue,
+                  ),
                 ),
               ],
             ),
