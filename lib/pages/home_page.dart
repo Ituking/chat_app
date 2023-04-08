@@ -53,6 +53,7 @@ class _HomePageState extends State<HomePage> {
               children: const [
                 ListTile(
                   leading: CircleAvatar(),
+                  title: Text("Emma"),
                 ),
               ],
             ),
