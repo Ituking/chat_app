@@ -72,6 +72,12 @@ class _HomePageState extends State<HomePage> {
                     Text("Comments"),
                   ],
                 ),
+                Row(
+                  children: const [
+                    Icon(Icons.share),
+                    Text("Share"),
+                  ],
+                ),
               ],
             ),
           ),
