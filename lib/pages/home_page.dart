@@ -60,24 +60,36 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.blue,
                   ),
                 ),
+                const SizedBox(
+                  height: 14.0,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Row(
                       children: const [
                         Icon(Icons.thumb_up),
+                        SizedBox(
+                          width: 8.0,
+                        ),
                         Text("Like"),
                       ],
                     ),
                     Row(
                       children: const [
                         Icon(Icons.comment),
+                        SizedBox(
+                          width: 8.0,
+                        ),
                         Text("Comments"),
                       ],
                     ),
                     Row(
                       children: const [
                         Icon(Icons.share),
+                        SizedBox(
+                          width: 8.0,
+                        ),
                         Text("Share"),
                       ],
                     ),
