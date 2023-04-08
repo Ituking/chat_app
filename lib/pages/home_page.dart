@@ -44,47 +44,13 @@ class _HomePageState extends State<HomePage> {
         centerTitle: false,
         title: const Text("Home"),
       ),
-      body: ListView.builder(
-        itemCount: userPosts.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                CircleAvatar(
-                  radius: 22,
-                  foregroundImage: NetworkImage(userPosts[index].imagePath!),
-                ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        left: 8.0,
-                      ),
-                      child: Text(
-                        postedUser[index].name,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        left: 8.0,
-                      ),
-                      child: Text(
-                        DateFormat('M/d/yy').format(userPosts[index].postTime!),
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w200,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          );
-        },
+      body: Column(
+        children: [
+          Container(
+            height: 350,
+            color: Colors.red,
+          ),
+        ],
       ),
     );
   }
