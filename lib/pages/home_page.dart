@@ -49,6 +49,13 @@ class _HomePageState extends State<HomePage> {
           Container(
             height: 350,
             color: Colors.red,
+            child: Column(
+              children: const [
+                ListTile(
+                  leading: CircleAvatar(),
+                ),
+              ],
+            ),
           ),
         ],
       ),
