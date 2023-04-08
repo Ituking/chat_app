@@ -46,56 +46,58 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
-          SizedBox(
-            height: 350,
-            child: Column(
-              children: [
-                const ListTile(
-                  leading: CircleAvatar(),
-                  title: Text("Emma"),
-                  subtitle: Text("Tue Oct 01 2022 12:40"),
-                ),
-                Expanded(
-                  child: Container(
-                    color: Colors.blue,
+          Card(
+            child: SizedBox(
+              height: 350,
+              child: Column(
+                children: [
+                  const ListTile(
+                    leading: CircleAvatar(),
+                    title: Text("Emma"),
+                    subtitle: Text("Tue Oct 01 2022 12:40"),
                   ),
-                ),
-                const SizedBox(
-                  height: 14.0,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Row(
-                      children: const [
-                        Icon(Icons.thumb_up),
-                        SizedBox(
-                          width: 8.0,
-                        ),
-                        Text("Like"),
-                      ],
+                  Expanded(
+                    child: Container(
+                      color: Colors.blue,
                     ),
-                    Row(
-                      children: const [
-                        Icon(Icons.comment),
-                        SizedBox(
-                          width: 8.0,
-                        ),
-                        Text("Comments"),
-                      ],
-                    ),
-                    Row(
-                      children: const [
-                        Icon(Icons.share),
-                        SizedBox(
-                          width: 8.0,
-                        ),
-                        Text("Share"),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
+                  ),
+                  const SizedBox(
+                    height: 14.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Row(
+                        children: const [
+                          Icon(Icons.thumb_up),
+                          SizedBox(
+                            width: 8.0,
+                          ),
+                          Text("Like"),
+                        ],
+                      ),
+                      Row(
+                        children: const [
+                          Icon(Icons.comment),
+                          SizedBox(
+                            width: 8.0,
+                          ),
+                          Text("Comments"),
+                        ],
+                      ),
+                      Row(
+                        children: const [
+                          Icon(Icons.share),
+                          SizedBox(
+                            width: 8.0,
+                          ),
+                          Text("Share"),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],
