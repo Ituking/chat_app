@@ -61,21 +61,25 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Row(
-                  children: const [
-                    Icon(Icons.thumb_up),
-                    Text("Like"),
-                  ],
-                ),
-                Row(
-                  children: const [
-                    Icon(Icons.comment),
-                    Text("Comments"),
-                  ],
-                ),
-                Row(
-                  children: const [
-                    Icon(Icons.share),
-                    Text("Share"),
+                  children: [
+                    Row(
+                      children: const [
+                        Icon(Icons.thumb_up),
+                        Text("Like"),
+                      ],
+                    ),
+                    Row(
+                      children: const [
+                        Icon(Icons.comment),
+                        Text("Comments"),
+                      ],
+                    ),
+                    Row(
+                      children: const [
+                        Icon(Icons.share),
+                        Text("Share"),
+                      ],
+                    ),
                   ],
                 ),
               ],
