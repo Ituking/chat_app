@@ -69,7 +69,10 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Row(
                         children: const [
-                          Icon(Icons.thumb_up),
+                          Icon(
+                            Icons.thumb_up,
+                            color: Colors.grey,
+                          ),
                           SizedBox(
                             width: 8.0,
                           ),
@@ -78,7 +81,10 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Row(
                         children: const [
-                          Icon(Icons.comment),
+                          Icon(
+                            Icons.comment,
+                            color: Colors.grey,
+                          ),
                           SizedBox(
                             width: 8.0,
                           ),
@@ -87,7 +93,10 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Row(
                         children: const [
-                          Icon(Icons.share),
+                          Icon(
+                            Icons.share,
+                            color: Colors.grey,
+                          ),
                           SizedBox(
                             width: 8.0,
                           ),
