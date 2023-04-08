@@ -60,6 +60,12 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.blue,
                   ),
                 ),
+                Row(
+                  children: const [
+                    Icon(Icons.thumb_up),
+                    Text("Like"),
+                  ],
+                ),
               ],
             ),
           ),
