@@ -54,6 +54,7 @@ class _HomePageState extends State<HomePage> {
                 ListTile(
                   leading: CircleAvatar(),
                   title: Text("Emma"),
+                  subtitle: Text("Tue Oct 01 2022 12:40"),
                 ),
               ],
             ),
