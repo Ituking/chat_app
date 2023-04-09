@@ -76,7 +76,12 @@ class _HomePageState extends State<HomePage> {
                           SizedBox(
                             width: 8.0,
                           ),
-                          Text("Like"),
+                          Text(
+                            "Like",
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
+                          ),
                         ],
                       ),
                       Row(
@@ -88,7 +93,12 @@ class _HomePageState extends State<HomePage> {
                           SizedBox(
                             width: 8.0,
                           ),
-                          Text("Comments"),
+                          Text(
+                            "Comments",
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
+                          ),
                         ],
                       ),
                       Row(
@@ -100,7 +110,12 @@ class _HomePageState extends State<HomePage> {
                           SizedBox(
                             width: 8.0,
                           ),
-                          Text("Share"),
+                          Text(
+                            "Share",
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
+                          ),
                         ],
                       ),
                     ],
