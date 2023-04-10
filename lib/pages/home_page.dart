@@ -174,7 +174,7 @@ class _HomePageState extends State<HomePage> {
           builder: (BuildContext context) {
             return SingleChildScrollView(
               child: SizedBox(
-                height: 700,
+                height: MediaQuery.of(context).size.height * 0.85,
                 child: Padding(
                   padding: EdgeInsets.only(
                     bottom: MediaQuery.of(context).viewInsets.bottom,
