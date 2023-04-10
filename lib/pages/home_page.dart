@@ -170,6 +170,7 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => showModalBottomSheet(
           context: context,
+          isScrollControlled: true,
           builder: (BuildContext context) {
             return const PostPage();
           },
