@@ -28,7 +28,9 @@ class _PostPageState extends State<PostPage> {
           ),
         ],
       ),
-      body: Column(),
+      body: const Center(
+        child: Text("PostPage"),
+      ),
     );
   }
 }
