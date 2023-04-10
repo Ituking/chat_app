@@ -14,10 +14,14 @@ class _PostPageState extends State<PostPage> {
       appBar: AppBar(
         centerTitle: false,
         title: const Text("PostPage"),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.add),
+          ),
+        ],
       ),
-      body: const Center(
-        child: Text("PostPage"),
-      ),
+      body: Column(),
     );
   }
 }
