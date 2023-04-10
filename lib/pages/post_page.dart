@@ -28,8 +28,11 @@ class _PostPageState extends State<PostPage> {
           ),
         ],
       ),
-      body: const Center(
-        child: Text("PostPage"),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {},
+          child: const Text("Select Photo"),
+        ),
       ),
     );
   }
