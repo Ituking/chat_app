@@ -50,6 +50,8 @@ class _HomePageState extends State<HomePage> {
           final post = userPostsList[index];
           final user =
               postedUser.firstWhere((user) => user.uid == post.postAccountId);
+          final formattedDate =
+              DateFormat('EEE MMM dd yyyy HH:mm').format(post.postTime!);
         },
       ),
     );
