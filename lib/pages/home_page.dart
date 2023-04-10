@@ -46,7 +46,9 @@ class _HomePageState extends State<HomePage> {
       ),
       body: ListView.builder(
         itemCount: userPostsList.length,
-        itemBuilder: (context, index) {},
+        itemBuilder: (context, index) {
+          final post = userPostsList[index];
+        },
       ),
     );
   }
