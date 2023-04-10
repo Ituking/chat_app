@@ -22,6 +22,7 @@ class _PostPageState extends State<PostPage> {
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
+                fontSize: 20,
               ),
             ),
           ),
