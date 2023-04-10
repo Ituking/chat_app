@@ -1,5 +1,6 @@
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/model/user.dart';
+import 'package:chat_app/pages/post_page.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -167,7 +168,14 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const PostPage(),
+            ),
+          );
+        },
         child: const Icon(Icons.add),
       ),
     );
