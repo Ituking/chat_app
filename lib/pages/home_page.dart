@@ -1,3 +1,4 @@
+import 'package:chat_app/main.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/model/user.dart';
 import 'package:chat_app/pages/post_page.dart';
@@ -174,6 +175,8 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.green,
+        foregroundColor: materialWhite,
         onPressed: () => showModalBottomSheet(
           context: context,
           isScrollControlled: true,
