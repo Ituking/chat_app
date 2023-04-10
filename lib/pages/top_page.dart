@@ -18,7 +18,13 @@ class _TopPageState extends State<TopPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: const Text("Chats"),
+        title: const Text(
+          "Chats",
+          style: TextStyle(
+            color: Colors.green,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
         actions: [
           IconButton(
             onPressed: () {

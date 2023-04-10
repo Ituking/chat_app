@@ -53,7 +53,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: const Text("Home"),
+        title: const Text(
+          "Home",
+          style: TextStyle(
+            color: Colors.green,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
       ),
       body: ListView.builder(
         itemCount: userPostsList.length,

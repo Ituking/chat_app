@@ -23,7 +23,13 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
       backgroundColor: const Color.fromARGB(236, 255, 255, 255),
       appBar: AppBar(
         centerTitle: false,
-        title: Text(widget.talkRoom.talkUser.name),
+        title: Text(
+          widget.talkRoom.talkUser.name,
+          style: const TextStyle(
+            color: Colors.green,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
       ),
       body: SafeArea(
         child: Stack(

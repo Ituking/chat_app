@@ -57,7 +57,13 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: const Text("Setting"),
+        title: const Text(
+          "Setting",
+          style: TextStyle(
+            color: Colors.green,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),

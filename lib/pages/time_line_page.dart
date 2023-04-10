@@ -32,7 +32,13 @@ class _TimeLinePageState extends State<TimeLinePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: const Text("TimeLine"),
+        title: const Text(
+          "TimeLine",
+          style: TextStyle(
+            color: Colors.green,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
       ),
       body: GestureDetector(
         onTap: () {

@@ -13,7 +13,13 @@ class _PostPageState extends State<PostPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: const Text("PostPage"),
+        title: const Text(
+          "PostPage",
+          style: TextStyle(
+            color: Colors.green,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
         actions: [
           TextButton(
             onPressed: () {},
