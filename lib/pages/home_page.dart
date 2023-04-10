@@ -168,14 +168,12 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const PostPage(),
-            ),
-          );
-        },
+        onPressed: () => showModalBottomSheet(
+          context: context,
+          builder: (BuildContext context) {
+            return const PostPage();
+          },
+        ),
         child: const Icon(Icons.add),
       ),
     );
