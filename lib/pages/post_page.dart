@@ -10,8 +10,12 @@ class PostPage extends StatefulWidget {
 class _PostPageState extends State<PostPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: false,
+        title: const Text("PostPage"),
+      ),
+      body: const Center(
         child: Text("PostPage"),
       ),
     );
