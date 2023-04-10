@@ -172,7 +172,17 @@ class _HomePageState extends State<HomePage> {
           context: context,
           isScrollControlled: true,
           builder: (BuildContext context) {
-            return const PostPage();
+            return SingleChildScrollView(
+              child: SizedBox(
+                height: 700,
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).viewInsets.bottom,
+                  ),
+                  child: const PostPage(),
+                ),
+              ),
+            );
           },
         ),
         child: const Icon(Icons.add),
