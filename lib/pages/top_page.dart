@@ -35,7 +35,10 @@ class _TopPageState extends State<TopPage> {
                 ),
               );
             },
-            icon: const Icon(Icons.settings),
+            icon: const Icon(
+              Icons.settings,
+              color: Colors.green,
+            ),
           ),
         ],
       ),
