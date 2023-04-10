@@ -15,9 +15,14 @@ class _PostPageState extends State<PostPage> {
         centerTitle: false,
         title: const Text("PostPage"),
         actions: [
-          IconButton(
+          TextButton(
             onPressed: () {},
-            icon: const Icon(Icons.add),
+            child: const Text(
+              "Post",
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
           ),
         ],
       ),
