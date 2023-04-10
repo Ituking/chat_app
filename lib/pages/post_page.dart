@@ -21,6 +21,7 @@ class _PostPageState extends State<PostPage> {
               "Post",
               style: TextStyle(
                 color: Colors.white,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
