@@ -48,6 +48,8 @@ class _HomePageState extends State<HomePage> {
         itemCount: userPostsList.length,
         itemBuilder: (context, index) {
           final post = userPostsList[index];
+          final user =
+              postedUser.firstWhere((user) => user.uid == post.postAccountId);
         },
       ),
     );
