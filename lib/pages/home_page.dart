@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
       uid: "0002",
     ),
   ];
-  List<Post> userPosts = [
+  List<Post> userPostsList = [
     Post(
       id: "0001",
       postAccountId: "0001",
@@ -44,97 +44,9 @@ class _HomePageState extends State<HomePage> {
         centerTitle: false,
         title: const Text("Home"),
       ),
-      body: Column(
-        children: [
-          Card(
-            child: SizedBox(
-              height: 350,
-              child: Column(
-                children: [
-                  const ListTile(
-                    leading: CircleAvatar(),
-                    title: Text("Emma"),
-                    subtitle: Text("Tue Oct 01 2022 12:40"),
-                  ),
-                  Expanded(
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(
-                            "https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
-                          ),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 14.0,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Row(
-                        children: const [
-                          Icon(
-                            Icons.thumb_up,
-                            color: Colors.grey,
-                          ),
-                          SizedBox(
-                            width: 8.0,
-                          ),
-                          Text(
-                            "Like",
-                            style: TextStyle(
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: const [
-                          Icon(
-                            Icons.comment,
-                            color: Colors.grey,
-                          ),
-                          SizedBox(
-                            width: 8.0,
-                          ),
-                          Text(
-                            "Comments",
-                            style: TextStyle(
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: const [
-                          Icon(
-                            Icons.share,
-                            color: Colors.grey,
-                          ),
-                          SizedBox(
-                            width: 8.0,
-                          ),
-                          Text(
-                            "Share",
-                            style: TextStyle(
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 12.0,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
+      body: ListView.builder(
+        itemCount: userPostsList.length,
+        itemBuilder: (context, index) {},
       ),
     );
   }
