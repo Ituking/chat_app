@@ -56,6 +56,9 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: Colors.green,
+        ),
         centerTitle: false,
         title: const Text(
           "Setting",

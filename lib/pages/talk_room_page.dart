@@ -22,6 +22,9 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(236, 255, 255, 255),
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: Colors.green,
+        ),
         centerTitle: false,
         title: Text(
           widget.talkRoom.talkUser.name,

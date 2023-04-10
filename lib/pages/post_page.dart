@@ -12,6 +12,9 @@ class _PostPageState extends State<PostPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: Colors.green,
+        ),
         centerTitle: false,
         title: const Text(
           "PostPage",
