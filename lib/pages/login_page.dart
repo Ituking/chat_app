@@ -30,12 +30,17 @@ class _LoginPageState extends State<LoginPage> {
                   color: Colors.green,
                 ),
               ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.7,
-                child: TextField(
-                  controller: emailController,
-                  decoration: const InputDecoration(
-                    hintText: "Email Address",
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10.0,
+                ),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.7,
+                  child: TextField(
+                    controller: emailController,
+                    decoration: const InputDecoration(
+                      hintText: "Email Address",
+                    ),
                   ),
                 ),
               ),
