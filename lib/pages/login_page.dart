@@ -40,6 +40,11 @@ class _LoginPageState extends State<LoginPage> {
                     controller: emailController,
                     decoration: const InputDecoration(
                       hintText: "Email Address",
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.green,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -50,6 +55,11 @@ class _LoginPageState extends State<LoginPage> {
                   controller: passwordController,
                   decoration: const InputDecoration(
                     hintText: "Password",
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.green,
+                      ),
+                    ),
                   ),
                 ),
               ),
