@@ -1,3 +1,4 @@
+import 'package:chat_app/screens/bottom_tab_bar.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -102,7 +103,14 @@ class _LoginPageState extends State<LoginPage> {
                 height: 30,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BottomTabBar(),
+                    ),
+                  );
+                },
                 child: const Text("Email Login"),
               ),
             ],
