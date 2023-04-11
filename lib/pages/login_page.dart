@@ -19,6 +19,9 @@ class _LoginPageState extends State<LoginPage> {
           width: double.infinity,
           child: Column(
             children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.4,
+              ),
               const Text(
                 "Chat App",
                 style: TextStyle(
