@@ -19,7 +19,14 @@ class _LoginPageState extends State<LoginPage> {
           width: double.infinity,
           child: Column(
             children: [
-              const Text("ChatApp"),
+              const Text(
+                "Chat App",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green,
+                ),
+              ),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.7,
                 child: TextField(
