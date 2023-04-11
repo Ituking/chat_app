@@ -70,6 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.red,
                     ),
                   ),
+                  obscureText: true,
                 ),
               ),
               const SizedBox(
