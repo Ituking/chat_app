@@ -20,11 +20,17 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             children: [
               const Text("ChatApp"),
-              TextField(
-                controller: emailController,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.7,
+                child: TextField(
+                  controller: emailController,
+                ),
               ),
-              TextField(
-                controller: passwordController,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.7,
+                child: TextField(
+                  controller: passwordController,
+                ),
               ),
             ],
           ),
