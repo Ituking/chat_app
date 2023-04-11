@@ -45,6 +45,9 @@ class _LoginPageState extends State<LoginPage> {
                           color: Colors.green,
                         ),
                       ),
+                      errorStyle: TextStyle(
+                        color: Colors.red,
+                      ),
                     ),
                   ),
                 ),
@@ -59,6 +62,9 @@ class _LoginPageState extends State<LoginPage> {
                       borderSide: BorderSide(
                         color: Colors.green,
                       ),
+                    ),
+                    errorStyle: TextStyle(
+                      color: Colors.red,
                     ),
                   ),
                 ),
