@@ -12,10 +12,13 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: const [
-            Text("ChatApp"),
-          ],
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            children: const [
+              Text("ChatApp"),
+            ],
+          ),
         ),
       ),
     );
