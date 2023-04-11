@@ -24,12 +24,18 @@ class _LoginPageState extends State<LoginPage> {
                 width: MediaQuery.of(context).size.width * 0.7,
                 child: TextField(
                   controller: emailController,
+                  decoration: const InputDecoration(
+                    hintText: "Email Address",
+                  ),
                 ),
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.7,
                 child: TextField(
                   controller: passwordController,
+                  decoration: const InputDecoration(
+                    hintText: "Password",
+                  ),
                 ),
               ),
             ],
