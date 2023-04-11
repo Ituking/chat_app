@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.35,
+                height: MediaQuery.of(context).size.height * 0.25,
               ),
               const Text(
                 "Chat App",
@@ -70,6 +70,9 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
+              ),
+              const SizedBox(
+                height: 20,
               ),
               RichText(
                 text: TextSpan(
