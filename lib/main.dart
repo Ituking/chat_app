@@ -1,4 +1,5 @@
 import 'package:chat_app/firestore/user_firestore.dart';
+import 'package:chat_app/pages/login_page.dart';
 import 'package:chat_app/pages/time_line_page.dart';
 import 'package:chat_app/pages/top_page.dart';
 import 'package:chat_app/screens/bottom_tab_bar.dart';
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: materialWhite,
       ),
-      home: const BottomTabBar(),
+      home: const LoginPage(),
     );
   }
 }
