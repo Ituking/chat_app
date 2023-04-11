@@ -69,6 +69,24 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
+              RichText(
+                text: const TextSpan(
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                  children: [
+                    TextSpan(
+                      text: "If you do not have an account ",
+                    ),
+                    TextSpan(
+                      text: "this",
+                      style: TextStyle(
+                        color: Colors.green,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
