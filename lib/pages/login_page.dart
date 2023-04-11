@@ -18,10 +18,14 @@ class _LoginPageState extends State<LoginPage> {
         child: SizedBox(
           width: double.infinity,
           child: Column(
-            children: const [
-              Text("ChatApp"),
-              TextField(),
-              TextField(),
+            children: [
+              const Text("ChatApp"),
+              TextField(
+                controller: emailController,
+              ),
+              TextField(
+                controller: passwordController,
+              ),
             ],
           ),
         ),
