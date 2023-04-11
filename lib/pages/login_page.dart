@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -70,19 +72,25 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               RichText(
-                text: const TextSpan(
-                  style: TextStyle(
+                text: TextSpan(
+                  style: const TextStyle(
                     color: Colors.black,
                   ),
                   children: [
-                    TextSpan(
+                    const TextSpan(
                       text: "If you do not have an account ",
                     ),
                     TextSpan(
                       text: "this",
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.green,
                       ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          if (kDebugMode) {
+                            print("Create an account.");
+                          }
+                        },
                     ),
                   ],
                 ),
