@@ -1,5 +1,5 @@
+import 'package:chat_app/pages/create_account_page.dart';
 import 'package:chat_app/screens/bottom_tab_bar.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -98,9 +98,12 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          if (kDebugMode) {
-                            print("Create an account.");
-                          }
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const CreateAccountPage(),
+                            ),
+                          );
                         },
                     ),
                   ],
