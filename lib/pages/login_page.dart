@@ -46,6 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
                           color: Colors.green,
+                          width: 2,
                         ),
                       ),
                       errorStyle: TextStyle(
@@ -66,6 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.green,
+                        width: 2,
                       ),
                     ),
                     errorStyle: TextStyle(
