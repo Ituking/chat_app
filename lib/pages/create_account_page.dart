@@ -27,6 +27,9 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
       body: Center(
         child: Column(
           children: const [
+            SizedBox(
+              height: 30,
+            ),
             CircleAvatar(
               backgroundColor: Colors.green,
               radius: 40,
