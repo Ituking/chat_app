@@ -20,6 +20,8 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   File? image;
   ImagePicker picker = ImagePicker();
 
+  Future<void> getImageFromGallery() async {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
