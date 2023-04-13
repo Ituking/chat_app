@@ -152,6 +152,10 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                 cursorWidth: 2.0,
               ),
             ),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text("Create an account"),
+            ),
           ],
         ),
       ),
