@@ -25,6 +25,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
         child: Column(
           children: const [
             CircleAvatar(
+              radius: 40,
               child: Icon(Icons.add),
             ),
           ],
