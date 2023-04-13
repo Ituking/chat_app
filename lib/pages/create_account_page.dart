@@ -17,6 +17,9 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
         iconTheme: const IconThemeData(
           color: Colors.green,
         ),
+        title: const Text(
+          "Sign Up",
+        ),
       ),
       body: const Center(
         child: Text("Sign Up"),
