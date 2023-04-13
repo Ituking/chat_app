@@ -47,6 +47,12 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                 controller: nameController,
                 decoration: const InputDecoration(
                   hintText: "Name",
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.green,
+                      width: 2,
+                    ),
+                  ),
                 ),
               ),
             ),
