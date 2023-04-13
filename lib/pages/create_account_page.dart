@@ -81,6 +81,26 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                 cursorWidth: 2.0,
               ),
             ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.7,
+              child: TextField(
+                controller: selfIntroductionController,
+                decoration: const InputDecoration(
+                  hintText: "Self Introduction",
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.green,
+                      width: 2,
+                    ),
+                  ),
+                  errorStyle: TextStyle(
+                    color: Colors.red,
+                  ),
+                ),
+                cursorColor: Colors.green,
+                cursorWidth: 2.0,
+              ),
+            ),
           ],
         ),
       ),
