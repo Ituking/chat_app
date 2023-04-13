@@ -19,6 +19,9 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
         ),
         title: const Text(
           "Sign Up",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       body: Center(
