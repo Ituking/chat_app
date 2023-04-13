@@ -1,3 +1,4 @@
+import 'package:chat_app/screens/bottom_tab_bar.dart';
 import 'package:flutter/material.dart';
 
 class CreateAccountPage extends StatefulWidget {
@@ -156,7 +157,20 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               height: 50,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                if (nameController.text.isNotEmpty &&
+                    userIdController.text.isNotEmpty &&
+                    selfIntroductionController.text.isNotEmpty &&
+                    emailController.text.isNotEmpty &&
+                    passwordController.text.isNotEmpty) {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BottomTabBar(),
+                    ),
+                  );
+                }
+              },
               child: const Text("Create an account"),
             ),
           ],
