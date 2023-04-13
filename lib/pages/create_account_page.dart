@@ -8,6 +8,12 @@ class CreateAccountPage extends StatefulWidget {
 }
 
 class _CreateAccountPageState extends State<CreateAccountPage> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController userIdController = TextEditingController();
+  TextEditingController selfIntroductionController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
