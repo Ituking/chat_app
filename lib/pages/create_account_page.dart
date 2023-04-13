@@ -32,16 +32,21 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
       ),
       body: Center(
         child: Column(
-          children: const [
-            SizedBox(
+          children: [
+            const SizedBox(
               height: 30,
             ),
-            CircleAvatar(
+            const CircleAvatar(
               backgroundColor: Colors.green,
               radius: 40,
               child: Icon(Icons.add),
             ),
-            TextField(),
+            TextField(
+              controller: nameController,
+              decoration: const InputDecoration(
+                hintText: "Name",
+              ),
+            ),
           ],
         ),
       ),
