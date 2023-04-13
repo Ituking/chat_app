@@ -21,8 +21,14 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
           "Sign Up",
         ),
       ),
-      body: const Center(
-        child: Text("Sign Up"),
+      body: Center(
+        child: Column(
+          children: const [
+            CircleAvatar(
+              child: Icon(Icons.add),
+            ),
+          ],
+        ),
       ),
     );
   }
