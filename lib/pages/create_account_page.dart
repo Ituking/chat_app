@@ -57,6 +57,8 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     color: Colors.red,
                   ),
                 ),
+                cursorColor: Colors.green,
+                cursorWidth: 2.0,
               ),
             ),
           ],
