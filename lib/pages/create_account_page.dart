@@ -41,10 +41,13 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               radius: 40,
               child: Icon(Icons.add),
             ),
-            TextField(
-              controller: nameController,
-              decoration: const InputDecoration(
-                hintText: "Name",
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.7,
+              child: TextField(
+                controller: nameController,
+                decoration: const InputDecoration(
+                  hintText: "Name",
+                ),
               ),
             ),
           ],
