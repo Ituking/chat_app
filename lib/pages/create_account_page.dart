@@ -33,12 +33,12 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
       body: Center(
         child: Column(
           children: [
-            const SizedBox(
-              height: 30,
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.05,
             ),
             const CircleAvatar(
               backgroundColor: Colors.green,
-              radius: 40,
+              radius: 50,
               child: Icon(Icons.add),
             ),
             SingleChildScrollView(
@@ -151,6 +151,9 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                 cursorColor: Colors.green,
                 cursorWidth: 2.0,
               ),
+            ),
+            const SizedBox(
+              height: 50,
             ),
             ElevatedButton(
               onPressed: () {},
