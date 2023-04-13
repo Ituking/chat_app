@@ -22,6 +22,11 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
 
   Future<void> getImageFromGallery() async {
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      setState(() {
+        image = File(pickedFile.path);
+      });
+    }
   }
 
   @override
