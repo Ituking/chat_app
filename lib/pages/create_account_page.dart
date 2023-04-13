@@ -20,7 +20,9 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   File? image;
   ImagePicker picker = ImagePicker();
 
-  Future<void> getImageFromGallery() async {}
+  Future<void> getImageFromGallery() async {
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+  }
 
   @override
   Widget build(BuildContext context) {
