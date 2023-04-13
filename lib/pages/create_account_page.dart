@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:chat_app/screens/bottom_tab_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class CreateAccountPage extends StatefulWidget {
   const CreateAccountPage({super.key});
@@ -14,6 +17,8 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   TextEditingController selfIntroductionController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController emailController = TextEditingController();
+  File? image;
+  ImagePicker picker = ImagePicker();
 
   @override
   Widget build(BuildContext context) {
