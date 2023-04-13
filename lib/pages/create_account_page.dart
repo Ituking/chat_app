@@ -35,6 +35,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               radius: 40,
               child: Icon(Icons.add),
             ),
+            TextField(),
           ],
         ),
       ),
