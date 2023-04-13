@@ -14,6 +14,9 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        iconTheme: const IconThemeData(
+          color: Colors.green,
+        ),
       ),
       body: const Center(
         child: Text("Sign Up"),
