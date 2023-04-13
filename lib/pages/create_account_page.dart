@@ -41,44 +41,52 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               radius: 40,
               child: Icon(Icons.add),
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.7,
-              child: TextField(
-                controller: nameController,
-                decoration: const InputDecoration(
-                  hintText: "Name",
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.green,
-                      width: 2,
+            SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.7,
+                  child: TextField(
+                    controller: nameController,
+                    decoration: const InputDecoration(
+                      hintText: "Name",
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.green,
+                          width: 2,
+                        ),
+                      ),
+                      errorStyle: TextStyle(
+                        color: Colors.red,
+                      ),
                     ),
-                  ),
-                  errorStyle: TextStyle(
-                    color: Colors.red,
+                    cursorColor: Colors.green,
+                    cursorWidth: 2.0,
                   ),
                 ),
-                cursorColor: Colors.green,
-                cursorWidth: 2.0,
               ),
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.7,
-              child: TextField(
-                controller: userIdController,
-                decoration: const InputDecoration(
-                  hintText: "ID",
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.green,
-                      width: 2,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.7,
+                child: TextField(
+                  controller: userIdController,
+                  decoration: const InputDecoration(
+                    hintText: "ID",
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.green,
+                        width: 2,
+                      ),
+                    ),
+                    errorStyle: TextStyle(
+                      color: Colors.red,
                     ),
                   ),
-                  errorStyle: TextStyle(
-                    color: Colors.red,
-                  ),
+                  cursorColor: Colors.green,
+                  cursorWidth: 2.0,
                 ),
-                cursorColor: Colors.green,
-                cursorWidth: 2.0,
               ),
             ),
             SizedBox(
@@ -101,24 +109,27 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                 cursorWidth: 2.0,
               ),
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.7,
-              child: TextField(
-                controller: emailController,
-                decoration: const InputDecoration(
-                  hintText: "Email Address",
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.green,
-                      width: 2,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.7,
+                child: TextField(
+                  controller: emailController,
+                  decoration: const InputDecoration(
+                    hintText: "Email Address",
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.green,
+                        width: 2,
+                      ),
+                    ),
+                    errorStyle: TextStyle(
+                      color: Colors.red,
                     ),
                   ),
-                  errorStyle: TextStyle(
-                    color: Colors.red,
-                  ),
+                  cursorColor: Colors.green,
+                  cursorWidth: 2.0,
                 ),
-                cursorColor: Colors.green,
-                cursorWidth: 2.0,
               ),
             ),
             SizedBox(
