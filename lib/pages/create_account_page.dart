@@ -53,6 +53,9 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                       width: 2,
                     ),
                   ),
+                  errorStyle: TextStyle(
+                    color: Colors.red,
+                  ),
                 ),
               ),
             ),
