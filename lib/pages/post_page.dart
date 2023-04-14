@@ -12,14 +12,16 @@ class _PostPageState extends State<PostPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         iconTheme: const IconThemeData(
-          color: Colors.green,
+          color: Colors.black,
         ),
         centerTitle: false,
         title: const Text(
           "PostPage",
           style: TextStyle(
-            color: Colors.green,
+            color: Colors.black,
             fontWeight: FontWeight.w900,
           ),
         ),
@@ -29,7 +31,7 @@ class _PostPageState extends State<PostPage> {
             child: const Text(
               "Post",
               style: TextStyle(
-                color: Colors.green,
+                color: Colors.black,
                 fontWeight: FontWeight.w900,
                 fontSize: 20,
               ),

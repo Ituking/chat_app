@@ -17,11 +17,13 @@ class _TopPageState extends State<TopPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         centerTitle: false,
         title: const Text(
           "Chats",
           style: TextStyle(
-            color: Colors.green,
+            color: Colors.black,
             fontWeight: FontWeight.w900,
           ),
         ),
@@ -37,7 +39,7 @@ class _TopPageState extends State<TopPage> {
             },
             icon: const Icon(
               Icons.settings,
-              color: Colors.green,
+              color: Colors.black,
             ),
           ),
         ],

@@ -31,12 +31,16 @@ class _TimeLinePageState extends State<TimeLinePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: false,
-        title: const Text(
-          "TimeLine",
-          style: TextStyle(
-            color: Colors.green,
-            fontWeight: FontWeight.w900,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+        title: const Center(
+          child: Text(
+            "TimeLine",
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w900,
+            ),
           ),
         ),
       ),
