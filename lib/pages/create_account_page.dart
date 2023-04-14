@@ -51,10 +51,16 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.05,
             ),
-            const CircleAvatar(
-              backgroundColor: Colors.green,
-              radius: 50,
-              child: Icon(Icons.add),
+            GestureDetector(
+              onTap: () {
+                getImageFromGallery();
+              },
+              child: CircleAvatar(
+                foregroundImage: image == null ? null : FileImage(image!),
+                backgroundColor: Colors.green,
+                radius: 50,
+                child: const Icon(Icons.add),
+              ),
             ),
             SingleChildScrollView(
               child: Padding(
