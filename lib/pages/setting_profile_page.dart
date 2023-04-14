@@ -80,6 +80,16 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
                 Expanded(
                   child: TextField(
                     controller: controller,
+                    decoration: const InputDecoration(
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.black,
+                          width: 2,
+                        ),
+                      ),
+                    ),
+                    cursorColor: Colors.black,
+                    cursorWidth: 2.0,
                   ),
                 ),
               ],
