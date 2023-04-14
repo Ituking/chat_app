@@ -26,6 +26,10 @@ class _HomePageState extends State<HomePage> {
       name: "Mark",
       uid: "0003",
     ),
+    User(
+      name: "Stefan",
+      uid: "0004",
+    ),
   ];
   List<Post> userPostsList = [
     Post(
@@ -47,6 +51,13 @@ class _HomePageState extends State<HomePage> {
       postAccountId: "0003",
       postTime: DateTime.now(),
       imagePath: "https://cdn.pixabay.com/photo/2010/11/26/canyon-203_1280.jpg",
+    ),
+    Post(
+      id: "0004",
+      postAccountId: "0004",
+      postTime: DateTime.now(),
+      imagePath:
+          "https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8M3x8cGVyc29ufGVufDB8fHx8MTY4MTM4NjM2MQ&ixlib=rb-4.0.3&q=80&w=400",
     ),
   ];
   @override
