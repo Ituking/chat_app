@@ -182,7 +182,8 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     userIdController.text.isNotEmpty &&
                     selfIntroductionController.text.isNotEmpty &&
                     emailController.text.isNotEmpty &&
-                    passwordController.text.isNotEmpty) {
+                    passwordController.text.isNotEmpty &&
+                    image != null) {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
