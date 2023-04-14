@@ -22,6 +22,8 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(236, 255, 255, 255),
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         iconTheme: const IconThemeData(
           color: Colors.black,
         ),
