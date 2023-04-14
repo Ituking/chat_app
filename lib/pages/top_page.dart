@@ -64,7 +64,7 @@ class _TopPageState extends State<TopPage> {
                                         padding: const EdgeInsets.symmetric(
                                             horizontal: 8.0),
                                         child: CircleAvatar(
-                                          radius: 30,
+                                          radius: 25,
                                           backgroundImage: talkRooms[index]
                                                       .talkUser
                                                       .imagePath ==
