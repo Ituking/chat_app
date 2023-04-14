@@ -19,7 +19,7 @@ class _TopPageState extends State<TopPage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        centerTitle: false,
+        centerTitle: true,
         title: const Text(
           "Chats",
           style: TextStyle(
@@ -27,22 +27,6 @@ class _TopPageState extends State<TopPage> {
             fontWeight: FontWeight.w900,
           ),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const SettingProfilePage(),
-                ),
-              );
-            },
-            icon: const Icon(
-              Icons.settings,
-              color: Colors.black,
-            ),
-          ),
-        ],
       ),
       body: StreamBuilder<QuerySnapshot>(
           stream: RoomFireStore.joinedRoomSnapshot,

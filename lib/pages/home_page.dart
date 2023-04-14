@@ -56,13 +56,11 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: const Center(
-          child: Text(
-            "Home",
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w900,
-            ),
+        title: const Text(
+          "Home",
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w900,
           ),
         ),
       ),
