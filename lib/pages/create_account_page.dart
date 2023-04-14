@@ -73,7 +73,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                       hintText: "Name",
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: Colors.green,
+                          color: Colors.black,
                           width: 2,
                         ),
                       ),
@@ -81,7 +81,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                         color: Colors.red,
                       ),
                     ),
-                    cursorColor: Colors.green,
+                    cursorColor: Colors.black,
                     cursorWidth: 2.0,
                   ),
                 ),
@@ -97,7 +97,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     hintText: "ID",
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: Colors.green,
+                        color: Colors.black,
                         width: 2,
                       ),
                     ),
@@ -105,7 +105,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                       color: Colors.red,
                     ),
                   ),
-                  cursorColor: Colors.green,
+                  cursorColor: Colors.black,
                   cursorWidth: 2.0,
                 ),
               ),
@@ -118,7 +118,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                   hintText: "Self Introduction",
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.green,
+                      color: Colors.black,
                       width: 2,
                     ),
                   ),
@@ -126,7 +126,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     color: Colors.red,
                   ),
                 ),
-                cursorColor: Colors.green,
+                cursorColor: Colors.black,
                 cursorWidth: 2.0,
               ),
             ),
@@ -140,7 +140,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     hintText: "Email Address",
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: Colors.green,
+                        color: Colors.black,
                         width: 2,
                       ),
                     ),
@@ -148,7 +148,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                       color: Colors.red,
                     ),
                   ),
-                  cursorColor: Colors.green,
+                  cursorColor: Colors.black,
                   cursorWidth: 2.0,
                 ),
               ),
@@ -161,7 +161,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                   hintText: "Password",
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.green,
+                      color: Colors.black,
                       width: 2,
                     ),
                   ),
@@ -169,7 +169,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     color: Colors.red,
                   ),
                 ),
-                cursorColor: Colors.green,
+                cursorColor: Colors.black,
                 cursorWidth: 2.0,
               ),
             ),

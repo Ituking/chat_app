@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
                       hintText: "Email Address",
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: Colors.green,
+                          color: Colors.black,
                           width: 2,
                         ),
                       ),
@@ -53,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.red,
                       ),
                     ),
-                    cursorColor: Colors.green,
+                    cursorColor: Colors.black,
                     cursorWidth: 2.0,
                   ),
                 ),
@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                     hintText: "Password",
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: Colors.green,
+                        color: Colors.black,
                         width: 2,
                       ),
                     ),
@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.red,
                     ),
                   ),
-                  cursorColor: Colors.green,
+                  cursorColor: Colors.black,
                   cursorWidth: 2.0,
                   obscureText: true,
                 ),
