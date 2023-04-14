@@ -32,7 +32,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
           widget.talkRoom.talkUser.name,
           style: const TextStyle(
             color: Colors.black,
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

@@ -23,7 +23,7 @@ class _TopPageState extends State<TopPage> {
           "Chats",
           style: TextStyle(
             color: Colors.black,
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

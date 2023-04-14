@@ -66,7 +66,7 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
           "Setting",
           style: TextStyle(
             color: Colors.black,
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

@@ -35,10 +35,10 @@ class _TimeLinePageState extends State<TimeLinePage> {
         elevation: 0,
         centerTitle: true,
         title: const Text(
-          "TimeLine",
+          "Timeline",
           style: TextStyle(
             color: Colors.black,
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

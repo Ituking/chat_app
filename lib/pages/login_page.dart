@@ -25,12 +25,14 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.25,
               ),
-              const Text(
+              Text(
                 "Chat App",
                 style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.green,
+                  fontSize: 50,
+                  foreground: Paint()
+                    ..style = PaintingStyle.stroke
+                    ..strokeWidth = 3
+                    ..color = Colors.green,
                 ),
               ),
               Padding(

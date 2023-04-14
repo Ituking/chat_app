@@ -19,10 +19,10 @@ class _PostPageState extends State<PostPage> {
         ),
         centerTitle: false,
         title: const Text(
-          "PostPage",
+          "Postpage",
           style: TextStyle(
             color: Colors.black,
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.bold,
           ),
         ),
         actions: [
@@ -32,7 +32,7 @@ class _PostPageState extends State<PostPage> {
               "Post",
               style: TextStyle(
                 color: Colors.black,
-                fontWeight: FontWeight.w900,
+                fontWeight: FontWeight.bold,
                 fontSize: 20,
               ),
             ),
