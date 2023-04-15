@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:chat_app/screens/bottom_tab_bar.dart';
 import 'package:chat_app/utils/authentication.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -30,7 +31,10 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
     }
   }
 
-  Future<void> uploadImage() async {}
+  Future<void> uploadImage() async {
+    final FirebaseStorage storageInstance = FirebaseStorage.instance;
+    final Reference ref = storageInstance.ref();
+  }
 
   @override
   Widget build(BuildContext context) {
