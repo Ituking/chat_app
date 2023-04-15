@@ -17,7 +17,7 @@ class Authentication {
       if (kDebugMode) {
         print("FAILED, $e");
       }
-      return "Registration error.";
+      return false;
     }
   }
 
@@ -37,7 +37,7 @@ class Authentication {
       if (kDebugMode) {
         print("FAILED, $e");
       }
-      return "Login Failed";
+      return false;
     }
   }
 }
