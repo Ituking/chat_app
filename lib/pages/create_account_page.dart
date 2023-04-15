@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:chat_app/screens/bottom_tab_bar.dart';
+import 'package:chat_app/utils/authentication.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -177,13 +178,15 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               height: 50,
             ),
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
                 if (nameController.text.isNotEmpty &&
                     userIdController.text.isNotEmpty &&
                     selfIntroductionController.text.isNotEmpty &&
                     emailController.text.isNotEmpty &&
                     passwordController.text.isNotEmpty &&
                     image != null) {
+                  var result = await Authentication.signUp(
+                      emailController.text, passwordController.text);
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
