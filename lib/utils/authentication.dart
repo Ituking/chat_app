@@ -22,6 +22,12 @@ class Authentication {
   }
 
   static Future<dynamic> emailSignIn(String email, String password) async {
-    try {} on FirebaseAuthException catch (e) {}
+    try {
+      final UserCredential _result =
+          await _firebaseAuth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+    } on FirebaseAuthException catch (e) {}
   }
 }
