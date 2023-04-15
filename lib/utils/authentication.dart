@@ -5,6 +5,9 @@ class Authentication {
   static User? currentFirebaseUser;
 
   static Future<dynamic> signUp(String email, String password) async {
-    try {} on FirebaseAuthException catch (e) {}
+    try {
+      await _firebaseAuth.createUserWithEmailAndPassword(
+          email: email, password: password);
+    } on FirebaseAuthException catch (e) {}
   }
 }
