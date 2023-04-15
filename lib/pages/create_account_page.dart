@@ -30,6 +30,8 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
     }
   }
 
+  Future<void> uploadImage() async {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
