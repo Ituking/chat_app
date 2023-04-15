@@ -187,12 +187,15 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     image != null) {
                   var result = await Authentication.signUp(
                       emailController.text, passwordController.text);
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const BottomTabBar(),
-                    ),
-                  );
+                  if (result == true) {
+                    if (!mounted) return;
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BottomTabBar(),
+                      ),
+                    );
+                  }
                 }
               },
               child: const Text("Create an account"),
