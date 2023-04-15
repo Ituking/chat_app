@@ -33,6 +33,11 @@ class Authentication {
         print("Login Success");
       }
       return true;
-    } on FirebaseAuthException catch (e) {}
+    } on FirebaseAuthException catch (e) {
+      if (kDebugMode) {
+        print("FAILED, $e");
+      }
+      return "Login Failed";
+    }
   }
 }
