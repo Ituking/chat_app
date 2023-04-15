@@ -28,6 +28,11 @@ class Authentication {
         email: email,
         password: password,
       );
+      currentFirebaseUser = _result.user;
+      if (kDebugMode) {
+        print("Login Success");
+      }
+      return true;
     } on FirebaseAuthException catch (e) {}
   }
 }
