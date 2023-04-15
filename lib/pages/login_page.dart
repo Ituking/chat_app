@@ -121,12 +121,15 @@ class _LoginPageState extends State<LoginPage> {
                       passwordController.text.isNotEmpty) {
                     var result = await Authentication.emailSignIn(
                         emailController.text, passwordController.text);
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const BottomTabBar(),
-                      ),
-                    );
+                    if (result == true) {
+                      if (!mounted) return;
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const BottomTabBar(),
+                        ),
+                      );
+                    }
                   }
                 },
                 child: const Text("Email Login"),
