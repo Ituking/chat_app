@@ -21,5 +21,7 @@ class Authentication {
     }
   }
 
-  static Future<dynamic> emailSignIn(String email, String password) async {}
+  static Future<dynamic> emailSignIn(String email, String password) async {
+    try {} on FirebaseAuthException catch (e) {}
+  }
 }
