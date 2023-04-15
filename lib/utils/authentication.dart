@@ -23,12 +23,12 @@ class Authentication {
 
   static Future<dynamic> emailSignIn(String email, String password) async {
     try {
-      final UserCredential _result =
+      final UserCredential result =
           await _firebaseAuth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
-      currentFirebaseUser = _result.user;
+      currentFirebaseUser = result.user;
       if (kDebugMode) {
         print("Login Success");
       }
