@@ -30,7 +30,7 @@ class Authentication {
       );
       currentFirebaseUser = result.user;
       if (kDebugMode) {
-        print("Login Success");
+        print("Login Success.");
       }
       return true;
     } on FirebaseAuthException catch (e) {
