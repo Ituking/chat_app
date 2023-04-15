@@ -31,9 +31,10 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
     }
   }
 
-  Future<void> uploadImage() async {
+  Future<void> uploadImage(String uid) async {
     final FirebaseStorage storageInstance = FirebaseStorage.instance;
     final Reference ref = storageInstance.ref();
+    await ref.child(uid).putFile(image!);
   }
 
   @override
