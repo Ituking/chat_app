@@ -10,12 +10,12 @@ class Authentication {
       await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
       if (kDebugMode) {
-        print("Registration Completed");
+        print("Registration Completed.");
       }
       return true;
     } on FirebaseAuthException catch (e) {
       if (kDebugMode) {
-        print("FAILED");
+        print("FAILED, $e");
       }
       return "Registration error.";
     }
