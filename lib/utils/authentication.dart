@@ -20,4 +20,6 @@ class Authentication {
       return "Registration error.";
     }
   }
+
+  static Future<dynamic> emailSignIn() async {}
 }
