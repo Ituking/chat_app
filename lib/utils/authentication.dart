@@ -13,6 +13,11 @@ class Authentication {
         print("Registration Completed");
       }
       return true;
-    } on FirebaseAuthException catch (e) {}
+    } on FirebaseAuthException catch (e) {
+      if (kDebugMode) {
+        print("FAILED");
+      }
+      return "Registration error.";
+    }
   }
 }
