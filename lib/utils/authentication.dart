@@ -21,5 +21,5 @@ class Authentication {
     }
   }
 
-  static Future<dynamic> emailSignIn() async {}
+  static Future<dynamic> emailSignIn(String email, String password) async {}
 }
