@@ -1,6 +1,8 @@
+import 'package:chat_app/firestore/account_firestore.dart';
 import 'package:chat_app/pages/create_account_page.dart';
 import 'package:chat_app/screens/bottom_tab_bar.dart';
 import 'package:chat_app/utils/authentication.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -121,14 +123,18 @@ class _LoginPageState extends State<LoginPage> {
                       passwordController.text.isNotEmpty) {
                     var result = await Authentication.emailSignIn(
                         emailController.text, passwordController.text);
-                    if (result == true) {
-                      if (!mounted) return;
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const BottomTabBar(),
-                        ),
-                      );
+                    if (result is UserCredential) {
+                      var result0 =
+                          await AccountFirestore.getUser(result.user!.uid);
+                      if (result0 == true) {
+                        if (!mounted) return;
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const BottomTabBar(),
+                          ),
+                        );
+                      }
                     }
                   }
                 },
