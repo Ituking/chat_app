@@ -33,7 +33,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
     }
   }
 
-  Future<void> uploadImage(String uid) async {
+  Future<String> uploadImage(String uid) async {
     final FirebaseStorage storageInstance = FirebaseStorage.instance;
     final Reference ref = storageInstance.ref();
     await ref.child(uid).putFile(image!);
@@ -41,6 +41,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
     if (kDebugMode) {
       print("image_path: $downloadUrl");
     }
+    return downloadUrl;
   }
 
   @override
