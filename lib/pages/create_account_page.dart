@@ -74,7 +74,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               },
               child: CircleAvatar(
                 foregroundImage: image == null ? null : FileImage(image!),
-                backgroundColor: Colors.green,
+                backgroundColor: Colors.teal,
                 radius: 50,
                 child: const Icon(Icons.add),
               ),
