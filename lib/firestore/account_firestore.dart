@@ -6,5 +6,7 @@ class AccountFirestore {
   static final CollectionReference account =
       _firestoreInstance.collection('account');
 
-  static Future<dynamic> setUser(Account newAccount) async {}
+  static Future<dynamic> setUser(Account newAccount) async {
+    try {} on FirebaseException catch (e) {}
+  }
 }
