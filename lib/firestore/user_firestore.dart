@@ -9,10 +9,6 @@ class UserFirestore {
       FirebaseFirestore.instance;
   static final _userCollection = _firebaseFirestoreInstance.collection('user');
 
-  static Future<dynamic> setUser(User newAccount) async {
-    try {} on FirebaseException catch (e) {}
-  }
-
   static Future<String?> insertNewAccount() async {
     try {
       final newDoc = await _userCollection.add({
