@@ -29,5 +29,5 @@ class AccountFirestore {
     }
   }
 
-  static Future<dynamic> getUser() async {}
+  static Future<dynamic> getUser(String uid) async {}
 }
