@@ -1,4 +1,5 @@
 import 'package:chat_app/model/account.dart';
+import 'package:chat_app/utils/authentication.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 
@@ -30,6 +31,24 @@ class AccountFirestore {
   }
 
   static Future<dynamic> getUser(String uid) async {
-    try {} on FirebaseException catch (e) {}
+    try {
+      DocumentSnapshot documentSnapshot = await account.doc(uid).get();
+      Map<String, dynamic> data =
+          documentSnapshot.data() as Map<String, dynamic>;
+      Account myAccount = Account(
+        id: uid,
+        name: data['name'],
+        imagePath: data['image_path'],
+        selfIntroduction: data['self_introduction'],
+        userId: data['user_id'],
+        createdTime: data['created_time'],
+        updatedTime: data['updated_time'],
+      );
+      Authentication.myAccount = myAccount;
+      if (kDebugMode) {
+        print("User acquisition succeeded.");
+      }
+      return true;
+    } on FirebaseException catch (e) {}
   }
 }
