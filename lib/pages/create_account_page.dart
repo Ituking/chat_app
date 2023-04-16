@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:chat_app/screens/bottom_tab_bar.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -36,6 +37,9 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
     final Reference ref = storageInstance.ref();
     await ref.child(uid).putFile(image!);
     String downloadUrl = await storageInstance.ref(uid).getDownloadURL();
+    if (kDebugMode) {
+      print("image_path: $downloadUrl");
+    }
   }
 
   @override
