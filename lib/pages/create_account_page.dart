@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:chat_app/screens/bottom_tab_bar.dart';
 import 'package:chat_app/utils/authentication.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -199,7 +200,8 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     image != null) {
                   var result = await Authentication.signUp(
                       emailController.text, passwordController.text);
-                  if (result == true) {
+                  if (result is UserCredential) {
+                    await uploadImage(result.user!.uid);
                     if (!mounted) return;
                     Navigator.pushReplacement(
                       context,
