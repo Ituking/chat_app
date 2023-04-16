@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:chat_app/firestore/account_firestore.dart';
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/screens/bottom_tab_bar.dart';
 import 'package:chat_app/utils/authentication.dart';
@@ -211,13 +212,16 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                       selfIntroduction: selfIntroductionController.text,
                       userId: userIdController.text,
                     );
-                    if (!mounted) return;
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const BottomTabBar(),
-                      ),
-                    );
+                    var result0 = await AccountFirestore.setUser(newAccount);
+                    if (result0 == true) {
+                      if (!mounted) return;
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const BottomTabBar(),
+                        ),
+                      );
+                    }
                   }
                 }
               },
