@@ -21,6 +21,11 @@ class AccountFirestore {
         print("Account registration completed.");
       }
       return true;
-    } on FirebaseException catch (e) {}
+    } on FirebaseException catch (e) {
+      if (kDebugMode) {
+        print("Account Registration Failed. $e");
+      }
+      return false;
+    }
   }
 }
