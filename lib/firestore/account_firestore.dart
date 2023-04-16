@@ -49,6 +49,11 @@ class AccountFirestore {
         print("User acquisition succeeded.");
       }
       return true;
-    } on FirebaseException catch (e) {}
+    } on FirebaseException catch (e) {
+      if (kDebugMode) {
+        print("User acquisition failed. $e");
+      }
+      return false;
+    }
   }
 }
