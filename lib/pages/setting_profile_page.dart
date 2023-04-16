@@ -132,9 +132,10 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
               child: ElevatedButton(
                 onPressed: () async {
                   User newProfile = User(
-                      name: controller.text,
-                      imagePath: imagePath,
-                      uid: SharedPrefs.fetchUid()!);
+                    name: controller.text,
+                    imagePath: imagePath,
+                    uid: SharedPrefs.fetchUid()!,
+                  );
                   await UserFirestore.updateUser(newProfile);
                 },
                 child: const Text("Edit"),
