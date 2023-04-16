@@ -34,7 +34,7 @@ class Authentication {
       if (kDebugMode) {
         print("Login Success.");
       }
-      return true;
+      return result;
     } on FirebaseAuthException catch (e) {
       if (kDebugMode) {
         print("FAILED, $e");
