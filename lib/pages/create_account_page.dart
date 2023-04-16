@@ -202,7 +202,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                   var result = await Authentication.signUp(
                       emailController.text, passwordController.text);
                   if (result is UserCredential) {
-                    await uploadImage(result.user!.uid);
+                    String imagePath = await uploadImage(result.user!.uid);
                     if (!mounted) return;
                     Navigator.pushReplacement(
                       context,
