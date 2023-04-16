@@ -12,7 +12,7 @@ class Authentication {
       if (kDebugMode) {
         print("Registration Completed.");
       }
-      return true;
+      return newAccount;
     } on FirebaseAuthException catch (e) {
       if (kDebugMode) {
         print("FAILED, $e");
