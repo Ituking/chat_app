@@ -45,7 +45,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
           ),
         ],
         currentIndex: selectedIndex,
-        selectedItemColor: Colors.green,
+        selectedItemColor: Colors.black,
         onTap: (index) {
           setState(() {
             selectedIndex = index;

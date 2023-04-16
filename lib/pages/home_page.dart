@@ -188,8 +188,8 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.green,
-        foregroundColor: materialWhite,
+        backgroundColor: materialWhite,
+        foregroundColor: Colors.black,
         onPressed: () => showModalBottomSheet(
           context: context,
           isScrollControlled: true,

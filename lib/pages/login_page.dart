@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
                   foreground: Paint()
                     ..style = PaintingStyle.stroke
                     ..strokeWidth = 3
-                    ..color = Colors.green,
+                    ..color = Colors.teal,
                 ),
               ),
               Padding(
@@ -97,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                     TextSpan(
                       text: "this",
                       style: const TextStyle(
-                        color: Colors.green,
+                        color: Colors.teal,
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
