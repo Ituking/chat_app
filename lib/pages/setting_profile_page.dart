@@ -59,6 +59,7 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
+        automaticallyImplyLeading: false,
         title: const Text(
           "Setting",
           style: TextStyle(

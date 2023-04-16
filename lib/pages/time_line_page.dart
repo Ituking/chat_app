@@ -34,6 +34,7 @@ class _TimeLinePageState extends State<TimeLinePage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
+        automaticallyImplyLeading: false,
         title: const Text(
           "Timeline",
           style: TextStyle(

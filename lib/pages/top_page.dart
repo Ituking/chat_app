@@ -19,6 +19,7 @@ class _TopPageState extends State<TopPage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
+        automaticallyImplyLeading: false,
         title: const Text(
           "Chats",
           style: TextStyle(
