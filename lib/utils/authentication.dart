@@ -7,8 +7,8 @@ class Authentication {
 
   static Future<dynamic> signUp(String email, String password) async {
     try {
-      await _firebaseAuth.createUserWithEmailAndPassword(
-          email: email, password: password);
+      UserCredential newAccount = await _firebaseAuth
+          .createUserWithEmailAndPassword(email: email, password: password);
       if (kDebugMode) {
         print("Registration Completed.");
       }
