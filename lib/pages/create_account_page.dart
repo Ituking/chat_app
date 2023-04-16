@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:chat_app/model/account.dart';
 import 'package:chat_app/screens/bottom_tab_bar.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -203,6 +204,13 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                       emailController.text, passwordController.text);
                   if (result is UserCredential) {
                     String imagePath = await uploadImage(result.user!.uid);
+                    Account newAccount = Account(
+                      id: result.user!.uid,
+                      name: nameController.text,
+                      imagePath: imagePath,
+                      selfIntroduction: selfIntroductionController.text,
+                      userId: userIdController.text,
+                    );
                     if (!mounted) return;
                     Navigator.pushReplacement(
                       context,
