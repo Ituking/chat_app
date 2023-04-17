@@ -71,6 +71,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       fontSize: 16.0,
                     ),
                   ),
+                  SizedBox(height: 16.0),
                 ],
               ),
             ),
