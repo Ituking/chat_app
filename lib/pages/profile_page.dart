@@ -70,10 +70,10 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CircleAvatar(
+                  CircleAvatar(
                     radius: 50.0,
                     backgroundImage: NetworkImage(
-                      'https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__480.jpg',
+                      myAccount.imagePath,
                     ),
                   ),
                   const SizedBox(height: 10.0),
