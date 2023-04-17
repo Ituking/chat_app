@@ -1,4 +1,5 @@
 import 'package:chat_app/pages/home_page.dart';
+import 'package:chat_app/pages/profile_page.dart';
 import 'package:chat_app/pages/setting_profile_page.dart';
 import 'package:chat_app/pages/time_line_page.dart';
 import 'package:chat_app/pages/top_page.dart';
@@ -17,7 +18,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
     const HomePage(),
     const TimeLinePage(),
     const TopPage(),
-    const SettingProfilePage(),
+    const ProfilePage(),
   ];
 
   @override
@@ -40,8 +41,8 @@ class _BottomTabBarState extends State<BottomTabBar> {
             label: "Chats",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: "Setting",
+            icon: Icon(Icons.person),
+            label: "Profile",
           ),
         ],
         currentIndex: selectedIndex,
