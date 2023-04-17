@@ -57,5 +57,5 @@ class AccountFirestore {
     }
   }
 
-  static Future<dynamic> updateUser() {}
+  static Future<dynamic> updateUser(String uid) {}
 }
