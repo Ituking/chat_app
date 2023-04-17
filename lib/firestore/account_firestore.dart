@@ -56,4 +56,6 @@ class AccountFirestore {
       return false;
     }
   }
+
+  static Future<dynamic> updateUser() {}
 }
