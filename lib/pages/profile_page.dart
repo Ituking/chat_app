@@ -64,6 +64,13 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ),
                   SizedBox(height: 8.0),
+                  Text(
+                    'Software Engineer',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 16.0,
+                    ),
+                  ),
                 ],
               ),
             ),
