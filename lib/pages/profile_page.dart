@@ -32,12 +32,18 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Column(
               children: [
                 Row(
-                  children: const [
-                    CircleAvatar(
+                  children: [
+                    const CircleAvatar(
                       radius: 40,
                       foregroundImage: NetworkImage(
                         "https://images.unsplash.com/photo-1472396961693-142e6e269027?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8Mjl8fE5hdHVyZXxlbnwwfHx8fDE2NzgwODY0NTY&ixlib=rb-4.0.3&q=80&w=400",
                       ),
+                    ),
+                    Column(
+                      children: const [
+                        Text("John"),
+                        Text("0001"),
+                      ],
                     ),
                   ],
                 ),
