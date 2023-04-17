@@ -2,6 +2,7 @@ import 'package:chat_app/main.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/model/user.dart';
 import 'package:chat_app/pages/post_page.dart';
+import 'package:chat_app/utils/widget_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -63,20 +64,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-        title: const Text(
-          "Home",
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 28.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
+      appBar: WidgetUtils.createAppBar("Home"),
       body: ListView.builder(
         itemCount: userPostsList.length,
         itemBuilder: (context, index) {

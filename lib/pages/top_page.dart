@@ -1,6 +1,7 @@
 import 'package:chat_app/firestore/room_firestore.dart';
 import 'package:chat_app/model/talk_room.dart';
 import 'package:chat_app/pages/talk_room_page.dart';
+import 'package:chat_app/utils/widget_utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -15,20 +16,7 @@ class _TopPageState extends State<TopPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-        title: const Text(
-          "Chats",
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 28.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
+      appBar: WidgetUtils.createAppBar("Chats"),
       body: StreamBuilder<QuerySnapshot>(
           stream: RoomFireStore.joinedRoomSnapshot,
           builder: (context, streamSnapshot) {

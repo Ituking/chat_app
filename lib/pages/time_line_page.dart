@@ -1,5 +1,6 @@
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/post_widget.dart';
+import 'package:chat_app/utils/widget_utils.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -31,20 +32,7 @@ class _TimeLinePageState extends State<TimeLinePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-        title: const Text(
-          "Timeline",
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 28.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
+      appBar: WidgetUtils.createAppBar("Timeline"),
       body: GestureDetector(
         onTap: () {
           if (kDebugMode) {
