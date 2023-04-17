@@ -97,8 +97,8 @@ class _ProfilePageState extends State<ProfilePage> {
                       Padding(
                         padding: const EdgeInsets.only(top: 80.0),
                         child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
+                          onPressed: () async {
+                            var result = await Navigator.push(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const EditAccountPage(),
