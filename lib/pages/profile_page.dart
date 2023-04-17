@@ -1,5 +1,6 @@
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
+import 'package:chat_app/pages/edit_account_page.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:flutter/material.dart';
 
@@ -47,7 +48,14 @@ class _ProfilePageState extends State<ProfilePage> {
           IconButton(
             icon: const Icon(Icons.more_horiz),
             color: Colors.grey,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const EditAccountPage(),
+                ),
+              );
+            },
           ),
         ],
       ),
