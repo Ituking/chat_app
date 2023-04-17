@@ -44,6 +44,20 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16.0, 140.0, 16.0, 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  CircleAvatar(
+                    radius: 50.0,
+                    backgroundImage: NetworkImage(
+                      'https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__480.jpg',
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
