@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:chat_app/model/account.dart';
+import 'package:chat_app/utils/authentication.dart';
 import 'package:chat_app/utils/function_utils.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +14,7 @@ class EditAccountPage extends StatefulWidget {
 }
 
 class _EditAccountPageState extends State<EditAccountPage> {
+  Account myAccount = Authentication.myAccount!;
   TextEditingController nameController = TextEditingController();
   TextEditingController userIdController = TextEditingController();
   TextEditingController selfIntroductionController = TextEditingController();
