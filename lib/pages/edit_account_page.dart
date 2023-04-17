@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:chat_app/utils/function_utils.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
 class EditAccountPage extends StatefulWidget {
   const EditAccountPage({super.key});
@@ -17,7 +16,6 @@ class _EditAccountPageState extends State<EditAccountPage> {
   TextEditingController userIdController = TextEditingController();
   TextEditingController selfIntroductionController = TextEditingController();
   File? image;
-  ImagePicker picker = ImagePicker();
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +28,13 @@ class _EditAccountPageState extends State<EditAccountPage> {
               height: MediaQuery.of(context).size.height * 0.05,
             ),
             GestureDetector(
-              onTap: () {
-                FunctionUtils.getImageFromGallery();
+              onTap: () async {
+                var result = await FunctionUtils.getImageFromGallery();
+                if (result != null) {
+                  setState(() {
+                    image = File(result.path);
+                  });
+                }
               },
               child: CircleAvatar(
                 foregroundImage: image == null ? null : FileImage(image!),
