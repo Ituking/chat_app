@@ -24,6 +24,14 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ),
       ),
+      body: Column(
+        children: [
+          Container(
+            color: Colors.red,
+            height: MediaQuery.of(context).size.height * 0.25,
+          ),
+        ],
+      ),
     );
   }
 }
