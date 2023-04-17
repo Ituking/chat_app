@@ -99,9 +99,9 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ),
                   const SizedBox(height: 8.0),
-                  const Text(
-                    'Software Engineer',
-                    style: TextStyle(
+                  Text(
+                    myAccount.userId,
+                    style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 16.0,
                     ),
