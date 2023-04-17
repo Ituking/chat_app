@@ -1,6 +1,5 @@
 import 'package:chat_app/pages/home_page.dart';
 import 'package:chat_app/pages/profile_page.dart';
-import 'package:chat_app/pages/setting_profile_page.dart';
 import 'package:chat_app/pages/time_line_page.dart';
 import 'package:chat_app/pages/top_page.dart';
 import 'package:flutter/material.dart';
