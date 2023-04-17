@@ -138,8 +138,7 @@ class _EditAccountPageState extends State<EditAccountPage> {
               onPressed: () async {
                 if (nameController.text.isNotEmpty &&
                     userIdController.text.isNotEmpty &&
-                    selfIntroductionController.text.isNotEmpty &&
-                    image != null) {}
+                    selfIntroductionController.text.isNotEmpty) {}
               },
               child: const Text("Update"),
             ),
