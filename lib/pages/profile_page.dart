@@ -27,7 +27,7 @@ class _ProfilePageState extends State<ProfilePage> {
       body: Column(
         children: [
           Container(
-            color: Colors.red,
+            color: Colors.red.withOpacity(0.3),
             height: MediaQuery.of(context).size.height * 0.25,
             child: Column(
               children: [
