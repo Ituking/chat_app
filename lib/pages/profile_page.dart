@@ -105,7 +105,14 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             );
                           },
-                          child: const Text("Edit"),
+                          child: const Text(
+                            "Edit",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ),
                     ],
