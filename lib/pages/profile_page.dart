@@ -1,4 +1,6 @@
+import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
+import 'package:chat_app/utils/authentication.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -9,6 +11,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  Account myAccount = Authentication.myAccount!;
   List<Post> postList = [
     Post(
       id: "0001",
