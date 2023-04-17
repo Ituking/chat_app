@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:chat_app/firestore/account_firestore.dart';
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:chat_app/utils/function_utils.dart';
@@ -138,7 +139,28 @@ class _EditAccountPageState extends State<EditAccountPage> {
               onPressed: () async {
                 if (nameController.text.isNotEmpty &&
                     userIdController.text.isNotEmpty &&
-                    selfIntroductionController.text.isNotEmpty) {}
+                    selfIntroductionController.text.isNotEmpty) {
+                  String imagePath = "";
+                  if (image == null) {
+                    imagePath = myAccount.imagePath;
+                  } else {
+                    var result =
+                        await FunctionUtils.uploadImage(myAccount.id, image!);
+                    imagePath = result;
+                  }
+                  Account updateAccount = Account(
+                    id: myAccount.id,
+                    name: nameController.text,
+                    imagePath: imagePath,
+                    selfIntroduction: selfIntroductionController.text,
+                    userId: userIdController.text,
+                  );
+                  var result = await AccountFirestore.updateUser(updateAccount);
+                  if (result == true) {
+                    if (!mounted) return;
+                    Navigator.pop(context);
+                  }
+                }
               },
               child: const Text("Update"),
             ),
