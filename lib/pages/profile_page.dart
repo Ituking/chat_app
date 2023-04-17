@@ -77,9 +77,9 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ),
                   const SizedBox(height: 10.0),
-                  const Text(
-                    'Jane Doe',
-                    style: TextStyle(
+                  Text(
+                    myAccount.name,
+                    style: const TextStyle(
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,
                     ),
