@@ -41,8 +41,20 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                     Column(
                       children: const [
-                        Text("John"),
-                        Text("0001"),
+                        Text(
+                          "John",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          "0001",
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
                       ],
                     ),
                   ],
