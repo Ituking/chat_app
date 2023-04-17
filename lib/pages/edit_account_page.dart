@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:chat_app/utils/function_utils.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -30,7 +31,7 @@ class _EditAccountPageState extends State<EditAccountPage> {
             ),
             GestureDetector(
               onTap: () {
-                getImageFromGallery();
+                FunctionUtils.getImageFromGallery();
               },
               child: CircleAvatar(
                 foregroundImage: image == null ? null : FileImage(image!),

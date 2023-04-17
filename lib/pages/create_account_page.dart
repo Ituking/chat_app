@@ -4,12 +4,10 @@ import 'package:chat_app/firestore/account_firestore.dart';
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/screens/bottom_tab_bar.dart';
 import 'package:chat_app/utils/authentication.dart';
+import 'package:chat_app/utils/function_utils.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
 class CreateAccountPage extends StatefulWidget {
   const CreateAccountPage({super.key});
@@ -37,8 +35,13 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               height: MediaQuery.of(context).size.height * 0.05,
             ),
             GestureDetector(
-              onTap: () {
-                getImageFromGallery();
+              onTap: () async {
+                var result = await FunctionUtils.getImageFromGallery();
+                if (result != null) {
+                  setState(() {
+                    image = File(result.path);
+                  });
+                }
               },
               child: CircleAvatar(
                 foregroundImage: image == null ? null : FileImage(image!),
@@ -172,7 +175,8 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                   var result = await Authentication.signUp(
                       emailController.text, passwordController.text);
                   if (result is UserCredential) {
-                    String imagePath = await uploadImage(result.user!.uid);
+                    String imagePath = await FunctionUtils.uploadImage(
+                        result.user!.uid, image!);
                     Account newAccount = Account(
                       id: result.user!.uid,
                       name: nameController.text,
