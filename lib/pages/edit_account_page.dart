@@ -20,6 +20,14 @@ class _EditAccountPageState extends State<EditAccountPage> {
   TextEditingController selfIntroductionController = TextEditingController();
   File? image;
 
+  ImageProvider getImage() {
+    if (image == null) {
+      return NetworkImage(myAccount.imagePath);
+    } else {
+      return FileImage(image!);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
