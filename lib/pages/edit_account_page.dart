@@ -57,7 +57,7 @@ class _EditAccountPageState extends State<EditAccountPage> {
                 }
               },
               child: CircleAvatar(
-                foregroundImage: image == null ? null : FileImage(image!),
+                foregroundImage: getImage(),
                 backgroundColor: Colors.teal,
                 radius: 50,
                 child: const Icon(Icons.add),
