@@ -94,16 +94,19 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ),
                       ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const EditAccountPage(),
-                            ),
-                          );
-                        },
-                        child: const Text("Edit"),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 80.0),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const EditAccountPage(),
+                              ),
+                            );
+                          },
+                          child: const Text("Edit"),
+                        ),
                       ),
                     ],
                   ),
