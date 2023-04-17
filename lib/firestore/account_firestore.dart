@@ -58,6 +58,17 @@ class AccountFirestore {
   }
 
   static Future<dynamic> updateUser(Account updateAccount) async {
-    try {} on FirebaseException catch (e) {}
+    try {
+      await account.doc(updateAccount.id).update({
+        'name': updateAccount.name,
+        'image_path': updateAccount.imagePath,
+        'user_id': updateAccount.userId,
+        'self_introduction': updateAccount.selfIntroduction,
+        'update_time': Timestamp.now(),
+      });
+      if (kDebugMode) {
+        print("User information updated successfully.");
+      }
+    } on FirebaseException catch (e) {}
   }
 }
