@@ -100,6 +100,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   const SizedBox(height: 8.0),
                   const Text(
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget ullamcorper est, id pretium nisi. Aliquam vel malesuada magna, eu consectetur sapien. Aliquam consequat felis at nulla lacinia, ut vestibulum urna sollicitudin. Sed fermentum, tellus sed volutpat imperdiet, dolor lectus accumsan nulla, sit amet pharetra metus nisi id purus. Nunc eu lectus dignissim, blandit magna id, bibendum ex. Nam sed elit quam. Aliquam eu leo nulla. Etiam iaculis velit sit amet nunc posuere, vel interdum sapien maximus. Sed porttitor mi mauris, sed vestibulum mauris lacinia vel. Integer vitae quam interdum, commodo tellus non, tincidunt odio. Praesent vel urna ut justo sodales ullamcorper.',
+                    maxLines: 5,
                     style: TextStyle(
                       fontSize: 16.0,
                     ),
