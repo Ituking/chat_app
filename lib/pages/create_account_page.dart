@@ -27,26 +27,6 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   File? image;
   ImagePicker picker = ImagePicker();
 
-  Future<void> getImageFromGallery() async {
-    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
-    if (pickedFile != null) {
-      setState(() {
-        image = File(pickedFile.path);
-      });
-    }
-  }
-
-  Future<String> uploadImage(String uid) async {
-    final FirebaseStorage storageInstance = FirebaseStorage.instance;
-    final Reference ref = storageInstance.ref();
-    await ref.child(uid).putFile(image!);
-    String downloadUrl = await storageInstance.ref(uid).getDownloadURL();
-    if (kDebugMode) {
-      print("image_path: $downloadUrl");
-    }
-    return downloadUrl;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
