@@ -48,14 +48,7 @@ class _ProfilePageState extends State<ProfilePage> {
           IconButton(
             icon: const Icon(Icons.more_horiz),
             color: Colors.grey,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const EditAccountPage(),
-                ),
-              );
-            },
+            onPressed: () {},
           ),
         ],
       ),
@@ -78,25 +71,41 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CircleAvatar(
-                    radius: 50.0,
-                    backgroundColor: Colors.white,
-                    backgroundImage: NetworkImage(myAccount.imagePath),
-                    child: Container(
-                      padding: const EdgeInsets.all(2),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: Colors.white,
-                          width: 2,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CircleAvatar(
+                        radius: 50.0,
+                        backgroundColor: Colors.white,
+                        backgroundImage: NetworkImage(myAccount.imagePath),
+                        child: Container(
+                          padding: const EdgeInsets.all(2),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: Colors.white,
+                              width: 2,
+                            ),
+                          ),
+                          child: CircleAvatar(
+                            radius: 48.0,
+                            backgroundImage: NetworkImage(myAccount.imagePath),
+                          ),
                         ),
                       ),
-                      child: CircleAvatar(
-                        radius: 48.0,
-                        backgroundImage: NetworkImage(myAccount.imagePath),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const EditAccountPage(),
+                            ),
+                          );
+                        },
+                        child: const Text("Edit"),
                       ),
-                    ),
+                    ],
                   ),
                   const SizedBox(height: 10.0),
                   Text(
