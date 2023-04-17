@@ -1,4 +1,5 @@
 import 'package:chat_app/model/post.dart';
+import 'package:chat_app/post_widget.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -59,11 +60,15 @@ class _TimeLinePageState extends State<TimeLinePage> {
             childAspectRatio: 0.7,
           ),
           itemBuilder: (BuildContext context, int index) {
-            return const Image(
-              image: NetworkImage(
-                  "https://images.unsplash.com/photo-1542233637-20456b09d882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"),
-              fit: BoxFit.cover,
-            );
+            try {
+              return PostWidget(post: postList[index]);
+            } catch (e) {
+              if (e is RangeError) {
+                return Container();
+              } else {
+                rethrow;
+              }
+            }
           },
         ),
       ),
