@@ -104,6 +104,9 @@ class _ProfilePageState extends State<ProfilePage> {
                       fontSize: 16.0,
                     ),
                   ),
+                  const SizedBox(
+                    height: 30.0,
+                  ),
                   GridView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
