@@ -39,6 +39,7 @@ class _TimeLinePageState extends State<TimeLinePage> {
           "Timeline",
           style: TextStyle(
             color: Colors.black,
+            fontSize: 28.0,
             fontWeight: FontWeight.bold,
           ),
         ),
