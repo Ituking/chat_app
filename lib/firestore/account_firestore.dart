@@ -57,7 +57,7 @@ class AccountFirestore {
     }
   }
 
-  static Future<dynamic> updateUser(String uid) async {
+  static Future<dynamic> updateUser(Account updateAccount) async {
     try {} on FirebaseException catch (e) {}
   }
 }
