@@ -69,6 +69,7 @@ class AccountFirestore {
       if (kDebugMode) {
         print("User information updated successfully.");
       }
+      return true;
     } on FirebaseException catch (e) {
       if (kDebugMode) {
         print("Failed to update user information. $e");
