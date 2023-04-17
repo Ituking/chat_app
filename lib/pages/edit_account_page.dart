@@ -21,6 +21,15 @@ class _EditAccountPageState extends State<EditAccountPage> {
   File? image;
 
   @override
+  void initState() {
+    super.initState();
+    nameController = TextEditingController(text: myAccount.name);
+    userIdController = TextEditingController(text: myAccount.userId);
+    selfIntroductionController =
+        TextEditingController(text: myAccount.selfIntroduction);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: WidgetUtils.createAppBar("Edit"),
