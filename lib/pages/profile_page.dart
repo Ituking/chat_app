@@ -29,6 +29,15 @@ class _ProfilePageState extends State<ProfilePage> {
           Container(
             color: Colors.red,
             height: MediaQuery.of(context).size.height * 0.25,
+            child: Column(
+              children: [
+                Row(
+                  children: const [
+                    CircleAvatar(),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
