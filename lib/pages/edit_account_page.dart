@@ -155,10 +155,11 @@ class _EditAccountPageState extends State<EditAccountPage> {
                     selfIntroduction: selfIntroductionController.text,
                     userId: userIdController.text,
                   );
+                  Authentication.myAccount = updateAccount;
                   var result = await AccountFirestore.updateUser(updateAccount);
                   if (result == true) {
                     if (!mounted) return;
-                    Navigator.pop(context);
+                    Navigator.pop(context, true);
                   }
                 }
               },

@@ -104,6 +104,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                 builder: (context) => const EditAccountPage(),
                               ),
                             );
+                            if (result == true) {
+                              setState(() {
+                                myAccount = Authentication.myAccount!;
+                              });
+                            }
                           },
                           child: const Text(
                             "Edit",
