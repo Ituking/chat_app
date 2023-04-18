@@ -6,5 +6,7 @@ class PostFirestore {
   static final CollectionReference posts =
       _firestoreInstance.collection('posts');
 
-  static Future<dynamic> addPost(Post post) async {}
+  static Future<dynamic> addPost(Post post) async {
+    try {} on FirebaseException catch (e) {}
+  }
 }
