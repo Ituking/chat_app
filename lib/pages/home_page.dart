@@ -39,6 +39,7 @@ class _HomePageState extends State<HomePage> {
       postTime: DateTime.now(),
       imagePath:
           "https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
+      content: 'On a sunny day, you can still go to the beach 🌊.',
     ),
     Post(
       id: "0002",
@@ -46,12 +47,14 @@ class _HomePageState extends State<HomePage> {
       postTime: DateTime.now(),
       imagePath:
           "https://images.unsplash.com/photo-1542233637-20456b09d882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      content: 'A day healed by nature 🌳.',
     ),
     Post(
       id: "0003",
       postAccountId: "0003",
       postTime: DateTime.now(),
       imagePath: "https://cdn.pixabay.com/photo/2010/11/26/canyon-203_1280.jpg",
+      content: 'Lovely views taken on my trip ✨.',
     ),
     Post(
       id: "0004",
@@ -59,6 +62,7 @@ class _HomePageState extends State<HomePage> {
       postTime: DateTime.now(),
       imagePath:
           "https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8M3x8cGVyc29ufGVufDB8fHx8MTY4MTM4NjM2MQ&ixlib=rb-4.0.3&q=80&w=400",
+      content: 'Great walk on a sunny day.',
     ),
   ];
   @override
