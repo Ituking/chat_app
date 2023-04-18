@@ -1,3 +1,4 @@
+import 'package:chat_app/model/post.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PostFirestore {
@@ -5,5 +6,5 @@ class PostFirestore {
   static final CollectionReference posts =
       _firestoreInstance.collection('posts');
 
-  static Future<dynamic> addPost() async {}
+  static Future<dynamic> addPost(Post post) async {}
 }
