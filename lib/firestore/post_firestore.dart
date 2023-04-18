@@ -4,4 +4,6 @@ class PostFirestore {
   static final _firestoreInstance = FirebaseFirestore.instance;
   static final CollectionReference posts =
       _firestoreInstance.collection('posts');
+
+  static Future<dynamic> addPost() async {}
 }
