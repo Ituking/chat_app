@@ -8,6 +8,8 @@ class PostPage extends StatefulWidget {
 }
 
 class _PostPageState extends State<PostPage> {
+  TextEditingController contentController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +28,7 @@ class _PostPageState extends State<PostPage> {
           ),
         ),
         actions: [
-          TextButton(
+          ElevatedButton(
             onPressed: () {},
             child: const Text(
               "Post",
