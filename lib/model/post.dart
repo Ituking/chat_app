@@ -1,9 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Post {
   String id;
   String? imagePath;
   String content;
   String postAccountId;
-  DateTime? postTime;
+  Timestamp? postTime;
 
   Post({
     required this.id,

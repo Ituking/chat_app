@@ -2,6 +2,7 @@ import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/edit_account_page.dart';
 import 'package:chat_app/utils/authentication.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -17,7 +18,7 @@ class _ProfilePageState extends State<ProfilePage> {
     Post(
       id: "0001",
       postAccountId: "0001",
-      postTime: DateTime.now(),
+      postTime: Timestamp.now(),
       imagePath:
           "https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
       content: '',
@@ -25,7 +26,7 @@ class _ProfilePageState extends State<ProfilePage> {
     Post(
       id: "0002",
       postAccountId: "0002",
-      postTime: DateTime.now(),
+      postTime: Timestamp.now(),
       imagePath:
           "https://images.unsplash.com/photo-1542233637-20456b09d882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
       content: '',

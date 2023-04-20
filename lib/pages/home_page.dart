@@ -3,6 +3,7 @@ import 'package:chat_app/model/post.dart';
 import 'package:chat_app/model/user.dart';
 import 'package:chat_app/pages/post_page.dart';
 import 'package:chat_app/utils/widget_utils.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -36,7 +37,7 @@ class _HomePageState extends State<HomePage> {
     Post(
       id: "0001",
       postAccountId: "0001",
-      postTime: DateTime.now(),
+      postTime: Timestamp.now(),
       imagePath:
           "https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
       content: 'On a sunny day, you can still go to the beach 🌊.',
@@ -44,7 +45,7 @@ class _HomePageState extends State<HomePage> {
     Post(
       id: "0002",
       postAccountId: "0002",
-      postTime: DateTime.now(),
+      postTime: Timestamp.now(),
       imagePath:
           "https://images.unsplash.com/photo-1542233637-20456b09d882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
       content: 'A day healed by nature 🌳.',
@@ -52,14 +53,14 @@ class _HomePageState extends State<HomePage> {
     Post(
       id: "0003",
       postAccountId: "0003",
-      postTime: DateTime.now(),
+      postTime: Timestamp.now(),
       imagePath: "https://cdn.pixabay.com/photo/2010/11/26/canyon-203_1280.jpg",
       content: 'Lovely views taken on my trip ✨.',
     ),
     Post(
       id: "0004",
       postAccountId: "0004",
-      postTime: DateTime.now(),
+      postTime: Timestamp.now(),
       imagePath:
           "https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8M3x8cGVyc29ufGVufDB8fHx8MTY4MTM4NjM2MQ&ixlib=rb-4.0.3&q=80&w=400",
       content: 'Great walk on a sunny day.',
@@ -75,8 +76,9 @@ class _HomePageState extends State<HomePage> {
           final post = userPostsList[index];
           final user =
               postedUser.firstWhere((user) => user.uid == post.postAccountId);
-          final formattedDate =
-              DateFormat('EEE MMM dd yyyy HH:mm').format(post.postTime!);
+          final formattedDate = DateFormat('EEE MMM dd yyyy HH:mm').format(
+            post.postTime!.toDate(),
+          );
           return Card(
             child: SizedBox(
               height: 350,
