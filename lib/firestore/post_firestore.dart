@@ -26,6 +26,11 @@ class PostFirestore {
         print("Submission Completed.");
       }
       return true;
-    } on FirebaseException catch (e) {}
+    } on FirebaseException catch (e) {
+      if (kDebugMode) {
+        print("Submission Failure. $e");
+      }
+      return false;
+    }
   }
 }
