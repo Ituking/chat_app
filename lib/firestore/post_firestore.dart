@@ -1,5 +1,6 @@
 import 'package:chat_app/model/post.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 
 class PostFirestore {
   static final _firestoreInstance = FirebaseFirestore.instance;
@@ -21,6 +22,10 @@ class PostFirestore {
         'post_id': result.id,
         'created_time': Timestamp.now(),
       });
+      if (kDebugMode) {
+        print("Submission Completed.");
+      }
+      return true;
     } on FirebaseException catch (e) {}
   }
 }
