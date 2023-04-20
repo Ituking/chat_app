@@ -17,6 +17,10 @@ class PostFirestore {
         'post_account_id': newPost.postAccountId,
         'created_time': Timestamp.now(),
       });
+      userPosts.doc(result.id).set({
+        'post_id': result.id,
+        'created_time': Timestamp.now(),
+      });
     } on FirebaseException catch (e) {}
   }
 }
