@@ -12,6 +12,11 @@ class PostFirestore {
           .collection('user')
           .doc(newPost.postAccountId)
           .collection('my_posts');
+      var result = await posts.add({
+        'content': newPost.content,
+        'post_account_id': newPost.postAccountId,
+        'created_time': Timestamp.now(),
+      });
     } on FirebaseException catch (e) {}
   }
 }
