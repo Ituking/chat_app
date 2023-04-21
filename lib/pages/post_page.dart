@@ -27,6 +27,8 @@ class _PostPageState extends State<PostPage> {
     }
   }
 
+  Future<void> uploadImage() async {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
