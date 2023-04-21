@@ -36,7 +36,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
             label: "Media",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.wechat),
+            icon: Icon(Icons.chat),
             label: "Chats",
           ),
           BottomNavigationBarItem(
