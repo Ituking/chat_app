@@ -16,7 +16,7 @@ class PostPage extends StatefulWidget {
 class _PostPageState extends State<PostPage> {
   TextEditingController contentController = TextEditingController();
   File? image;
-  final ImagePicker _picker = ImagePicker();
+  final ImagePicker picker = ImagePicker();
 
   @override
   Widget build(BuildContext context) {
