@@ -30,6 +30,7 @@ class _PostPageState extends State<PostPage> {
 
   Future<void> uploadImage() async {
     final FirebaseStorage storageInstance = FirebaseStorage.instance;
+    final Reference ref = storageInstance.ref();
   }
 
   @override
