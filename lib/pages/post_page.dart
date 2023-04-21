@@ -28,9 +28,10 @@ class _PostPageState extends State<PostPage> {
     }
   }
 
-  Future<void> uploadImage() async {
+  Future<void> uploadImage(String uid) async {
     final FirebaseStorage storageInstance = FirebaseStorage.instance;
     final Reference ref = storageInstance.ref();
+    await ref.child(uid).putFile(image!);
   }
 
   @override
