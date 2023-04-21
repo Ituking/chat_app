@@ -1,3 +1,5 @@
+import 'package:chat_app/model/post.dart';
+import 'package:chat_app/utils/authentication.dart';
 import 'package:flutter/material.dart';
 
 class PostPage extends StatefulWidget {
@@ -29,7 +31,17 @@ class _PostPageState extends State<PostPage> {
         ),
         actions: [
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              if (contentController.text.isNotEmpty) {
+                Post newPost = Post(
+                  content: contentController.text,
+                  postAccountId: Authentication.myAccount!.id,
+                  id: '',
+                  imagePath: '',
+                  postTime: null,
+                );
+              }
+            },
             child: const Text(
               "Post",
               style: TextStyle(
