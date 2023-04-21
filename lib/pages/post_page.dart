@@ -1,3 +1,4 @@
+import 'package:chat_app/firestore/post_firestore.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,7 @@ class _PostPageState extends State<PostPage> {
         ),
         actions: [
           ElevatedButton(
-            onPressed: () {
+            onPressed: () async {
               if (contentController.text.isNotEmpty) {
                 Post newPost = Post(
                   content: contentController.text,
@@ -40,6 +41,7 @@ class _PostPageState extends State<PostPage> {
                   imagePath: '',
                   postTime: null,
                 );
+                var result = await PostFirestore.addPost(newPost);
               }
             },
             child: const Text(
