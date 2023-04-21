@@ -32,6 +32,7 @@ class _PostPageState extends State<PostPage> {
     final FirebaseStorage storageInstance = FirebaseStorage.instance;
     final Reference ref = storageInstance.ref();
     await ref.child(uid).putFile(image!);
+    String downloadUrl = await storageInstance.ref(uid).getDownloadURL();
   }
 
   @override
