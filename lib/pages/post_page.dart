@@ -20,6 +20,11 @@ class _PostPageState extends State<PostPage> {
 
   Future<void> getImageFromGarally() async {
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      setState(() {
+        image = File(pickedFile.path);
+      });
+    }
   }
 
   @override
