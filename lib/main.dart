@@ -1,10 +1,8 @@
 import 'package:chat_app/firestore/user_firestore.dart';
 import 'package:chat_app/pages/login_page.dart';
 import 'package:chat_app/utils/shared_prefs.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterfire_ui/auth.dart';
 
 import 'firebase_options.dart';
 
@@ -40,7 +38,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const providerConfigs = [EmailProviderConfiguration()];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
