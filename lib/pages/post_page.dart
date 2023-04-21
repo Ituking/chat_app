@@ -4,6 +4,7 @@ import 'package:chat_app/firestore/post_firestore.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -33,6 +34,9 @@ class _PostPageState extends State<PostPage> {
     final Reference ref = storageInstance.ref();
     await ref.child(uid).putFile(image!);
     String downloadUrl = await storageInstance.ref(uid).getDownloadURL();
+    if (kDebugMode) {
+      print('image_path: $downloadUrl');
+    }
   }
 
   @override
