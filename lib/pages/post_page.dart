@@ -42,6 +42,10 @@ class _PostPageState extends State<PostPage> {
                   postTime: null,
                 );
                 var result = await PostFirestore.addPost(newPost);
+                if (result == true) {
+                  if (!mounted) return;
+                  Navigator.pop(context);
+                }
               }
             },
             child: const Text(
