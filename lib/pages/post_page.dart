@@ -21,7 +21,7 @@ class _PostPageState extends State<PostPage> {
         ),
         centerTitle: false,
         title: const Text(
-          "Postpage",
+          "Create post",
           style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
@@ -40,12 +40,6 @@ class _PostPageState extends State<PostPage> {
             ),
           ),
         ],
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {},
-          child: const Text("Select Photo"),
-        ),
       ),
     );
   }
