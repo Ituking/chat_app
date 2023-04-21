@@ -41,6 +41,23 @@ class _PostPageState extends State<PostPage> {
           ),
         ],
       ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Expanded(
+              child: TextField(
+                controller: contentController,
+                maxLines: null,
+                decoration: const InputDecoration(
+                  hintText: "What's on your mind?",
+                  border: InputBorder.none,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
