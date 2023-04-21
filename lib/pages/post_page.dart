@@ -18,6 +18,8 @@ class _PostPageState extends State<PostPage> {
   File? image;
   final ImagePicker picker = ImagePicker();
 
+  Future<void> getImageFromGarally() async {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
