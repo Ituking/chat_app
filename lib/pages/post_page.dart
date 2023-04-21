@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:chat_app/firestore/post_firestore.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/utils/authentication.dart';
@@ -12,6 +14,7 @@ class PostPage extends StatefulWidget {
 
 class _PostPageState extends State<PostPage> {
   TextEditingController contentController = TextEditingController();
+  File? image;
 
   @override
   Widget build(BuildContext context) {
