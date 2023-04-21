@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:chat_app/firestore/post_firestore.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/utils/authentication.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -27,7 +28,9 @@ class _PostPageState extends State<PostPage> {
     }
   }
 
-  Future<void> uploadImage() async {}
+  Future<void> uploadImage() async {
+    final FirebaseStorage storageInstance = FirebaseStorage.instance;
+  }
 
   @override
   Widget build(BuildContext context) {
