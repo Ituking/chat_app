@@ -53,6 +53,7 @@ class _PostPageState extends State<PostPage> {
                   hintText: "What's on your mind?",
                   border: InputBorder.none,
                 ),
+                cursorColor: Colors.black,
               ),
             ),
           ],
