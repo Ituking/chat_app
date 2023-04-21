@@ -56,6 +56,7 @@ class _PostPageState extends State<PostPage> {
                 cursorColor: Colors.black,
               ),
             ),
+            const Divider(height: 1),
             ListTile(
               leading: const Icon(Icons.photo_library),
               title: const Text("Add a photo"),
