@@ -108,7 +108,9 @@ class _PostPageState extends State<PostPage> {
             ListTile(
               leading: const Icon(Icons.photo_library),
               title: const Text("Add a photo"),
-              onTap: () {},
+              onTap: () {
+                getImageFromGarally();
+              },
             ),
           ],
         ),
