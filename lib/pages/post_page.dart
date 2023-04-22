@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:chat_app/firestore/post_firestore.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/utils/authentication.dart';
+import 'package:chat_app/utils/function_utils.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -19,25 +20,6 @@ class _PostPageState extends State<PostPage> {
   TextEditingController contentController = TextEditingController();
   File? image;
   final ImagePicker picker = ImagePicker();
-
-  Future<void> getImageFromGarally() async {
-    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
-    if (pickedFile != null) {
-      setState(() {
-        image = File(pickedFile.path);
-      });
-    }
-  }
-
-  Future<void> uploadImage(String uid) async {
-    final FirebaseStorage storageInstance = FirebaseStorage.instance;
-    final Reference ref = storageInstance.ref();
-    await ref.child(uid).putFile(image!);
-    String downloadUrl = await storageInstance.ref(uid).getDownloadURL();
-    if (kDebugMode) {
-      print('image_path: $downloadUrl');
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -118,7 +100,7 @@ class _PostPageState extends State<PostPage> {
               leading: const Icon(Icons.photo_library),
               title: const Text("Add a photo"),
               onTap: () {
-                getImageFromGarally();
+                FunctionUtils.getImageFromGallery();
               },
             ),
           ],
