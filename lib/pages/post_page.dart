@@ -103,7 +103,16 @@ class _PostPageState extends State<PostPage> {
             const SizedBox(
               height: 30,
             ),
-            image == null ? const SizedBox() : Image.file(image!),
+            image == null
+                ? const SizedBox()
+                : SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.3,
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    child: Image.file(
+                      image!,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
             const Divider(height: 1),
             ListTile(
               leading: const Icon(Icons.photo_library),
