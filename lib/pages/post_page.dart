@@ -84,12 +84,15 @@ class _PostPageState extends State<PostPage> {
             ),
             image == null
                 ? const SizedBox()
-                : SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.3,
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    child: Image.file(
-                      image!,
-                      fit: BoxFit.cover,
+                : ClipRRect(
+                    borderRadius: BorderRadius.circular(24.0),
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.3,
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      child: Image.file(
+                        image!,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
             const Divider(height: 1),
