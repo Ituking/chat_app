@@ -100,6 +100,9 @@ class _PostPageState extends State<PostPage> {
                 cursorColor: Colors.black,
               ),
             ),
+            const SizedBox(
+              height: 30,
+            ),
             const Divider(height: 1),
             ListTile(
               leading: const Icon(Icons.photo_library),
