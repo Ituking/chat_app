@@ -19,7 +19,6 @@ class PostPage extends StatefulWidget {
 class _PostPageState extends State<PostPage> {
   TextEditingController contentController = TextEditingController();
   File? image;
-  final ImagePicker picker = ImagePicker();
 
   @override
   Widget build(BuildContext context) {
@@ -99,8 +98,11 @@ class _PostPageState extends State<PostPage> {
             ListTile(
               leading: const Icon(Icons.photo_library),
               title: const Text("Add a photo"),
-              onTap: () {
-                FunctionUtils.getImageFromGallery();
+              onTap: () async {
+                var result = await FunctionUtils.getImageFromGallery();
+                setState(() {
+                  image = File(result.path);
+                });
               },
             ),
           ],
