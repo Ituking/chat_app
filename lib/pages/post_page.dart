@@ -4,10 +4,7 @@ import 'package:chat_app/firestore/post_firestore.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:chat_app/utils/function_utils.dart';
-import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
 class PostPage extends StatefulWidget {
   const PostPage({super.key});
