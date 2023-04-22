@@ -38,7 +38,7 @@ class _PostPageState extends State<PostPage> {
         actions: [
           ElevatedButton(
             onPressed: () async {
-              if (contentController.text.isNotEmpty) {
+              if (contentController.text.isNotEmpty && image != null) {
                 Post newPost = Post(
                   content: contentController.text,
                   postAccountId: Authentication.myAccount!.id,
