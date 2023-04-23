@@ -50,6 +50,10 @@ class PostFirestore {
         );
         postList.add(post);
       });
+      if (kDebugMode) {
+        print("Success in retrieving my post.");
+      }
+      return postList;
     } on FirebaseException catch (e) {}
   }
 }
