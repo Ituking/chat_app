@@ -54,6 +54,11 @@ class PostFirestore {
         print("Success in retrieving my post.");
       }
       return postList;
-    } on FirebaseException catch (e) {}
+    } on FirebaseException catch (e) {
+      if (kDebugMode) {
+        print("Failure to retrieve my post. $e");
+      }
+      return false;
+    }
   }
 }
