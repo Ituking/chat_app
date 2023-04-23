@@ -16,11 +16,12 @@ class PostFirestore {
       var result = await posts.add({
         'content': newPost.content,
         'post_account_id': newPost.postAccountId,
-        'created_time': Timestamp.now(),
+        'image_path': newPost.imagePath,
+        'post_time': Timestamp.now(),
       });
       userPosts.doc(result.id).set({
         'post_id': result.id,
-        'created_time': Timestamp.now(),
+        'post_time': Timestamp.now(),
       });
       if (kDebugMode) {
         print("Submission Completed.");
@@ -40,6 +41,12 @@ class PostFirestore {
       await Future.forEach(ids, (String elements) async {
         var doc = await posts.doc(elements).get();
         Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+        Post post = Post(
+            id: doc.id,
+            imagePath: data['image_path'],
+            content: data['content'],
+            postAccountId: data['post_account_id'],
+            postTime: data['post_time']);
       });
     } on FirebaseException catch (e) {}
   }
