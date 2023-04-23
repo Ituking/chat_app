@@ -21,8 +21,14 @@ class _PostPageState extends State<PostPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
+        ),
         elevation: 0,
         iconTheme: const IconThemeData(
           color: Colors.black,
@@ -36,7 +42,7 @@ class _PostPageState extends State<PostPage> {
           ),
         ),
         actions: [
-          ElevatedButton(
+          OutlinedButton(
             onPressed: () async {
               if (contentController.text.isNotEmpty && image != null) {
                 Post newPost = Post(

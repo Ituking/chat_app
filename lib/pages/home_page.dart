@@ -106,6 +106,7 @@ class _HomePageState extends State<HomePage> {
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(24.0),
                         image: DecorationImage(
                           image: NetworkImage(
                             post.imagePath!,
@@ -187,6 +188,12 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: materialWhite,
         foregroundColor: Colors.black,
         onPressed: () => showModalBottomSheet(
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
+            ),
+          ),
           context: context,
           isScrollControlled: true,
           builder: (BuildContext context) {
