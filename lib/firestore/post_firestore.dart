@@ -42,11 +42,13 @@ class PostFirestore {
         var doc = await posts.doc(elements).get();
         Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
         Post post = Post(
-            id: doc.id,
-            imagePath: data['image_path'],
-            content: data['content'],
-            postAccountId: data['post_account_id'],
-            postTime: data['post_time']);
+          id: doc.id,
+          imagePath: data['image_path'],
+          content: data['content'],
+          postAccountId: data['post_account_id'],
+          postTime: data['post_time'],
+        );
+        postList.add(post);
       });
     } on FirebaseException catch (e) {}
   }
