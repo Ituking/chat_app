@@ -33,4 +33,6 @@ class PostFirestore {
       return false;
     }
   }
+
+  static Future<List<Post>> getPostsFromIds(List<String> ids) async {}
 }
