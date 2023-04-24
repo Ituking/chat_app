@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/edit_account_page.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -14,6 +17,9 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   Account myAccount = Authentication.myAccount!;
+  File? image;
+  String imagePath = '';
+  final ImagePicker _picker = ImagePicker();
 
   @override
   Widget build(BuildContext context) {
