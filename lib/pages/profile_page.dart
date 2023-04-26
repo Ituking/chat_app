@@ -178,6 +178,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     ),
                                     itemBuilder:
                                         (BuildContext context, int index) {
+                                      Post post = snapshot.data![index];
                                       return Container(
                                         margin: const EdgeInsets.all(2.0),
                                         decoration: BoxDecoration(
