@@ -1,5 +1,8 @@
 import 'dart:io';
 
+import 'package:chat_app/firestore/account_firestore.dart';
+import 'package:chat_app/firestore/post_firestore.dart';
+import 'package:chat_app/firestore/user_firestore.dart';
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/edit_account_page.dart';
@@ -150,7 +153,11 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                   Expanded(
                     child: StreamBuilder<QuerySnapshot>(
-                        stream: null,
+                        stream: AccountFirestore.account
+                            .doc(myAccount.id)
+                            .collection('my_posts')
+                            .orderBy('created_time', descending: true)
+                            .snapshots(),
                         builder: (context, snapshot) {
                           return GridView.builder(
                             shrinkWrap: true,
