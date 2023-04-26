@@ -153,12 +153,13 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                   Expanded(
                     child: StreamBuilder<QuerySnapshot>(
-                        stream: AccountFirestore.account
-                            .doc(myAccount.id)
-                            .collection('my_posts')
-                            .orderBy('created_time', descending: true)
-                            .snapshots(),
-                        builder: (context, snapshot) {
+                      stream: AccountFirestore.account
+                          .doc(myAccount.id)
+                          .collection('my_posts')
+                          .orderBy('created_time', descending: true)
+                          .snapshots(),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
                           return GridView.builder(
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
@@ -181,7 +182,9 @@ class _ProfilePageState extends State<ProfilePage> {
                               );
                             },
                           );
-                        }),
+                        }
+                      },
+                    ),
                   ),
                 ],
               ),
