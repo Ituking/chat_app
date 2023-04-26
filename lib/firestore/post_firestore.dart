@@ -58,7 +58,7 @@ class PostFirestore {
       if (kDebugMode) {
         print("Failure to retrieve my post. $e");
       }
-      return false;
+      return null;
     }
   }
 }
