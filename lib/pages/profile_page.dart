@@ -167,30 +167,32 @@ class _ProfilePageState extends State<ProfilePage> {
                           return FutureBuilder<dynamic>(
                               future: PostFirestore.getPostsFromIds(myPostIds),
                               builder: (context, snapshot) {
-                                return GridView.builder(
-                                  shrinkWrap: true,
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  itemCount: postList.length,
-                                  gridDelegate:
-                                      const SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 3,
-                                  ),
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return Container(
-                                      margin: const EdgeInsets.all(2.0),
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                          image: NetworkImage(
-                                              postList[index].imagePath!),
-                                          fit: BoxFit.cover,
+                                if (snapshot.hasData) {
+                                  return GridView.builder(
+                                    shrinkWrap: true,
+                                        const NeverScrollableScrollPhysics(),
+                                    itemCount: postList.length,
+                                    gridDelegate:
+                                        const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 3,
+                                    ),
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
+                                      return Container(
+                                        margin: const EdgeInsets.all(2.0),
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                            image: NetworkImage(
+                                                postList[index].imagePath!),
+                                            fit: BoxFit.cover,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                      ),
-                                    );
-                                  },
-                                );
+                                      );
+                                    },
+                                  );
+                                }
                               });
                         } else {
                           return Container();
