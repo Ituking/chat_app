@@ -170,8 +170,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 if (snapshot.hasData) {
                                   return GridView.builder(
                                     shrinkWrap: true,
-                                    physics:
-                                        const NeverScrollableScrollPhysics(),
+                                    physics: const ClampingScrollPhysics(),
                                     itemCount: postList.length,
                                     gridDelegate:
                                         const SliverGridDelegateWithFixedCrossAxisCount(
