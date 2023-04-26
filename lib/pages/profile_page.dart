@@ -160,6 +160,10 @@ class _ProfilePageState extends State<ProfilePage> {
                           .snapshots(),
                       builder: (context, snapshot) {
                         if (snapshot.hasData) {
+                          List<String> myPostIds = List.generate(
+                              snapshot.data!.docs.length, (index) {
+                            return snapshot.data!.docs[index].id;
+                          });
                           return GridView.builder(
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
