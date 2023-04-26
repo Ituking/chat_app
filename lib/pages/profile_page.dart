@@ -170,6 +170,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 if (snapshot.hasData) {
                                   return GridView.builder(
                                     shrinkWrap: true,
+                                    physics:
                                         const NeverScrollableScrollPhysics(),
                                     itemCount: postList.length,
                                     gridDelegate:
@@ -192,6 +193,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                       );
                                     },
                                   );
+                                } else {
+                                  return Container();
                                 }
                               });
                         } else {
