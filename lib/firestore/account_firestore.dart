@@ -94,6 +94,10 @@ class AccountFirestore {
         );
         map[accountId] = postAccount;
       });
+      if (kDebugMode) {
+        print("Acquisition of contributing users completed.");
+      }
+      return map;
     } on FirebaseException catch (e) {}
   }
 }
