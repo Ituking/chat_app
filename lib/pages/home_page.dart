@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                     ),
                                     title: Text(
-                                      user.name,
+                                      postAccount.name,
                                       style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                       ),
