@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                     if (userSnapshot.hasData &&
                         userSnapshot.connectionState == ConnectionState.done) {
                       return ListView.builder(
-                        itemCount: userPostsList.length,
+                        itemCount: postSnapshot.data!.docs.length,
                         itemBuilder: (context, index) {
                           final post = userPostsList[index];
                           final user = postedUser.firstWhere(
