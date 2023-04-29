@@ -54,9 +54,9 @@ class _HomePageState extends State<HomePage> {
               });
               return FutureBuilder<Map<String, Account>?>(
                   future: AccountFirestore.getPostUserMap(postAccountIds),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData &&
-                        snapshot.connectionState == ConnectionState.done) {
+                  builder: (context, userSnapshot) {
+                    if (userSnapshot.hasData &&
+                        userSnapshot.connectionState == ConnectionState.done) {
                       return ListView.builder(
                         itemCount: userPostsList.length,
                         itemBuilder: (context, index) {
