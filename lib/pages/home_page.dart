@@ -46,12 +46,12 @@ class _HomePageState extends State<HomePage> {
           builder: (context, postSnapshot) {
             if (postSnapshot.hasData) {
               List<String> postAccountIds = [];
-              postSnapshot.data!.docs.forEach((doc) {
+              for (var doc in postSnapshot.data!.docs) {
                 Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
                 if (!postAccountIds.contains(data['post_account_id'])) {
                   postAccountIds.add(data['post_account_id']);
                 }
-              });
+              }
               return FutureBuilder<Map<String, Account>?>(
                   future: AccountFirestore.getPostUserMap(postAccountIds),
                   builder: (context, userSnapshot) {
