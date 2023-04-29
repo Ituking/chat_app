@@ -81,5 +81,6 @@ class AccountFirestore {
   static Future<Map<String, Account>?> getPostUserMap(
       List<String> accountIds) async {
     Map<String, Account> map = {};
+    try {} on FirebaseException catch (e) {}
   }
 }
