@@ -70,6 +70,8 @@ class _HomePageState extends State<HomePage> {
                             postAccountId: data['post_account_id'],
                             postTime: data['post_time'],
                           );
+                          Account postAccount =
+                              userSnapshot.data![post.postAccountId]!;
                           return Card(
                             child: SizedBox(
                               height: 350,
