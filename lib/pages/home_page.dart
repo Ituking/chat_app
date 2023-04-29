@@ -90,7 +90,9 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                     ),
                                     subtitle: Text(
-                                      formattedDate,
+                                      (DateFormat('M/d/yy').format(
+                                        post.postTime!.toDate(),
+                                      )),
                                       style: const TextStyle(
                                         fontWeight: FontWeight.normal,
                                       ),
