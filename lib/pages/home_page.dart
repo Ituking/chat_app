@@ -1,5 +1,7 @@
+import 'package:chat_app/firestore/account_firestore.dart';
 import 'package:chat_app/firestore/post_firestore.dart';
 import 'package:chat_app/main.dart';
+import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/model/user.dart';
 import 'package:chat_app/pages/post_page.dart';
@@ -50,121 +52,126 @@ class _HomePageState extends State<HomePage> {
                   postAccountIds.add(data['post_account_id']);
                 }
               });
-              return ListView.builder(
-                itemCount: userPostsList.length,
-                itemBuilder: (context, index) {
-                  final post = userPostsList[index];
-                  final user = postedUser
-                      .firstWhere((user) => user.uid == post.postAccountId);
-                  final formattedDate =
-                      DateFormat('EEE MMM dd yyyy HH:mm').format(
-                    post.postTime!.toDate(),
-                  );
-                  return Card(
-                    child: SizedBox(
-                      height: 350,
-                      child: Column(
-                        children: [
-                          ListTile(
-                            leading: const CircleAvatar(
-                              backgroundImage: NetworkImage(
-                                "https://images.unsplash.com/photo-1472396961693-142e6e269027?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8Mjl8fE5hdHVyZXxlbnwwfHx8fDE2NzgwODY0NTY&ixlib=rb-4.0.3&q=80&w=400",
-                              ),
-                            ),
-                            title: Text(
-                              user.name,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            subtitle: Text(
-                              formattedDate,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.normal,
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(24.0),
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                    post.imagePath!,
+              return FutureBuilder<Map<String, Account>?>(
+                  future: AccountFirestore.getPostUserMap(postAccountIds),
+                  builder: (context, snapshot) {
+                    return ListView.builder(
+                      itemCount: userPostsList.length,
+                      itemBuilder: (context, index) {
+                        final post = userPostsList[index];
+                        final user = postedUser.firstWhere(
+                            (user) => user.uid == post.postAccountId);
+                        final formattedDate =
+                            DateFormat('EEE MMM dd yyyy HH:mm').format(
+                          post.postTime!.toDate(),
+                        );
+                        return Card(
+                          child: SizedBox(
+                            height: 350,
+                            child: Column(
+                              children: [
+                                ListTile(
+                                  leading: const CircleAvatar(
+                                    backgroundImage: NetworkImage(
+                                      "https://images.unsplash.com/photo-1472396961693-142e6e269027?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8Mjl8fE5hdHVyZXxlbnwwfHx8fDE2NzgwODY0NTY&ixlib=rb-4.0.3&q=80&w=400",
+                                    ),
                                   ),
-                                  fit: BoxFit.cover,
+                                  title: Text(
+                                    user.name,
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  subtitle: Text(
+                                    formattedDate,
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                Expanded(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(24.0),
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                          post.imagePath!,
+                                        ),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 14.0,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Row(
+                                      children: const [
+                                        Icon(
+                                          Icons.thumb_up,
+                                          color: Colors.grey,
+                                        ),
+                                        SizedBox(
+                                          width: 8.0,
+                                        ),
+                                        Text(
+                                          "Like",
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: const [
+                                        Icon(
+                                          Icons.comment,
+                                          color: Colors.grey,
+                                        ),
+                                        SizedBox(
+                                          width: 8.0,
+                                        ),
+                                        Text(
+                                          "Comments",
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: const [
+                                        Icon(
+                                          Icons.share,
+                                          color: Colors.grey,
+                                        ),
+                                        SizedBox(
+                                          width: 8.0,
+                                        ),
+                                        Text(
+                                          "Share",
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 12.0,
+                                ),
+                              ],
                             ),
                           ),
-                          const SizedBox(
-                            height: 14.0,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Row(
-                                children: const [
-                                  Icon(
-                                    Icons.thumb_up,
-                                    color: Colors.grey,
-                                  ),
-                                  SizedBox(
-                                    width: 8.0,
-                                  ),
-                                  Text(
-                                    "Like",
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                children: const [
-                                  Icon(
-                                    Icons.comment,
-                                    color: Colors.grey,
-                                  ),
-                                  SizedBox(
-                                    width: 8.0,
-                                  ),
-                                  Text(
-                                    "Comments",
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                children: const [
-                                  Icon(
-                                    Icons.share,
-                                    color: Colors.grey,
-                                  ),
-                                  SizedBox(
-                                    width: 8.0,
-                                  ),
-                                  Text(
-                                    "Share",
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 12.0,
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              );
+                        );
+                      },
+                    );
+                  });
             } else {
               return Container();
             }
