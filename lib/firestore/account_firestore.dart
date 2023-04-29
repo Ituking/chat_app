@@ -99,6 +99,11 @@ class AccountFirestore {
             "Successful acquisition of information about the user who submitted the article.");
       }
       return map;
-    } on FirebaseException catch (e) {}
+    } on FirebaseException catch (e) {
+      if (kDebugMode) {
+        print("Failure to obtain information about the submitting user.");
+      }
+      return null;
+    }
   }
 }
