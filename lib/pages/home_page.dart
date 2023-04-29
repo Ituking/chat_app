@@ -44,7 +44,9 @@ class _HomePageState extends State<HomePage> {
           builder: (context, postSnapshot) {
             if (postSnapshot.hasData) {
               List<String> postAccountIds = [];
-              postSnapshot.data!.docs.forEach((doc) {});
+              postSnapshot.data!.docs.forEach((doc) {
+                Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+              });
               return ListView.builder(
                 itemCount: userPostsList.length,
                 itemBuilder: (context, index) {
