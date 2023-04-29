@@ -101,7 +101,7 @@ class AccountFirestore {
       return map;
     } on FirebaseException catch (e) {
       if (kDebugMode) {
-        print("Failure to obtain information about the submitting user.");
+        print("Failure to obtain information about the submitting user. $e");
       }
       return null;
     }
