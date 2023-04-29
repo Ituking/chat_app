@@ -151,57 +151,54 @@ class _ProfilePageState extends State<ProfilePage> {
                   const SizedBox(
                     height: 30.0,
                   ),
-                  Expanded(
-                    child: StreamBuilder<QuerySnapshot>(
-                      stream: AccountFirestore.account
-                          .doc(myAccount.id)
-                          .collection('my_posts')
-                          .orderBy('created_time', descending: true)
-                          .snapshots(),
-                      builder: (context, snapshot) {
-                        if (snapshot.hasData) {
-                          List<String> myPostIds = List.generate(
-                              snapshot.data!.docs.length, (index) {
-                            return snapshot.data!.docs[index].id;
-                          });
-                          return FutureBuilder<List<Post>?>(
-                              future: PostFirestore.getPostsFromIds(myPostIds),
-                              builder: (context, snapshot) {
-                                if (snapshot.hasData) {
-                                  return GridView.builder(
-                                    shrinkWrap: true,
-                                    physics: const ClampingScrollPhysics(),
-                                    itemCount: snapshot.data!.length,
-                                    gridDelegate:
-                                        const SliverGridDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: 3,
-                                    ),
-                                    itemBuilder:
-                                        (BuildContext context, int index) {
-                                      Post post = snapshot.data![index];
-                                      return Container(
-                                        margin: const EdgeInsets.all(2.0),
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: NetworkImage(
-                                                postList[index].imagePath!),
-                                            fit: BoxFit.cover,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
+                  StreamBuilder<QuerySnapshot>(
+                    stream: AccountFirestore.account
+                        .doc(myAccount.id)
+                        .collection('my_posts')
+                        .orderBy('created_time', descending: true)
+                        .snapshots(),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        List<String> myPostIds =
+                            List.generate(snapshot.data!.docs.length, (index) {
+                          return snapshot.data!.docs[index].id;
+                        });
+                        return FutureBuilder<List<Post>?>(
+                            future: PostFirestore.getPostsFromIds(myPostIds),
+                            builder: (context, snapshot) {
+                              if (snapshot.hasData) {
+                                return GridView.builder(
+                                  shrinkWrap: true,
+                                  physics: const ClampingScrollPhysics(),
+                                  itemCount: snapshot.data!.length,
+                                  gridDelegate:
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 3,
+                                  ),
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
+                                    Post post = snapshot.data![index];
+                                    return Container(
+                                      margin: const EdgeInsets.all(2.0),
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: NetworkImage(post.imagePath!),
+                                          fit: BoxFit.cover,
                                         ),
-                                      );
-                                    },
-                                  );
-                                } else {
-                                  return Container();
-                                }
-                              });
-                        } else {
-                          return Container();
-                        }
-                      },
-                    ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                    );
+                                  },
+                                );
+                              } else {
+                                return Container();
+                              }
+                            });
+                      } else {
+                        return Container();
+                      }
+                    },
                   ),
                 ],
               ),
