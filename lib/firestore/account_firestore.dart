@@ -92,6 +92,7 @@ class AccountFirestore {
           selfIntroduction: data['self_introduction'],
           userId: data['user_id'],
         );
+        map[accountId] = postAccount;
       });
     } on FirebaseException catch (e) {}
   }
