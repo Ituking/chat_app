@@ -60,7 +60,9 @@ class _HomePageState extends State<HomePage> {
                       return ListView.builder(
                         itemCount: postSnapshot.data!.docs.length,
                         itemBuilder: (context, index) {
-                          final post = userPostsList[index];
+                          Map<String, dynamic> data =
+                              postSnapshot.data!.docs[index].data()
+                                  as Map<String, dynamic>;
                           final user = postedUser.firstWhere(
                               (user) => user.uid == post.postAccountId);
                           final formattedDate =
