@@ -43,6 +43,7 @@ class _HomePageState extends State<HomePage> {
           stream: PostFirestore.posts.snapshots(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
+              List<String> postAccountIds = [];
               return ListView.builder(
                 itemCount: userPostsList.length,
                 itemBuilder: (context, index) {
