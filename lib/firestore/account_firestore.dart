@@ -79,5 +79,7 @@ class AccountFirestore {
   }
 
   static Future<Map<String, Account>?> getPostUserMap(
-      List<String> accountIds) async {}
+      List<String> accountIds) async {
+    Map<String, Account> map = {};
+  }
 }
