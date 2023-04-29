@@ -84,6 +84,7 @@ class AccountFirestore {
     try {
       await Future.forEach(accountIds, (String element) async {
         var doc = await account.doc(element).get();
+        Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
       });
     } on FirebaseException catch (e) {}
   }
