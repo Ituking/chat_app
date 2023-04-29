@@ -63,11 +63,12 @@ class _HomePageState extends State<HomePage> {
                           Map<String, dynamic> data =
                               postSnapshot.data!.docs[index].data()
                                   as Map<String, dynamic>;
-                          final user = postedUser.firstWhere(
-                              (user) => user.uid == post.postAccountId);
-                          final formattedDate =
-                              DateFormat('EEE MMM dd yyyy HH:mm').format(
-                            post.postTime!.toDate(),
+                          Post post = Post(
+                            id: postSnapshot.data!.docs[index].id,
+                            imagePath: data['image_path'],
+                            content: data['content'],
+                            postAccountId: data['post_account_id'],
+                            postTime: data['post_time'],
                           );
                           return Card(
                             child: SizedBox(
