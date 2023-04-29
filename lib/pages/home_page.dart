@@ -41,8 +41,8 @@ class _HomePageState extends State<HomePage> {
       appBar: WidgetUtils.createAppBar("Home"),
       body: StreamBuilder<QuerySnapshot>(
           stream: PostFirestore.posts.snapshots(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
+          builder: (context, postSnapshot) {
+            if (postSnapshot.hasData) {
               List<String> postAccountIds = [];
               return ListView.builder(
                 itemCount: userPostsList.length,
