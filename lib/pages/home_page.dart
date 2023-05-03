@@ -7,6 +7,7 @@ import 'package:chat_app/model/user.dart';
 import 'package:chat_app/pages/post_page.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -70,6 +71,12 @@ class _HomePageState extends State<HomePage> {
                             postAccountId: data['post_account_id'],
                             postTime: data['post_time'],
                           );
+                          if (kDebugMode) {
+                            print(post.imagePath);
+                          }
+                          if (kDebugMode) {
+                            print(post.postTime);
+                          }
                           Account postAccount =
                               userSnapshot.data![post.postAccountId]!;
                           return Card(
@@ -90,9 +97,11 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                     ),
                                     subtitle: Text(
-                                      (DateFormat('M/d/yy').format(
-                                        post.postTime!.toDate(),
-                                      )),
+                                      post.postTime == null
+                                          ? ""
+                                          : DateFormat('M/d/yy').format(
+                                              post.postTime!.toDate(),
+                                            ),
                                       style: const TextStyle(
                                         fontWeight: FontWeight.normal,
                                       ),
