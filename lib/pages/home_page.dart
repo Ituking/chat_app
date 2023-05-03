@@ -3,7 +3,6 @@ import 'package:chat_app/firestore/post_firestore.dart';
 import 'package:chat_app/main.dart';
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
-import 'package:chat_app/model/user.dart';
 import 'package:chat_app/pages/post_page.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -19,25 +18,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<User> postedUser = [
-    User(
-      name: "Emma",
-      uid: "0001",
-    ),
-    User(
-      name: "John",
-      uid: "0002",
-    ),
-    User(
-      name: "Mark",
-      uid: "0003",
-    ),
-    User(
-      name: "Stefan",
-      uid: "0004",
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
