@@ -4,6 +4,7 @@ import 'package:chat_app/main.dart';
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/post_page.dart';
+import 'package:chat_app/utils/like_button.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
@@ -146,10 +147,7 @@ class _HomePageState extends State<HomePage> {
                                     children: [
                                       Row(
                                         children: const [
-                                          Icon(
-                                            Icons.thumb_up,
-                                            color: Colors.grey,
-                                          ),
+                                          LikeButton(),
                                           SizedBox(
                                             width: 8.0,
                                           ),
