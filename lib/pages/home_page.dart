@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                                     subtitle: Text(
                                       post.postTime == null
                                           ? ""
-                                          : DateFormat('M/d/yy').format(
+                                          : DateFormat('yyyy-MM-dd-Hm').format(
                                               post.postTime!.toDate(),
                                             ),
                                       style: const TextStyle(
