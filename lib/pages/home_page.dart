@@ -110,10 +110,17 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                     ),
                                   ),
-                                  Text(
-                                    post.content,
-                                    style: const TextStyle(
-                                      fontSize: 16.0,
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      alignment: Alignment.centerLeft,
+                                      width: double.infinity,
+                                      child: Text(
+                                        post.content,
+                                        style: const TextStyle(
+                                          fontSize: 16.0,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                   Expanded(
