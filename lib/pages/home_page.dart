@@ -108,18 +108,38 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   Expanded(
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(24.0),
-                                        image: DecorationImage(
-                                          image: NetworkImage(
-                                            post.imagePath!,
+                                    child: post.imagePath != null
+                                        ? Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(24.0),
+                                              image: DecorationImage(
+                                                image: NetworkImage(
+                                                    post.imagePath!),
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                          )
+                                        : Container(
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.3,
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.9,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(24.0),
+                                              color: Colors.grey,
+                                            ),
+                                            child: const Icon(
+                                              Icons.image,
+                                              color: Colors.white,
+                                              size: 64.0,
+                                            ),
                                           ),
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ),
                                   ),
                                   const SizedBox(
                                     height: 14.0,
