@@ -75,6 +75,9 @@ class _HomePageState extends State<HomePage> {
                             print(post.imagePath);
                           }
                           if (kDebugMode) {
+                            print(post.content);
+                          }
+                          if (kDebugMode) {
                             print(post.postTime);
                           }
                           Account postAccount =
@@ -105,6 +108,12 @@ class _HomePageState extends State<HomePage> {
                                       style: const TextStyle(
                                         fontWeight: FontWeight.normal,
                                       ),
+                                    ),
+                                  ),
+                                  Text(
+                                    post.content,
+                                    style: const TextStyle(
+                                      fontSize: 16.0,
                                     ),
                                   ),
                                   Expanded(
