@@ -53,7 +53,8 @@ class _PostPageState extends State<PostPage> {
                   imagePath: '',
                   postTime: Timestamp.now(),
                 );
-                await FunctionUtils.uploadImage(uid, image!);
+                final downloadUrl =
+                    await FunctionUtils.uploadImage(uid, image!);
                 var result = await PostFirestore.addPost(newPost);
                 if (result == true) {
                   if (!mounted) return;
