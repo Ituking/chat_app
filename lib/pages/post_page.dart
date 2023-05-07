@@ -17,6 +17,7 @@ class PostPage extends StatefulWidget {
 class _PostPageState extends State<PostPage> {
   TextEditingController contentController = TextEditingController();
   File? image;
+  String uid = Authentication.myAccount!.id;
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +53,7 @@ class _PostPageState extends State<PostPage> {
                   imagePath: '',
                   postTime: Timestamp.now(),
                 );
+                await FunctionUtils.uploadImage(uid, image!);
                 var result = await PostFirestore.addPost(newPost);
                 if (result == true) {
                   if (!mounted) return;
@@ -98,10 +100,6 @@ class _PostPageState extends State<PostPage> {
                       child: Image.file(
                         image!,
                         fit: BoxFit.cover,
-                        errorBuilder: (BuildContext context, Object exception,
-                            StackTrace? stackTrace) {
-                          return const Text('Failed to load image.');
-                        },
                       ),
                     ),
                   ),
