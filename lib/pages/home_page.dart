@@ -91,19 +91,6 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Container(
-                                      alignment: Alignment.centerLeft,
-                                      width: double.infinity,
-                                      child: Text(
-                                        post.content,
-                                        style: const TextStyle(
-                                          fontSize: 16.0,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
                                   Expanded(
                                     child: post.imagePath != null
                                         ? Container(
@@ -137,6 +124,19 @@ class _HomePageState extends State<HomePage> {
                                               size: 64.0,
                                             ),
                                           ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      alignment: Alignment.centerLeft,
+                                      width: double.infinity,
+                                      child: Text(
+                                        post.content,
+                                        style: const TextStyle(
+                                          fontSize: 16.0,
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                   const SizedBox(
                                     height: 14.0,
