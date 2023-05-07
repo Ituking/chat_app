@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class ChatInputField extends StatelessWidget {
   final TextEditingController? controller;
-  const ChatInputField({super.key, this.controller});
+  final Function(String)? onSend;
+  const ChatInputField({super.key, this.controller, this.onSend});
 
   @override
   Widget build(BuildContext context) {
