@@ -98,6 +98,10 @@ class _PostPageState extends State<PostPage> {
                       child: Image.file(
                         image!,
                         fit: BoxFit.cover,
+                        errorBuilder: (BuildContext context, Object exception,
+                            StackTrace? stackTrace) {
+                          return const Text('Failed to load image.');
+                        },
                       ),
                     ),
                   ),
