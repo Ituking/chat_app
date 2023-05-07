@@ -46,15 +46,15 @@ class _PostPageState extends State<PostPage> {
           OutlinedButton(
             onPressed: () async {
               if (contentController.text.isNotEmpty && image != null) {
+                final downloadUrl =
+                    await FunctionUtils.uploadImage(uid, image!);
                 Post newPost = Post(
                   content: contentController.text,
                   postAccountId: Authentication.myAccount!.id,
                   id: '',
-                  imagePath: '',
+                  imagePath: downloadUrl,
                   postTime: Timestamp.now(),
                 );
-                final downloadUrl =
-                    await FunctionUtils.uploadImage(uid, image!);
                 var result = await PostFirestore.addPost(newPost);
                 if (result == true) {
                   if (!mounted) return;
