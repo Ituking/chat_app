@@ -63,9 +63,10 @@ class PostFirestore {
   }
 
   static Future<dynamic> deletePosts(String accountId) async {
-    final CollectionReference _userPosts = _firestoreInstance
+    final CollectionReference userPosts = _firestoreInstance
         .collection('user')
         .doc(accountId)
         .collection('my_posts');
+    var snapshot = await userPosts.get();
   }
 }
