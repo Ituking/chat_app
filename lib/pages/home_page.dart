@@ -5,7 +5,6 @@ import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/post_page.dart';
 import 'package:chat_app/utils/like_button.dart';
-import 'package:chat_app/utils/widget_utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +21,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: WidgetUtils.createAppBar("Home"),
       body: StreamBuilder<QuerySnapshot>(
           stream: PostFirestore.posts.snapshots(),
           builder: (context, postSnapshot) {
