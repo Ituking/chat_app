@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:chat_app/firestore/account_firestore.dart';
 import 'package:chat_app/model/account.dart';
+import 'package:chat_app/pages/login_page.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:chat_app/utils/function_utils.dart';
 import 'package:chat_app/utils/widget_utils.dart';
@@ -174,6 +175,12 @@ class _EditAccountPageState extends State<EditAccountPage> {
                 while (Navigator.canPop(context)) {
                   Navigator.pop(context);
                 }
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoginPage(),
+                  ),
+                );
               },
               child: const Text("Logout"),
             ),
