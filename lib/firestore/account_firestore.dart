@@ -1,3 +1,4 @@
+import 'package:chat_app/firestore/post_firestore.dart';
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -109,5 +110,6 @@ class AccountFirestore {
 
   static Future<dynamic> deleteUser(String accountId) async {
     account.doc(accountId).delete();
+    PostFirestore.deletePosts(accountId);
   }
 }
