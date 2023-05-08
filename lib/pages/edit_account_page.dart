@@ -165,6 +165,13 @@ class _EditAccountPageState extends State<EditAccountPage> {
               },
               child: const Text("Update"),
             ),
+            const SizedBox(
+              height: 50,
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text("Logout"),
+            ),
           ],
         ),
       ),
