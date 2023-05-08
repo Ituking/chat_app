@@ -32,64 +32,72 @@ class _TopPageState extends State<TopPage> {
                     } else {
                       if (futureSnapshot.hasData) {
                         List<TalkRoom> talkRooms = futureSnapshot.data!;
-                        return ListView.builder(
-                            itemCount: talkRooms.length,
-                            itemBuilder: (context, index) {
-                              return InkWell(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => TalkRoomPage(
-                                        talkRoom: talkRooms[index],
-                                      ),
-                                    ),
-                                  );
-                                },
-                                child: SizedBox(
-                                  height: 70,
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 8.0),
-                                        child: CircleAvatar(
-                                          radius: 25,
-                                          backgroundImage: talkRooms[index]
-                                                      .talkUser
-                                                      .imagePath ==
-                                                  null
-                                              ? null
-                                              : NetworkImage(talkRooms[index]
-                                                  .talkUser
-                                                  .imagePath!),
+                        return SizedBox(
+                          height: MediaQuery.of(context).size.height,
+                          child: ListView.builder(
+                              itemCount: talkRooms.length,
+                              itemBuilder: (context, index) {
+                                return InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => TalkRoomPage(
+                                          talkRoom: talkRooms[index],
                                         ),
                                       ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            talkRooms[index].talkUser.name,
-                                            style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                            ),
+                                    );
+                                  },
+                                  child: SizedBox(
+                                    height: 70,
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 8.0),
+                                          child: CircleAvatar(
+                                            radius: 25,
+                                            backgroundImage: talkRooms[index]
+                                                        .talkUser
+                                                        .imagePath ==
+                                                    null
+                                                ? null
+                                                : NetworkImage(talkRooms[index]
+                                                    .talkUser
+                                                    .imagePath!),
                                           ),
-                                          Text(
-                                            talkRooms[index].lastMessage ?? "",
-                                            style: const TextStyle(
-                                              color: Colors.grey,
-                                            ),
+                                        ),
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                talkRooms[index].talkUser.name,
+                                                style: const TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                              Text(
+                                                talkRooms[index].lastMessage ??
+                                                    "",
+                                                style: const TextStyle(
+                                                  color: Colors.grey,
+                                                ),
+                                                maxLines: 1,
+                                                overflow: TextOverflow.ellipsis,
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
-                                    ],
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              );
-                            });
+                                );
+                              }),
+                        );
                       } else {
                         return const Center(
                           child: Text("FAILED"),
