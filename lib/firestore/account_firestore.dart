@@ -106,4 +106,8 @@ class AccountFirestore {
       return null;
     }
   }
+
+  static Future<dynamic> deleteUser(String accountId) async {
+    account.doc(accountId).delete();
+  }
 }
