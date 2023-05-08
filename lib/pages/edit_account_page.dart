@@ -169,7 +169,9 @@ class _EditAccountPageState extends State<EditAccountPage> {
               height: 50,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Authentication.signOut();
+              },
               child: const Text("Logout"),
             ),
           ],
