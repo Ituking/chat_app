@@ -171,6 +171,9 @@ class _EditAccountPageState extends State<EditAccountPage> {
             ElevatedButton(
               onPressed: () {
                 Authentication.signOut();
+                while (Navigator.canPop(context)) {
+                  Navigator.pop(context);
+                }
               },
               child: const Text("Logout"),
             ),
