@@ -68,5 +68,9 @@ class PostFirestore {
         .doc(accountId)
         .collection('my_posts');
     var snapshot = await userPosts.get();
+    for (var doc in snapshot.docs) {
+      await posts.doc(doc.id).delete();
+      userPosts.doc(doc.id).delete();
+    }
   }
 }
