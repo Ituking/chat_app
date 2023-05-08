@@ -184,6 +184,30 @@ class _EditAccountPageState extends State<EditAccountPage> {
               },
               child: const Text("Logout"),
             ),
+            const SizedBox(
+              height: 50,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+              onPressed: () {
+                Authentication.signOut();
+                while (Navigator.canPop(context)) {
+                  Navigator.pop(context);
+                }
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoginPage(),
+                  ),
+                );
+              },
+              child: const Text(
+                "Delete Account",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
           ],
         ),
       ),
