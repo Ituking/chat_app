@@ -190,6 +190,8 @@ class _EditAccountPageState extends State<EditAccountPage> {
             ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
               onPressed: () {
+                AccountFirestore.deleteUser(myAccount.id);
+                Authentication.deleteAuth();
                 Authentication.signOut();
                 while (Navigator.canPop(context)) {
                   Navigator.pop(context);
