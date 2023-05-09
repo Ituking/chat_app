@@ -1,6 +1,7 @@
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/comment.dart';
 import 'package:chat_app/utils/widget_utils.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -27,13 +28,13 @@ class _PostCommentPageState extends State<PostCommentPage> {
       id: "1",
       content: "Beautiful photo! You're such a talented photographer.",
       commentAccountId: "1",
-      commentTime: DateTime.now(),
+      commentTime: Timestamp.now(),
     ),
     Comment(
       id: "2",
       content: "This place looks amazing! I need to add it to my travel list.",
       commentAccountId: "2",
-      commentTime: DateTime.now(),
+      commentTime: Timestamp.now(),
     ),
   ];
 
@@ -78,8 +79,9 @@ class _PostCommentPageState extends State<PostCommentPage> {
                             ],
                           ),
                           Text(
-                            DateFormat('yyyy-MM-dd-Hm')
-                                .format(commentList[index].commentTime!),
+                            DateFormat('yyyy-MM-dd-Hm').format(
+                              commentList[index].commentTime!.toDate(),
+                            ),
                           ),
                         ],
                       ),
