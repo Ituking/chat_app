@@ -56,7 +56,7 @@ class _PostCommentPageState extends State<PostCommentPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Column(
+                        Row(
                           children: [
                             Text(
                               commentAccount.name,
