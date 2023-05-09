@@ -12,6 +12,11 @@ class CommentFirestore {
           .collection('user')
           .doc(newComment.commentAccountId)
           .collection('my_comments');
+      var result = await comments.add({
+        'content': newComment.content,
+        'comment_account_id': newComment.commentAccountId,
+        'comment_time': Timestamp.now(),
+      });
     } on FirebaseException catch (e) {}
   }
 }
