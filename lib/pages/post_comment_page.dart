@@ -49,6 +49,15 @@ class _PostCommentPageState extends State<PostCommentPage> {
                 radius: 20,
                 foregroundImage: NetworkImage(commentAccount.imagePath),
               ),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Text(commentAccount.name),
+                    ],
+                  ),
+                ],
+              ),
             ],
           );
         },
