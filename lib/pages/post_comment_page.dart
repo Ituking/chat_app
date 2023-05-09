@@ -10,8 +10,11 @@ class PostCommentPage extends StatefulWidget {
 class _PostCommentPageState extends State<PostCommentPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+      ),
+      body: const Center(
         child: Text("Comment"),
       ),
     );
