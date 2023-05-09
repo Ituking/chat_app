@@ -40,8 +40,9 @@ class _PostCommentPageState extends State<PostCommentPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: WidgetUtils.createAppBar("Comment"),
-      body: const Center(
-        child: Text("Comment"),
+      body: ListView.builder(
+        itemCount: commentList.length,
+        itemBuilder: (context, index) {},
       ),
     );
   }
