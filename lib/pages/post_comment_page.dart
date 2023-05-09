@@ -1,3 +1,4 @@
+import 'package:chat_app/model/comment.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,8 @@ class PostCommentPage extends StatefulWidget {
 }
 
 class _PostCommentPageState extends State<PostCommentPage> {
+  List<Comment> commentList = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
