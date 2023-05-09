@@ -10,7 +10,20 @@ class PostCommentPage extends StatefulWidget {
 }
 
 class _PostCommentPageState extends State<PostCommentPage> {
-  List<Comment> commentList = [];
+  List<Comment> commentList = [
+    Comment(
+      id: "1",
+      content: "Beautiful photo! You're such a talented photographer.",
+      commentAccountId: "1",
+      commentTime: DateTime.now(),
+    ),
+    Comment(
+      id: "2",
+      content: "This place looks amazing! I need to add it to my travel list.",
+      commentAccountId: "2",
+      commentTime: DateTime.now(),
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
