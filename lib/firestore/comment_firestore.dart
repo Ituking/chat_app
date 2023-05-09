@@ -6,5 +6,7 @@ class CommentFirestore {
   static final CollectionReference comments =
       _firestoreInstance.collection('comments');
 
-  static Future<dynamic> addComment(Comment newComment) async {}
+  static Future<dynamic> addComment(Comment newComment) async {
+    try {} on FirebaseException catch (e) {}
+  }
 }
