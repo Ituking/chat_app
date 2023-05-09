@@ -1,3 +1,4 @@
+import 'package:chat_app/model/comment.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CommentFirestore {
@@ -5,5 +6,5 @@ class CommentFirestore {
   static final CollectionReference comments =
       _firestoreInstance.collection('comments');
 
-  static Future<dynamic> addComment() async {}
+  static Future<dynamic> addComment(Comment newComment) async {}
 }
