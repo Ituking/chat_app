@@ -54,6 +54,7 @@ class _PostCommentPageState extends State<PostCommentPage> {
                   Row(
                     children: [
                       Text(commentAccount.name),
+                      Text(commentAccount.userId),
                     ],
                   ),
                 ],
