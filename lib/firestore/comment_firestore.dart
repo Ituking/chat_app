@@ -28,7 +28,7 @@ class CommentFirestore {
       return true;
     } on FirebaseException catch (e) {
       if (kDebugMode) {
-        print("Comment Failed.");
+        print("Comment Failed.$e");
       }
       return false;
     }
