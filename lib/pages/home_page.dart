@@ -125,7 +125,10 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0,
+                                      vertical: 25.0,
+                                    ),
                                     child: Container(
                                       alignment: Alignment.centerLeft,
                                       width: double.infinity,
