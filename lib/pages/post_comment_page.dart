@@ -55,7 +55,12 @@ class _PostCommentPageState extends State<PostCommentPage> {
                   Row(
                     children: [
                       Text(commentAccount.name),
-                      Text(commentAccount.userId),
+                      Text(
+                        '@${commentAccount.userId}',
+                        style: const TextStyle(
+                          color: Colors.grey,
+                        ),
+                      ),
                       Text(
                         DateFormat('yyyy-MM-dd-Hm')
                             .format(commentList[index].commentTime!),
