@@ -42,7 +42,16 @@ class _PostCommentPageState extends State<PostCommentPage> {
       appBar: WidgetUtils.createAppBar("Comment"),
       body: ListView.builder(
         itemCount: commentList.length,
-        itemBuilder: (context, index) {},
+        itemBuilder: (context, index) {
+          return Row(
+            children: [
+              CircleAvatar(
+                radius: 20,
+                foregroundImage: NetworkImage(commentAccount.imagePath),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
