@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                               userSnapshot.data![post.postAccountId]!;
                           return Card(
                             child: SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.8,
+                              height: MediaQuery.of(context).size.height * 0.75,
                               child: Column(
                                 children: [
                                   ListTile(
