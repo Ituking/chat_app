@@ -1,10 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-
 class Comment {
   String id;
   String content;
   String commentAccountId;
-  Timestamp? commentTime;
+  DateTime? commentTime;
 
   Comment({
     required this.id,
