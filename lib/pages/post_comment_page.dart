@@ -2,6 +2,7 @@ import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/comment.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class PostCommentPage extends StatefulWidget {
   const PostCommentPage({super.key});
@@ -55,6 +56,10 @@ class _PostCommentPageState extends State<PostCommentPage> {
                     children: [
                       Text(commentAccount.name),
                       Text(commentAccount.userId),
+                      Text(
+                        DateFormat('yyyy-MM-dd-Hm')
+                            .format(commentList[index].commentTime!),
+                      ),
                     ],
                   ),
                 ],
