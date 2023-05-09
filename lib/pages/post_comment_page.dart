@@ -48,9 +48,12 @@ class _PostCommentPageState extends State<PostCommentPage> {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Row(
               children: [
-                CircleAvatar(
-                  radius: 20,
-                  foregroundImage: NetworkImage(commentAccount.imagePath),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: CircleAvatar(
+                    radius: 20,
+                    foregroundImage: NetworkImage(commentAccount.imagePath),
+                  ),
                 ),
                 Expanded(
                   child: Column(
