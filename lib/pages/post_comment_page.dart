@@ -44,45 +44,48 @@ class _PostCommentPageState extends State<PostCommentPage> {
       body: ListView.builder(
         itemCount: commentList.length,
         itemBuilder: (context, index) {
-          return Row(
-            children: [
-              CircleAvatar(
-                radius: 20,
-                foregroundImage: NetworkImage(commentAccount.imagePath),
-              ),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              commentAccount.name,
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              '@${commentAccount.userId}',
-                              style: const TextStyle(
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Text(
-                          DateFormat('yyyy-MM-dd-Hm')
-                              .format(commentList[index].commentTime!),
-                        ),
-                      ],
-                    ),
-                    Text(commentList[index].content),
-                  ],
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            child: Row(
+              children: [
+                CircleAvatar(
+                  radius: 20,
+                  foregroundImage: NetworkImage(commentAccount.imagePath),
                 ),
-              ),
-            ],
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                commentAccount.name,
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                '@${commentAccount.userId}',
+                                style: const TextStyle(
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Text(
+                            DateFormat('yyyy-MM-dd-Hm')
+                                .format(commentList[index].commentTime!),
+                          ),
+                        ],
+                      ),
+                      Text(commentList[index].content),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           );
         },
       ),
