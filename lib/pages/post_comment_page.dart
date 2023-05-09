@@ -50,27 +50,35 @@ class _PostCommentPageState extends State<PostCommentPage> {
                 radius: 20,
                 foregroundImage: NetworkImage(commentAccount.imagePath),
               ),
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        commentAccount.name,
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        '@${commentAccount.userId}',
-                        style: const TextStyle(
-                          color: Colors.grey,
+              Expanded(
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            Text(
+                              commentAccount.name,
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              '@${commentAccount.userId}',
+                              style: const TextStyle(
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                      Text(
-                        DateFormat('yyyy-MM-dd-Hm')
-                            .format(commentList[index].commentTime!),
-                      ),
-                    ],
-                  ),
-                ],
+                        Text(
+                          DateFormat('yyyy-MM-dd-Hm')
+                              .format(commentList[index].commentTime!),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ],
           );
