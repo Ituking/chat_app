@@ -54,7 +54,10 @@ class _PostCommentPageState extends State<PostCommentPage> {
                 children: [
                   Row(
                     children: [
-                      Text(commentAccount.name),
+                      Text(
+                        commentAccount.name,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
                       Text(
                         '@${commentAccount.userId}',
                         style: const TextStyle(
