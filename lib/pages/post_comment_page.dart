@@ -45,11 +45,11 @@ class _PostCommentPageState extends State<PostCommentPage> {
         itemCount: commentList.length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             child: Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   child: CircleAvatar(
                     radius: 20,
                     foregroundImage: NetworkImage(commentAccount.imagePath),
