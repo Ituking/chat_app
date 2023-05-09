@@ -3,6 +3,7 @@ import 'package:chat_app/firestore/post_firestore.dart';
 import 'package:chat_app/main.dart';
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
+import 'package:chat_app/pages/post_comment_page.dart';
 import 'package:chat_app/pages/post_page.dart';
 import 'package:chat_app/utils/like_button.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -157,22 +158,33 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                         ],
                                       ),
-                                      Row(
-                                        children: const [
-                                          Icon(
-                                            Icons.comment,
-                                            color: Colors.grey,
-                                          ),
-                                          SizedBox(
-                                            width: 8.0,
-                                          ),
-                                          Text(
-                                            "Comments",
-                                            style: TextStyle(
+                                      GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const PostCommentPage(),
+                                            ),
+                                          );
+                                        },
+                                        child: Row(
+                                          children: const [
+                                            Icon(
+                                              Icons.comment,
                                               color: Colors.grey,
                                             ),
-                                          ),
-                                        ],
+                                            SizedBox(
+                                              width: 8.0,
+                                            ),
+                                            Text(
+                                              "Comments",
+                                              style: TextStyle(
+                                                color: Colors.grey,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                       Row(
                                         children: const [
