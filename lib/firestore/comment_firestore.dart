@@ -26,6 +26,11 @@ class CommentFirestore {
         print("Comment Completed.");
       }
       return true;
-    } on FirebaseException catch (e) {}
+    } on FirebaseException catch (e) {
+      if (kDebugMode) {
+        print("Comment Failed.");
+      }
+      return false;
+    }
   }
 }
