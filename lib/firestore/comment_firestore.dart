@@ -17,6 +17,10 @@ class CommentFirestore {
         'comment_account_id': newComment.commentAccountId,
         'comment_time': Timestamp.now(),
       });
+      userComments.doc(result.id).set({
+        'comment_id': result.id,
+        'comment_time': Timestamp.now(),
+      });
     } on FirebaseException catch (e) {}
   }
 }
