@@ -38,6 +38,8 @@ class _PostCommentPageState extends State<PostCommentPage> {
     ),
   ];
 
+  TextEditingController contentController = TextEditingController();
+
   late final bottomSpace = MediaQuery.of(context).viewInsets.bottom;
   double getScreenHeight() => MediaQuery.of(context).size.height;
 
@@ -115,14 +117,15 @@ class _PostCommentPageState extends State<PostCommentPage> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Row(
-                  children: const [
+                  children: [
                     Flexible(
                       child: TextField(
+                        controller: contentController,
                         autofocus: true,
                         cursorColor: Colors.black,
                       ),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.only(left: 8.0),
                       child: Icon(Icons.send),
                     ),
