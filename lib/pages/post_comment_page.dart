@@ -38,61 +38,90 @@ class _PostCommentPageState extends State<PostCommentPage> {
     ),
   ];
 
+  late final bottomSpace = MediaQuery.of(context).viewInsets.bottom;
+  double getScreenHeight() => MediaQuery.of(context).size.height;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: WidgetUtils.createAppBar("Comment"),
-      body: ListView.builder(
-        itemCount: commentList.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                  child: CircleAvatar(
-                    radius: 20,
-                    foregroundImage: NetworkImage(commentAccount.imagePath),
-                  ),
-                ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
+      body: SingleChildScrollView(
+        reverse: true,
+        child: Stack(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height - 100,
+              child: ListView.builder(
+                itemCount: commentList.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 15, vertical: 15),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                          child: CircleAvatar(
+                            radius: 20,
+                            foregroundImage:
+                                NetworkImage(commentAccount.imagePath),
+                          ),
+                        ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                commentAccount.name,
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text(
+                                        commentAccount.name,
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        '@${commentAccount.userId}',
+                                        style: const TextStyle(
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Text(
+                                    DateFormat('yyyy-MM-dd-Hm').format(
+                                      commentList[index].commentTime!.toDate(),
+                                    ),
+                                  ),
+                                ],
                               ),
-                              Text(
-                                '@${commentAccount.userId}',
-                                style: const TextStyle(
-                                  color: Colors.grey,
-                                ),
-                              ),
+                              Text(commentList[index].content),
                             ],
                           ),
-                          Text(
-                            DateFormat('yyyy-MM-dd-Hm').format(
-                              commentList[index].commentTime!.toDate(),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text(commentList[index].content),
-                    ],
-                  ),
-                ),
-              ],
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
             ),
-          );
-        },
+            Positioned(
+              bottom: getScreenHeight() * 0.4,
+              left: 0,
+              right: 0,
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: TextField(
+                  autofocus: true,
+                  cursorColor: Colors.black,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
