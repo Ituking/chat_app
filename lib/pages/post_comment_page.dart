@@ -1,5 +1,7 @@
+import 'package:chat_app/firestore/comment_firestore.dart';
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/comment.dart';
+import 'package:chat_app/utils/authentication.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -129,7 +131,22 @@ class _PostCommentPageState extends State<PostCommentPage> {
                       padding: const EdgeInsets.only(left: 8.0),
                       child: IconButton(
                         icon: const Icon(Icons.send),
-                        onPressed: () {},
+                        onPressed: () async {
+                          if (contentController.text.isNotEmpty) {
+                            Comment newComment = Comment(
+                              content: contentController.text,
+                              commentAccountId: Authentication.myAccount!.id,
+                              id: '',
+                              commentTime: null,
+                            );
+                            var result =
+                                await CommentFirestore.addComment(newComment);
+                            if (result == true) {
+                              if (!mounted) return;
+                              Navigator.pop(context);
+                            }
+                          }
+                        },
                       ),
                     ),
                   ],
