@@ -18,10 +18,28 @@ class _PostPageState extends State<PostPage> {
   TextEditingController contentController = TextEditingController();
   File? image;
   String uid = Authentication.myAccount!.id;
+  FocusNode focusNode = FocusNode();
+
+  @override
+  void initState() {
+    super.initState();
+    focusNode.addListener(() {
+      if (!focusNode.hasFocus) {
+        focusNode.requestFocus();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    focusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.transparent,
       appBar: AppBar(
         shape: const RoundedRectangleBorder(
@@ -75,47 +93,48 @@ class _PostPageState extends State<PostPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Expanded(
-              child: TextField(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              TextField(
                 controller: contentController,
                 maxLines: null,
+                focusNode: focusNode,
                 decoration: const InputDecoration(
                   hintText: "What's on your mind?",
                   border: InputBorder.none,
                 ),
                 cursorColor: Colors.black,
               ),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            image == null
-                ? const SizedBox()
-                : ClipRRect(
-                    borderRadius: BorderRadius.circular(24.0),
-                    child: SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.3,
-                      width: MediaQuery.of(context).size.width * 0.9,
-                      child: Image.file(
-                        image!,
-                        fit: BoxFit.cover,
+              const SizedBox(
+                height: 30,
+              ),
+              image == null
+                  ? const SizedBox()
+                  : ClipRRect(
+                      borderRadius: BorderRadius.circular(24.0),
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.3,
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        child: Image.file(
+                          image!,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
-                  ),
-            const Divider(height: 1),
-            ListTile(
-              leading: const Icon(Icons.photo_library),
-              title: const Text("Add a photo"),
-              onTap: () async {
-                var result = await FunctionUtils.getImageFromGallery();
-                setState(() {
-                  image = File(result.path);
-                });
-              },
-            ),
-          ],
+              const Divider(height: 1),
+              ListTile(
+                leading: const Icon(Icons.photo_library),
+                title: const Text("Add a photo"),
+                onTap: () async {
+                  var result = await FunctionUtils.getImageFromGallery();
+                  setState(() {
+                    image = File(result.path);
+                  });
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
