@@ -125,9 +125,12 @@ class _PostCommentPageState extends State<PostCommentPage> {
                         cursorColor: Colors.black,
                       ),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 8.0),
-                      child: Icon(Icons.send),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: IconButton(
+                        icon: const Icon(Icons.send),
+                        onPressed: () {},
+                      ),
                     ),
                   ],
                 ),
