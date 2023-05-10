@@ -112,11 +112,21 @@ class _PostCommentPageState extends State<PostCommentPage> {
               bottom: getScreenHeight() * 0.4,
               left: 0,
               right: 0,
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15),
-                child: TextField(
-                  autofocus: true,
-                  cursorColor: Colors.black,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Row(
+                  children: const [
+                    Flexible(
+                      child: TextField(
+                        autofocus: true,
+                        cursorColor: Colors.black,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 8.0),
+                      child: Icon(Icons.send),
+                    ),
+                  ],
                 ),
               ),
             ),
