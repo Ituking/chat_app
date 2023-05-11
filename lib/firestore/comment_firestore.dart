@@ -55,6 +55,11 @@ class CommentFirestore {
         }
         return map;
       });
-    } on FirebaseException catch (e) {}
+    } on FirebaseException catch (e) {
+      if (kDebugMode) {
+        print("Failure to obtain comment user information. $e");
+      }
+      return null;
+    }
   }
 }
