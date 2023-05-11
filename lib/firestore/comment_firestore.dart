@@ -49,6 +49,11 @@ class CommentFirestore {
           selfIntroduction: data['self_introduction'],
           userId: data['user_id'],
         );
+        map[accountId] = commentAccount;
+        if (kDebugMode) {
+          print("Completed acquisition of comment user information.");
+        }
+        return map;
       });
     } on FirebaseException catch (e) {}
   }
