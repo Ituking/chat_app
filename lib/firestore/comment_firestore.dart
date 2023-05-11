@@ -47,6 +47,10 @@ class CommentFirestore {
           commentTime: data["comment_time"],
         );
         commentList.add(comment);
+        if (kDebugMode) {
+          print("Comment acquisition completed.");
+        }
+        return commentList;
       });
     } on FirebaseException catch (e) {}
   }
