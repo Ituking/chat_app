@@ -34,5 +34,7 @@ class CommentFirestore {
     }
   }
 
-  static Future<List<Comment>> getCommentsFromIds(List<String> Ids) async {}
+  static Future<List<Comment>> getCommentsFromIds(List<String> Ids) async {
+    List<Post> postList = [];
+  }
 }
