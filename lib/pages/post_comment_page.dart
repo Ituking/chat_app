@@ -54,6 +54,9 @@ class _PostCommentPageState extends State<PostCommentPage> {
                               return ListView.builder(
                                 itemCount: commentSnapshot.data!.docs.length,
                                 itemBuilder: (context, index) {
+                                  Map<String, dynamic> data =
+                                      commentSnapshot.data!.docs[index].data()
+                                          as Map<String, dynamic>;
                                   return Padding(
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 15, vertical: 15),
