@@ -33,8 +33,8 @@ class _PostCommentPageState extends State<PostCommentPage> {
               height: MediaQuery.of(context).size.height - 100,
               child: StreamBuilder<QuerySnapshot>(
                   stream: CommentFirestore.comments.snapshots(),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
+                  builder: (context, commentSnapshot) {
+                    if (commentSnapshot.hasData) {
                       List<String> commentAccountIds = [];
                       return ListView.builder(
                         itemCount: commentList.length,
