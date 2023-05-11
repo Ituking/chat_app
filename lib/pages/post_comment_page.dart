@@ -35,6 +35,7 @@ class _PostCommentPageState extends State<PostCommentPage> {
                   stream: CommentFirestore.comments.snapshots(),
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
+                      List<String> commentAccountIds = [];
                       return ListView.builder(
                         itemCount: commentList.length,
                         itemBuilder: (context, index) {
