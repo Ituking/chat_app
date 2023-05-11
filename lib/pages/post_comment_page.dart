@@ -52,7 +52,7 @@ class _PostCommentPageState extends State<PostCommentPage> {
                                 userSnapshot.connectionState ==
                                     ConnectionState.done) {
                               return ListView.builder(
-                                itemCount: commentList.length,
+                                itemCount: commentSnapshot.data!.docs.length,
                                 itemBuilder: (context, index) {
                                   return Padding(
                                     padding: const EdgeInsets.symmetric(
