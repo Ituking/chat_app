@@ -40,6 +40,12 @@ class CommentFirestore {
       await Future.forEach(ids, (id) async {
         var doc = await comments.doc(id).get();
         Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+        Comment comment = Comment(
+          id: id,
+          content: data["content"],
+          commentAccountId: data["comment_account_id"],
+          commentTime: data["comment_time"],
+        );
       });
     } on FirebaseException catch (e) {}
   }
