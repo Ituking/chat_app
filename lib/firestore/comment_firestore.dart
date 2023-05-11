@@ -34,7 +34,7 @@ class CommentFirestore {
     }
   }
 
-  static Future<List<Comment>> getCommentsFromIds(List<String> ids) async {
+  static Future<dynamic> getCommentsFromIds(List<String> ids) async {
     List<Comment> commentList = [];
     try {
       await Future.forEach(ids, (id) async {
