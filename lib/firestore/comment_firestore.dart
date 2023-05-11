@@ -36,5 +36,6 @@ class CommentFirestore {
 
   static Future<List<Comment>> getCommentsFromIds(List<String> Ids) async {
     List<Post> postList = [];
+    try {} on FirebaseException catch (e) {}
   }
 }
