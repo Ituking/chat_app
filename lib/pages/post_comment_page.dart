@@ -116,7 +116,7 @@ class _PostCommentPageState extends State<PostCommentPage> {
                                                   ),
                                                 ],
                                               ),
-                                              Text(commentList[index].content),
+                                              Text(comment.content),
                                             ],
                                           ),
                                         ),
