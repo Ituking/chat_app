@@ -41,6 +41,7 @@ class CommentFirestore {
     try {
       await Future.forEach(accountIds, (String accountId) async {
         var doc = await comments.doc(accountId).get();
+        Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
       });
     } on FirebaseException catch (e) {}
   }
