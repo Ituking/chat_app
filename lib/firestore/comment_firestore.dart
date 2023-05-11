@@ -52,6 +52,11 @@ class CommentFirestore {
         }
         return commentList;
       });
-    } on FirebaseException catch (e) {}
+    } on FirebaseException catch (e) {
+      if (kDebugMode) {
+        print("Failed to get comment.$e");
+      }
+      return false;
+    }
   }
 }
