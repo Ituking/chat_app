@@ -33,4 +33,6 @@ class CommentFirestore {
       return false;
     }
   }
+
+  static Future<List<Comment>> getCommentsFromIds(List<String> Ids) async {}
 }
