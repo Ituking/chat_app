@@ -1,3 +1,4 @@
+import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/comment.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
@@ -33,4 +34,7 @@ class CommentFirestore {
       return false;
     }
   }
+
+  static Future<Map<String, Account>> getCommentUserMap(
+      List<String> accountIds) async {}
 }
