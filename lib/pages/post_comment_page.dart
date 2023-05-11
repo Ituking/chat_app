@@ -110,8 +110,7 @@ class _PostCommentPageState extends State<PostCommentPage> {
                                                   Text(
                                                     DateFormat('yyyy-MM-dd-Hm')
                                                         .format(
-                                                      commentList[index]
-                                                          .commentTime!
+                                                      comment.commentTime!
                                                           .toDate(),
                                                     ),
                                                   ),
