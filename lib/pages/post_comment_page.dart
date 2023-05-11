@@ -57,6 +57,13 @@ class _PostCommentPageState extends State<PostCommentPage> {
                                   Map<String, dynamic> data =
                                       commentSnapshot.data!.docs[index].data()
                                           as Map<String, dynamic>;
+                                  Comment comment = Comment(
+                                    id: commentSnapshot.data!.docs[index].id,
+                                    content: data['content'],
+                                    commentAccountId:
+                                        data['content_account_id'],
+                                    commentTime: data['comment_time'],
+                                  );
                                   return Padding(
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 15, vertical: 15),
