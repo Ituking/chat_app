@@ -33,30 +33,4 @@ class CommentFirestore {
       return false;
     }
   }
-
-  static Future<dynamic> getCommentsFromIds(List<String> ids) async {
-    List<Comment> commentList = [];
-    try {
-      await Future.forEach(ids, (id) async {
-        var doc = await comments.doc(id).get();
-        Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-        Comment comment = Comment(
-          id: id,
-          content: data["content"],
-          commentAccountId: data["comment_account_id"],
-          commentTime: data["comment_time"],
-        );
-        commentList.add(comment);
-        if (kDebugMode) {
-          print("Comment acquisition completed.");
-        }
-        return commentList;
-      });
-    } on FirebaseException catch (e) {
-      if (kDebugMode) {
-        print("Failed to get comment.$e");
-      }
-      return false;
-    }
-  }
 }
