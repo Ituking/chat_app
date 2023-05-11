@@ -38,6 +38,8 @@ class CommentFirestore {
   static Future<Map<String, Account>> getCommentUserMap(
       List<String> accountIds) async {
     Map<String, Account> map = {};
-    try {} on FirebaseException catch (e) {}
+    try {
+      await Future.forEach(accountIds, (accountId) async {});
+    } on FirebaseException catch (e) {}
   }
 }
