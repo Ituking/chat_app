@@ -64,6 +64,8 @@ class _PostCommentPageState extends State<PostCommentPage> {
                                         data['content_account_id'],
                                     commentTime: data['comment_time'],
                                   );
+                                  Account commentAccount = userSnapshot
+                                      .data![comment.commentAccountId]!;
                                   return Padding(
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 15, vertical: 15),
