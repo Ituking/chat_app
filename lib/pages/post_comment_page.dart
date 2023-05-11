@@ -48,68 +48,75 @@ class _PostCommentPageState extends State<PostCommentPage> {
                           future: CommentFirestore.getCommentUserMap(
                               commentAccountIds),
                           builder: (context, snapshot) {
-                            return ListView.builder(
-                              itemCount: commentList.length,
-                              itemBuilder: (context, index) {
-                                return Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 15, vertical: 15),
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 10.0),
-                                        child: CircleAvatar(
-                                          radius: 20,
-                                          foregroundImage: NetworkImage(
-                                              commentAccount.imagePath),
+                            if (snapshot.hasData &&
+                                snapshot.connectionState ==
+                                    ConnectionState.done) {
+                              return ListView.builder(
+                                itemCount: commentList.length,
+                                itemBuilder: (context, index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 15, vertical: 15),
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 10.0),
+                                          child: CircleAvatar(
+                                            radius: 20,
+                                            foregroundImage: NetworkImage(
+                                                commentAccount.imagePath),
+                                          ),
                                         ),
-                                      ),
-                                      Expanded(
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Row(
-                                                  children: [
-                                                    Text(
-                                                      commentAccount.name,
-                                                      style: const TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                    ),
-                                                    Text(
-                                                      '@${commentAccount.userId}',
-                                                      style: const TextStyle(
-                                                        color: Colors.grey,
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Row(
+                                                    children: [
+                                                      Text(
+                                                        commentAccount.name,
+                                                        style: const TextStyle(
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
                                                       ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                Text(
-                                                  DateFormat('yyyy-MM-dd-Hm')
-                                                      .format(
-                                                    commentList[index]
-                                                        .commentTime!
-                                                        .toDate(),
+                                                      Text(
+                                                        '@${commentAccount.userId}',
+                                                        style: const TextStyle(
+                                                          color: Colors.grey,
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
-                                                ),
-                                              ],
-                                            ),
-                                            Text(commentList[index].content),
-                                          ],
+                                                  Text(
+                                                    DateFormat('yyyy-MM-dd-Hm')
+                                                        .format(
+                                                      commentList[index]
+                                                          .commentTime!
+                                                          .toDate(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Text(commentList[index].content),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              },
-                            );
+                                      ],
+                                    ),
+                                  );
+                                },
+                              );
+                            } else {
+                              return Container();
+                            }
                           });
                     } else {
                       return Container();
