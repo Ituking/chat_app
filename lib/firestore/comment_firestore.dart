@@ -46,6 +46,7 @@ class CommentFirestore {
           commentAccountId: data["comment_account_id"],
           commentTime: data["comment_time"],
         );
+        commentList.add(comment);
       });
     } on FirebaseException catch (e) {}
   }
