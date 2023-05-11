@@ -36,7 +36,10 @@ class _PostCommentPageState extends State<PostCommentPage> {
                   builder: (context, commentSnapshot) {
                     if (commentSnapshot.hasData) {
                       List<String> commentAccountIds = [];
-                      for (var doc in commentSnapshot.data!.docs) {}
+                      for (var doc in commentSnapshot.data!.docs) {
+                        Map<String, dynamic> data =
+                            doc.data() as Map<String, dynamic>;
+                      }
                       return ListView.builder(
                         itemCount: commentList.length,
                         itemBuilder: (context, index) {
