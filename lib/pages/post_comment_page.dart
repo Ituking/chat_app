@@ -47,9 +47,9 @@ class _PostCommentPageState extends State<PostCommentPage> {
                       return FutureBuilder<Map<String, Account>?>(
                           future: CommentFirestore.getCommentUserMap(
                               commentAccountIds),
-                          builder: (context, snapshot) {
-                            if (snapshot.hasData &&
-                                snapshot.connectionState ==
+                          builder: (context, userSnapshot) {
+                            if (userSnapshot.hasData &&
+                                userSnapshot.connectionState ==
                                     ConnectionState.done) {
                               return ListView.builder(
                                 itemCount: commentList.length,
