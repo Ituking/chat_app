@@ -35,6 +35,8 @@ class CommentFirestore {
     }
   }
 
+  static Future<List<Comment>> getCommentsFromIds(List<String> ids) async {}
+
   static Future<Map<String, Account>?> getCommentUserMap(
       List<String> accountIds) async {
     Map<String, Account> map = {};
