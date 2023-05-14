@@ -125,7 +125,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                             controller: controller,
                             decoration: const InputDecoration(
                               contentPadding: EdgeInsets.only(left: 10),
-                              border: OutlineInputBorder(),
+                              border: InputBorder.none,
                             ),
                           ),
                         ),
