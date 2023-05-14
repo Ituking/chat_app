@@ -61,7 +61,7 @@ class _PostCommentPageState extends State<PostCommentPage> {
                                     id: commentSnapshot.data!.docs[index].id,
                                     content: data['content'],
                                     commentAccountId:
-                                        data['content_account_id'],
+                                        data['comment_account_id'],
                                     commentTime: data['comment_time'],
                                   );
                                   Account commentAccount = userSnapshot
