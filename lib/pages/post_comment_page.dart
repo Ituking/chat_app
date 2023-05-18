@@ -4,6 +4,7 @@ import 'package:chat_app/model/comment.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -39,9 +40,15 @@ class _PostCommentPageState extends State<PostCommentPage> {
                       for (var doc in commentSnapshot.data!.docs) {
                         Map<String, dynamic> data =
                             doc.data() as Map<String, dynamic>;
+                        if (kDebugMode) {
+                          print("data => $data");
+                        }
                         if (!commentAccountIds
                             .contains(data['comment_account_id'])) {
                           commentAccountIds.add(data['comment_account_id']);
+                          if (kDebugMode) {
+                            print("commentAccountIds => $commentAccountIds");
+                          }
                         }
                       }
                       return FutureBuilder<Map<String, Account>?>(
@@ -62,6 +69,7 @@ class _PostCommentPageState extends State<PostCommentPage> {
                                     content: data['content'],
                                     commentAccountId:
                                         data['comment_account_id'],
+                                    imagePath: '',
                                     commentTime: data['comment_time'],
                                   );
                                   Account commentAccount = userSnapshot
@@ -159,6 +167,7 @@ class _PostCommentPageState extends State<PostCommentPage> {
                               content: contentController.text,
                               commentAccountId: Authentication.myAccount!.id,
                               id: '',
+                              imagePath: '',
                               commentTime: null,
                             );
                             var result =

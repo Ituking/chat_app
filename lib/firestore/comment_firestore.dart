@@ -41,15 +41,28 @@ class CommentFirestore {
     try {
       await Future.forEach(accountIds, (String accountId) async {
         var doc = await comments.doc(accountId).get();
+        if (kDebugMode) {
+          print(doc);
+        }
         Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-        Account commentAccount = Account(
+        if (kDebugMode) {
+          print(data);
+        }
+        // Account commentAccount = Account(
+        //   id: accountId,
+        //   name: data['name'],
+        //   imagePath: data['image_path'],
+        //   selfIntroduction: data['self_introduction'],
+        //   userId: data['user_id'],
+        // );
+        Comment commentAccount = Comment(
           id: accountId,
-          name: data['name'],
+          content: data['content'],
+          commentAccountId: data['comment_account_id'],
           imagePath: data['image_path'],
-          selfIntroduction: data['self_introduction'],
-          userId: data['user_id'],
+          commentTime: Timestamp.now(),
         );
-        map[accountId] = commentAccount;
+        map[accountId] = commentAccount as Account;
         if (kDebugMode) {
           print("Completed acquisition of comment user information.");
         }
