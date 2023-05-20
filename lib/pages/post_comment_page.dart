@@ -84,7 +84,7 @@ class _PostCommentPageState extends State<PostCommentPage> {
                                           child: CircleAvatar(
                                             radius: 20,
                                             foregroundImage: NetworkImage(
-                                                commentAccount.imagePath),
+                                                commentAccount.imagePath!),
                                           ),
                                         ),
                                         Expanded(
@@ -100,7 +100,7 @@ class _PostCommentPageState extends State<PostCommentPage> {
                                                   Row(
                                                     children: [
                                                       Text(
-                                                        commentAccount.name,
+                                                        commentAccount.name!,
                                                         style: const TextStyle(
                                                             fontWeight:
                                                                 FontWeight
