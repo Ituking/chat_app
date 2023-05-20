@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 class CommentFirestore {
   static final _firestoreInstance = FirebaseFirestore.instance;
   static final CollectionReference comments =
-      _firestoreInstance.collection('comments');
+      _firestoreInstance.collection('account');
 
   static Future<dynamic> addComment(Comment newComment) async {
     try {
@@ -41,39 +41,41 @@ class CommentFirestore {
     try {
       await Future.forEach(accountIds, (String accountId) async {
         var doc = await comments.doc(accountId).get();
-        if (kDebugMode) {
-          print(doc);
+
+        if (doc.exists) {
+          Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+          Account commentAccount = Account(
+            id: accountId,
+            name: data['name'] as String?,
+            imagePath: data['image_path'] as String?,
+            selfIntroduction: data['self_introduction'] as String?,
+            userId: data['user_id'] as String?,
+          );
+          map[accountId] = commentAccount;
+        } else {
+          // ドキュメントが存在しない場合のエラーハンドリング
+          if (kDebugMode) {
+            print('Document does not exist for account ID: $accountId');
+          }
         }
-        Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-        if (kDebugMode) {
-          print(data);
-        }
-        Account commentAccount = Account(
-          id: accountId,
-          name: data['name'],
-          imagePath: data['image_path'],
-          selfIntroduction: data['self_introduction'],
-          userId: data['user_id'],
-        );
-        // Comment commentAccount = Comment(
-        //   id: accountId,
-        //   content: data['content'],
-        //   commentAccountId: data['comment_account_id'],
-        //   imagePath: data['image_path'],
-        //   commentTime: Timestamp.now(),
-        // );
-        map[accountId] = commentAccount;
-        if (kDebugMode) {
-          print("Completed acquisition of comment user information.");
-        }
-        return map;
       });
-    } on FirebaseException catch (e) {
+
       if (kDebugMode) {
-        print("Failure to obtain comment user information. $e");
+        print('Completed acquisition of comment user information.');
+      }
+      return map;
+    } on FirebaseException catch (e) {
+      // Firebaseからのエラーが発生した場合のエラーハンドリング
+      if (kDebugMode) {
+        print('Failure to obtain comment user information: $e');
+      }
+      return null;
+    } catch (e) {
+      // その他のエラーが発生した場合のエラーハンドリング
+      if (kDebugMode) {
+        print('An error occurred while obtaining comment user information: $e');
       }
       return null;
     }
-    return null;
   }
 }
