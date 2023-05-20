@@ -48,21 +48,21 @@ class CommentFirestore {
         if (kDebugMode) {
           print(data);
         }
-        // Account commentAccount = Account(
-        //   id: accountId,
-        //   name: data['name'],
-        //   imagePath: data['image_path'],
-        //   selfIntroduction: data['self_introduction'],
-        //   userId: data['user_id'],
-        // );
-        Comment commentAccount = Comment(
+        Account commentAccount = Account(
           id: accountId,
-          content: data['content'],
-          commentAccountId: data['comment_account_id'],
+          name: data['name'],
           imagePath: data['image_path'],
-          commentTime: Timestamp.now(),
+          selfIntroduction: data['self_introduction'],
+          userId: data['user_id'],
         );
-        map[accountId] = commentAccount as Account;
+        // Comment commentAccount = Comment(
+        //   id: accountId,
+        //   content: data['content'],
+        //   commentAccountId: data['comment_account_id'],
+        //   imagePath: data['image_path'],
+        //   commentTime: Timestamp.now(),
+        // );
+        map[accountId] = commentAccount;
         if (kDebugMode) {
           print("Completed acquisition of comment user information.");
         }

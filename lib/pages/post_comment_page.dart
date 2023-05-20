@@ -69,7 +69,6 @@ class _PostCommentPageState extends State<PostCommentPage> {
                                     content: data['content'],
                                     commentAccountId:
                                         data['comment_account_id'],
-                                    imagePath: '',
                                     commentTime: data['comment_time'],
                                   );
                                   Account commentAccount = userSnapshot
@@ -167,7 +166,6 @@ class _PostCommentPageState extends State<PostCommentPage> {
                               content: contentController.text,
                               commentAccountId: Authentication.myAccount!.id,
                               id: '',
-                              imagePath: '',
                               commentTime: null,
                             );
                             var result =
