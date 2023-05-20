@@ -46,11 +46,18 @@ class CommentFirestore {
           Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
           Account commentAccount = Account(
             id: accountId,
-            name: data['name'] as String?,
-            imagePath: data['image_path'] as String?,
-            selfIntroduction: data['self_introduction'] as String?,
-            userId: data['user_id'] as String?,
+            name: data['name'] as String,
+            imagePath: data['image_path'] as String,
+            selfIntroduction: data['self_introduction'] as String,
+            userId: data['user_id'] as String,
           );
+          if (kDebugMode) {
+            print(data);
+            print(data['name']);
+            print(data['image_path']);
+            print(data['self_introduction']);
+            print(data['user_id']);
+          }
           map[accountId] = commentAccount;
         } else {
           // ドキュメントが存在しない場合のエラーハンドリング

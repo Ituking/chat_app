@@ -68,7 +68,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       CircleAvatar(
                         radius: 50.0,
                         backgroundColor: Colors.white,
-                        backgroundImage: NetworkImage(myAccount.imagePath!),
+                        backgroundImage: NetworkImage(myAccount.imagePath),
                         child: Container(
                           padding: const EdgeInsets.all(2),
                           decoration: BoxDecoration(
@@ -81,7 +81,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                           child: CircleAvatar(
                             radius: 48.0,
-                            backgroundImage: NetworkImage(myAccount.imagePath!),
+                            backgroundImage: NetworkImage(myAccount.imagePath),
                           ),
                         ),
                       ),
@@ -115,7 +115,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                   const SizedBox(height: 10.0),
                   Text(
-                    myAccount.name!,
+                    myAccount.name,
                     style: const TextStyle(
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,
@@ -123,7 +123,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                   const SizedBox(height: 8.0),
                   Text(
-                    myAccount.userId!,
+                    myAccount.userId,
                     style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 16.0,
@@ -139,7 +139,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                   const SizedBox(height: 8.0),
                   Text(
-                    myAccount.selfIntroduction!,
+                    myAccount.selfIntroduction,
                     maxLines: 5,
                     style: const TextStyle(
                       fontSize: 16.0,
