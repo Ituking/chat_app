@@ -53,10 +53,10 @@ class CommentFirestore {
           }
           Account commentAccount = Account(
             id: accountId,
-            name: data['name'] as String,
-            imagePath: data['image_path'] as String,
-            selfIntroduction: data['self_introduction'] as String,
-            userId: data['user_id'] as String,
+            name: data['name'].toString(),
+            imagePath: data['image_path'].toString(),
+            selfIntroduction: data['self_introduction'].toString(),
+            userId: data['user_id'].toString(),
           );
           map[accountId] = commentAccount;
         } else {
