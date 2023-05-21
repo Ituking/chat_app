@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "chat_app",
-            "request": "launch",
+            "request": "attach",
             "type": "dart",
             "args": ["--app-id", "com.example.chatApp"],
         },
