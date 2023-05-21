@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 class CommentFirestore {
   static final _firestoreInstance = FirebaseFirestore.instance;
   static final CollectionReference comments =
-      _firestoreInstance.collection('account');
+      _firestoreInstance.collection('comments');
 
   static Future<dynamic> addComment(Comment newComment) async {
     try {
