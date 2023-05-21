@@ -44,13 +44,6 @@ class CommentFirestore {
 
         if (doc.exists) {
           Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-          Account commentAccount = Account(
-            id: accountId,
-            name: data['name'] as String,
-            imagePath: data['image_path'] as String,
-            selfIntroduction: data['self_introduction'] as String,
-            userId: data['user_id'] as String,
-          );
           if (kDebugMode) {
             print(data);
             print(data['name']);
@@ -58,6 +51,13 @@ class CommentFirestore {
             print(data['self_introduction']);
             print(data['user_id']);
           }
+          Account commentAccount = Account(
+            id: accountId,
+            name: data['name'] as String,
+            imagePath: data['image_path'] as String,
+            selfIntroduction: data['self_introduction'] as String,
+            userId: data['user_id'] as String,
+          );
           map[accountId] = commentAccount;
         } else {
           // ドキュメントが存在しない場合のエラーハンドリング
