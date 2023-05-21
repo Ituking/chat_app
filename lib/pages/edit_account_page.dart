@@ -24,7 +24,7 @@ class _EditAccountPageState extends State<EditAccountPage> {
 
   ImageProvider getImage() {
     if (image == null) {
-      return NetworkImage(myAccount.imagePath!);
+      return NetworkImage(myAccount.imagePath);
     } else {
       return FileImage(image!);
     }
@@ -143,7 +143,7 @@ class _EditAccountPageState extends State<EditAccountPage> {
                     selfIntroductionController.text.isNotEmpty) {
                   String imagePath = "";
                   if (image == null) {
-                    imagePath = myAccount.imagePath!;
+                    imagePath = myAccount.imagePath;
                   } else {
                     var result =
                         await FunctionUtils.uploadImage(myAccount.id, image!);
