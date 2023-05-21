@@ -41,7 +41,8 @@ class _PostCommentPageState extends State<PostCommentPage> {
                         Map<String, dynamic> data =
                             doc.data() as Map<String, dynamic>;
                         if (kDebugMode) {
-                          print("data => $data");
+                          print(
+                              "commentSnapshot.data!.docs[index].data() => $data");
                         }
                         if (!commentAccountIds
                             .contains(data['comment_account_id'])) {
