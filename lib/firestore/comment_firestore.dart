@@ -7,6 +7,8 @@ class CommentFirestore {
   static final _firestoreInstance = FirebaseFirestore.instance;
   static final CollectionReference comments =
       _firestoreInstance.collection('comments');
+  static final CollectionReference account =
+      _firestoreInstance.collection('account');
 
   static Future<dynamic> addComment(Comment newComment) async {
     try {
