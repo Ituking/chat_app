@@ -67,6 +67,10 @@ class _PostCommentPageState extends State<PostCommentPage> {
                                   Map<String, dynamic> data =
                                       commentSnapshot.data!.docs[index].data()
                                           as Map<String, dynamic>;
+                                  if (kDebugMode) {
+                                    print(
+                                        "commentSnapshot.data!.docs[index].data() => $data");
+                                  }
                                   Comment comment = Comment(
                                     id: commentSnapshot.data!.docs[index].id,
                                     content: data['content'],
@@ -74,8 +78,24 @@ class _PostCommentPageState extends State<PostCommentPage> {
                                         data['comment_account_id'],
                                     commentTime: data['comment_time'],
                                   );
+                                  if (kDebugMode) {
+                                    print('Comment ID: ${comment.id}');
+                                    print('Content: ${comment.content}');
+                                    print(
+                                        'Comment Account ID: ${comment.commentAccountId}');
+                                    print(
+                                        'Comment Time: ${comment.commentTime}');
+                                  }
+                                  if (kDebugMode) {
+                                    print(
+                                        "userSnapshot.data => ${userSnapshot.data}");
+                                  }
                                   Account commentAccount = userSnapshot
                                       .data![comment.commentAccountId]!;
+                                  if (kDebugMode) {
+                                    print(
+                                        "userSnapshot.data![comment.commentAccountId]! => $commentAccount");
+                                  }
                                   return Padding(
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 15, vertical: 15),
