@@ -33,7 +33,9 @@ class _PostCommentPageState extends State<PostCommentPage> {
             SizedBox(
               height: MediaQuery.of(context).size.height - 100,
               child: StreamBuilder<QuerySnapshot>(
-                  stream: CommentFirestore.comments.snapshots(),
+                  stream: FirebaseFirestore.instance
+                      .collection('comments')
+                      .snapshots(),
                   builder: (context, commentSnapshot) {
                     if (commentSnapshot.hasData) {
                       List<String> commentAccountIds = [];
