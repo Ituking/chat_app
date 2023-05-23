@@ -40,9 +40,6 @@ class CommentFirestore {
   static Future<Map<String, Account>?> getCommentUserMap(
       List<String> accountIds) async {
     Map<String, Account> map = {};
-    // if (kDebugMode) {
-    //   print("comments.doc(accountId).get() => $comments");
-    // }
     try {
       await Future.forEach(accountIds, (String accountId) async {
         var doc = await account.doc(accountId).get();
