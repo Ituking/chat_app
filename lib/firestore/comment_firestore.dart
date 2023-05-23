@@ -65,6 +65,12 @@ class CommentFirestore {
           );
           map[accountId] = commentAccount;
           if (kDebugMode) {
+            print("accountid => $accountId");
+          }
+          if (kDebugMode) {
+            print("commentAccountId => {$commentAccount.id}");
+          }
+          if (kDebugMode) {
             print("map => $map");
           }
         } else {
