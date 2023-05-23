@@ -45,7 +45,7 @@ class CommentFirestore {
     // }
     try {
       await Future.forEach(accountIds, (String accountId) async {
-        var doc = await comments.doc(accountId).get();
+        var doc = await account.doc(accountId).get();
 
         if (doc.exists) {
           Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
