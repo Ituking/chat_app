@@ -77,13 +77,9 @@ class CommentFirestore {
           }
         }
       });
-
-      // if (kDebugMode) {
-      //   print('Completed acquisition of comment user information.');
-      // }
-      // if (kDebugMode) {
-      //   print("map => $map");
-      // }
+      if (kDebugMode) {
+        print('Completed acquisition of comment user information.');
+      }
       return map;
     } on FirebaseException catch (e) {
       // Firebaseからのエラーが発生した場合のエラーハンドリング
