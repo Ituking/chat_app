@@ -64,6 +64,9 @@ class CommentFirestore {
             userId: data['user_id'].toString(),
           );
           map[accountId] = commentAccount;
+          if (kDebugMode) {
+            print("map => $map");
+          }
         } else {
           // ドキュメントが存在しない場合のエラーハンドリング
           // if (kDebugMode) {
@@ -75,9 +78,9 @@ class CommentFirestore {
       // if (kDebugMode) {
       //   print('Completed acquisition of comment user information.');
       // }
-      if (kDebugMode) {
-        print("map => $map");
-      }
+      // if (kDebugMode) {
+      //   print("map => $map");
+      // }
       return map;
     } on FirebaseException catch (e) {
       // Firebaseからのエラーが発生した場合のエラーハンドリング
