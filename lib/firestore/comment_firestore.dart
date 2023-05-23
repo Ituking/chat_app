@@ -25,14 +25,14 @@ class CommentFirestore {
         'comment_id': result.id,
         'comment_time': Timestamp.now(),
       });
-      // if (kDebugMode) {
-      //   print("Comment Completed.");
-      // }
+      if (kDebugMode) {
+        print("Comment Completed.");
+      }
       return true;
     } on FirebaseException catch (e) {
-      // if (kDebugMode) {
-      //   print("Comment Failed.$e");
-      // }
+      if (kDebugMode) {
+        print("Comment Failed.$e");
+      }
       return false;
     }
   }
@@ -72,9 +72,9 @@ class CommentFirestore {
           }
         } else {
           // ドキュメントが存在しない場合のエラーハンドリング
-          // if (kDebugMode) {
-          //   print('Document does not exist for account ID: $accountId');
-          // }
+          if (kDebugMode) {
+            print('Document does not exist for account ID: $accountId');
+          }
         }
       });
 
@@ -87,15 +87,15 @@ class CommentFirestore {
       return map;
     } on FirebaseException catch (e) {
       // Firebaseからのエラーが発生した場合のエラーハンドリング
-      // if (kDebugMode) {
-      //   print('Failure to obtain comment user information: $e');
-      // }
+      if (kDebugMode) {
+        print('Failure to obtain comment user information: $e');
+      }
       return null;
     } catch (e) {
       // その他のエラーが発生した場合のエラーハンドリング
-      // if (kDebugMode) {
-      //   print('An error occurred while obtaining comment user information: $e');
-      // }
+      if (kDebugMode) {
+        print('An error occurred while obtaining comment user information: $e');
+      }
       return null;
     }
   }
