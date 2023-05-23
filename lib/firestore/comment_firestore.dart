@@ -25,14 +25,14 @@ class CommentFirestore {
         'comment_id': result.id,
         'comment_time': Timestamp.now(),
       });
-      if (kDebugMode) {
-        print("Comment Completed.");
-      }
+      // if (kDebugMode) {
+      //   print("Comment Completed.");
+      // }
       return true;
     } on FirebaseException catch (e) {
-      if (kDebugMode) {
-        print("Comment Failed.$e");
-      }
+      // if (kDebugMode) {
+      //   print("Comment Failed.$e");
+      // }
       return false;
     }
   }
@@ -40,6 +40,9 @@ class CommentFirestore {
   static Future<Map<String, Account>?> getCommentUserMap(
       List<String> accountIds) async {
     Map<String, Account> map = {};
+    // if (kDebugMode) {
+    //   print("comments.doc(accountId).get() => $comments");
+    // }
     try {
       await Future.forEach(accountIds, (String accountId) async {
         var doc = await comments.doc(accountId).get();
@@ -63,27 +66,30 @@ class CommentFirestore {
           map[accountId] = commentAccount;
         } else {
           // ドキュメントが存在しない場合のエラーハンドリング
-          if (kDebugMode) {
-            print('Document does not exist for account ID: $accountId');
-          }
+          // if (kDebugMode) {
+          //   print('Document does not exist for account ID: $accountId');
+          // }
         }
       });
 
+      // if (kDebugMode) {
+      //   print('Completed acquisition of comment user information.');
+      // }
       if (kDebugMode) {
-        print('Completed acquisition of comment user information.');
+        print("map => $map");
       }
       return map;
     } on FirebaseException catch (e) {
       // Firebaseからのエラーが発生した場合のエラーハンドリング
-      if (kDebugMode) {
-        print('Failure to obtain comment user information: $e');
-      }
+      // if (kDebugMode) {
+      //   print('Failure to obtain comment user information: $e');
+      // }
       return null;
     } catch (e) {
       // その他のエラーが発生した場合のエラーハンドリング
-      if (kDebugMode) {
-        print('An error occurred while obtaining comment user information: $e');
-      }
+      // if (kDebugMode) {
+      //   print('An error occurred while obtaining comment user information: $e');
+      // }
       return null;
     }
   }
