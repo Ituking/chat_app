@@ -35,12 +35,19 @@ class _ImageZoomPageState extends State<ImageZoomPage> {
           ),
         ),
       ),
-      body: const Center(
-        child: Image(
-          image: NetworkImage(
-            "https://images.unsplash.com/photo-1472396961693-142e6e269027?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8Mjl8fE5hdHVyZXxlbnwwfHx8fDE2NzgwODY0NTY&ixlib=rb-4.0.3&q=80&w=400",
+      body: Column(
+        children: const [
+          Expanded(
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: Image(
+                image: NetworkImage(
+                  "https://images.unsplash.com/photo-1472396961693-142e6e269027?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8Mjl8fE5hdHVyZXxlbnwwfHx8fDE2NzgwODY0NTY&ixlib=rb-4.0.3&q=80&w=400",
+                ),
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
