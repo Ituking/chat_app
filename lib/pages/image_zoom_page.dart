@@ -14,8 +14,19 @@ class _ImageZoomPageState extends State<ImageZoomPage> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        leading: const Icon(
-          Icons.clear,
+        leading: Container(
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+          ),
+          child: CircleAvatar(
+            backgroundColor: Colors.transparent,
+            child: IconButton(
+              icon: const Icon(Icons.clear),
+              onPressed: () {
+                // Handle clear button press
+              },
+            ),
+          ),
         ),
       ),
       body: const Center(
