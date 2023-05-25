@@ -24,7 +24,7 @@ class _ImageZoomPageState extends State<ImageZoomPage> {
             child: IconButton(
               icon: const Icon(Icons.clear),
               onPressed: () {
-                Navigator.push(
+                Navigator.pop(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const HomePage(),
