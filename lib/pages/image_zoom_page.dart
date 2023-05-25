@@ -10,8 +10,13 @@ class ImageZoomPage extends StatefulWidget {
 class _ImageZoomPageState extends State<ImageZoomPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      appBar: AppBar(
+        leading: const Icon(
+          Icons.clear,
+        ),
+      ),
+      body: const Center(
         child: Image(
           image: NetworkImage(
             "https://images.unsplash.com/photo-1472396961693-142e6e269027?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8Mjl8fE5hdHVyZXxlbnwwfHx8fDE2NzgwODY0NTY&ixlib=rb-4.0.3&q=80&w=400",
