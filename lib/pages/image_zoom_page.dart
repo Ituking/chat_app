@@ -1,3 +1,4 @@
+import 'package:chat_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class ImageZoomPage extends StatefulWidget {
@@ -23,7 +24,12 @@ class _ImageZoomPageState extends State<ImageZoomPage> {
             child: IconButton(
               icon: const Icon(Icons.clear),
               onPressed: () {
-                // Handle clear button press
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HomePage(),
+                  ),
+                );
               },
             ),
           ),
