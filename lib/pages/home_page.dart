@@ -65,167 +65,189 @@ class _HomePageState extends State<HomePage> {
                           }
                           Account postAccount =
                               userSnapshot.data![post.postAccountId]!;
-                          return Card(
-                            child: SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.75,
-                              child: Column(
-                                children: [
-                                  ListTile(
-                                    leading: const CircleAvatar(
-                                      backgroundImage: NetworkImage(
-                                        "https://images.unsplash.com/photo-1472396961693-142e6e269027?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8Mjl8fE5hdHVyZXxlbnwwfHx8fDE2NzgwODY0NTY&ixlib=rb-4.0.3&q=80&w=400",
+                          return AnimatedPadding(
+                            duration: const Duration(milliseconds: 60),
+                            padding: EdgeInsets.all(padValue),
+                            child: Card(
+                              child: SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.75,
+                                child: Column(
+                                  children: [
+                                    ListTile(
+                                      leading: const CircleAvatar(
+                                        backgroundImage: NetworkImage(
+                                          "https://images.unsplash.com/photo-1472396961693-142e6e269027?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8Mjl8fE5hdHVyZXxlbnwwfHx8fDE2NzgwODY0NTY&ixlib=rb-4.0.3&q=80&w=400",
+                                        ),
                                       ),
-                                    ),
-                                    title: Text(
-                                      postAccount.name,
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    subtitle: Text(
-                                      post.postTime == null
-                                          ? ""
-                                          : DateFormat('yyyy-MM-dd-Hm').format(
-                                              post.postTime!.toDate(),
-                                            ),
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.normal,
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: post.imagePath != null
-                                        ? GestureDetector(
-                                            onTap: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const ImageZoomPage(),
-                                                ),
-                                              );
-                                            },
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(24.0),
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      post.imagePath!),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        : Container(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.3,
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                0.9,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0),
-                                              color: Colors.grey,
-                                            ),
-                                            child: const Icon(
-                                              Icons.image,
-                                              color: Colors.white,
-                                              size: 64.0,
-                                            ),
-                                          ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 8.0,
-                                      vertical: 25.0,
-                                    ),
-                                    child: Container(
-                                      alignment: Alignment.centerLeft,
-                                      width: double.infinity,
-                                      child: Text(
-                                        post.content,
+                                      title: Text(
+                                        postAccount.name,
                                         style: const TextStyle(
-                                          fontSize: 16.0,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      subtitle: Text(
+                                        post.postTime == null
+                                            ? ""
+                                            : DateFormat('yyyy-MM-dd-Hm')
+                                                .format(
+                                                post.postTime!.toDate(),
+                                              ),
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.normal,
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    height: 14.0,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Row(
-                                        children: const [
-                                          LikeButton(),
-                                          SizedBox(
-                                            width: 8.0,
-                                          ),
-                                          Text(
-                                            "Like",
-                                            style: TextStyle(
-                                              color: Colors.grey,
+                                    Expanded(
+                                      child: post.imagePath != null
+                                          ? GestureDetector(
+                                              onTap: () {
+                                                Navigator.push(
+                                                  context,
+                                                  PageRouteBuilder(
+                                                    pageBuilder: (
+                                                      context,
+                                                      animation,
+                                                      secondaryAnimation,
+                                                    ) =>
+                                                        const ImageZoomPage(),
+                                                    transitionsBuilder: (
+                                                      context,
+                                                      animation,
+                                                      secondaryAnimation,
+                                                      child,
+                                                    ) {
+                                                      return ScaleTransition(
+                                                        scale: animation,
+                                                        child: child,
+                                                      );
+                                                    },
+                                                  ),
+                                                );
+                                              },
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          24.0),
+                                                  image: DecorationImage(
+                                                    image: NetworkImage(
+                                                        post.imagePath!),
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              ),
+                                            )
+                                          : Container(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.3,
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.9,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(24.0),
+                                                color: Colors.grey,
+                                              ),
+                                              child: const Icon(
+                                                Icons.image,
+                                                color: Colors.white,
+                                                size: 64.0,
+                                              ),
                                             ),
-                                          ),
-                                        ],
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 8.0,
+                                        vertical: 25.0,
                                       ),
-                                      GestureDetector(
-                                        onTap: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const PostCommentPage(),
-                                            ),
-                                          );
-                                        },
-                                        child: Row(
+                                      child: Container(
+                                        alignment: Alignment.centerLeft,
+                                        width: double.infinity,
+                                        child: Text(
+                                          post.content,
+                                          style: const TextStyle(
+                                            fontSize: 16.0,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 14.0,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Row(
                                           children: const [
-                                            Icon(
-                                              Icons.comment,
-                                              color: Colors.grey,
-                                            ),
+                                            LikeButton(),
                                             SizedBox(
                                               width: 8.0,
                                             ),
                                             Text(
-                                              "Comments",
+                                              "Like",
                                               style: TextStyle(
                                                 color: Colors.grey,
                                               ),
                                             ),
                                           ],
                                         ),
-                                      ),
-                                      Row(
-                                        children: const [
-                                          Icon(
-                                            Icons.share,
-                                            color: Colors.grey,
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const PostCommentPage(),
+                                              ),
+                                            );
+                                          },
+                                          child: Row(
+                                            children: const [
+                                              Icon(
+                                                Icons.comment,
+                                                color: Colors.grey,
+                                              ),
+                                              SizedBox(
+                                                width: 8.0,
+                                              ),
+                                              Text(
+                                                "Comments",
+                                                style: TextStyle(
+                                                  color: Colors.grey,
+                                                ),
+                                              ),
+                                            ],
                                           ),
-                                          SizedBox(
-                                            width: 8.0,
-                                          ),
-                                          Text(
-                                            "Share",
-                                            style: TextStyle(
+                                        ),
+                                        Row(
+                                          children: const [
+                                            Icon(
+                                              Icons.share,
                                               color: Colors.grey,
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(
-                                    height: 12.0,
-                                  ),
-                                ],
+                                            SizedBox(
+                                              width: 8.0,
+                                            ),
+                                            Text(
+                                              "Share",
+                                              style: TextStyle(
+                                                color: Colors.grey,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 12.0,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           );
