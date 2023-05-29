@@ -6,6 +6,6 @@ class User {
   User({
     required this.name,
     required this.uid,
-    this.imagePath,
-  });
+    String? imagePath,
+  }) : imagePath = imagePath != '' ? imagePath : null;
 }

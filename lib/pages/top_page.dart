@@ -3,6 +3,7 @@ import 'package:chat_app/model/talk_room.dart';
 import 'package:chat_app/pages/talk_room_page.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class TopPage extends StatefulWidget {
@@ -37,6 +38,11 @@ class _TopPageState extends State<TopPage> {
                           child: ListView.builder(
                               itemCount: talkRooms.length,
                               itemBuilder: (context, index) {
+                                if (kDebugMode) {
+                                  print(
+                                    "talkRooms[index].talkUser.imagePath => ${talkRooms[index].talkUser.imagePath}",
+                                  );
+                                }
                                 return InkWell(
                                   onTap: () {
                                     Navigator.push(
@@ -59,12 +65,12 @@ class _TopPageState extends State<TopPage> {
                                             radius: 25,
                                             backgroundImage: talkRooms[index]
                                                         .talkUser
-                                                        .imagePath ==
+                                                        .imagePath !=
                                                     null
-                                                ? null
-                                                : NetworkImage(talkRooms[index]
+                                                ? NetworkImage(talkRooms[index]
                                                     .talkUser
-                                                    .imagePath!),
+                                                    .imagePath!)
+                                                : null,
                                           ),
                                         ),
                                         Expanded(
