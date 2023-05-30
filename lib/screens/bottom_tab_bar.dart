@@ -32,7 +32,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.photo_size_select_actual_rounded),
+            icon: Icon(Icons.photo_size_select_actual_outlined),
             label: "Media",
           ),
           BottomNavigationBarItem(
