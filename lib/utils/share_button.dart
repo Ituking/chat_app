@@ -13,7 +13,7 @@ class _ShareButtonState extends State<ShareButton> {
   String text = "";
   String subject = "";
   List<String> imageNames = [];
-  List<String> imagePaths = [];
+  List<XFile> imagePaths = [];
 
   @override
   Widget build(BuildContext context) {
