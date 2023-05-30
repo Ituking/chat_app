@@ -210,7 +210,7 @@ class _HomePageState extends State<HomePage> {
                                         child: Row(
                                           children: const [
                                             Icon(
-                                              Icons.comment,
+                                              Icons.mode_comment_outlined,
                                               color: Colors.grey,
                                             ),
                                             SizedBox(
