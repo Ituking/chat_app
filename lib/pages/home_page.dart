@@ -228,7 +228,7 @@ class _HomePageState extends State<HomePage> {
                                       Row(
                                         children: const [
                                           Icon(
-                                            Icons.share,
+                                            Icons.ios_share,
                                             color: Colors.grey,
                                           ),
                                           SizedBox(
