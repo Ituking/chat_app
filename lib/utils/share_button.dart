@@ -30,5 +30,7 @@ class _ShareButtonState extends State<ShareButton> {
     );
   }
 
-  onShare(BuildContext context) async {}
+  onShare(BuildContext context) async {
+    final RenderBox box = context.findRenderObject() as RenderBox;
+  }
 }
