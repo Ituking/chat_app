@@ -30,7 +30,5 @@ class _ShareButtonState extends State<ShareButton> {
     );
   }
 
-  void shareText(String text, String subject) async {
-    await Share.share(text, subject: subject);
-  }
+  onShare(BuildContext context) async {}
 }
