@@ -7,6 +7,7 @@ import 'package:chat_app/pages/image_zoom_page.dart';
 import 'package:chat_app/pages/post_comment_page.dart';
 import 'package:chat_app/pages/post_page.dart';
 import 'package:chat_app/utils/like_button.dart';
+import 'package:chat_app/utils/share_button.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -227,10 +228,7 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                       Row(
                                         children: const [
-                                          Icon(
-                                            Icons.ios_share,
-                                            color: Colors.grey,
-                                          ),
+                                          ShareButton(),
                                           SizedBox(
                                             width: 8.0,
                                           ),
