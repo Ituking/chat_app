@@ -36,7 +36,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
             label: "Media",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
+            icon: Icon(Icons.messenger_outline_rounded),
             label: "Chats",
           ),
           BottomNavigationBarItem(
