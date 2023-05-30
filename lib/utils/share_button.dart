@@ -9,6 +9,8 @@ class ShareButton extends StatefulWidget {
 }
 
 class _ShareButtonState extends State<ShareButton> {
+  String text = "";
+
   @override
   Widget build(BuildContext context) {
     return IconButton(
