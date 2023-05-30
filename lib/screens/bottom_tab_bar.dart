@@ -28,7 +28,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home_outlined),
             label: "Home",
           ),
           BottomNavigationBarItem(
