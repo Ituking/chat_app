@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ShareButton extends StatefulWidget {
   const ShareButton({super.key});
@@ -27,5 +28,9 @@ class _ShareButtonState extends State<ShareButton> {
         color: Colors.grey,
       ),
     );
+  }
+
+  void shareText(String text, String subject) async {
+    await Share.share(text, subject: subject);
   }
 }
