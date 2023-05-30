@@ -11,6 +11,7 @@ class ShareButton extends StatefulWidget {
 class _ShareButtonState extends State<ShareButton> {
   String text = "";
   String subject = "";
+  List<String> imageNames = [];
 
   @override
   Widget build(BuildContext context) {
