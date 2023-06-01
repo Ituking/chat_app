@@ -40,6 +40,19 @@ class _ShareButtonState extends State<ShareButton> {
         subject: subject,
         sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size,
       );
+    } else {
+      if (kDebugMode) {
+        print("text => $text");
+      }
+      if (text.isNotEmpty) {
+        await Share.share(
+          text,
+          subject: subject,
+          sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size,
+        );
+      } else {
+        return Container();
+      }
     }
   }
 }
