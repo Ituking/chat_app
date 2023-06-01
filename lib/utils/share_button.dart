@@ -33,7 +33,9 @@ class _ShareButtonState extends State<ShareButton> {
 
   onShare(BuildContext context) async {
     final RenderBox box = context.findRenderObject() as RenderBox;
-
+    if (kDebugMode) {
+      print("imagePaths => $imagePaths");
+    }
     if (imagePaths.isNotEmpty) {
       await Share.shareXFiles(
         imagePaths,
