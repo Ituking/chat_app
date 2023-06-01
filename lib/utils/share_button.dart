@@ -22,6 +22,7 @@ class _ShareButtonState extends State<ShareButton> {
         if (kDebugMode) {
           print("ShareButtonTaped.");
         }
+        onShare(context);
       },
       icon: const Icon(
         Icons.ios_share_outlined,
