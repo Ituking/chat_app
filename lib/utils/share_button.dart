@@ -32,5 +32,14 @@ class _ShareButtonState extends State<ShareButton> {
 
   onShare(BuildContext context) async {
     final RenderBox box = context.findRenderObject() as RenderBox;
+
+    if (imagePaths.isNotEmpty) {
+      await Share.shareXFiles(
+        imagePaths,
+        text: text,
+        subject: subject,
+        sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size,
+      );
+    }
   }
 }
