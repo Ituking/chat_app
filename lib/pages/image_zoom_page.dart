@@ -35,8 +35,8 @@ class _ImageZoomPageState extends State<ImageZoomPage> {
           ),
         ),
       ),
-      body: const Column(
-        children: [
+      body: Column(
+        children: const [
           Expanded(
             child: Align(
               alignment: Alignment.topCenter,

@@ -184,8 +184,8 @@ class _HomePageState extends State<HomePage> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      const Row(
-                                        children: [
+                                      Row(
+                                        children: const [
                                           LikeButton(),
                                           SizedBox(
                                             width: 8.0,
@@ -208,8 +208,8 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                           );
                                         },
-                                        child: const Row(
-                                          children: [
+                                        child: Row(
+                                          children: const [
                                             Icon(
                                               Icons.mode_comment_outlined,
                                               color: Colors.grey,
@@ -226,8 +226,8 @@ class _HomePageState extends State<HomePage> {
                                           ],
                                         ),
                                       ),
-                                      const Row(
-                                        children: [
+                                      Row(
+                                        children: const [
                                           ShareButton(),
                                           SizedBox(
                                             width: 8.0,
