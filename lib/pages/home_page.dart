@@ -106,7 +106,9 @@ class _HomePageState extends State<HomePage> {
                                                     animation,
                                                     secondaryAnimation,
                                                   ) =>
-                                                      const ImageZoomPage(),
+                                                      ImageZoomPage(
+                                                    imagePath: post.imagePath!,
+                                                  ),
                                                   transitionsBuilder: (
                                                     context,
                                                     animation,
@@ -117,7 +119,10 @@ class _HomePageState extends State<HomePage> {
                                                         .buildTransitions(
                                                       MaterialPageRoute(
                                                         builder: (context) =>
-                                                            const ImageZoomPage(),
+                                                            ImageZoomPage(
+                                                          imagePath:
+                                                              post.imagePath!,
+                                                        ),
                                                       ),
                                                       context,
                                                       animation,
