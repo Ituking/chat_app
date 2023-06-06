@@ -10,6 +10,8 @@ class ShareButton extends StatefulWidget {
 }
 
 class _ShareButtonState extends State<ShareButton> {
+  Future<void> share() async {}
+
   @override
   Widget build(BuildContext context) {
     return IconButton(
