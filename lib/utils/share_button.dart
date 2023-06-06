@@ -2,15 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
-class ShareButton extends StatefulWidget {
+class ShareButton extends StatelessWidget {
   const ShareButton({super.key});
-
-  @override
-  State<ShareButton> createState() => _ShareButtonState();
-}
-
-class _ShareButtonState extends State<ShareButton> {
-  Future<void> share() async {}
 
   @override
   Widget build(BuildContext context) {
