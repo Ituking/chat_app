@@ -10,11 +10,6 @@ class ShareButton extends StatefulWidget {
 }
 
 class _ShareButtonState extends State<ShareButton> {
-  String text = "";
-  String subject = "";
-  List<String> imageNames = [];
-  List<XFile> imagePaths = [];
-
   @override
   Widget build(BuildContext context) {
     return IconButton(
@@ -22,40 +17,11 @@ class _ShareButtonState extends State<ShareButton> {
         if (kDebugMode) {
           print("ShareButtonTaped.");
         }
-        onShare(context);
       },
       icon: const Icon(
         Icons.ios_share_outlined,
         color: Colors.grey,
       ),
     );
-  }
-
-  onShare(BuildContext context) async {
-    final RenderBox box = context.findRenderObject() as RenderBox;
-    if (kDebugMode) {
-      print("imagePaths => $imagePaths");
-    }
-    if (imagePaths.isNotEmpty) {
-      await Share.shareXFiles(
-        imagePaths,
-        text: text,
-        subject: subject,
-        sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size,
-      );
-    } else {
-      if (kDebugMode) {
-        print("text => $text");
-      }
-      if (text.isNotEmpty) {
-        await Share.share(
-          text,
-          subject: subject,
-          sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size,
-        );
-      } else {
-        return Container();
-      }
-    }
   }
 }
