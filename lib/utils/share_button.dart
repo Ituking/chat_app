@@ -6,6 +6,10 @@ class ShareButton extends StatelessWidget {
   final String content;
   const ShareButton({super.key, required this.content});
 
+  Future<void> share() async {
+    await Share.share(content);
+  }
+
   @override
   Widget build(BuildContext context) {
     return IconButton(
