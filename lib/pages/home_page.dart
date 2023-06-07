@@ -232,12 +232,14 @@ class _HomePageState extends State<HomePage> {
                                         ),
                                       ),
                                       Row(
-                                        children: const [
-                                          ShareButton(),
-                                          SizedBox(
+                                        children: [
+                                          ShareButton(
+                                            content: post.content,
+                                          ),
+                                          const SizedBox(
                                             width: 8.0,
                                           ),
-                                          Text(
+                                          const Text(
                                             "Share",
                                             style: TextStyle(
                                               color: Colors.grey,
