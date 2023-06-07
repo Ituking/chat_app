@@ -14,9 +14,7 @@ class ShareButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {
-        if (kDebugMode) {
-          print("ShareButtonTaped.");
-        }
+        share();
       },
       icon: const Icon(
         Icons.ios_share_outlined,
