@@ -4,11 +4,13 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class FunctionUtils {
   static Future<dynamic> getImageFromGallery(BuildContext context) async {
     try {
       ImagePicker picker = ImagePicker();
+      PermissionStatus permissionStatus = await Permission.photos.request();
     } catch (e) {}
     // final pickedFile = await picker.pickImage(source: ImageSource.gallery);
     // return File(pickedFile!.path);
