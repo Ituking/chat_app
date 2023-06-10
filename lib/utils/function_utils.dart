@@ -18,6 +18,10 @@ class FunctionUtils {
         } else {
           return null;
         }
+      } else if (permissionStatus.isDenied) {
+        if (kDebugMode) {
+          print("Access Denied.");
+        }
       }
     } catch (e) {}
     // final pickedFile = await picker.pickImage(source: ImageSource.gallery);
