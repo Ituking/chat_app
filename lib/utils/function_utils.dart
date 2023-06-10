@@ -33,7 +33,13 @@ class FunctionUtils {
         showAlertDialog(context);
         return false;
       }
-    } catch (e) {}
+    } catch (e) {
+      if (kDebugMode) {
+        print("$e");
+      }
+      showAlertDialog(context);
+      return false;
+    }
     // final pickedFile = await picker.pickImage(source: ImageSource.gallery);
     // return File(pickedFile!.path);
     // if (pickedFile != null) {
