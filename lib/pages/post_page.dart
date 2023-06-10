@@ -127,7 +127,7 @@ class _PostPageState extends State<PostPage> {
                 leading: const Icon(Icons.photo_library),
                 title: const Text("Add a photo"),
                 onTap: () async {
-                  var result = await FunctionUtils.getImageFromGallery();
+                  var result = await FunctionUtils.getImageFromGallery(context);
                   setState(() {
                     image = File(result.path);
                   });
