@@ -13,9 +13,10 @@ class _ImageZoomPageState extends State<ImageZoomPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white.withOpacity(0.0),
+        elevation: 0.0,
         leading: Container(
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
@@ -23,7 +24,10 @@ class _ImageZoomPageState extends State<ImageZoomPage> {
           child: CircleAvatar(
             backgroundColor: Colors.transparent,
             child: IconButton(
-              icon: const Icon(Icons.clear),
+              icon: const Icon(
+                Icons.clear,
+                color: Colors.black,
+              ),
               onPressed: () {
                 Navigator.pop(
                   context,
