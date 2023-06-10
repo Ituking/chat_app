@@ -15,6 +15,8 @@ class FunctionUtils {
         final pickedFile = await picker.pickImage(source: ImageSource.gallery);
         if (pickedFile != null) {
           return File(pickedFile.path);
+        } else {
+          return null;
         }
       }
     } catch (e) {}
