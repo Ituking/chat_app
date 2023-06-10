@@ -6,9 +6,9 @@ import 'package:image_picker/image_picker.dart';
 
 class FunctionUtils {
   static Future<dynamic> getImageFromGallery() async {
-    ImagePicker picker = ImagePicker();
-    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
-    return File(pickedFile!.path);
+    // ImagePicker picker = ImagePicker();
+    // final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+    // return File(pickedFile!.path);
     // if (pickedFile != null) {
     //   setState(() {
     //     image = File(pickedFile.path);
