@@ -22,6 +22,9 @@ class FunctionUtils {
         if (kDebugMode) {
           print("Access Denied.");
         }
+        if (context.mounted) return;
+        showAlertDialog(context);
+        return false;
       }
     } catch (e) {}
     // final pickedFile = await picker.pickImage(source: ImageSource.gallery);
