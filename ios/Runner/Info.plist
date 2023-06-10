@@ -48,6 +48,6 @@
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Allow Access To Photo Folders</string>
+	<string>Access to gallery is required for selecting images</string>
 </dict>
 </plist>
