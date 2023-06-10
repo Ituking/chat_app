@@ -1,6 +1,5 @@
 import 'package:chat_app/firestore/account_firestore.dart';
 import 'package:chat_app/firestore/post_firestore.dart';
-import 'package:chat_app/main.dart';
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/image_zoom_page.dart';
