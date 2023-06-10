@@ -25,6 +25,13 @@ class FunctionUtils {
         if (context.mounted) return;
         showAlertDialog(context);
         return false;
+      } else {
+        if (kDebugMode) {
+          print("Exception occured.");
+        }
+        if (context.mounted) return;
+        showAlertDialog(context);
+        return false;
       }
     } catch (e) {}
     // final pickedFile = await picker.pickImage(source: ImageSource.gallery);
