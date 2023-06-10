@@ -33,6 +33,40 @@ class FunctionUtils {
     // }
   }
 
+  static void showAlertDialog(BuildContext context) async {
+    await showCupertinoDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) => CupertinoAlertDialog(
+        title: const Text("Permission Denied"),
+        content: const Text("Allow access to gallery and photos"),
+        actions: [
+          CupertinoDialogAction(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text(
+              "Cancel",
+              style: TextStyle(
+                color: CupertinoColors.systemRed,
+              ),
+            ),
+          ),
+          CupertinoDialogAction(
+            isDefaultAction: true,
+            onPressed: () => openAppSettings(),
+            child: const Text(
+              "Settings",
+              style: TextStyle(
+                color: CupertinoColors.activeBlue,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   static Future<String> uploadImage(String uid, File image) async {
     final FirebaseStorage storageInstance = FirebaseStorage.instance;
     final Reference ref = storageInstance.ref();
