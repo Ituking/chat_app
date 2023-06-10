@@ -11,7 +11,9 @@ class FunctionUtils {
     try {
       ImagePicker picker = ImagePicker();
       PermissionStatus permissionStatus = await Permission.photos.request();
-      if (permissionStatus.isGranted) {}
+      if (permissionStatus.isGranted) {
+        final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+      }
     } catch (e) {}
     // final pickedFile = await picker.pickImage(source: ImageSource.gallery);
     // return File(pickedFile!.path);
