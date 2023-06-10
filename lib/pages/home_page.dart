@@ -267,9 +267,9 @@ class _HomePageState extends State<HomePage> {
             }
           }),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: materialWhite.withOpacity(0.0),
+        backgroundColor: Colors.teal,
         elevation: 0.0,
-        foregroundColor: Colors.black,
+        foregroundColor: Colors.white,
         onPressed: () => showModalBottomSheet(
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
