@@ -198,7 +198,7 @@ class _HomePageState extends State<HomePage> {
                                           Text(
                                             "Like",
                                             style: TextStyle(
-                                              color: Colors.grey,
+                                              color: Colors.black,
                                             ),
                                           ),
                                         ],
@@ -217,7 +217,7 @@ class _HomePageState extends State<HomePage> {
                                           children: const [
                                             Icon(
                                               Icons.mode_comment_outlined,
-                                              color: Colors.grey,
+                                              color: Colors.black,
                                             ),
                                             SizedBox(
                                               width: 8.0,
@@ -225,7 +225,7 @@ class _HomePageState extends State<HomePage> {
                                             Text(
                                               "Comments",
                                               style: TextStyle(
-                                                color: Colors.grey,
+                                                color: Colors.black,
                                               ),
                                             ),
                                           ],
@@ -242,7 +242,7 @@ class _HomePageState extends State<HomePage> {
                                           const Text(
                                             "Share",
                                             style: TextStyle(
-                                              color: Colors.grey,
+                                              color: Colors.black,
                                             ),
                                           ),
                                         ],
@@ -267,7 +267,8 @@ class _HomePageState extends State<HomePage> {
             }
           }),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: materialWhite,
+        backgroundColor: materialWhite.withOpacity(0.0),
+        elevation: 0.0,
         foregroundColor: Colors.black,
         onPressed: () => showModalBottomSheet(
           shape: const RoundedRectangleBorder(

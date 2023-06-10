@@ -14,7 +14,7 @@ class _LikeButtonState extends State<LikeButton> {
     return IconButton(
       icon: Icon(
         Icons.thumb_up_outlined,
-        color: isLiked ? Colors.teal : Colors.grey,
+        color: isLiked ? Colors.teal : Colors.black,
       ),
       onPressed: () {
         setState(() {
