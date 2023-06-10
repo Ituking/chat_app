@@ -51,7 +51,7 @@ class _EditAccountPageState extends State<EditAccountPage> {
             ),
             GestureDetector(
               onTap: () async {
-                var result = await FunctionUtils.getImageFromGallery();
+                var result = await FunctionUtils.getImageFromGallery(context);
                 if (result != null) {
                   setState(() {
                     image = File(result.path);

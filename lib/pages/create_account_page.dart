@@ -36,7 +36,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
             ),
             GestureDetector(
               onTap: () async {
-                var result = await FunctionUtils.getImageFromGallery();
+                var result = await FunctionUtils.getImageFromGallery(context);
                 if (result != null) {
                   setState(() {
                     image = File(result.path);
