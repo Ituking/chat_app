@@ -94,5 +94,7 @@ class FunctionUtils {
     return downloadUrl;
   }
 
-  static Future saveImage(File image) async {}
+  static Future saveImage(File image) async {
+    try {} catch (e) {}
+  }
 }
