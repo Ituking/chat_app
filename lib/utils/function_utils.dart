@@ -95,6 +95,9 @@ class FunctionUtils {
   }
 
   static Future saveImage(File image) async {
-    try {} catch (e) {}
+    try {
+      final PermissionStatus permissionStatus =
+          await Permission.photos.request();
+    } catch (e) {}
   }
 }
