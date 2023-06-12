@@ -47,6 +47,7 @@ dependencies:
   cached_network_image: ^3.2.3
   share_plus: ^7.0.2
   permission_handler: ^10.3.0
+  image_gallery_saver: ^2.0.1
 
 dev_dependencies:
   flutter_test:
