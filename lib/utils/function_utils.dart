@@ -23,9 +23,10 @@ class FunctionUtils {
         if (kDebugMode) {
           print("Access Denied.");
         }
-        if (context.mounted) return;
-        showAlertDialog(context);
-        return false;
+        if (context.mounted) {
+          showAlertDialog(context);
+          return false;
+        }
       } else {
         if (kDebugMode) {
           print("Exception occured.");
