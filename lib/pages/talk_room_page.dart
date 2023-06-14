@@ -122,12 +122,24 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: CupertinoTextField(
-                            controller: controller,
+                          child: Container(
                             decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
                               border: Border.all(
                                 width: 0,
                                 color: CupertinoColors.inactiveGray,
+                              ),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: CupertinoTextField(
+                                controller: controller,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    width: 0,
+                                    color: CupertinoColors.inactiveGray,
+                                  ),
+                                ),
                               ),
                             ),
                           ),
