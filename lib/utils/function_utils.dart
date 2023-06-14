@@ -77,6 +77,7 @@ class FunctionUtils {
             "This will allow you to share the contents of your camera roll and use other functions. Go to Settings and tap Photos."),
         actions: [
           CupertinoDialogAction(
+            isDestructiveAction: true,
             onPressed: () {
               Navigator.pop(context, false);
             },
