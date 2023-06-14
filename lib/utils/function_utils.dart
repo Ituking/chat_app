@@ -35,7 +35,11 @@ class FunctionUtils {
               } else {
                 return null;
               }
+            } else {
+              return false;
             }
+          } else {
+            return false;
           }
         }
       } else {
