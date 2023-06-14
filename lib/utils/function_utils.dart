@@ -72,7 +72,7 @@ class FunctionUtils {
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) => CupertinoAlertDialog(
-        title: const Text("Permission Denied"),
+        title: const Text("Allow access to photos"),
         content: const Text("Allow access to gallery and photos"),
         actions: [
           CupertinoDialogAction(
