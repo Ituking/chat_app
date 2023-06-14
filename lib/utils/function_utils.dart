@@ -66,7 +66,7 @@ class FunctionUtils {
     // }
   }
 
-  static void showAlertDialog(BuildContext context) async {
+  static Future<bool> showAlertDialog(BuildContext context) async {
     bool isOpened = false;
     await showCupertinoDialog<bool>(
       context: context,
@@ -103,6 +103,7 @@ class FunctionUtils {
         ],
       ),
     );
+    return isOpened;
   }
 
   static Future<String> uploadImage(String uid, File image) async {
