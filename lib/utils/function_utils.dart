@@ -64,7 +64,7 @@ class FunctionUtils {
 
   static void showAlertDialog(BuildContext context) async {
     bool isOpened = false;
-    await showCupertinoDialog<void>(
+    await showCupertinoDialog<bool>(
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) => CupertinoAlertDialog(
