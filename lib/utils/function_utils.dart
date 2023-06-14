@@ -25,8 +25,9 @@ class FunctionUtils {
         }
         if (context.mounted) {
           bool isOpened = await showAlertDialog(context);
-
-          return false;
+          if (isOpened) {
+            permissionStatus = await Permission.photos.request();
+          }
         }
       } else {
         if (kDebugMode) {
