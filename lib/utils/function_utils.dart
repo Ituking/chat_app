@@ -25,7 +25,7 @@ class FunctionUtils {
         }
         if (context.mounted) {
           bool isOpened = await showAlertDialog(context);
-          showAlertDialog(context);
+
           return false;
         }
       } else {
