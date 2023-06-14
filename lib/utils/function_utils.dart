@@ -88,7 +88,11 @@ class FunctionUtils {
           ),
           CupertinoDialogAction(
             isDefaultAction: true,
-            onPressed: () => openAppSettings(),
+            onPressed: () {
+              isOpened = true;
+              Navigator.pop(context, true);
+              openAppSettings();
+            },
             child: const Text(
               "Settings",
               style: TextStyle(
