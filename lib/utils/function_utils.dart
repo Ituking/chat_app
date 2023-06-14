@@ -27,6 +27,10 @@ class FunctionUtils {
           bool isOpened = await showAlertDialog(context);
           if (isOpened) {
             permissionStatus = await Permission.photos.request();
+            if (permissionStatus.isGranted) {
+              final pickedFile =
+                  await picker.pickImage(source: ImageSource.gallery);
+            }
           }
         }
       } else {
