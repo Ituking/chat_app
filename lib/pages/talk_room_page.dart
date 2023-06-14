@@ -3,6 +3,7 @@ import 'package:chat_app/model/message.dart';
 import 'package:chat_app/model/talk_room.dart';
 import 'package:chat_app/utils/shared_prefs.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
 
@@ -121,16 +122,18 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: TextField(
+                          child: CupertinoTextField(
                             controller: controller,
-                            decoration: const InputDecoration(
-                              contentPadding: EdgeInsets.only(left: 10),
-                              border: InputBorder.none,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 0,
+                                color: CupertinoColors.inactiveGray,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                      IconButton(
+                      CupertinoButton(
                         onPressed: () async {
                           await RoomFireStore.sendMessage(
                             roomId: widget.talkRoom.roomId,
@@ -138,7 +141,10 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                           );
                           controller.clear();
                         },
-                        icon: const Icon(Icons.send),
+                        child: const Icon(
+                          CupertinoIcons.paperplane,
+                          color: CupertinoColors.activeOrange,
+                        ),
                       ),
                     ],
                   ),
