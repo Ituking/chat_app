@@ -24,6 +24,7 @@ class FunctionUtils {
           print("Access Denied.");
         }
         if (context.mounted) {
+          bool isOpened = await showAlertDialog(context);
           showAlertDialog(context);
           return false;
         }
