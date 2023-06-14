@@ -82,9 +82,6 @@ class FunctionUtils {
             },
             child: const Text(
               "Cancel",
-              style: TextStyle(
-                color: CupertinoColors.systemRed,
-              ),
             ),
           ),
           CupertinoDialogAction(
