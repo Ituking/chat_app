@@ -63,6 +63,7 @@ class FunctionUtils {
   }
 
   static void showAlertDialog(BuildContext context) async {
+    bool isOpened = false;
     await showCupertinoDialog<void>(
       context: context,
       barrierDismissible: false,
