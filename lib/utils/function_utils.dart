@@ -77,7 +77,7 @@ class FunctionUtils {
         actions: [
           CupertinoDialogAction(
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.pop(context, false);
             },
             child: const Text(
               "Cancel",
