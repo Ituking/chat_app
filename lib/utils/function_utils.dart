@@ -18,7 +18,8 @@ class FunctionUtils {
         } else {
           return null;
         }
-      } else if (permissionStatus.isDenied) {
+      } else if (permissionStatus.isDenied ||
+          permissionStatus.isPermanentlyDenied) {
         if (kDebugMode) {
           print("Access Denied.");
         }
