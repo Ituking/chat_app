@@ -72,7 +72,7 @@ class FunctionUtils {
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) => CupertinoAlertDialog(
-        title: const Text("Allow access to photos"),
+        title: const Text("Allow access to Photos"),
         content: const Text(
             "This will allow you to share the contents of your camera roll and use other functions. Go to Settings and tap Photos."),
         actions: [
