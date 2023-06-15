@@ -3,10 +3,13 @@ import 'package:chat_app/pages/login_page.dart';
 import 'package:chat_app/utils/shared_prefs.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+// ignore: library_prefixes
+import 'package:timeago/timeago.dart' as timeAgo;
 
 import 'firebase_options.dart';
 
 void main() async {
+  timeAgo.setLocaleMessages("en", timeAgo.EnMessages());
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

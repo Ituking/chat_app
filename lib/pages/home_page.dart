@@ -7,10 +7,10 @@ import 'package:chat_app/pages/post_comment_page.dart';
 import 'package:chat_app/pages/post_page.dart';
 import 'package:chat_app/utils/like_button.dart';
 import 'package:chat_app/utils/share_button.dart';
+import 'package:chat_app/utils/timeago.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                                     subtitle: Text(
                                       post.postTime == null
                                           ? ""
-                                          : DateFormat('yyyy-MM-dd-Hm').format(
+                                          : createTimeAgoString(
                                               post.postTime!.toDate(),
                                             ),
                                       style: const TextStyle(
