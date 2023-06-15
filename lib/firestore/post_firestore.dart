@@ -52,6 +52,7 @@ class PostFirestore {
       });
       if (kDebugMode) {
         print("Success in retrieving my post.");
+        print("postList => $postList");
       }
       return postList;
     } on FirebaseException catch (e) {
