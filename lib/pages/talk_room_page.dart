@@ -21,7 +21,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(236, 255, 255, 255),
+      backgroundColor: CupertinoColors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
