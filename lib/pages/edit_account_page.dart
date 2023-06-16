@@ -6,6 +6,7 @@ import 'package:chat_app/pages/login_page.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:chat_app/utils/function_utils.dart';
 import 'package:chat_app/utils/widget_utils.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EditAccountPage extends StatefulWidget {
@@ -60,7 +61,7 @@ class _EditAccountPageState extends State<EditAccountPage> {
               },
               child: CircleAvatar(
                 foregroundImage: getImage(),
-                backgroundColor: Colors.teal,
+                backgroundColor: CupertinoColors.activeGreen,
                 radius: 50,
                 child: const Icon(Icons.add),
               ),
@@ -76,15 +77,15 @@ class _EditAccountPageState extends State<EditAccountPage> {
                       hintText: "Name",
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: Colors.black,
+                          color: CupertinoColors.black,
                           width: 2,
                         ),
                       ),
                       errorStyle: TextStyle(
-                        color: Colors.red,
+                        color: CupertinoColors.systemRed,
                       ),
                     ),
-                    cursorColor: Colors.black,
+                    cursorColor: CupertinoColors.black,
                     cursorWidth: 2.0,
                   ),
                 ),
@@ -100,15 +101,15 @@ class _EditAccountPageState extends State<EditAccountPage> {
                     hintText: "ID",
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: Colors.black,
+                        color: CupertinoColors.black,
                         width: 2,
                       ),
                     ),
                     errorStyle: TextStyle(
-                      color: Colors.red,
+                      color: CupertinoColors.systemRed,
                     ),
                   ),
-                  cursorColor: Colors.black,
+                  cursorColor: CupertinoColors.black,
                   cursorWidth: 2.0,
                 ),
               ),
@@ -121,15 +122,15 @@ class _EditAccountPageState extends State<EditAccountPage> {
                   hintText: "Self Introduction",
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.black,
+                      color: CupertinoColors.black,
                       width: 2,
                     ),
                   ),
                   errorStyle: TextStyle(
-                    color: Colors.red,
+                    color: CupertinoColors.systemRed,
                   ),
                 ),
-                cursorColor: Colors.black,
+                cursorColor: CupertinoColors.black,
                 cursorWidth: 2.0,
               ),
             ),
@@ -188,7 +189,9 @@ class _EditAccountPageState extends State<EditAccountPage> {
               height: 50,
             ),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: CupertinoColors.systemRed,
+              ),
               onPressed: () {
                 AccountFirestore.deleteUser(myAccount.id);
                 Authentication.deleteAuth();
@@ -206,7 +209,7 @@ class _EditAccountPageState extends State<EditAccountPage> {
               child: const Text(
                 "Delete Account",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: CupertinoColors.white,
                 ),
               ),
             ),
