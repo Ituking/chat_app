@@ -88,10 +88,8 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                                         horizontal: 10, vertical: 6),
                                     child: Text(
                                       message.message,
-                                      style: TextStyle(
-                                        color: message.isMe
-                                            ? Colors.white
-                                            : Colors.white,
+                                      style: const TextStyle(
+                                        color: CupertinoColors.white,
                                       ),
                                     ),
                                   ),
