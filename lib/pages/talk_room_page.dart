@@ -146,6 +146,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(15),
                               child: CupertinoTextField(
+                                cursorColor: CupertinoColors.activeGreen,
                                 controller: controller,
                                 decoration: BoxDecoration(
                                   color:
