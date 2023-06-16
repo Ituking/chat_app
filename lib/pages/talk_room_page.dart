@@ -86,16 +86,22 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                                     ),
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 10, vertical: 6),
-                                    child: Text(
-                                      message.message,
-                                      style: const TextStyle(
-                                        color: CupertinoColors.white,
-                                      ),
-                                    ),
-                                  ),
-                                  Text(
-                                    intl.DateFormat('HH:mm').format(
-                                      message.sendTime.toDate(),
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                          child: Text(
+                                            message.message,
+                                            style: const TextStyle(
+                                              color: CupertinoColors.white,
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          intl.DateFormat('HH:mm').format(
+                                            message.sendTime.toDate(),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],
