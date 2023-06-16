@@ -155,6 +155,13 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                                   horizontal: 10,
                                   vertical: 6,
                                 ),
+                                placeholder: 'Enter a message',
+                                placeholderStyle: const TextStyle(
+                                  color: CupertinoColors.placeholderText,
+                                ),
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                           ),
