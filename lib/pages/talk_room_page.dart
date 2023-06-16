@@ -80,8 +80,8 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                                                 0.6),
                                     decoration: BoxDecoration(
                                       color: message.isMe
-                                          ? Colors.blueGrey
-                                          : Colors.teal,
+                                          ? CupertinoColors.activeGreen
+                                          : CupertinoColors.inactiveGray,
                                       borderRadius: BorderRadius.circular(15),
                                     ),
                                     padding: const EdgeInsets.symmetric(
