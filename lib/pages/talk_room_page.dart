@@ -100,6 +100,9 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                                           intl.DateFormat('HH:mm').format(
                                             message.sendTime.toDate(),
                                           ),
+                                          style: const TextStyle(
+                                            color: CupertinoColors.white,
+                                          ),
                                         ),
                                       ],
                                     ),
