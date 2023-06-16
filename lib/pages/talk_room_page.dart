@@ -179,7 +179,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                         },
                         child: const Icon(
                           CupertinoIcons.paperplane,
-                          color: CupertinoColors.activeOrange,
+                          color: CupertinoColors.activeGreen,
                         ),
                       ),
                     ],

@@ -9,6 +9,7 @@ import 'package:chat_app/utils/like_button.dart';
 import 'package:chat_app/utils/share_button.dart';
 import 'package:chat_app/utils/timeago.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -266,9 +267,9 @@ class _HomePageState extends State<HomePage> {
             }
           }),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.teal,
+        backgroundColor: CupertinoColors.activeGreen,
         elevation: 0.0,
-        foregroundColor: Colors.white,
+        foregroundColor: CupertinoColors.white,
         onPressed: () => showModalBottomSheet(
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
