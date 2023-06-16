@@ -7,6 +7,7 @@ import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/edit_account_page.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -25,12 +26,12 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: CupertinoColors.white,
         elevation: 0,
         title: const Text(
           'Profile',
           style: TextStyle(
-            color: Colors.black,
+            color: CupertinoColors.black,
             fontSize: 20.0,
             fontWeight: FontWeight.bold,
           ),
@@ -38,7 +39,7 @@ class _ProfilePageState extends State<ProfilePage> {
         actions: [
           IconButton(
             icon: const Icon(Icons.more_horiz),
-            color: Colors.grey,
+            color: CupertinoColors.systemGrey,
             onPressed: () {},
           ),
         ],
@@ -67,15 +68,15 @@ class _ProfilePageState extends State<ProfilePage> {
                     children: [
                       CircleAvatar(
                         radius: 50.0,
-                        backgroundColor: Colors.white,
+                        backgroundColor: CupertinoColors.white,
                         backgroundImage: NetworkImage(myAccount.imagePath),
                         child: Container(
                           padding: const EdgeInsets.all(2),
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: CupertinoColors.white,
                             shape: BoxShape.circle,
                             border: Border.all(
-                              color: Colors.white,
+                              color: CupertinoColors.white,
                               width: 2,
                             ),
                           ),
@@ -104,7 +105,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           child: const Text(
                             "Edit",
                             style: TextStyle(
-                              color: Colors.black,
+                              color: CupertinoColors.black,
                               fontSize: 16.0,
                               fontWeight: FontWeight.bold,
                             ),
@@ -125,7 +126,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   Text(
                     myAccount.userId,
                     style: const TextStyle(
-                      color: Colors.grey,
+                      color: CupertinoColors.systemGrey,
                       fontSize: 16.0,
                     ),
                   ),
