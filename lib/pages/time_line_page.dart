@@ -1,7 +1,7 @@
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/post_widget.dart';
-import 'package:chat_app/utils/widget_utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +35,15 @@ class _TimeLinePageState extends State<TimeLinePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: WidgetUtils.createAppBar("Timeline"),
+      appBar: AppBar(
+        title: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 8),
+          child: CupertinoSearchTextField(
+            placeholder: 'Search',
+            onSubmitted: (String value) {},
+          ),
+        ),
+      ),
       body: GestureDetector(
         onTap: () {
           if (kDebugMode) {
