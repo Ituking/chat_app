@@ -97,6 +97,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                                             message.message,
                                             style: const TextStyle(
                                               color: CupertinoColors.white,
+                                              fontSize: 16,
                                             ),
                                           ),
                                         ),
@@ -106,6 +107,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                                           ),
                                           style: const TextStyle(
                                             color: CupertinoColors.white,
+                                            fontSize: 16,
                                           ),
                                         ),
                                       ],
