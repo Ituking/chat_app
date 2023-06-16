@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LikeButton extends StatefulWidget {
@@ -14,7 +15,9 @@ class _LikeButtonState extends State<LikeButton> {
     return IconButton(
       icon: Icon(
         Icons.thumb_up_outlined,
-        color: isLiked ? Colors.teal : Colors.black,
+        color: isLiked
+            ? const Color.fromRGBO(255, 100, 130, 1)
+            : CupertinoColors.black,
       ),
       onPressed: () {
         setState(() {
