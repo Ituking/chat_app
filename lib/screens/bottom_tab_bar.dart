@@ -2,6 +2,7 @@ import 'package:chat_app/pages/home_page.dart';
 import 'package:chat_app/pages/profile_page.dart';
 import 'package:chat_app/pages/time_line_page.dart';
 import 'package:chat_app/pages/top_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BottomTabBar extends StatefulWidget {
@@ -45,7 +46,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
           ),
         ],
         currentIndex: selectedIndex,
-        selectedItemColor: Colors.black,
+        selectedItemColor: CupertinoColors.activeGreen,
         onTap: (index) {
           setState(() {
             selectedIndex = index;
