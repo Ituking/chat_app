@@ -128,7 +128,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Container(
-                  color: Colors.white,
+                  color: CupertinoColors.white,
                   height: 60,
                   child: Row(
                     children: [
@@ -137,14 +137,14 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(15),
                               border: Border.all(
                                 width: 0,
                                 color: CupertinoColors.inactiveGray,
                               ),
                             ),
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(15),
                               child: CupertinoTextField(
                                 controller: controller,
                                 decoration: BoxDecoration(
