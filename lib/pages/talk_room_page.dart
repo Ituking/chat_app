@@ -158,7 +158,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                                 ),
                                 placeholder: 'Enter a message',
                                 placeholderStyle: const TextStyle(
-                                  color: CupertinoColors.placeholderText,
+                                  color: CupertinoColors.secondaryLabel,
                                 ),
                                 style: const TextStyle(
                                   color: Colors.white,
