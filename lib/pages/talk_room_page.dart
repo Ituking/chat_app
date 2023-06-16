@@ -148,10 +148,12 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                               child: CupertinoTextField(
                                 controller: controller,
                                 decoration: BoxDecoration(
-                                  border: Border.all(
-                                    width: 0,
-                                    color: CupertinoColors.inactiveGray,
-                                  ),
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 6,
                                 ),
                               ),
                             ),
