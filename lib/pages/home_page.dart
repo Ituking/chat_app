@@ -157,11 +157,11 @@ class _HomePageState extends State<HomePage> {
                                             decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(24.0),
-                                              color: Colors.grey,
+                                              color: CupertinoColors.systemGrey,
                                             ),
                                             child: const Icon(
                                               Icons.image,
-                                              color: Colors.white,
+                                              color: CupertinoColors.white,
                                               size: 64.0,
                                             ),
                                           ),
@@ -198,7 +198,7 @@ class _HomePageState extends State<HomePage> {
                                           Text(
                                             "Like",
                                             style: TextStyle(
-                                              color: Colors.black,
+                                              color: CupertinoColors.black,
                                             ),
                                           ),
                                         ],
@@ -217,7 +217,7 @@ class _HomePageState extends State<HomePage> {
                                           children: [
                                             Icon(
                                               Icons.mode_comment_outlined,
-                                              color: Colors.black,
+                                              color: CupertinoColors.black,
                                             ),
                                             SizedBox(
                                               width: 8.0,
@@ -225,7 +225,7 @@ class _HomePageState extends State<HomePage> {
                                             Text(
                                               "Comments",
                                               style: TextStyle(
-                                                color: Colors.black,
+                                                color: CupertinoColors.black,
                                               ),
                                             ),
                                           ],
@@ -242,7 +242,7 @@ class _HomePageState extends State<HomePage> {
                                           const Text(
                                             "Share",
                                             style: TextStyle(
-                                              color: Colors.black,
+                                              color: CupertinoColors.black,
                                             ),
                                           ),
                                         ],
