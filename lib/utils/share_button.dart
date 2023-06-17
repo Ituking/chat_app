@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -17,7 +18,7 @@ class ShareButton extends StatelessWidget {
       },
       icon: const Icon(
         Icons.ios_share_outlined,
-        color: Colors.black,
+        color: CupertinoColors.black,
       ),
     );
   }
