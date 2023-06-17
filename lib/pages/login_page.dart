@@ -3,6 +3,7 @@ import 'package:chat_app/pages/create_account_page.dart';
 import 'package:chat_app/screens/bottom_tab_bar.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
                   foreground: Paint()
                     ..style = PaintingStyle.stroke
                     ..strokeWidth = 3
-                    ..color = Colors.teal,
+                    ..color = CupertinoColors.activeGreen,
                 ),
               ),
               Padding(
@@ -51,15 +52,15 @@ class _LoginPageState extends State<LoginPage> {
                       hintText: "Email Address",
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: Colors.black,
+                          color: CupertinoColors.black,
                           width: 2,
                         ),
                       ),
                       errorStyle: TextStyle(
-                        color: Colors.red,
+                        color: CupertinoColors.destructiveRed,
                       ),
                     ),
-                    cursorColor: Colors.black,
+                    cursorColor: CupertinoColors.black,
                     cursorWidth: 2.0,
                   ),
                 ),
@@ -72,15 +73,15 @@ class _LoginPageState extends State<LoginPage> {
                     hintText: "Password",
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: Colors.black,
+                        color: CupertinoColors.black,
                         width: 2,
                       ),
                     ),
                     errorStyle: TextStyle(
-                      color: Colors.red,
+                      color: CupertinoColors.destructiveRed,
                     ),
                   ),
-                  cursorColor: Colors.black,
+                  cursorColor: CupertinoColors.black,
                   cursorWidth: 2.0,
                   obscureText: true,
                 ),
@@ -91,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
               RichText(
                 text: TextSpan(
                   style: const TextStyle(
-                    color: Colors.black,
+                    color: CupertinoColors.black,
                   ),
                   children: [
                     const TextSpan(
@@ -100,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                     TextSpan(
                       text: "this",
                       style: const TextStyle(
-                        color: Colors.teal,
+                        color: CupertinoColors.activeGreen,
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
