@@ -31,9 +31,22 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
         centerTitle: false,
         title: Row(
           children: [
-            CircleAvatar(
-              backgroundImage: NetworkImage(
-                widget.talkRoom.talkUser.imagePath!,
+            Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: CupertinoColors.systemGrey.withOpacity(0.3),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: CircleAvatar(
+                backgroundImage: NetworkImage(
+                  widget.talkRoom.talkUser.imagePath!,
+                ),
               ),
             ),
             const SizedBox(
