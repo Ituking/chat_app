@@ -29,12 +29,21 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
           color: CupertinoColors.black,
         ),
         centerTitle: false,
-        title: Text(
-          widget.talkRoom.talkUser.name,
-          style: const TextStyle(
-            color: CupertinoColors.black,
-            fontWeight: FontWeight.bold,
-          ),
+        title: Row(
+          children: [
+            CircleAvatar(
+              backgroundImage: NetworkImage(
+                widget.talkRoom.talkUser.imagePath!,
+              ),
+            ),
+            Text(
+              widget.talkRoom.talkUser.name,
+              style: const TextStyle(
+                color: CupertinoColors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
         ),
       ),
       body: SafeArea(
