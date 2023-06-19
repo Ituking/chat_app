@@ -36,6 +36,9 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                 widget.talkRoom.talkUser.imagePath!,
               ),
             ),
+            const SizedBox(
+              width: 12,
+            ),
             Text(
               widget.talkRoom.talkUser.name,
               style: const TextStyle(
