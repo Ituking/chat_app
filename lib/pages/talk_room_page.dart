@@ -1,6 +1,7 @@
 import 'package:chat_app/firestore/room_firestore.dart';
 import 'package:chat_app/model/message.dart';
 import 'package:chat_app/model/talk_room.dart';
+import 'package:chat_app/pages/user_profile_page.dart';
 import 'package:chat_app/utils/shared_prefs.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
@@ -31,21 +32,31 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
         centerTitle: false,
         title: Row(
           children: [
-            Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    color: CupertinoColors.systemGrey.withOpacity(0.3),
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: const Offset(0, 3),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (contaxt) => const UserProfilePage(),
                   ),
-                ],
-              ),
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(
-                  widget.talkRoom.talkUser.imagePath!,
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: CupertinoColors.systemGrey.withOpacity(0.3),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
+                ),
+                child: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                    widget.talkRoom.talkUser.imagePath!,
+                  ),
                 ),
               ),
             ),
