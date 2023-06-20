@@ -69,6 +69,7 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.7,
                 child: TextFormField(
+                  autofillHints: const [AutofillHints.password],
                   controller: passwordController,
                   decoration: const InputDecoration(
                     hintText: "Password",
