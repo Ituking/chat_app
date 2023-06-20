@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.7,
-                  child: TextField(
+                  child: TextFormField(
                     controller: emailController,
                     decoration: const InputDecoration(
                       hintText: "Email Address",
@@ -67,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.7,
-                child: TextField(
+                child: TextFormField(
                   controller: passwordController,
                   decoration: const InputDecoration(
                     hintText: "Password",
