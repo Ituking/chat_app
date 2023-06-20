@@ -47,6 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.7,
                   child: TextFormField(
+                    autofillHints: const [AutofillHints.email],
                     controller: emailController,
                     decoration: const InputDecoration(
                       hintText: "Email Address",
