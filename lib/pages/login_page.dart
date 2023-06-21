@@ -53,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                       hintText: "Email Address",
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: CupertinoColors.black,
+                          color: CupertinoColors.activeGreen,
                           width: 2,
                         ),
                       ),
