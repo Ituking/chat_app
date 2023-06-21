@@ -31,14 +31,19 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.25,
               ),
-              Text(
-                "Chat App",
-                style: TextStyle(
-                  fontSize: 50,
-                  foreground: Paint()
-                    ..style = PaintingStyle.stroke
-                    ..strokeWidth = 3
-                    ..color = CupertinoColors.activeGreen,
+              AnimatedOpacity(
+                opacity: isLoggingIn ? 0.0 : 1.0,
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.easeIn,
+                child: Text(
+                  "Chat App",
+                  style: TextStyle(
+                    fontSize: 50,
+                    foreground: Paint()
+                      ..style = PaintingStyle.stroke
+                      ..strokeWidth = 3
+                      ..color = CupertinoColors.activeGreen,
+                  ),
                 ),
               ),
               Padding(
@@ -126,6 +131,9 @@ class _LoginPageState extends State<LoginPage> {
               ),
               ElevatedButton(
                 onPressed: () async {
+                  setState(() {
+                    isLoggingIn = true;
+                  });
                   if (emailController.text.isNotEmpty &&
                       passwordController.text.isNotEmpty) {
                     var result = await Authentication.emailSignIn(
@@ -135,6 +143,9 @@ class _LoginPageState extends State<LoginPage> {
                           await AccountFirestore.getUser(result.user!.uid);
                       if (result0 == true) {
                         if (!mounted) return;
+                        setState(() {
+                          isLoggingIn = false;
+                        });
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
