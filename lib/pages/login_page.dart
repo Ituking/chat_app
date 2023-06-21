@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
                     controller: emailController,
                     decoration: const InputDecoration(
                       hintText: "Email Address",
-                      focusedBorder: UnderlineInputBorder(
+                      focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: CupertinoColors.black,
                           width: 2,
