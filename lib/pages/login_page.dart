@@ -72,15 +72,16 @@ class _LoginPageState extends State<LoginPage> {
                 child: TextFormField(
                   autofillHints: const [AutofillHints.password],
                   controller: passwordController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     hintText: "Password",
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: const BorderSide(
                         color: CupertinoColors.black,
                         width: 2,
                       ),
                     ),
-                    errorStyle: TextStyle(
+                    errorStyle: const TextStyle(
                       color: CupertinoColors.destructiveRed,
                     ),
                   ),
