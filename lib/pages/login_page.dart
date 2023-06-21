@@ -77,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16),
                       borderSide: const BorderSide(
-                        color: CupertinoColors.black,
+                        color: CupertinoColors.activeGreen,
                         width: 2,
                       ),
                     ),
