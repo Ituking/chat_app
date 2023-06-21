@@ -49,15 +49,16 @@ class _LoginPageState extends State<LoginPage> {
                   child: TextFormField(
                     autofillHints: const [AutofillHints.email],
                     controller: emailController,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       hintText: "Email Address",
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderRadius: BorderRadius.circular(16),
+                        borderSide: const BorderSide(
                           color: CupertinoColors.activeGreen,
                           width: 2,
                         ),
                       ),
-                      errorStyle: TextStyle(
+                      errorStyle: const TextStyle(
                         color: CupertinoColors.destructiveRed,
                       ),
                     ),
