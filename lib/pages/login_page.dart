@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                   controller: passwordController,
                   decoration: const InputDecoration(
                     hintText: "Password",
-                    focusedBorder: UnderlineInputBorder(
+                    focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: CupertinoColors.black,
                         width: 2,
