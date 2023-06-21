@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                       color: CupertinoColors.destructiveRed,
                     ),
                   ),
-                  cursorColor: CupertinoColors.black,
+                  cursorColor: CupertinoColors.activeGreen,
                   cursorWidth: 2.0,
                   obscureText: true,
                 ),
