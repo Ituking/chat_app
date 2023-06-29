@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class UserProfilePage extends StatefulWidget {
-  const UserProfilePage({super.key});
+  final String userId;
+  const UserProfilePage({super.key, required this.userId});
 
   @override
   State<UserProfilePage> createState() => _UserProfilePageState();
