@@ -37,7 +37,9 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (contaxt) => const UserProfilePage(),
+                    builder: (contaxt) => UserProfilePage(
+                      userId: widget.talkRoom.talkUser.uid,
+                    ),
                   ),
                 );
               },
