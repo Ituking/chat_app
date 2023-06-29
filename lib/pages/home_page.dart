@@ -293,7 +293,9 @@ class _HomePageState extends State<HomePage> {
             );
           },
         ),
-        child: const Icon(Icons.add),
+        child: const Icon(
+          CupertinoIcons.add,
+        ),
       ),
     );
   }
