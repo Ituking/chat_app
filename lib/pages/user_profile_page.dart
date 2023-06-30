@@ -12,9 +12,18 @@ class UserProfilePage extends StatefulWidget {
 class _UserProfilePageState extends State<UserProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("UserProfilePage"),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: CupertinoColors.white,
+        elevation: 0,
+        title: const Text(
+          'Profile',
+          style: TextStyle(
+            color: CupertinoColors.black,
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     );
   }
