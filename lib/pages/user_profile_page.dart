@@ -1,3 +1,4 @@
+import 'package:chat_app/model/account.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,7 @@ class UserProfilePage extends StatefulWidget {
 }
 
 class _UserProfilePageState extends State<UserProfilePage> {
+  Account? userAccount;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
