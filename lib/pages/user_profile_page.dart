@@ -76,6 +76,13 @@ class _UserProfilePageState extends State<UserProfilePage> {
                   const SizedBox(
                     height: 10.0,
                   ),
+                  const Text(
+                    "Emma",
+                    style: TextStyle(
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
             ),
