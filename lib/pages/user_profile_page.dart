@@ -13,6 +13,7 @@ class UserProfilePage extends StatefulWidget {
 class _UserProfilePageState extends State<UserProfilePage> {
   Account? userAccount;
   @override
+  Future<void> getUserProfile() async {}
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
