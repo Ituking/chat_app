@@ -25,6 +25,23 @@ class _UserProfilePageState extends State<UserProfilePage> {
           ),
         ),
       ),
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            Container(
+              height: 200.0,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(
+                    "https://cdn.pixabay.com/photo/2023/06/13/15/05/astronaut-8061095_1280.png",
+                  ),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
