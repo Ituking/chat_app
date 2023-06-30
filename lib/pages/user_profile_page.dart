@@ -83,6 +83,9 @@ class _UserProfilePageState extends State<UserProfilePage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  const SizedBox(
+                    height: 8.0,
+                  ),
                 ],
               ),
             ),
