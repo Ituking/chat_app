@@ -14,7 +14,13 @@ class UserProfilePage extends StatefulWidget {
 
 class _UserProfilePageState extends State<UserProfilePage> {
   Account? userAccount;
+
   @override
+  void initState() {
+    super.initState();
+    getUserProfile();
+  }
+
   Future<void> getUserProfile() async {
     User? userProfile = await UserFirestore.fetchProfile(widget.userId);
   }
