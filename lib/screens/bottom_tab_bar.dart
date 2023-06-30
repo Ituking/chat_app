@@ -1,5 +1,5 @@
 import 'package:chat_app/pages/home_page.dart';
-import 'package:chat_app/pages/profile_page.dart';
+import 'package:chat_app/pages/my_profile_page.dart';
 import 'package:chat_app/pages/time_line_page.dart';
 import 'package:chat_app/pages/top_page.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,7 +18,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
     const HomePage(),
     const TimeLinePage(),
     const TopPage(),
-    const ProfilePage(),
+    const MyProfilePage(),
   ];
 
   @override
