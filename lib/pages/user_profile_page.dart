@@ -2,6 +2,7 @@ import 'package:chat_app/firestore/user_firestore.dart';
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/user.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class UserProfilePage extends StatefulWidget {
@@ -33,6 +34,10 @@ class _UserProfilePageState extends State<UserProfilePage> {
           userId: "",
         );
       });
+    } else {
+      if (kDebugMode) {
+        print("userProfile is null.");
+      }
     }
   }
 
