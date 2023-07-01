@@ -23,6 +23,17 @@ class _UserProfilePageState extends State<UserProfilePage> {
 
   Future<void> getUserProfile() async {
     User? userProfile = await UserFirestore.fetchProfile(widget.userId);
+    if (userProfile != null) {
+      setState(() {
+        userAccount = Account(
+          id: widget.userId,
+          name: userProfile.name,
+          imagePath: userProfile.imagePath!,
+          selfIntroduction: "",
+          userId: "",
+        );
+      });
+    }
   }
 
   Widget build(BuildContext context) {
