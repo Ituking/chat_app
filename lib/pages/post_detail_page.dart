@@ -13,8 +13,20 @@ class PostDetailPage extends StatefulWidget {
 class _PostDetailPageState extends State<PostDetailPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: CupertinoColors.white,
+        elevation: 0,
+        title: const Text(
+          "Post",
+          style: TextStyle(
+            color: CupertinoColors.black,
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      body: const Center(
         child: Text("PostDetailPage"),
       ),
     );
