@@ -132,16 +132,46 @@ class _UserProfilePageState extends State<UserProfilePage> {
         SliverToBoxAdapter(
           child: Stack(
             children: [
-              Container(
-                height: 200.0,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(
-                      "https://cdn.pixabay.com/photo/2023/06/13/15/05/astronaut-8061095_1280.png",
+              Stack(
+                children: [
+                  Container(
+                    height: 200.0,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(
+                          "https://cdn.pixabay.com/photo/2023/06/13/15/05/astronaut-8061095_1280.png",
+                        ),
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                    fit: BoxFit.cover,
                   ),
-                ),
+                  const Positioned(
+                    bottom: 16.0,
+                    right: 16.0,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          "100Followers",
+                          style: TextStyle(
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold,
+                            color: CupertinoColors.white,
+                          ),
+                        ),
+                        SizedBox(height: 8.0),
+                        Text(
+                          "200Following",
+                          style: TextStyle(
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold,
+                            color: CupertinoColors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16.0, 140.0, 16.0, 0),
