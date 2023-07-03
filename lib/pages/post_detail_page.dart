@@ -32,8 +32,9 @@ class _PostDetailPageState extends State<PostDetailPage> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) =>
-                  ImageZoomPage(imagePath: widget.post.imagePath),
+              builder: (context) => ImageZoomPage(
+                imagePath: widget.post.imagePath,
+              ),
             ),
           );
         },
