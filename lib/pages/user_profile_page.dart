@@ -2,6 +2,7 @@ import 'package:chat_app/firestore/user_firestore.dart';
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/model/user.dart';
+import 'package:chat_app/pages/post_detail_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -235,12 +236,24 @@ class _UserProfilePageState extends State<UserProfilePage> {
             ),
             itemBuilder: (context, index) {
               Post post = postList[index];
-              return Container(
-                height: 200,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(post.imagePath!),
-                    fit: BoxFit.cover,
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PostDetailPage(
+                        post: post,
+                      ),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 200,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage(post.imagePath!),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               );
