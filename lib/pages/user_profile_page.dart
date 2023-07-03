@@ -247,12 +247,15 @@ class _UserProfilePageState extends State<UserProfilePage> {
                     ),
                   );
                 },
-                child: Container(
-                  height: 200,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(post.imagePath!),
-                      fit: BoxFit.cover,
+                child: Hero(
+                  tag: "post_${post.id}",
+                  child: Container(
+                    height: 200,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(post.imagePath!),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
