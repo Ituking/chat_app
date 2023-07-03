@@ -226,10 +226,12 @@ class _UserProfilePageState extends State<UserProfilePage> {
           ),
         ),
         SliverPadding(
-          padding: EdgeInsets.zero,
+          padding: const EdgeInsets.all(4.0),
           sliver: SliverGrid.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
+              mainAxisSpacing: 4.0,
+              crossAxisSpacing: 4.0,
             ),
             itemBuilder: (context, index) {
               Post post = postList[index];
