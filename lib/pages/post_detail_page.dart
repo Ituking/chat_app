@@ -1,4 +1,5 @@
 import 'package:chat_app/model/post.dart';
+import 'package:chat_app/pages/image_zoom_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -26,14 +27,25 @@ class _PostDetailPageState extends State<PostDetailPage> {
           ),
         ),
       ),
-      body: Hero(
-        tag: "post_${widget.post.id}",
-        child: Container(
-          height: 200,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: NetworkImage(widget.post.imagePath!),
-              fit: BoxFit.cover,
+      body: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+                  ImageZoomPage(imagePath: widget.post.imagePath),
+            ),
+          );
+        },
+        child: Hero(
+          tag: "post_${widget.post.id}",
+          child: Container(
+            height: 200,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(widget.post.imagePath!),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
