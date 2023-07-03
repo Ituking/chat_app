@@ -222,12 +222,6 @@ class _UserProfilePageState extends State<UserProfilePage> {
                   ],
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(top: 400.0),
-                child: Divider(
-                  color: CupertinoColors.systemGrey,
-                ),
-              ),
             ],
           ),
         ),
