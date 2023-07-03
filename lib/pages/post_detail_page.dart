@@ -26,8 +26,17 @@ class _PostDetailPageState extends State<PostDetailPage> {
           ),
         ),
       ),
-      body: const Center(
-        child: Text("PostDetailPage"),
+      body: Hero(
+        tag: "post_${widget.post.id}",
+        child: Container(
+          height: 200,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: NetworkImage(widget.post.imagePath!),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
       ),
     );
   }
