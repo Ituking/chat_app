@@ -133,14 +133,21 @@ class _HomePageState extends State<HomePage> {
                                                 ),
                                               );
                                             },
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(24.0),
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      post.imagePath!),
-                                                  fit: BoxFit.cover,
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                horizontal: 5.0,
+                                              ),
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          24.0),
+                                                  image: DecorationImage(
+                                                    image: NetworkImage(
+                                                        post.imagePath!),
+                                                    fit: BoxFit.cover,
+                                                  ),
                                                 ),
                                               ),
                                             ),
