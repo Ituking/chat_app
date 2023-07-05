@@ -50,6 +50,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
               child: Container(
                 height: 200,
                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(24.0),
                   image: DecorationImage(
                     image: NetworkImage(widget.post.imagePath!),
                     fit: BoxFit.cover,
