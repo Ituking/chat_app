@@ -40,14 +40,20 @@ class _PostDetailPageState extends State<PostDetailPage> {
         },
         child: SizedBox(
           height: MediaQuery.of(context).size.height * 0.5,
-          child: Hero(
-            tag: "post_${widget.post.id}",
-            child: Container(
-              height: 200,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(widget.post.imagePath!),
-                  fit: BoxFit.cover,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 10.0,
+              vertical: 10.0,
+            ),
+            child: Hero(
+              tag: "post_${widget.post.id}",
+              child: Container(
+                height: 200,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(widget.post.imagePath!),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
