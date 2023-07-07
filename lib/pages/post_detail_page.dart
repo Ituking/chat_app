@@ -3,6 +3,7 @@ import 'package:chat_app/pages/image_zoom_page.dart';
 import 'package:chat_app/pages/post_comment_page.dart';
 import 'package:chat_app/pages/user_profile_page.dart';
 import 'package:chat_app/utils/like_button.dart';
+import 'package:chat_app/utils/share_button.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -166,6 +167,22 @@ class _PostDetailPageState extends State<PostDetailPage> {
                       ),
                     ],
                   ),
+                ),
+                Row(
+                  children: [
+                    ShareButton(
+                      content: widget.post.content,
+                    ),
+                    const SizedBox(
+                      width: 8.0,
+                    ),
+                    const Text(
+                      "Share",
+                      style: TextStyle(
+                        color: CupertinoColors.black,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             )
