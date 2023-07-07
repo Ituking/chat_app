@@ -1,5 +1,6 @@
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/image_zoom_page.dart';
+import 'package:chat_app/pages/post_comment_page.dart';
 import 'package:chat_app/pages/user_profile_page.dart';
 import 'package:chat_app/utils/like_button.dart';
 import 'package:chat_app/utils/widget_utils.dart';
@@ -122,10 +123,10 @@ class _PostDetailPageState extends State<PostDetailPage> {
             const SizedBox(
               height: 14.0,
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Row(
+                const Row(
                   children: [
                     LikeButton(),
                     SizedBox(
@@ -138,6 +139,33 @@ class _PostDetailPageState extends State<PostDetailPage> {
                       ),
                     ),
                   ],
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PostCommentPage(),
+                      ),
+                    );
+                  },
+                  child: const Row(
+                    children: [
+                      Icon(
+                        Icons.mode_comment_outlined,
+                        color: CupertinoColors.black,
+                      ),
+                      SizedBox(
+                        width: 8.0,
+                      ),
+                      Text(
+                        "Comments",
+                        style: TextStyle(
+                          color: CupertinoColors.black,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             )
