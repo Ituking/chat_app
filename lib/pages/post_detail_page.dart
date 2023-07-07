@@ -118,6 +118,9 @@ class _PostDetailPageState extends State<PostDetailPage> {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 14.0,
+            ),
           ],
         ),
       ),
