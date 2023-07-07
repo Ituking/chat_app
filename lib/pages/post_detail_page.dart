@@ -1,6 +1,7 @@
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/image_zoom_page.dart';
 import 'package:chat_app/pages/user_profile_page.dart';
+import 'package:chat_app/utils/like_button.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -121,6 +122,25 @@ class _PostDetailPageState extends State<PostDetailPage> {
             const SizedBox(
               height: 14.0,
             ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Row(
+                  children: [
+                    LikeButton(),
+                    SizedBox(
+                      width: 8.0,
+                    ),
+                    Text(
+                      "Like",
+                      style: TextStyle(
+                        color: CupertinoColors.black,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            )
           ],
         ),
       ),
