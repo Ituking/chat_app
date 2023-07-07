@@ -44,124 +44,126 @@ class _MyProfilePageState extends State<MyProfilePage> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Stack(
-          children: [
-            Container(
-              height: 200.0,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(
-                    'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
+      body: ListView(
+        children: [
+          Stack(
+            children: [
+              Container(
+                height: 200.0,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(
+                      'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
+                    ),
+                    fit: BoxFit.cover,
                   ),
-                  fit: BoxFit.cover,
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16.0, 140.0, 16.0, 0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CircleAvatar(
-                        radius: 50.0,
-                        backgroundColor: CupertinoColors.white,
-                        backgroundImage: NetworkImage(myAccount.imagePath),
-                        child: Container(
-                          padding: const EdgeInsets.all(2),
-                          decoration: BoxDecoration(
-                            color: CupertinoColors.white,
-                            shape: BoxShape.circle,
-                            border: Border.all(
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16.0, 140.0, 16.0, 0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CircleAvatar(
+                          radius: 50.0,
+                          backgroundColor: CupertinoColors.white,
+                          backgroundImage: NetworkImage(myAccount.imagePath),
+                          child: Container(
+                            padding: const EdgeInsets.all(2),
+                            decoration: BoxDecoration(
                               color: CupertinoColors.white,
-                              width: 2,
-                            ),
-                          ),
-                          child: CircleAvatar(
-                            radius: 48.0,
-                            backgroundImage: NetworkImage(myAccount.imagePath),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 80.0),
-                        child: ElevatedButton(
-                          onPressed: () async {
-                            var result = await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const EditAccountPage(),
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: CupertinoColors.white,
+                                width: 2,
                               ),
-                            );
-                            if (result == true) {
-                              setState(() {
-                                myAccount = Authentication.myAccount!;
-                              });
-                            }
-                          },
-                          child: const Text(
-                            "Edit",
-                            style: TextStyle(
-                              color: CupertinoColors.black,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold,
+                            ),
+                            child: CircleAvatar(
+                              radius: 48.0,
+                              backgroundImage:
+                                  NetworkImage(myAccount.imagePath),
                             ),
                           ),
                         ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 80.0),
+                          child: ElevatedButton(
+                            onPressed: () async {
+                              var result = await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const EditAccountPage(),
+                                ),
+                              );
+                              if (result == true) {
+                                setState(() {
+                                  myAccount = Authentication.myAccount!;
+                                });
+                              }
+                            },
+                            child: const Text(
+                              "Edit",
+                              style: TextStyle(
+                                color: CupertinoColors.black,
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10.0),
+                    Text(
+                      myAccount.name,
+                      style: const TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
                       ),
-                    ],
-                  ),
-                  const SizedBox(height: 10.0),
-                  Text(
-                    myAccount.name,
-                    style: const TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
                     ),
-                  ),
-                  const SizedBox(height: 8.0),
-                  Text(
-                    myAccount.userId,
-                    style: const TextStyle(
-                      color: CupertinoColors.systemGrey,
-                      fontSize: 16.0,
+                    const SizedBox(height: 8.0),
+                    Text(
+                      myAccount.userId,
+                      style: const TextStyle(
+                        color: CupertinoColors.systemGrey,
+                        fontSize: 16.0,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 16.0),
-                  const Text(
-                    'About',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
+                    const SizedBox(height: 16.0),
+                    const Text(
+                      'About',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 8.0),
-                  Text(
-                    myAccount.selfIntroduction,
-                    maxLines: 5,
-                    style: const TextStyle(
-                      fontSize: 16.0,
+                    const SizedBox(height: 8.0),
+                    Text(
+                      myAccount.selfIntroduction,
+                      maxLines: 5,
+                      style: const TextStyle(
+                        fontSize: 16.0,
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 30.0,
-                  ),
-                  StreamBuilder<QuerySnapshot>(
-                    stream: AccountFirestore.account
-                        .doc(myAccount.id)
-                        .collection('my_posts')
-                        .orderBy('created_time', descending: true)
-                        .snapshots(),
-                    builder: (context, snapshot) {
-                      if (snapshot.hasData) {
-                        List<String> myPostIds =
-                            List.generate(snapshot.data!.docs.length, (index) {
-                          return snapshot.data!.docs[index].id;
-                        });
-                        return FutureBuilder<List<Post>?>(
+                    const SizedBox(
+                      height: 30.0,
+                    ),
+                    StreamBuilder<QuerySnapshot>(
+                      stream: AccountFirestore.account
+                          .doc(myAccount.id)
+                          .collection('my_posts')
+                          .orderBy('created_time', descending: true)
+                          .snapshots(),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          List<String> myPostIds = List.generate(
+                              snapshot.data!.docs.length, (index) {
+                            return snapshot.data!.docs[index].id;
+                          });
+                          return FutureBuilder<List<Post>?>(
                             future: PostFirestore.getPostsFromIds(myPostIds),
                             builder: (context, snapshot) {
                               if (snapshot.hasData) {
@@ -192,17 +194,19 @@ class _MyProfilePageState extends State<MyProfilePage> {
                               } else {
                                 return Container();
                               }
-                            });
-                      } else {
-                        return Container();
-                      }
-                    },
-                  ),
-                ],
+                            },
+                          );
+                        } else {
+                          return Container();
+                        }
+                      },
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
-        ),
+            ],
+          ),
+        ],
       ),
     );
   }
