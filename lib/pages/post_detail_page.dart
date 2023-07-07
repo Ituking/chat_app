@@ -1,5 +1,6 @@
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/image_zoom_page.dart';
+import 'package:chat_app/pages/user_profile_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -31,17 +32,41 @@ class _PostDetailPageState extends State<PostDetailPage> {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            const ListTile(
-              leading: CircleAvatar(
-                backgroundImage: NetworkImage(
-                  "https://cdn.pixabay.com/photo/2023/06/13/15/05/astronaut-8061095_1280.png",
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => UserProfilePage(
+                      userId: widget.post.postAccountId,
+                    ),
+                  ),
+                );
+              },
+              child: ListTile(
+                leading: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => UserProfilePage(
+                          userId: widget.post.postAccountId,
+                        ),
+                      ),
+                    );
+                  },
+                  child: const CircleAvatar(
+                    backgroundImage: NetworkImage(
+                      "https://cdn.pixabay.com/photo/2023/06/13/15/05/astronaut-8061095_1280.png",
+                    ),
+                  ),
                 ),
-              ),
-              title: Text(
-                "Emma",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: CupertinoColors.black,
+                title: const Text(
+                  "Emma",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: CupertinoColors.black,
+                  ),
                 ),
               ),
             ),
