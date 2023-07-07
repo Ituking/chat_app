@@ -35,6 +35,12 @@ class _PostDetailPageState extends State<PostDetailPage> {
                 "https://cdn.pixabay.com/photo/2023/06/13/15/05/astronaut-8061095_1280.png",
               ),
             ),
+            title: Text(
+              "Emma",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
           GestureDetector(
             onTap: () {
