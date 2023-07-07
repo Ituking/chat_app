@@ -1,6 +1,7 @@
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/image_zoom_page.dart';
 import 'package:chat_app/pages/user_profile_page.dart';
+import 'package:chat_app/utils/widget_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -16,18 +17,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: CupertinoColors.white,
-        elevation: 0,
-        title: const Text(
-          "Post",
-          style: TextStyle(
-            color: CupertinoColors.black,
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
+      appBar: WidgetUtils.createAppBar("Post"),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
