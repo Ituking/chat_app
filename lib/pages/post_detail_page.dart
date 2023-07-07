@@ -39,6 +39,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
               "Emma",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
+                color: CupertinoColors.black,
               ),
             ),
           ),
