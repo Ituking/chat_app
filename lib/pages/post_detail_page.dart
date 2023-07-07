@@ -89,6 +89,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
                 widget.post.content,
                 style: const TextStyle(
                   fontSize: 16.0,
+                  color: CupertinoColors.black,
                 ),
               ),
             ),
