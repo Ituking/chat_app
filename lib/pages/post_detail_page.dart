@@ -70,6 +70,10 @@ class _PostDetailPageState extends State<PostDetailPage> {
                 ),
                 subtitle: const Text(
                   "3 days ago",
+                  style: TextStyle(
+                    fontWeight: FontWeight.normal,
+                    color: CupertinoColors.systemGrey,
+                  ),
                 ),
               ),
             ),
