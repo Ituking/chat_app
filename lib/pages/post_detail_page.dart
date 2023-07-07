@@ -78,7 +78,10 @@ class _PostDetailPageState extends State<PostDetailPage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 8.0,
+              vertical: 25.0,
+            ),
             child: Text(
               widget.post.content,
               style: const TextStyle(
