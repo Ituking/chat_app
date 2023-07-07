@@ -82,10 +82,14 @@ class _PostDetailPageState extends State<PostDetailPage> {
               horizontal: 8.0,
               vertical: 25.0,
             ),
-            child: Text(
-              widget.post.content,
-              style: const TextStyle(
-                fontSize: 16.0,
+            child: Container(
+              alignment: Alignment.centerLeft,
+              width: double.infinity,
+              child: Text(
+                widget.post.content,
+                style: const TextStyle(
+                  fontSize: 16.0,
+                ),
               ),
             ),
           ),
