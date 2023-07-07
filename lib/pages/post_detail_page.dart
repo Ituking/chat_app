@@ -186,6 +186,11 @@ class _PostDetailPageState extends State<PostDetailPage> {
                 ),
               ],
             ),
+            const Divider(
+              height: 1.0,
+              thickness: 0.5,
+              color: Colors.grey,
+            ),
           ],
         ),
       ),
