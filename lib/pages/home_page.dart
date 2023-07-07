@@ -81,6 +81,7 @@ class _HomePageState extends State<HomePage> {
                                       postAccount.name,
                                       style: const TextStyle(
                                         fontWeight: FontWeight.bold,
+                                        color: CupertinoColors.black,
                                       ),
                                     ),
                                     subtitle: Text(
