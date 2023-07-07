@@ -92,6 +92,7 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                       style: const TextStyle(
                                         fontWeight: FontWeight.normal,
+                                        color: CupertinoColors.systemGrey,
                                       ),
                                     ),
                                   ),
