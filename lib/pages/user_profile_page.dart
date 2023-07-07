@@ -3,6 +3,7 @@ import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/model/user.dart';
 import 'package:chat_app/pages/post_detail_page.dart';
+import 'package:chat_app/utils/widget_utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -99,18 +100,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: CupertinoColors.white,
-        elevation: 0,
-        title: const Text(
-          'Profile',
-          style: TextStyle(
-            color: CupertinoColors.black,
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
+      appBar: WidgetUtils.createAppBar("Profile"),
       body: userAccount != null ? buildUserProfile() : buildLoading(),
     );
   }
