@@ -68,6 +68,9 @@ class _PostDetailPageState extends State<PostDetailPage> {
                     color: CupertinoColors.black,
                   ),
                 ),
+                subtitle: const Text(
+                  "3 days ago",
+                ),
               ),
             ),
             GestureDetector(
