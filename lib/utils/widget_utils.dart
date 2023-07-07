@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class WidgetUtils {
@@ -6,7 +7,7 @@ class WidgetUtils {
       backgroundColor: Colors.transparent,
       elevation: 0,
       iconTheme: const IconThemeData(
-        color: Colors.black,
+        color: CupertinoColors.black,
       ),
       title: Text(
         title,
