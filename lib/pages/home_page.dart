@@ -186,6 +186,7 @@ class _HomePageState extends State<HomePage> {
                                         post.content,
                                         style: const TextStyle(
                                           fontSize: 16.0,
+                                          color: CupertinoColors.black,
                                         ),
                                       ),
                                     ),
