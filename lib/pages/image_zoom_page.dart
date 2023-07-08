@@ -1,4 +1,5 @@
 import 'package:chat_app/pages/home_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ImageZoomPage extends StatefulWidget {
@@ -26,7 +27,7 @@ class _ImageZoomPageState extends State<ImageZoomPage> {
             child: IconButton(
               icon: const Icon(
                 Icons.clear,
-                color: Colors.black,
+                color: CupertinoColors.black,
               ),
               onPressed: () {
                 Navigator.pop(
