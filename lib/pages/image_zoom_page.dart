@@ -26,7 +26,7 @@ class _ImageZoomPageState extends State<ImageZoomPage> {
             backgroundColor: Colors.transparent,
             child: IconButton(
               icon: const Icon(
-                Icons.clear,
+                CupertinoIcons.clear,
                 color: CupertinoColors.black,
               ),
               onPressed: () {
