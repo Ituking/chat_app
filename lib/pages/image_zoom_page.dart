@@ -14,7 +14,7 @@ class _ImageZoomPageState extends State<ImageZoomPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: CupertinoColors.white,
       appBar: AppBar(
         backgroundColor: Colors.white.withOpacity(0.0),
         elevation: 0.0,
