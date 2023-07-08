@@ -16,7 +16,7 @@ class _ImageZoomPageState extends State<ImageZoomPage> {
     return Scaffold(
       backgroundColor: CupertinoColors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white.withOpacity(0.0),
+        backgroundColor: CupertinoColors.white.withOpacity(0.0),
         elevation: 0.0,
         leading: Container(
           decoration: const BoxDecoration(
