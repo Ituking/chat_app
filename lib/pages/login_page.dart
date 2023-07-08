@@ -131,9 +131,11 @@ class _LoginPageState extends State<LoginPage> {
               ),
               ElevatedButton(
                 onPressed: () async {
-                  setState(() {
-                    isLoggingIn = true;
-                  });
+                  setState(
+                    () {
+                      isLoggingIn = true;
+                    },
+                  );
                   if (emailController.text.isNotEmpty &&
                       passwordController.text.isNotEmpty) {
                     var result = await Authentication.emailSignIn(
@@ -143,9 +145,11 @@ class _LoginPageState extends State<LoginPage> {
                           await AccountFirestore.getUser(result.user!.uid);
                       if (result0 == true) {
                         if (!mounted) return;
-                        setState(() {
-                          isLoggingIn = false;
-                        });
+                        setState(
+                          () {
+                            isLoggingIn = false;
+                          },
+                        );
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(

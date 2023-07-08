@@ -31,9 +31,11 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
       final File imageFile = File(pickedImage.path);
       final Uint8List imageBytes = await imageFile.readAsBytes();
       if (imageBytes.isNotEmpty) {
-        setState(() {
-          image = imageFile;
-        });
+        setState(
+          () {
+            image = imageFile;
+          },
+        );
       } else {
         throw PlatformException(
             code: 'invalid_image',

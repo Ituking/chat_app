@@ -20,9 +20,11 @@ class _LikeButtonState extends State<LikeButton> {
             : CupertinoColors.black,
       ),
       onPressed: () {
-        setState(() {
-          isLiked = !isLiked;
-        });
+        setState(
+          () {
+            isLiked = !isLiked;
+          },
+        );
       },
     );
   }

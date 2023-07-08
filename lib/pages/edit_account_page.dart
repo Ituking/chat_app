@@ -54,9 +54,11 @@ class _EditAccountPageState extends State<EditAccountPage> {
               onTap: () async {
                 var result = await FunctionUtils.getImageFromGallery(context);
                 if (result != null) {
-                  setState(() {
-                    image = File(result.path);
-                  });
+                  setState(
+                    () {
+                      image = File(result.path);
+                    },
+                  );
                 }
               },
               child: CircleAvatar(

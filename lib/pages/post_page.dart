@@ -129,9 +129,11 @@ class _PostPageState extends State<PostPage> {
                 onTap: () async {
                   var result = await FunctionUtils.getImageFromGallery(context);
                   if (result != null && result is File) {
-                    setState(() {
-                      image = result;
-                    });
+                    setState(
+                      () {
+                        image = result;
+                      },
+                    );
                   }
                 },
               ),

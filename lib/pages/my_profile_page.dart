@@ -99,9 +99,11 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                 ),
                               );
                               if (result == true) {
-                                setState(() {
-                                  myAccount = Authentication.myAccount!;
-                                });
+                                setState(
+                                  () {
+                                    myAccount = Authentication.myAccount!;
+                                  },
+                                );
                               }
                             },
                             child: const Text(

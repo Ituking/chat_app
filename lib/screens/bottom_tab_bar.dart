@@ -48,9 +48,11 @@ class _BottomTabBarState extends State<BottomTabBar> {
         currentIndex: selectedIndex,
         selectedItemColor: CupertinoColors.activeGreen,
         onTap: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
+          setState(
+            () {
+              selectedIndex = index;
+            },
+          );
         },
       ),
     );
