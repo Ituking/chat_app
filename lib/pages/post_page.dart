@@ -84,7 +84,7 @@ class _PostPageState extends State<PostPage> {
             child: const Text(
               "Post",
               style: TextStyle(
-                color: Colors.black,
+                color: CupertinoColors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
               ),
