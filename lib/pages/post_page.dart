@@ -5,6 +5,7 @@ import 'package:chat_app/model/post.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:chat_app/utils/function_utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PostPage extends StatefulWidget {
@@ -50,7 +51,7 @@ class _PostPageState extends State<PostPage> {
         ),
         elevation: 0,
         iconTheme: const IconThemeData(
-          color: Colors.black,
+          color: CupertinoColors.black,
         ),
         centerTitle: false,
         title: const Text(
