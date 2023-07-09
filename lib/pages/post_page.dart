@@ -57,7 +57,7 @@ class _PostPageState extends State<PostPage> {
         title: const Text(
           "Create post",
           style: TextStyle(
-            color: Colors.black,
+            color: CupertinoColors.black,
             fontWeight: FontWeight.bold,
           ),
         ),
