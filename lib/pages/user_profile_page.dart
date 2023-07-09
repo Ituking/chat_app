@@ -109,12 +109,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
 
   Widget buildLoading() {
     return const Center(
-      child: CircularProgressIndicator(
-        strokeWidth: 4.0,
-        valueColor: AlwaysStoppedAnimation(
-          CupertinoColors.activeGreen,
-        ),
-      ),
+      child: CupertinoActivityIndicator(),
     );
   }
 
