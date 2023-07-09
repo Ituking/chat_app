@@ -125,7 +125,7 @@ class _PostPageState extends State<PostPage> {
                     ),
               const Divider(height: 1),
               ListTile(
-                leading: const Icon(Icons.photo_library),
+                leading: const Icon(CupertinoIcons.photo_fill),
                 title: const Text("Add a photo"),
                 onTap: () async {
                   var result = await FunctionUtils.getImageFromGallery(context);
