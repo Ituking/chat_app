@@ -105,7 +105,7 @@ class _PostPageState extends State<PostPage> {
                   hintText: "What's on your mind?",
                   border: InputBorder.none,
                 ),
-                cursorColor: Colors.black,
+                cursorColor: CupertinoColors.black,
               ),
               const SizedBox(
                 height: 30,
