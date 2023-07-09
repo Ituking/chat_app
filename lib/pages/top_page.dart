@@ -3,6 +3,7 @@ import 'package:chat_app/model/talk_room.dart';
 import 'package:chat_app/pages/talk_room_page.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +29,7 @@ class _TopPageState extends State<TopPage> {
                   if (futureSnapshot.connectionState ==
                       ConnectionState.waiting) {
                     return const Center(
-                      child: CircularProgressIndicator(),
+                      child: CupertinoActivityIndicator(),
                     );
                   } else {
                     if (futureSnapshot.hasData) {
@@ -120,7 +121,7 @@ class _TopPageState extends State<TopPage> {
                 });
           } else {
             return const Center(
-              child: CircularProgressIndicator(),
+              child: CupertinoActivityIndicator(),
             );
           }
         },
