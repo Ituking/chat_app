@@ -57,10 +57,37 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                 padding: const EdgeInsets.only(top: 20),
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.7,
+                  child: Form(
+                    child: TextFormField(
+                      controller: nameController,
+                      decoration: const InputDecoration(
+                        hintText: "Name",
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.black,
+                            width: 2,
+                          ),
+                        ),
+                        errorStyle: TextStyle(
+                          color: Colors.red,
+                        ),
+                      ),
+                      cursorColor: Colors.black,
+                      cursorWidth: 2.0,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.7,
+                child: Form(
                   child: TextFormField(
-                    controller: nameController,
+                    controller: userIdController,
                     decoration: const InputDecoration(
-                      hintText: "Name",
+                      hintText: "ID",
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
                           color: Colors.black,
@@ -77,14 +104,13 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.7,
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.7,
+              child: Form(
                 child: TextFormField(
-                  controller: userIdController,
+                  controller: selfIntroductionController,
                   decoration: const InputDecoration(
-                    hintText: "ID",
+                    hintText: "Self Introduction",
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.black,
@@ -100,34 +126,38 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                 ),
               ),
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.7,
-              child: TextFormField(
-                controller: selfIntroductionController,
-                decoration: const InputDecoration(
-                  hintText: "Self Introduction",
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.black,
-                      width: 2,
-                    ),
-                  ),
-                  errorStyle: TextStyle(
-                    color: Colors.red,
-                  ),
-                ),
-                cursorColor: Colors.black,
-                cursorWidth: 2.0,
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.7,
+                child: Form(
+                  child: TextFormField(
+                    controller: emailController,
+                    decoration: const InputDecoration(
+                      hintText: "Email Address",
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.black,
+                          width: 2,
+                        ),
+                      ),
+                      errorStyle: TextStyle(
+                        color: Colors.red,
+                      ),
+                    ),
+                    cursorColor: Colors.black,
+                    cursorWidth: 2.0,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.7,
+              child: Form(
                 child: TextFormField(
-                  controller: emailController,
+                  controller: passwordController,
                   decoration: const InputDecoration(
-                    hintText: "Email Address",
+                    hintText: "Password",
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.black,
@@ -141,26 +171,6 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                   cursorColor: Colors.black,
                   cursorWidth: 2.0,
                 ),
-              ),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.7,
-              child: TextFormField(
-                controller: passwordController,
-                decoration: const InputDecoration(
-                  hintText: "Password",
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.black,
-                      width: 2,
-                    ),
-                  ),
-                  errorStyle: TextStyle(
-                    color: Colors.red,
-                  ),
-                ),
-                cursorColor: Colors.black,
-                cursorWidth: 2.0,
               ),
             ),
             const SizedBox(
