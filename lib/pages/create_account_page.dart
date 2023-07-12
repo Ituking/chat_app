@@ -63,7 +63,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     child: TextFormField(
                       controller: nameController,
                       decoration: const InputDecoration(
-                        hintText: "Name",
+                        hintText: "Username",
                         focusedBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.black,
