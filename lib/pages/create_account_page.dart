@@ -92,6 +92,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.7,
                 child: Form(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   child: TextFormField(
                     controller: userIdController,
                     decoration: const InputDecoration(
@@ -108,6 +109,12 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     ),
                     cursorColor: Colors.black,
                     cursorWidth: 2.0,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "ID is required.";
+                      }
+                      return null;
+                    },
                   ),
                 ),
               ),
