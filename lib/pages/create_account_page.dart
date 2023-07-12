@@ -122,6 +122,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.7,
               child: Form(
+                autovalidateMode: AutovalidateMode.onUserInteraction,
                 child: TextFormField(
                   controller: selfIntroductionController,
                   decoration: const InputDecoration(
@@ -138,6 +139,12 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                   ),
                   cursorColor: Colors.black,
                   cursorWidth: 2.0,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Self Introduction is required.";
+                    }
+                    return null;
+                  },
                 ),
               ),
             ),
