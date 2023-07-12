@@ -23,6 +23,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   File? image;
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
