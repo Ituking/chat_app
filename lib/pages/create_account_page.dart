@@ -57,7 +57,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                 padding: const EdgeInsets.only(top: 20),
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.7,
-                  child: TextField(
+                  child: TextFormField(
                     controller: nameController,
                     decoration: const InputDecoration(
                       hintText: "Name",
@@ -81,7 +81,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.7,
-                child: TextField(
+                child: TextFormField(
                   controller: userIdController,
                   decoration: const InputDecoration(
                     hintText: "ID",
@@ -102,7 +102,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.7,
-              child: TextField(
+              child: TextFormField(
                 controller: selfIntroductionController,
                 decoration: const InputDecoration(
                   hintText: "Self Introduction",
@@ -124,7 +124,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.7,
-                child: TextField(
+                child: TextFormField(
                   controller: emailController,
                   decoration: const InputDecoration(
                     hintText: "Email Address",
@@ -145,7 +145,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.7,
-              child: TextField(
+              child: TextFormField(
                 controller: passwordController,
                 decoration: const InputDecoration(
                   hintText: "Password",
