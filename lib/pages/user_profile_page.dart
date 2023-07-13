@@ -103,16 +103,6 @@ class _UserProfilePageState extends State<UserProfilePage> {
     }
   }
 
-  Account getUserAccountFromFirestore() {
-    return Account(
-      id: widget.userId,
-      name: userAccount?.name ?? "",
-      imagePath: userAccount?.imagePath ?? "",
-      selfIntroduction: userAccount?.selfIntroduction ?? "",
-      userId: userAccount?.userId ?? "",
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
