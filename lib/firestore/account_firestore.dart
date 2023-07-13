@@ -133,15 +133,20 @@ class AccountFirestore {
   static Future<Account?> fetchProfile(String uid) async {
     try {
       DocumentSnapshot documentSnapshot = await account.doc(uid).get();
-      Map<String, dynamic> data =
-          documentSnapshot.data() as Map<String, dynamic>;
-      Account userAccount = Account(
-        id: uid,
-        name: data["name"],
-        imagePath: data["image_path"],
-        selfIntroduction: data["self_introduction"],
-        userId: data["user_id"],
-      );
+      if (documentSnapshot.exists) {
+        Map<String, dynamic>? data =
+            documentSnapshot.data() as Map<String, dynamic>?;
+        if (data != null) {
+          Account userAccount = Account(
+            id: uid,
+            name: data["name"],
+            imagePath: data["image_path"],
+            selfIntroduction: data["self_introduction"],
+            userId: data["user_id"],
+          );
+          return userAccount;
+        }
+      }
     } on FirebaseException catch (e) {}
   }
 }
