@@ -79,15 +79,21 @@ class _UserProfilePageState extends State<UserProfilePage> {
         Account? userProfile =
             await AccountFirestore.fetchProfile(widget.userId);
         if (userProfile != null) {
-          setState(() {
-            userAccount = Account(
-              id: widget.userId,
-              name: userProfile.name,
-              imagePath: userProfile.imagePath,
-              selfIntroduction: userProfile.selfIntroduction,
-              userId: userProfile.userId,
-            );
-          });
+          setState(
+            () {
+              userAccount = Account(
+                id: widget.userId,
+                name: userProfile.name,
+                imagePath: userProfile.imagePath,
+                selfIntroduction: userProfile.selfIntroduction,
+                userId: userProfile.userId,
+              );
+            },
+          );
+        } else {
+          if (kDebugMode) {
+            print("userProfile is null.");
+          }
         }
       }
     } on FirebaseException catch (e) {}
