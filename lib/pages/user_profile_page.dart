@@ -216,10 +216,10 @@ class _UserProfilePageState extends State<UserProfilePage> {
                                 width: 2,
                               ),
                             ),
-                            child: const CircleAvatar(
+                            child: CircleAvatar(
                               radius: 48.0,
                               backgroundImage: NetworkImage(
-                                "https://cdn.pixabay.com/photo/2023/06/13/15/05/astronaut-8061095_1280.png",
+                                userAccount!.imagePath,
                               ),
                             ),
                           ),
