@@ -69,7 +69,12 @@ class _UserProfilePageState extends State<UserProfilePage> {
   }
 
   Future<void> getUserProfile() async {
-    try {} on FirebaseException catch (e) {}
+    try {
+      DocumentSnapshot snapshot = await FirebaseFirestore.instance
+          .collection("account")
+          .doc(widget.userId)
+          .get();
+    } on FirebaseException catch (e) {}
     User? userProfile = await UserFirestore.fetchProfile(widget.userId);
     if (userProfile != null) {
       setState(
