@@ -131,6 +131,8 @@ class AccountFirestore {
   }
 
   static Future<dynamic> getUser(String uid) async {
-    try {} on FirebaseException catch (e) {}
+    try {
+      DocumentSnapshot documentSnapshot = await account.doc(uid).get();
+    } on FirebaseException catch (e) {}
   }
 }
