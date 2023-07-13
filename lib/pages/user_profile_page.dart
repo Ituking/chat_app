@@ -241,10 +241,10 @@ class _UserProfilePageState extends State<UserProfilePage> {
                     const SizedBox(
                       height: 8.0,
                     ),
-                    const Text(
-                      "Hello. Everyone.",
+                    Text(
+                      userAccount!.selfIntroduction,
                       maxLines: 5,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16.0,
                       ),
                     ),
