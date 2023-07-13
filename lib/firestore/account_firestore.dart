@@ -130,5 +130,7 @@ class AccountFirestore {
     PostFirestore.deletePosts(accountId);
   }
 
-  static Future<dynamic> getUser(String uid) async {}
+  static Future<dynamic> getUser(String uid) async {
+    try {} on FirebaseException catch (e) {}
+  }
 }
