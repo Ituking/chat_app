@@ -101,24 +101,6 @@ class _UserProfilePageState extends State<UserProfilePage> {
         print("Failure to retrieve information from Firebase: $e");
       }
     }
-    User? userProfile = await UserFirestore.fetchProfile(widget.userId);
-    if (userProfile != null) {
-      setState(
-        () {
-          userAccount = Account(
-            id: widget.userId,
-            name: userProfile.name,
-            imagePath: userProfile.imagePath!,
-            selfIntroduction: "",
-            userId: "",
-          );
-        },
-      );
-    } else {
-      if (kDebugMode) {
-        print("userProfile is null.");
-      }
-    }
   }
 
   Account getUserAccountFromFirestore() {
