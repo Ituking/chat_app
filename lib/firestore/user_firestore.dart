@@ -71,7 +71,6 @@ class UserFirestore {
         imagePath: snapshot.data()!['image_path'],
         uid: uid,
       );
-
       return user;
     } catch (e) {
       if (kDebugMode) {
