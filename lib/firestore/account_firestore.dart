@@ -129,4 +129,6 @@ class AccountFirestore {
     account.doc(accountId).delete();
     PostFirestore.deletePosts(accountId);
   }
+
+  static Future<dynamic> getUser(String uid) async {}
 }
