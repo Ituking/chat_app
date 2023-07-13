@@ -130,7 +130,7 @@ class AccountFirestore {
     PostFirestore.deletePosts(accountId);
   }
 
-  static Future<dynamic> getUser(String uid) async {
+  static Future<Account?> fetchProfile(String uid) async {
     try {
       DocumentSnapshot documentSnapshot = await account.doc(uid).get();
       Map<String, dynamic> data =
