@@ -96,7 +96,11 @@ class _UserProfilePageState extends State<UserProfilePage> {
           }
         }
       }
-    } on FirebaseException catch (e) {}
+    } on FirebaseException catch (e) {
+      if (kDebugMode) {
+        print("Failure to retrieve information from Firebase: $e");
+      }
+    }
     User? userProfile = await UserFirestore.fetchProfile(widget.userId);
     if (userProfile != null) {
       setState(
