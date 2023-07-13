@@ -1,3 +1,4 @@
+import 'package:chat_app/firestore/account_firestore.dart';
 import 'package:chat_app/firestore/user_firestore.dart';
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
@@ -74,7 +75,10 @@ class _UserProfilePageState extends State<UserProfilePage> {
           .collection("account")
           .doc(widget.userId)
           .get();
-      if (snapshot.exists) {}
+      if (snapshot.exists) {
+        Account? userProfile =
+            await AccountFirestore.fetchProfile(widget.userId);
+      }
     } on FirebaseException catch (e) {}
     User? userProfile = await UserFirestore.fetchProfile(widget.userId);
     if (userProfile != null) {
