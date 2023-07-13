@@ -78,6 +78,17 @@ class _UserProfilePageState extends State<UserProfilePage> {
       if (snapshot.exists) {
         Account? userProfile =
             await AccountFirestore.fetchProfile(widget.userId);
+        if (userProfile != null) {
+          setState(() {
+            userAccount = Account(
+              id: widget.userId,
+              name: userProfile.name,
+              imagePath: userProfile.imagePath,
+              selfIntroduction: userProfile.selfIntroduction,
+              userId: userProfile.userId,
+            );
+          });
+        }
       }
     } on FirebaseException catch (e) {}
     User? userProfile = await UserFirestore.fetchProfile(widget.userId);
