@@ -142,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                         emailController.text, passwordController.text);
                     if (result is UserCredential) {
                       var result0 =
-                          await AccountFirestore.getUser(result.user!.uid);
+                          await AccountFirestore.getMyAccount(result.user!.uid);
                       if (result0 == true) {
                         if (!mounted) return;
                         setState(

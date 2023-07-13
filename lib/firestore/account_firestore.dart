@@ -31,25 +31,42 @@ class AccountFirestore {
     }
   }
 
-  static Future<dynamic> getUser(String uid) async {
+  static Future<dynamic> getMyAccount(String uid) async {
     try {
-      DocumentSnapshot documentSnapshot = await account.doc(uid).get();
-      Map<String, dynamic> data =
-          documentSnapshot.data() as Map<String, dynamic>;
-      Account myAccount = Account(
-        id: uid,
-        name: data['name'],
-        imagePath: data['image_path'],
-        selfIntroduction: data['self_introduction'],
-        userId: data['user_id'],
-        createdTime: data['created_time'],
-        updatedTime: data['updated_time'],
-      );
-      Authentication.myAccount = myAccount;
       if (kDebugMode) {
-        print("User acquisition succeeded.");
+        print("uid => $uid");
       }
-      return true;
+      DocumentSnapshot documentSnapshot = await account.doc(uid).get();
+      if (documentSnapshot.exists) {
+        Map<String, dynamic>? data =
+            documentSnapshot.data() as Map<String, dynamic>?;
+        if (data != null) {
+          Account myAccount = Account(
+            id: uid,
+            name: data['name'],
+            imagePath: data['image_path'],
+            selfIntroduction: data['self_introduction'],
+            userId: data['user_id'],
+            createdTime: data['created_time'],
+            updatedTime: data['updated_time'],
+          );
+          Authentication.myAccount = myAccount;
+          if (kDebugMode) {
+            print("User acquisition succeeded.");
+          }
+          return true;
+        } else {
+          if (kDebugMode) {
+            print("User data is null.");
+          }
+          return false;
+        }
+      } else {
+        if (kDebugMode) {
+          print("User document does not exist.");
+        }
+        return false;
+      }
     } on FirebaseException catch (e) {
       if (kDebugMode) {
         print("User acquisition failed. $e");
