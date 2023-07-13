@@ -74,6 +74,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
           .collection("account")
           .doc(widget.userId)
           .get();
+      if (snapshot.exists) {}
     } on FirebaseException catch (e) {}
     User? userProfile = await UserFirestore.fetchProfile(widget.userId);
     if (userProfile != null) {
