@@ -18,7 +18,7 @@ class UserProfilePage extends StatefulWidget {
 }
 
 class _UserProfilePageState extends State<UserProfilePage> {
-  Account? userAccount;
+  static Account? userAccount;
   List<Post> postList = [
     Post(
       id: "0001",
