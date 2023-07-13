@@ -1,8 +1,6 @@
 import 'package:chat_app/firestore/account_firestore.dart';
-import 'package:chat_app/firestore/user_firestore.dart';
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
-import 'package:chat_app/model/user.dart';
 import 'package:chat_app/pages/post_detail_page.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
