@@ -133,6 +133,8 @@ class AccountFirestore {
   static Future<dynamic> getUser(String uid) async {
     try {
       DocumentSnapshot documentSnapshot = await account.doc(uid).get();
+      Map<String, dynamic> data =
+          documentSnapshot.data() as Map<String, dynamic>;
     } on FirebaseException catch (e) {}
   }
 }
