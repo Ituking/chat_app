@@ -147,6 +147,11 @@ class AccountFirestore {
           return userAccount;
         }
       }
-    } on FirebaseException catch (e) {}
+    } on FirebaseException catch (e) {
+      if (kDebugMode) {
+        print("FAILED ===== $e");
+      }
+    }
+    return null;
   }
 }
