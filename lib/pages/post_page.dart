@@ -68,7 +68,7 @@ class _PostPageState extends State<PostPage> {
                 final downloadUrl =
                     await FunctionUtils.uploadImage(uid, image!);
                 Post newPost = Post(
-                  content: contentController.text,
+                  postContent: contentController.text,
                   postAccountId: Authentication.myAccount!.id,
                   id: '',
                   postImagePath: downloadUrl,

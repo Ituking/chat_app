@@ -14,7 +14,7 @@ class PostFirestore {
           .doc(newPost.postAccountId)
           .collection('my_posts');
       var result = await posts.add({
-        'content': newPost.content,
+        'content': newPost.postContent,
         'post_account_id': newPost.postAccountId,
         'image_path': newPost.postImagePath,
         'post_time': Timestamp.now(),
@@ -44,7 +44,7 @@ class PostFirestore {
         Post post = Post(
           id: doc.id,
           postImagePath: data['image_path'],
-          content: data['content'],
+          postContent: data['content'],
           postAccountId: data['post_account_id'],
           postTime: data['post_time'],
         );

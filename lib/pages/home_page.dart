@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                           Post post = Post(
                             id: postSnapshot.data!.docs[index].id,
                             postImagePath: data['image_path'],
-                            content: data['content'],
+                            postContent: data['content'],
                             postAccountId: data['post_account_id'],
                             postTime: data['post_time'],
                           );
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
                             print(post.postImagePath);
                           }
                           if (kDebugMode) {
-                            print(post.content);
+                            print(post.postContent);
                           }
                           if (kDebugMode) {
                             print(post.postTime);
@@ -188,7 +188,7 @@ class _HomePageState extends State<HomePage> {
                                       alignment: Alignment.centerLeft,
                                       width: double.infinity,
                                       child: Text(
-                                        post.content,
+                                        post.postContent,
                                         style: const TextStyle(
                                           fontSize: 16.0,
                                           color: CupertinoColors.black,
@@ -248,7 +248,7 @@ class _HomePageState extends State<HomePage> {
                                       Row(
                                         children: [
                                           ShareButton(
-                                            content: post.content,
+                                            content: post.postContent,
                                           ),
                                           const SizedBox(
                                             width: 8.0,

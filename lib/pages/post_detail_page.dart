@@ -127,7 +127,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
                 alignment: Alignment.centerLeft,
                 width: double.infinity,
                 child: Text(
-                  widget.post.content,
+                  widget.post.postContent,
                   style: const TextStyle(
                     fontSize: 16.0,
                     color: CupertinoColors.black,
@@ -185,7 +185,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
                 Row(
                   children: [
                     ShareButton(
-                      content: widget.post.content,
+                      content: widget.post.postContent,
                     ),
                     const SizedBox(
                       width: 8.0,
