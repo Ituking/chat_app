@@ -185,7 +185,8 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                       margin: const EdgeInsets.all(2.0),
                                       decoration: BoxDecoration(
                                         image: DecorationImage(
-                                          image: NetworkImage(post.imagePath!),
+                                          image:
+                                              NetworkImage(post.postImagePath!),
                                           fit: BoxFit.cover,
                                         ),
                                         borderRadius:

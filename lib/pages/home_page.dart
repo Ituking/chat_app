@@ -50,13 +50,13 @@ class _HomePageState extends State<HomePage> {
                                   as Map<String, dynamic>;
                           Post post = Post(
                             id: postSnapshot.data!.docs[index].id,
-                            imagePath: data['image_path'],
+                            postImagePath: data['image_path'],
                             content: data['content'],
                             postAccountId: data['post_account_id'],
                             postTime: data['post_time'],
                           );
                           if (kDebugMode) {
-                            print(post.imagePath);
+                            print(post.postImagePath);
                           }
                           if (kDebugMode) {
                             print(post.content);
@@ -73,8 +73,9 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   ListTile(
                                     leading: CircleAvatar(
-                                      backgroundImage: post.imagePath != null
-                                          ? NetworkImage(post.imagePath!)
+                                      backgroundImage: post.postImagePath !=
+                                              null
+                                          ? NetworkImage(post.postImagePath!)
                                           : const NetworkImage(
                                               "https://images.unsplash.com/photo-1472396961693-142e6e269027?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8Mjl8fE5hdHVyZXxlbnwwfHx8fDE2NzgwODY0NTY&ixlib=rb-4.0.3&q=80&w=400",
                                             ),
@@ -99,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   Expanded(
-                                    child: post.imagePath != null
+                                    child: post.postImagePath != null
                                         ? GestureDetector(
                                             onTap: () {
                                               Navigator.push(
@@ -111,7 +112,8 @@ class _HomePageState extends State<HomePage> {
                                                     secondaryAnimation,
                                                   ) =>
                                                       ImageZoomPage(
-                                                    imagePath: post.imagePath!,
+                                                    imagePath:
+                                                        post.postImagePath!,
                                                   ),
                                                   transitionsBuilder: (
                                                     context,
@@ -124,8 +126,8 @@ class _HomePageState extends State<HomePage> {
                                                       MaterialPageRoute(
                                                         builder: (context) =>
                                                             ImageZoomPage(
-                                                          imagePath:
-                                                              post.imagePath!,
+                                                          imagePath: post
+                                                              .postImagePath!,
                                                         ),
                                                       ),
                                                       context,
@@ -149,7 +151,7 @@ class _HomePageState extends State<HomePage> {
                                                           24.0),
                                                   image: DecorationImage(
                                                     image: NetworkImage(
-                                                        post.imagePath!),
+                                                        post.postImagePath!),
                                                     fit: BoxFit.cover,
                                                   ),
                                                 ),

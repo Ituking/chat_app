@@ -8,7 +8,7 @@ class PostWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.network(
-      post.imagePath!,
+      post.postImagePath!,
       fit: BoxFit.cover,
     );
   }

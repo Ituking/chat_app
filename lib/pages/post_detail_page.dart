@@ -76,7 +76,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ImageZoomPage(
-                      imagePath: widget.post.imagePath,
+                      imagePath: widget.post.postImagePath,
                     ),
                   ),
                 );
@@ -95,7 +95,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(24.0),
                         image: DecorationImage(
-                          image: NetworkImage(widget.post.imagePath!),
+                          image: NetworkImage(widget.post.postImagePath!),
                           fit: BoxFit.cover,
                         ),
                       ),
