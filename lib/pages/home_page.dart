@@ -72,10 +72,12 @@ class _HomePageState extends State<HomePage> {
                               child: Column(
                                 children: [
                                   ListTile(
-                                    leading: const CircleAvatar(
-                                      backgroundImage: NetworkImage(
-                                        "https://images.unsplash.com/photo-1472396961693-142e6e269027?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8Mjl8fE5hdHVyZXxlbnwwfHx8fDE2NzgwODY0NTY&ixlib=rb-4.0.3&q=80&w=400",
-                                      ),
+                                    leading: CircleAvatar(
+                                      backgroundImage: post.imagePath != null
+                                          ? NetworkImage(post.imagePath!)
+                                          : const NetworkImage(
+                                              "https://images.unsplash.com/photo-1472396961693-142e6e269027?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8Mjl8fE5hdHVyZXxlbnwwfHx8fDE2NzgwODY0NTY&ixlib=rb-4.0.3&q=80&w=400",
+                                            ),
                                     ),
                                     title: Text(
                                       postAccount.name,
