@@ -70,7 +70,8 @@ class _MyProfilePageState extends State<MyProfilePage> {
                         CircleAvatar(
                           radius: 50.0,
                           backgroundColor: CupertinoColors.white,
-                          backgroundImage: NetworkImage(myAccount.imagePath),
+                          backgroundImage:
+                              NetworkImage(myAccount.profileImagePath),
                           child: Container(
                             padding: const EdgeInsets.all(2),
                             decoration: BoxDecoration(
@@ -84,7 +85,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                             child: CircleAvatar(
                               radius: 48.0,
                               backgroundImage:
-                                  NetworkImage(myAccount.imagePath),
+                                  NetworkImage(myAccount.profileImagePath),
                             ),
                           ),
                         ),

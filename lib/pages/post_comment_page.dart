@@ -107,7 +107,8 @@ class _PostCommentPageState extends State<PostCommentPage> {
                                           child: CircleAvatar(
                                             radius: 20,
                                             foregroundImage: NetworkImage(
-                                                commentAccount.imagePath),
+                                                commentAccount
+                                                    .profileImagePath),
                                           ),
                                         ),
                                         Expanded(

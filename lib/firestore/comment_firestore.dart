@@ -56,7 +56,7 @@ class CommentFirestore {
           Account commentAccount = Account(
             id: accountId,
             name: data['name'].toString(),
-            imagePath: data['image_path'].toString(),
+            profileImagePath: data['image_path'].toString(),
             selfIntroduction: data['self_introduction'].toString(),
             userId: data['user_id'].toString(),
           );

@@ -228,7 +228,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     Account newAccount = Account(
                       id: result.user!.uid,
                       name: nameController.text,
-                      imagePath: imagePath,
+                      profileImagePath: imagePath,
                       selfIntroduction: selfIntroductionController.text,
                       userId: userIdController.text,
                     );

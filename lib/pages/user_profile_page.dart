@@ -82,7 +82,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
               userAccount = Account(
                 id: widget.userId,
                 name: userProfile.name,
-                imagePath: userProfile.imagePath,
+                profileImagePath: userProfile.profileImagePath,
                 selfIntroduction: userProfile.selfIntroduction,
                 userId: userProfile.userId,
               );
@@ -189,7 +189,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                             child: CircleAvatar(
                               radius: 48.0,
                               backgroundImage: NetworkImage(
-                                userAccount!.imagePath,
+                                userAccount!.profileImagePath,
                               ),
                             ),
                           ),

@@ -15,7 +15,7 @@ class AccountFirestore {
         'name': newAccount.name,
         'user_id': newAccount.userId,
         'self_introduction': newAccount.selfIntroduction,
-        'image_path': newAccount.imagePath,
+        'image_path': newAccount.profileImagePath,
         'created_time': Timestamp.now(),
         'updated_time': Timestamp.now(),
       });
@@ -44,7 +44,7 @@ class AccountFirestore {
           Account myAccount = Account(
             id: uid,
             name: data['name'],
-            imagePath: data['image_path'],
+            profileImagePath: data['image_path'],
             selfIntroduction: data['self_introduction'],
             userId: data['user_id'],
             createdTime: data['created_time'],
@@ -79,7 +79,7 @@ class AccountFirestore {
     try {
       await account.doc(updateAccount.id).update({
         'name': updateAccount.name,
-        'image_path': updateAccount.imagePath,
+        'image_path': updateAccount.profileImagePath,
         'user_id': updateAccount.userId,
         'self_introduction': updateAccount.selfIntroduction,
         'update_time': Timestamp.now(),
@@ -106,7 +106,7 @@ class AccountFirestore {
         Account postAccount = Account(
           id: accountId,
           name: data['name'],
-          imagePath: data['image_path'],
+          profileImagePath: data['image_path'],
           selfIntroduction: data['self_introduction'],
           userId: data['user_id'],
         );
@@ -140,7 +140,7 @@ class AccountFirestore {
           Account userAccount = Account(
             id: uid,
             name: data["name"],
-            imagePath: data["image_path"],
+            profileImagePath: data["image_path"],
             selfIntroduction: data["self_introduction"],
             userId: data["user_id"],
           );

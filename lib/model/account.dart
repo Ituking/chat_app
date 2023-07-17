@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class Account {
   String id;
   String name;
-  String imagePath;
+  String profileImagePath;
   String selfIntroduction;
   String userId;
   Timestamp? createdTime;
@@ -12,7 +12,7 @@ class Account {
   Account({
     required this.id,
     required this.name,
-    required this.imagePath,
+    required this.profileImagePath,
     required this.selfIntroduction,
     required this.userId,
     this.createdTime,
