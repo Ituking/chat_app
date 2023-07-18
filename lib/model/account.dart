@@ -18,4 +18,14 @@ class Account {
     this.createdTime,
     this.updatedTime,
   });
+
+  factory Account.fromMap(Map<String, dynamic> map) {
+    return Account(
+      id: map['id'],
+      name: map['name'],
+      profileImagePath: map['profileImagePath'],
+      selfIntroduction: map['selfIntroduction'],
+      userId: map['userId'],
+    );
+  }
 }
