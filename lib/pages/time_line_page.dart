@@ -17,20 +17,34 @@ class _TimeLinePageState extends State<TimeLinePage> {
   List<Account> accountList = [];
   List<Post> postList = [
     Post(
-      id: "0001",
-      postAccountId: "0001",
-      postTime: Timestamp.now(),
+      id: '1',
       postImagePath:
-          "https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
-      postContent: 'On a sunny day, you can still go to the beach 🌊.',
+          "https://cdn.pixabay.com/photo/2023/05/23/18/12/hummingbird-8013214_1280.jpg",
+      postContent: 'This is a demo post 1',
+      postAccountId: 'user1',
+      postAccount: Account(
+        id: 'user1',
+        name: 'User 1',
+        profileImagePath: '',
+        selfIntroduction: '',
+        userId: '',
+      ),
+      postTime: Timestamp.now(),
     ),
     Post(
-      id: "0002",
-      postAccountId: "0002",
-      postTime: Timestamp.now(),
+      id: '2',
       postImagePath:
-          "https://images.unsplash.com/photo-1542233637-20456b09d882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-      postContent: 'A day healed by nature 🌳.',
+          "https://cdn.pixabay.com/photo/2023/05/23/18/12/hummingbird-8013214_1280.jpg",
+      postContent: 'This is a demo post 2',
+      postAccountId: 'user2',
+      postAccount: Account(
+        id: 'user2',
+        name: 'User 2',
+        profileImagePath: '',
+        selfIntroduction: '',
+        userId: '',
+      ),
+      postTime: Timestamp.now(),
     ),
   ];
 
