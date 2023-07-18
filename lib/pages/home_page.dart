@@ -5,6 +5,7 @@ import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/image_zoom_page.dart';
 import 'package:chat_app/pages/post_comment_page.dart';
 import 'package:chat_app/pages/post_page.dart';
+import 'package:chat_app/utils/authentication.dart';
 import 'package:chat_app/utils/like_button.dart';
 import 'package:chat_app/utils/share_button.dart';
 import 'package:chat_app/utils/timeago.dart';
@@ -22,6 +23,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   double padValue = 0;
+  Account myAccount = Authentication.myAccount!;
 
   @override
   Widget build(BuildContext context) {
