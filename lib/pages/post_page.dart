@@ -72,6 +72,7 @@ class _PostPageState extends State<PostPage> {
                   postAccountId: Authentication.myAccount!.id,
                   id: '',
                   postImagePath: downloadUrl,
+                  postAccount: Authentication.myAccount!,
                   postTime: Timestamp.now(),
                 );
                 var result = await PostFirestore.addPost(newPost);
