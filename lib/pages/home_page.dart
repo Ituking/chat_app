@@ -68,8 +68,6 @@ class _HomePageState extends State<HomePage> {
                           if (kDebugMode) {
                             print(post.postTime);
                           }
-                          Account postAccount =
-                              userSnapshot.data![post.postAccountId]!;
                           return Card(
                             child: SizedBox(
                               height: MediaQuery.of(context).size.height * 0.75,
@@ -85,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                     ),
                                     title: Text(
-                                      postAccount.name,
+                                      post.postAccount?.name ?? "Unknown",
                                       style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         color: CupertinoColors.black,
