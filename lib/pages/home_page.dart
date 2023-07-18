@@ -55,6 +55,8 @@ class _HomePageState extends State<HomePage> {
                             postImagePath: data['image_path'],
                             postContent: data['content'],
                             postAccountId: data['post_account_id'],
+                            postAccount:
+                                userSnapshot.data![data['post_account_id']],
                             postTime: data['post_time'],
                           );
                           if (kDebugMode) {
