@@ -18,48 +18,7 @@ class UserProfilePage extends StatefulWidget {
 
 class _UserProfilePageState extends State<UserProfilePage> {
   static Account? userAccount;
-  List<Post> postList = [
-    Post(
-      id: "0001",
-      postAccountId: "0001",
-      postTime: Timestamp.now(),
-      postImagePath:
-          "https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
-      postContent: 'On a sunny day, you can still go to the beach 🌊.',
-    ),
-    Post(
-      id: "0002",
-      postAccountId: "0002",
-      postTime: Timestamp.now(),
-      postImagePath:
-          "https://images.unsplash.com/photo-1542233637-20456b09d882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-      postContent: 'A day healed by nature 🌳.',
-    ),
-    Post(
-      id: "0003",
-      postAccountId: "0003",
-      postTime: Timestamp.now(),
-      postImagePath:
-          "https://images.unsplash.com/photo-1542233637-20456b09d882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-      postContent: 'A day healed by nature 🌳.',
-    ),
-    Post(
-      id: "0004",
-      postAccountId: "0004",
-      postTime: Timestamp.now(),
-      postImagePath:
-          "https://images.unsplash.com/photo-1542233637-20456b09d882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-      postContent: 'A day healed by nature 🌳.',
-    ),
-    Post(
-      id: "0005",
-      postAccountId: "0005",
-      postTime: Timestamp.now(),
-      postImagePath:
-          "https://images.unsplash.com/photo-1542233637-20456b09d882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-      postContent: 'A day healed by nature 🌳.',
-    ),
-  ];
+  List<Post> postList = [];
 
   @override
   void initState() {
