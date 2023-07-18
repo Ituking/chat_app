@@ -148,8 +148,8 @@ class _EditAccountPageState extends State<EditAccountPage> {
                   if (image == null) {
                     imagePath = myAccount.profileImagePath;
                   } else {
-                    var result =
-                        await FunctionUtils.uploadImage(myAccount.id, image!);
+                    var result = await FunctionUtils.uploadProfileImage(
+                        myAccount.id, image!);
                     imagePath = result;
                   }
                   Account updateAccount = Account(

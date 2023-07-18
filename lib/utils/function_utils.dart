@@ -105,7 +105,7 @@ class FunctionUtils {
     return isOpened;
   }
 
-  static Future<String> uploadImage(String uid, File image) async {
+  static Future<String> uploadProfileImage(String uid, File image) async {
     final FirebaseStorage storageInstance = FirebaseStorage.instance;
     final Reference ref = storageInstance.ref();
     await ref.child(uid).putFile(image);
