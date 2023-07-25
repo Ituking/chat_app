@@ -105,15 +105,42 @@ class FunctionUtils {
     return isOpened;
   }
 
-  static Future<String> uploadProfileImage(String uid, File image) async {
+  static Future<String?> uploadProfileImage(String uid, File image) async {
     final FirebaseStorage storageInstance = FirebaseStorage.instance;
-    final Reference ref = storageInstance.ref();
-    await ref.child(uid).putFile(image);
-    String downloadUrl = await storageInstance.ref(uid).getDownloadURL();
-    if (kDebugMode) {
-      print("image_path: $downloadUrl");
+    final Reference ref =
+        storageInstance.ref().child('profile_image').child(uid);
+    try {
+      await ref.putFile(image);
+      String downloadUrl = await ref.getDownloadURL();
+      if (kDebugMode) {
+        print(
+            "Profile image uploaded successfully. Download URL: $downloadUrl");
+      }
+      return downloadUrl;
+    } catch (e) {
+      if (kDebugMode) {
+        print("Failed to upload profile image: $e");
+      }
+      return null;
     }
-    return downloadUrl;
+  }
+
+  static Future<String?> uploadPostImage(String uid, File image) async {
+    final FirebaseStorage storageInstance = FirebaseStorage.instance;
+    final Reference ref = storageInstance.ref().child('post_images').child(uid);
+    try {
+      await ref.putFile(image);
+      String downloadUrl = await ref.getDownloadURL();
+      if (kDebugMode) {
+        print("Post image uploaded successfully. Download URL: $downloadUrl");
+      }
+      return downloadUrl;
+    } catch (e) {
+      if (kDebugMode) {
+        print("Failed to upload post image: $e");
+      }
+      return null;
+    }
   }
 
   static Future saveImage(File image) async {

@@ -223,12 +223,12 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                   var result = await Authentication.signUp(
                       emailController.text, passwordController.text);
                   if (result is UserCredential) {
-                    String imagePath = await FunctionUtils.uploadProfileImage(
+                    String? imagePath = await FunctionUtils.uploadProfileImage(
                         result.user!.uid, image!);
                     Account newAccount = Account(
                       id: result.user!.uid,
                       name: nameController.text,
-                      profileImagePath: imagePath,
+                      profileImagePath: imagePath!,
                       selfIntroduction: selfIntroductionController.text,
                       userId: userIdController.text,
                     );

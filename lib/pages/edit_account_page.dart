@@ -7,6 +7,7 @@ import 'package:chat_app/utils/authentication.dart';
 import 'package:chat_app/utils/function_utils.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class EditAccountPage extends StatefulWidget {
@@ -144,26 +145,45 @@ class _EditAccountPageState extends State<EditAccountPage> {
                 if (nameController.text.isNotEmpty &&
                     userIdController.text.isNotEmpty &&
                     selfIntroductionController.text.isNotEmpty) {
-                  String imagePath = "";
-                  if (image == null) {
-                    imagePath = myAccount.profileImagePath;
-                  } else {
+                  String profileImagePath = myAccount.profileImagePath;
+                  if (image != null) {
                     var result = await FunctionUtils.uploadProfileImage(
                         myAccount.id, image!);
-                    imagePath = result;
+                    if (result != null) {
+                      profileImagePath = result;
+                    } else {
+                      if (kDebugMode) {
+                        print("Failed to upload profile image.");
+                      }
+                      return;
+                    }
                   }
+                  // if (image == null) {
+                  //   profileImagePath = myAccount.profileImagePath;
+                  // } else {
+                  //   var result = await FunctionUtils.uploadProfileImage(
+                  //       myAccount.id, image!);
+                  //   profileImagePath = result!;
+                  // }
                   Account updateAccount = Account(
                     id: myAccount.id,
                     name: nameController.text,
-                    profileImagePath: imagePath,
+                    profileImagePath: profileImagePath,
                     selfIntroduction: selfIntroductionController.text,
                     userId: userIdController.text,
                   );
-                  Authentication.myAccount = updateAccount;
+                  // Authentication.myAccount = updateAccount;
                   var result = await AccountFirestore.updateUser(updateAccount);
                   if (result == true) {
                     if (!mounted) return;
+                    setState(() {
+                      myAccount = updateAccount;
+                    });
                     Navigator.pop(context, true);
+                  } else {
+                    if (kDebugMode) {
+                      print("Failed to update account.");
+                    }
                   }
                 }
               },

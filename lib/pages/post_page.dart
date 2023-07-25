@@ -66,7 +66,7 @@ class _PostPageState extends State<PostPage> {
             onPressed: () async {
               if (contentController.text.isNotEmpty && image != null) {
                 final downloadUrl =
-                    await FunctionUtils.uploadProfileImage(uid, image!);
+                    await FunctionUtils.uploadPostImage(uid, image!);
                 Post newPost = Post(
                   postContent: contentController.text,
                   postAccountId: Authentication.myAccount!.id,
