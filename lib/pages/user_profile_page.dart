@@ -70,6 +70,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
   void initState() {
     super.initState();
     getUserProfile();
+    getUserPosts();
   }
 
   Future<void> getUserProfile() async {
@@ -102,6 +103,38 @@ class _UserProfilePageState extends State<UserProfilePage> {
     } on FirebaseException catch (e) {
       if (kDebugMode) {
         print("Failure to retrieve information from Firebase: $e");
+      }
+    }
+  }
+
+  Future<void> getUserPosts() async {
+    try {
+      QuerySnapshot postsSnapshot = await FirebaseFirestore.instance
+          .collection("posts")
+          .where("postAccountId", isEqualTo: widget.userId)
+          .get();
+
+      List<Post> posts = postsSnapshot.docs.map((doc) {
+        Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+        return Post(
+          id: doc.id,
+          postAccountId: data['postAccountId'],
+          postTime: data['postTime'],
+          postImagePath: data['postImagePath'],
+          postContent: data['postContent'],
+          postAccount: Account.fromMap(data['postAccount']),
+        );
+      }).toList();
+
+      setState(() {
+        postList = posts;
+        if (kDebugMode) {
+          print("postList = $postList");
+        }
+      });
+    } on FirebaseException catch (e) {
+      if (kDebugMode) {
+        print("Failure to retrieve posts from Firebase: $e");
       }
     }
   }

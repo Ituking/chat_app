@@ -52,6 +52,13 @@ class _ImageZoomPageState extends State<ImageZoomPage> {
                 image: NetworkImage(
                   widget.imagePath!,
                 ),
+                errorBuilder: (context, error, stackTrace) {
+                  return const Icon(
+                    CupertinoIcons.exclamationmark_circle,
+                    size: 64,
+                    color: CupertinoColors.systemRed,
+                  );
+                },
               ),
             ),
           ),

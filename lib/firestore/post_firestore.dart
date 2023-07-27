@@ -46,6 +46,7 @@ class PostFirestore {
           postImagePath: data['image_path'],
           postContent: data['content'],
           postAccountId: data['post_account_id'],
+          postAccount: data[''],
           postTime: data['post_time'],
         );
         postList.add(post);
