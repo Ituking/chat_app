@@ -29,7 +29,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: StreamBuilder<QuerySnapshot>(
-          stream: PostFirestore.posts.snapshots(),
+          stream: PostFirestore.posts
+              .orderBy('post_time', descending: true)
+              .snapshots(),
           builder: (context, postSnapshot) {
             if (postSnapshot.hasData) {
               List<String> postAccountIds = [];
