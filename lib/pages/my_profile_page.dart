@@ -169,7 +169,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                           return FutureBuilder<List<Post>?>(
                             future: PostFirestore.getPostsFromIds(myPostIds),
                             builder: (context, snapshot) {
-                              if (snapshot.hasData) {
+                              if (snapshot.hasData && snapshot.data != null) {
                                 return GridView.builder(
                                   shrinkWrap: true,
                                   physics: const ClampingScrollPhysics(),
