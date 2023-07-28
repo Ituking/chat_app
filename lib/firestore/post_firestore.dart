@@ -1,3 +1,4 @@
+import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
@@ -40,17 +41,34 @@ class PostFirestore {
     try {
       await Future.forEach(ids, (String elements) async {
         var doc = await posts.doc(elements).get();
-        Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-        Post post = Post(
-          id: doc.id,
-          postImagePath: data['image_path'],
-          postContent: data['content'],
-          postAccountId: data['post_account_id'],
-          postAccount: data[''],
-          postTime: data['post_time'],
-        );
-        postList.add(post);
+        if (doc.exists) {
+          Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+          if (kDebugMode) {
+            print("Post data for ID ${doc.id}: $data");
+          }
+          Account account = Account(
+            id: doc.id,
+            name: data['name'],
+            profileImagePath: data['image_path'],
+            selfIntroduction: data['self_introduction'],
+            userId: data['user_id'],
+          );
+          Post post = Post(
+            id: doc.id,
+            postImagePath: data['image_path'],
+            postContent: data['content'],
+            postAccountId: data['post_account_id'],
+            postAccount: account,
+            postTime: data['post_time'],
+          );
+          postList.add(post);
+        } else {
+          if (kDebugMode) {
+            print("Post with ID ${doc.id} does not exist.");
+          }
+        }
       });
+
       if (kDebugMode) {
         print("Success in retrieving my post.");
         print("postList => $postList");
