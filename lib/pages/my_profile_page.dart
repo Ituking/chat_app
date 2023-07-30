@@ -8,6 +8,7 @@ import 'package:chat_app/pages/edit_account_page.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class MyProfilePage extends StatefulWidget {
@@ -161,6 +162,9 @@ class _MyProfilePageState extends State<MyProfilePage> {
                           .orderBy('created_time', descending: true)
                           .snapshots(),
                       builder: (context, snapshot) {
+                        if (kDebugMode) {
+                          print("StreamBuilder snapshot: $snapshot");
+                        }
                         if (snapshot.hasData) {
                           List<String> myPostIds = List.generate(
                               snapshot.data!.docs.length, (index) {
