@@ -39,8 +39,8 @@ class PostFirestore {
   static Future<List<Post>?> getPostsFromIds(List<String> ids) async {
     List<Post> postList = [];
     try {
-      await Future.forEach(ids, (String elements) async {
-        var doc = await posts.doc(elements).get();
+      await Future.forEach(ids, (String id) async {
+        var doc = await posts.doc(id).get();
         if (doc.exists) {
           Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
           if (kDebugMode) {
