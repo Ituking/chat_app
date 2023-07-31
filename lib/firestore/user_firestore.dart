@@ -85,7 +85,7 @@ class UserFirestore {
         .collection('user')
         .doc(userId)
         .collection('my_posts')
-        .orderBy('created_time', descending: true)
+        .orderBy('post_time', descending: true)
         .snapshots();
   }
 }
