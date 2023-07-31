@@ -36,7 +36,7 @@ class PostFirestore {
     }
   }
 
-  static Future<List<Post>?> getPostsFromIds(List<String> ids) async {
+  static Future<dynamic> getPostsFromIds(List<String> ids) async {
     List<Post> postList = [];
     try {
       await Future.forEach(ids, (String id) async {

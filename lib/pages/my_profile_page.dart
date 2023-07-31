@@ -166,7 +166,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                               snapshot.data!.docs.length, (index) {
                             return snapshot.data!.docs[index].id;
                           });
-                          return FutureBuilder<List<Post>?>(
+                          return FutureBuilder<dynamic>(
                             future: PostFirestore.getPostsFromIds(myPostIds),
                             builder: (context, snapshot) {
                               if (snapshot.hasData && snapshot.data != null) {
