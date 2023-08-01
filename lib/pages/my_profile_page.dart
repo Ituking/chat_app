@@ -169,40 +169,47 @@ class _MyProfilePageState extends State<MyProfilePage> {
                           return FutureBuilder<List<Post>?>(
                             future: PostFirestore.getPostsFromIds(myPostIds),
                             builder: (context, snapshot) {
-                              if (snapshot.hasData && snapshot.data != null) {
-                                return GridView.builder(
-                                  shrinkWrap: true,
-                                  physics: const ClampingScrollPhysics(),
-                                  itemCount: snapshot.data!.length,
-                                  gridDelegate:
-                                      const SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 3,
-                                  ),
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    Post post = snapshot.data![index];
-                                    return Container(
-                                      margin: const EdgeInsets.all(2.0),
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                          image:
-                                              NetworkImage(post.postImagePath!),
-                                          fit: BoxFit.cover,
+                              if (snapshot.connectionState ==
+                                  ConnectionState.done) {
+                                if (snapshot.hasData) {
+                                  return GridView.builder(
+                                    gridDelegate:
+                                        const SliverGridDelegateWithFixedCrossAxisCount(
+                                            crossAxisCount: 3),
+                                    shrinkWrap: true,
+                                    physics: const ClampingScrollPhysics(),
+                                    itemCount: snapshot.data!.length,
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
+                                      Post post = snapshot.data![index];
+                                      return Container(
+                                        margin: const EdgeInsets.all(2.0),
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                            image: NetworkImage(
+                                                post.postImagePath!),
+                                            fit: BoxFit.cover,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                      ),
-                                    );
-                                  },
-                                );
+                                      );
+                                    },
+                                  );
+                                } else {
+                                  return const Center(
+                                    child: Text('No Posts'),
+                                  );
+                                }
                               } else {
-                                return Container();
+                                return const Center(
+                                  child: CupertinoActivityIndicator(),
+                                );
                               }
                             },
                           );
-                        } else {
-                          return Container();
                         }
+                        return Container(); // Add this return statement
                       },
                     ),
                   ],
