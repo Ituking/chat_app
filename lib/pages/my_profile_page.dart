@@ -167,6 +167,9 @@ class _MyProfilePageState extends State<MyProfilePage> {
                             return snapshot.data!.docs[index].id;
                           });
                           if (kDebugMode) {
+                            print("snapshot: $snapshot");
+                          }
+                          if (kDebugMode) {
                             print("myPostIds: $myPostIds");
                           }
                           return FutureBuilder<List<Post>?>(
