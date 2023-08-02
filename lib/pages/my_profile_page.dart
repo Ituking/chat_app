@@ -177,11 +177,11 @@ class _MyProfilePageState extends State<MyProfilePage> {
                             builder: (context, futureSnapshot) {
                               if (futureSnapshot.connectionState ==
                                   ConnectionState.done) {
+                                if (kDebugMode) {
+                                  print("futureSnapshot: $futureSnapshot");
+                                }
                                 if (futureSnapshot.hasData &&
                                     futureSnapshot.data!.isNotEmpty) {
-                                  if (kDebugMode) {
-                                    print("futureSnapshot: $futureSnapshot");
-                                  }
                                   return GridView.builder(
                                     gridDelegate:
                                         const SliverGridDelegateWithFixedCrossAxisCount(
