@@ -174,20 +174,20 @@ class _MyProfilePageState extends State<MyProfilePage> {
                           }
                           return FutureBuilder<List<Post>?>(
                             future: PostFirestore.getPostsFromIds(myPostIds),
-                            builder: (context, snapshot) {
-                              if (snapshot.connectionState ==
+                            builder: (context, futureSnapshot) {
+                              if (futureSnapshot.connectionState ==
                                   ConnectionState.done) {
-                                if (snapshot.hasData) {
+                                if (futureSnapshot.hasData) {
                                   return GridView.builder(
                                     gridDelegate:
                                         const SliverGridDelegateWithFixedCrossAxisCount(
                                             crossAxisCount: 3),
                                     shrinkWrap: true,
                                     physics: const ClampingScrollPhysics(),
-                                    itemCount: snapshot.data!.length,
+                                    itemCount: futureSnapshot.data!.length,
                                     itemBuilder:
                                         (BuildContext context, int index) {
-                                      Post post = snapshot.data![index];
+                                      Post post = futureSnapshot.data![index];
                                       return Container(
                                         margin: const EdgeInsets.all(2.0),
                                         decoration: BoxDecoration(
