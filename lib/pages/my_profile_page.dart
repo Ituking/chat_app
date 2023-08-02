@@ -193,7 +193,8 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
                                             image: NetworkImage(
-                                                post.postImagePath!),
+                                              post.postImagePath!,
+                                            ),
                                             fit: BoxFit.cover,
                                           ),
                                           borderRadius:
