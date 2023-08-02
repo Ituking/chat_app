@@ -122,7 +122,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                     ),
                     const SizedBox(height: 10.0),
                     Text(
-                      myAccount.name,
+                      myAccount.name!,
                       style: const TextStyle(
                         fontSize: 24.0,
                         fontWeight: FontWeight.bold,
@@ -130,7 +130,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                     ),
                     const SizedBox(height: 8.0),
                     Text(
-                      myAccount.userId,
+                      myAccount.userId!,
                       style: const TextStyle(
                         color: CupertinoColors.systemGrey,
                         fontSize: 16.0,
@@ -146,7 +146,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                     ),
                     const SizedBox(height: 8.0),
                     Text(
-                      myAccount.selfIntroduction,
+                      myAccount.selfIntroduction!,
                       maxLines: 5,
                       style: const TextStyle(
                         fontSize: 16.0,

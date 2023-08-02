@@ -2,10 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Account {
   String id;
-  String name;
+  String? name;
   String profileImagePath;
-  String selfIntroduction;
-  String userId;
+  String? selfIntroduction;
+  String? userId;
   Timestamp? createdTime;
   Timestamp? updatedTime;
 
