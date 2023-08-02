@@ -207,6 +207,11 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                       );
                                     },
                                   );
+                                } else if (futureSnapshot.hasError) {
+                                  return Center(
+                                    child:
+                                        Text('Error: ${futureSnapshot.error}'),
+                                  );
                                 } else {
                                   return const Center(
                                     child: Text('No Posts'),
