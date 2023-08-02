@@ -177,7 +177,8 @@ class _MyProfilePageState extends State<MyProfilePage> {
                             builder: (context, futureSnapshot) {
                               if (futureSnapshot.connectionState ==
                                   ConnectionState.done) {
-                                if (futureSnapshot.hasData) {
+                                if (futureSnapshot.hasData &&
+                                    futureSnapshot.data!.isNotEmpty) {
                                   if (kDebugMode) {
                                     print("futureSnapshot: $futureSnapshot");
                                   }
