@@ -79,4 +79,13 @@ class UserFirestore {
     }
     return null;
   }
+
+  static Stream<QuerySnapshot> fetchUserPostsStream(String userId) {
+    return _firebaseFirestoreInstance
+        .collection('user')
+        .doc(userId)
+        .collection('my_posts')
+        .orderBy('post_time', descending: true)
+        .snapshots();
+  }
 }

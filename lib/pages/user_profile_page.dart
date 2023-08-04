@@ -238,7 +238,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                       height: 10.0,
                     ),
                     Text(
-                      userAccount!.name,
+                      userAccount!.name!,
                       style: const TextStyle(
                         fontSize: 24.0,
                         fontWeight: FontWeight.bold,
@@ -248,7 +248,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                       height: 8.0,
                     ),
                     Text(
-                      userAccount!.userId,
+                      userAccount!.userId!,
                       style: const TextStyle(
                         color: CupertinoColors.systemGrey,
                         fontSize: 16.0,
@@ -268,7 +268,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                       height: 8.0,
                     ),
                     Text(
-                      userAccount!.selfIntroduction,
+                      userAccount!.selfIntroduction!,
                       maxLines: 5,
                       style: const TextStyle(
                         fontSize: 16.0,

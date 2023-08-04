@@ -200,7 +200,7 @@ class _TalkRoomPageState extends State<TalkRoomPage> {
                                   color: CupertinoColors.secondaryLabel,
                                 ),
                                 style: const TextStyle(
-                                  color: Colors.white,
+                                  color: CupertinoColors.black,
                                 ),
                               ),
                             ),

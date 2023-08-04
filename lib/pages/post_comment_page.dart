@@ -124,7 +124,7 @@ class _PostCommentPageState extends State<PostCommentPage> {
                                                   Row(
                                                     children: [
                                                       Text(
-                                                        commentAccount.name,
+                                                        commentAccount.name!,
                                                         style: const TextStyle(
                                                             fontWeight:
                                                                 FontWeight
