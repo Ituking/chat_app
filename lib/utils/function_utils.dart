@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:uuid/uuid.dart';
 
 class FunctionUtils {
   static Future<dynamic> getImageFromGallery(BuildContext context) async {
@@ -127,7 +128,11 @@ class FunctionUtils {
 
   static Future<String?> uploadPostImage(String uid, File image) async {
     final FirebaseStorage storageInstance = FirebaseStorage.instance;
-    final Reference ref = storageInstance.ref().child('post_images').child(uid);
+    final Reference ref = storageInstance
+        .ref()
+        .child('post_images')
+        .child(uid)
+        .child(const Uuid().v4());
     try {
       await ref.putFile(image);
       String downloadUrl = await ref.getDownloadURL();

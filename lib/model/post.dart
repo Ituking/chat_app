@@ -2,7 +2,7 @@ import 'package:chat_app/model/account.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Post {
-  String id;
+  String? id;
   String? postImagePath;
   String postContent;
   String postAccountId;
