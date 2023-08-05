@@ -74,7 +74,7 @@ class _PostPageState extends State<PostPage> {
                 Post newPost = Post(
                   postContent: contentController.text,
                   postAccountId: Authentication.myAccount!.id,
-                  id: '',
+                  id: null,
                   postImagePath: downloadUrl,
                   postAccount: Authentication.myAccount!,
                   postTime: Timestamp.now(),
