@@ -5,6 +5,7 @@ import 'package:chat_app/firestore/user_firestore.dart';
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/edit_account_page.dart';
+import 'package:chat_app/pages/post_detail_page.dart';
 import 'package:chat_app/utils/authentication.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
@@ -192,17 +193,30 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                     itemBuilder:
                                         (BuildContext context, int index) {
                                       Post post = futureSnapshot.data![index];
-                                      return Container(
-                                        margin: const EdgeInsets.all(2.0),
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: NetworkImage(
-                                              post.postImagePath!,
+                                      return GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  PostDetailPage(
+                                                post: post,
+                                              ),
                                             ),
-                                            fit: BoxFit.cover,
+                                          );
+                                        },
+                                        child: Container(
+                                          margin: const EdgeInsets.all(2.0),
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                              image: NetworkImage(
+                                                post.postImagePath!,
+                                              ),
+                                              fit: BoxFit.cover,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
                                           ),
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
                                         ),
                                       );
                                     },
