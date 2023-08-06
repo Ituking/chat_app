@@ -205,17 +205,20 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                             ),
                                           );
                                         },
-                                        child: Container(
-                                          margin: const EdgeInsets.all(2.0),
-                                          decoration: BoxDecoration(
-                                            image: DecorationImage(
-                                              image: NetworkImage(
-                                                post.postImagePath!,
+                                        child: Hero(
+                                          tag: "post_${post.id}",
+                                          child: Container(
+                                            margin: const EdgeInsets.all(2.0),
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                image: NetworkImage(
+                                                  post.postImagePath!,
+                                                ),
+                                                fit: BoxFit.cover,
                                               ),
-                                              fit: BoxFit.cover,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
                                           ),
                                         ),
                                       );
