@@ -201,6 +201,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                               builder: (context) =>
                                                   PostDetailPage(
                                                 post: post,
+                                                account: myAccount,
                                               ),
                                             ),
                                           );
