@@ -1,3 +1,4 @@
+import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/image_zoom_page.dart';
 import 'package:chat_app/pages/post_comment_page.dart';
@@ -11,7 +12,8 @@ import 'package:intl/intl.dart';
 
 class PostDetailPage extends StatefulWidget {
   final Post post;
-  const PostDetailPage({super.key, required this.post});
+  final Account account;
+  const PostDetailPage({super.key, required this.post, required this.account});
 
   @override
   State<PostDetailPage> createState() => _PostDetailPageState();
