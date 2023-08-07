@@ -59,9 +59,9 @@ class _PostDetailPageState extends State<PostDetailPage> {
                     ),
                   ),
                 ),
-                title: const Text(
-                  "Emma",
-                  style: TextStyle(
+                title: Text(
+                  widget.account.name!,
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     color: CupertinoColors.black,
                   ),
