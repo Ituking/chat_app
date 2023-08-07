@@ -64,9 +64,9 @@ class _PostDetailPageState extends State<PostDetailPage> {
                     color: CupertinoColors.black,
                   ),
                 ),
-                subtitle: const Text(
-                  "3 days ago",
-                  style: TextStyle(
+                subtitle: Text(
+                  formattedTime,
+                  style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     color: CupertinoColors.systemGrey,
                   ),
