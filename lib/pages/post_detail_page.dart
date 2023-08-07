@@ -53,9 +53,9 @@ class _PostDetailPageState extends State<PostDetailPage> {
                       ),
                     );
                   },
-                  child: const CircleAvatar(
+                  child: CircleAvatar(
                     backgroundImage: NetworkImage(
-                      "https://cdn.pixabay.com/photo/2023/06/13/15/05/astronaut-8061095_1280.png",
+                      widget.account.profileImagePath,
                     ),
                   ),
                 ),
