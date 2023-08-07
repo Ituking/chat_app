@@ -7,6 +7,7 @@ import 'package:chat_app/utils/share_button.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class PostDetailPage extends StatefulWidget {
   final Post post;
@@ -19,6 +20,8 @@ class PostDetailPage extends StatefulWidget {
 class _PostDetailPageState extends State<PostDetailPage> {
   @override
   Widget build(BuildContext context) {
+    String formattedTime =
+        DateFormat.yMMMd().format(widget.post.postTime!.toDate());
     return Scaffold(
       appBar: WidgetUtils.createAppBar("Post"),
       body: SingleChildScrollView(
