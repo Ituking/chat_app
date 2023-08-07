@@ -1,3 +1,4 @@
+import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/image_zoom_page.dart';
 import 'package:chat_app/pages/post_comment_page.dart';
@@ -7,10 +8,12 @@ import 'package:chat_app/utils/share_button.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class PostDetailPage extends StatefulWidget {
   final Post post;
-  const PostDetailPage({super.key, required this.post});
+  final Account account;
+  const PostDetailPage({super.key, required this.post, required this.account});
 
   @override
   State<PostDetailPage> createState() => _PostDetailPageState();
@@ -19,6 +22,8 @@ class PostDetailPage extends StatefulWidget {
 class _PostDetailPageState extends State<PostDetailPage> {
   @override
   Widget build(BuildContext context) {
+    String formattedTime =
+        DateFormat.yMMMd().format(widget.post.postTime!.toDate());
     return Scaffold(
       appBar: WidgetUtils.createAppBar("Post"),
       body: SingleChildScrollView(
@@ -48,22 +53,22 @@ class _PostDetailPageState extends State<PostDetailPage> {
                       ),
                     );
                   },
-                  child: const CircleAvatar(
+                  child: CircleAvatar(
                     backgroundImage: NetworkImage(
-                      "https://cdn.pixabay.com/photo/2023/06/13/15/05/astronaut-8061095_1280.png",
+                      widget.account.profileImagePath,
                     ),
                   ),
                 ),
-                title: const Text(
-                  "Emma",
-                  style: TextStyle(
+                title: Text(
+                  widget.account.name!,
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     color: CupertinoColors.black,
                   ),
                 ),
-                subtitle: const Text(
-                  "3 days ago",
-                  style: TextStyle(
+                subtitle: Text(
+                  formattedTime,
+                  style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     color: CupertinoColors.systemGrey,
                   ),
@@ -100,20 +105,6 @@ class _PostDetailPageState extends State<PostDetailPage> {
                         ),
                       ),
                     ),
-                  ),
-                ),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.0),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "30 Likes",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: CupertinoColors.black,
                   ),
                 ),
               ),
