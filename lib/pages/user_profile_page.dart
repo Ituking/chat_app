@@ -300,6 +300,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                     MaterialPageRoute(
                       builder: (context) => PostDetailPage(
                         post: post,
+                        account: userAccount!,
                       ),
                     ),
                   );
