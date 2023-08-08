@@ -1,8 +1,8 @@
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/image_zoom_page.dart';
+import 'package:chat_app/pages/my_profile_page.dart';
 import 'package:chat_app/pages/post_comment_page.dart';
-import 'package:chat_app/pages/user_profile_page.dart';
 import 'package:chat_app/utils/like_button.dart';
 import 'package:chat_app/utils/share_button.dart';
 import 'package:chat_app/utils/widget_utils.dart';
@@ -35,9 +35,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => UserProfilePage(
-                      userId: widget.post.postAccountId,
-                    ),
+                    builder: (context) => const MyProfilePage(),
                   ),
                 );
               },
