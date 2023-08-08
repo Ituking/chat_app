@@ -42,21 +42,9 @@ class _PostDetailPageState extends State<PostDetailPage> {
                 );
               },
               child: ListTile(
-                leading: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => UserProfilePage(
-                          userId: widget.post.postAccountId,
-                        ),
-                      ),
-                    );
-                  },
-                  child: CircleAvatar(
-                    backgroundImage: NetworkImage(
-                      widget.account.profileImagePath,
-                    ),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                    widget.account.profileImagePath,
                   ),
                 ),
                 title: Text(
