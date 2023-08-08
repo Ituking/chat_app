@@ -1,7 +1,6 @@
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/image_zoom_page.dart';
-import 'package:chat_app/pages/my_profile_page.dart';
 import 'package:chat_app/pages/post_comment_page.dart';
 import 'package:chat_app/utils/like_button.dart';
 import 'package:chat_app/utils/share_button.dart';
@@ -30,34 +29,24 @@ class _PostDetailPageState extends State<PostDetailPage> {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const MyProfilePage(),
-                  ),
-                );
-              },
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                    widget.account.profileImagePath,
-                  ),
+            ListTile(
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage(
+                  widget.account.profileImagePath,
                 ),
-                title: Text(
-                  widget.account.name!,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: CupertinoColors.black,
-                  ),
+              ),
+              title: Text(
+                widget.account.name!,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: CupertinoColors.black,
                 ),
-                subtitle: Text(
-                  formattedTime,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.normal,
-                    color: CupertinoColors.systemGrey,
-                  ),
+              ),
+              subtitle: Text(
+                formattedTime,
+                style: const TextStyle(
+                  fontWeight: FontWeight.normal,
+                  color: CupertinoColors.systemGrey,
                 ),
               ),
             ),
