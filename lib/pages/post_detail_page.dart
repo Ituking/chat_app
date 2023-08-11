@@ -104,6 +104,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
             const SizedBox(
               height: 14.0,
             ),
+            Text("${widget.post.likedCount} Like"),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
