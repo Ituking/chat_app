@@ -202,7 +202,7 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   const SizedBox(
-                                    height: 14.0,
+                                    height: 3.0,
                                   ),
                                   Text(
                                     "${post.likedCount} like",
