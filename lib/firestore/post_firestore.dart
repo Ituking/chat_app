@@ -19,6 +19,7 @@ class PostFirestore {
         'post_account_id': newPost.postAccountId,
         'image_path': newPost.postImagePath,
         'post_time': Timestamp.now(),
+        'liked_count': newPost.likedCount,
       });
       userPosts.doc(result.id).set({
         'post_id': result.id,
@@ -60,6 +61,7 @@ class PostFirestore {
             postAccountId: data['post_account_id'],
             postAccount: account,
             postTime: data['post_time'],
+            likedCount: data['liked_count'],
           );
           postList.add(post);
         } else {
