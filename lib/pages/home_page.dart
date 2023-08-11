@@ -60,6 +60,7 @@ class _HomePageState extends State<HomePage> {
                             postAccount:
                                 userSnapshot.data![data['post_account_id']],
                             postTime: data['post_time'],
+                            likedCount: data['liked_count'],
                           );
                           if (kDebugMode) {
                             print(post.postImagePath);
@@ -69,6 +70,9 @@ class _HomePageState extends State<HomePage> {
                           }
                           if (kDebugMode) {
                             print(post.postTime);
+                          }
+                          if (kDebugMode) {
+                            print(post.likedCount);
                           }
                           return Card(
                             child: SizedBox(
@@ -200,6 +204,7 @@ class _HomePageState extends State<HomePage> {
                                   const SizedBox(
                                     height: 14.0,
                                   ),
+                                  Text("${post.likedCount} like"),
                                   Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
