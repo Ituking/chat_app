@@ -87,7 +87,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 8.0,
-                vertical: 25.0,
+                vertical: 10.0,
               ),
               child: Container(
                 alignment: Alignment.centerLeft,
