@@ -216,13 +216,15 @@ class _HomePageState extends State<HomePage> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      const Row(
+                                      Row(
                                         children: [
-                                          LikeButton(),
-                                          SizedBox(
+                                          LikeButton(
+                                            post: post,
+                                          ),
+                                          const SizedBox(
                                             width: 8.0,
                                           ),
-                                          Text(
+                                          const Text(
                                             "Like",
                                             style: TextStyle(
                                               color: CupertinoColors.black,
