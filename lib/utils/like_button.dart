@@ -19,6 +19,9 @@ class _LikeButtonState extends State<LikeButton> {
       if (isLiked) {
         widget.post.likedUserIds.remove(widget.post.postAccountId);
         widget.post.likedCount--;
+      } else {
+        widget.post.likedUserIds.add(widget.post.postAccountId);
+        widget.post.likedCount++;
       }
     });
   }
