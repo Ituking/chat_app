@@ -204,14 +204,6 @@ class _HomePageState extends State<HomePage> {
                                   const SizedBox(
                                     height: 3.0,
                                   ),
-                                  Text(
-                                    "${post.likedCount} like",
-                                    style: const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.normal,
-                                      color: CupertinoColors.black,
-                                    ),
-                                  ),
                                   Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
@@ -224,9 +216,11 @@ class _HomePageState extends State<HomePage> {
                                           const SizedBox(
                                             width: 8.0,
                                           ),
-                                          const Text(
-                                            "Like",
-                                            style: TextStyle(
+                                          Text(
+                                            "${post.likedCount}",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.normal,
                                               color: CupertinoColors.black,
                                             ),
                                           ),
