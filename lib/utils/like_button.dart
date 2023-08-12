@@ -41,10 +41,10 @@ class _LikeButtonState extends State<LikeButton> {
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(
-        Icons.thumb_up_outlined,
+        Icons.favorite,
         color: isLiked
             ? const Color.fromRGBO(255, 100, 130, 1)
-            : CupertinoColors.black,
+            : CupertinoColors.systemGrey,
       ),
       onPressed: toggleLike,
     );
