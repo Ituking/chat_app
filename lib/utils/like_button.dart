@@ -12,6 +12,11 @@ class LikeButton extends StatefulWidget {
 
 class _LikeButtonState extends State<LikeButton> {
   bool isLiked = false;
+
+  void toggleLike() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return IconButton(
