@@ -115,13 +115,15 @@ class _PostDetailPageState extends State<PostDetailPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                const Row(
+                Row(
                   children: [
-                    LikeButton(),
-                    SizedBox(
+                    LikeButton(
+                      post: widget.post,
+                    ),
+                    const SizedBox(
                       width: 8.0,
                     ),
-                    Text(
+                    const Text(
                       "Like",
                       style: TextStyle(
                         color: CupertinoColors.black,
