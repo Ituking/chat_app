@@ -46,13 +46,7 @@ class _LikeButtonState extends State<LikeButton> {
             ? const Color.fromRGBO(255, 100, 130, 1)
             : CupertinoColors.black,
       ),
-      onPressed: () {
-        setState(
-          () {
-            isLiked = !isLiked;
-          },
-        );
-      },
+      onPressed: toggleLike,
     );
   }
 }
