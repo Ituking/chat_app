@@ -14,7 +14,9 @@ class _LikeButtonState extends State<LikeButton> {
   bool isLiked = false;
 
   void toggleLike() {
-    setState(() {});
+    setState(() {
+      List<String> updatedLikedUserIds = List.from(widget.post.likedUserIds);
+    });
   }
 
   @override
