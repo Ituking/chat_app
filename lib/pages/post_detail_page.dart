@@ -104,14 +104,6 @@ class _PostDetailPageState extends State<PostDetailPage> {
             const SizedBox(
               height: 14.0,
             ),
-            Text(
-              "${widget.post.likedCount} like",
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.normal,
-                color: CupertinoColors.black,
-              ),
-            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -123,9 +115,11 @@ class _PostDetailPageState extends State<PostDetailPage> {
                     const SizedBox(
                       width: 8.0,
                     ),
-                    const Text(
-                      "Like",
-                      style: TextStyle(
+                    Text(
+                      "${widget.post.likedCount}",
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
                         color: CupertinoColors.black,
                       ),
                     ),
