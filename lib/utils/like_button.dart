@@ -23,6 +23,8 @@ class _LikeButtonState extends State<LikeButton> {
         widget.post.likedUserIds.add(widget.post.postAccountId);
         widget.post.likedCount++;
       }
+      widget.post.likedUserIds = updatedLikedUserIds;
+      isLiked = !isLiked;
     });
   }
 
