@@ -1,5 +1,6 @@
 import 'package:chat_app/model/post.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class LikeButton extends StatefulWidget {
@@ -16,6 +17,10 @@ class _LikeButtonState extends State<LikeButton> {
   void toggleLike() {
     setState(() {
       List<String> updatedLikedUserIds = List.from(widget.post.likedUserIds);
+      if (kDebugMode) {
+        print("postAccountId: ${widget.post.postAccountId}");
+        print("likedUserIds: ${widget.post.likedUserIds}");
+      }
       if (isLiked) {
         widget.post.likedUserIds.remove(widget.post.postAccountId);
         widget.post.likedCount--;
@@ -24,6 +29,10 @@ class _LikeButtonState extends State<LikeButton> {
         widget.post.likedCount++;
       }
       widget.post.likedUserIds = updatedLikedUserIds;
+      if (kDebugMode) {
+        print("updatedLikedUserIds: $updatedLikedUserIds");
+        print("widget.post.likedUserIds: ${widget.post.likedUserIds}");
+      }
       isLiked = !isLiked;
     });
   }
