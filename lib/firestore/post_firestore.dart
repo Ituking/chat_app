@@ -20,6 +20,7 @@ class PostFirestore {
         'image_path': newPost.postImagePath,
         'post_time': Timestamp.now(),
         'liked_count': newPost.likedCount,
+        'liked_user_ids': newPost.likedUserIds,
       });
       userPosts.doc(result.id).set({
         'post_id': result.id,
