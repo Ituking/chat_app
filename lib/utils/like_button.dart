@@ -15,6 +15,11 @@ class LikeButton extends StatefulWidget {
 class _LikeButtonState extends State<LikeButton> {
   bool isLiked = false;
 
+  @override
+  void initState() {
+    super.initState();
+  }
+
   void toggleLike() async {
     setState(() {
       List<String> updatedLikedUserIds = List.from(widget.post.likedUserIds);
