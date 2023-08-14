@@ -13,7 +13,7 @@ class LikeButton extends StatefulWidget {
 }
 
 class _LikeButtonState extends State<LikeButton> {
-  bool isLiked = false;
+  late bool isLiked;
 
   @override
   void initState() {
