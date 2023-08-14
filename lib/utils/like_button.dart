@@ -35,7 +35,7 @@ class _LikeButtonState extends State<LikeButton> {
         widget.post.likedUserIds.add(widget.post.postAccountId);
         widget.post.likedCount++;
       }
-      widget.post.likedUserIds = updatedLikedUserIds;
+      widget.post.likedCount = widget.post.likedUserIds.length;
       if (kDebugMode) {
         print("updatedLikedUserIds: $updatedLikedUserIds");
         print("widget.post.likedUserIds: ${widget.post.likedUserIds}");
