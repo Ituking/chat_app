@@ -1,4 +1,5 @@
 import 'package:chat_app/model/post.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +36,8 @@ class _LikeButtonState extends State<LikeButton> {
       }
       isLiked = !isLiked;
     });
+
+    try {} on FirebaseException catch (e) {}
   }
 
   @override
