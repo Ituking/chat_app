@@ -15,7 +15,7 @@ class LikeButton extends StatefulWidget {
 class _LikeButtonState extends State<LikeButton> {
   bool isLiked = false;
 
-  void toggleLike() {
+  void toggleLike() async {
     setState(() {
       List<String> updatedLikedUserIds = List.from(widget.post.likedUserIds);
       if (kDebugMode) {
@@ -45,6 +45,8 @@ class _LikeButtonState extends State<LikeButton> {
         'liked_count': widget.post.likedCount,
         'liked_user_ids': widget.post.likedUserIds,
       };
+
+      await ref.update(updateData);
     } on FirebaseException catch (e) {}
   }
 
