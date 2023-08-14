@@ -37,7 +37,10 @@ class _LikeButtonState extends State<LikeButton> {
       isLiked = !isLiked;
     });
 
-    try {} on FirebaseException catch (e) {}
+    try {
+      final ref =
+          FirebaseFirestore.instance.collection('posts').doc(widget.post.id);
+    } on FirebaseException catch (e) {}
   }
 
   @override
