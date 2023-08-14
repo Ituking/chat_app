@@ -47,6 +47,9 @@ class _LikeButtonState extends State<LikeButton> {
       };
 
       await ref.update(updateData);
+      if (kDebugMode) {
+        print("Firestore data updated successfully");
+      }
     } on FirebaseException catch (e) {}
   }
 
