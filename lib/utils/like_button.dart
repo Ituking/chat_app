@@ -40,6 +40,11 @@ class _LikeButtonState extends State<LikeButton> {
     try {
       final ref =
           FirebaseFirestore.instance.collection('posts').doc(widget.post.id);
+
+      final updateData = {
+        'liked_count': widget.post.likedCount,
+        'liked_user_ids': widget.post.likedUserIds,
+      };
     } on FirebaseException catch (e) {}
   }
 
