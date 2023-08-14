@@ -18,6 +18,7 @@ class _LikeButtonState extends State<LikeButton> {
   @override
   void initState() {
     super.initState();
+    isLiked = widget.post.likedUserIds.contains(widget.post.postAccountId);
   }
 
   void toggleLike() async {
