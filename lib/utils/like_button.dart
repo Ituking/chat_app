@@ -19,6 +19,11 @@ class _LikeButtonState extends State<LikeButton> {
   void initState() {
     super.initState();
     isLiked = widget.post.likedUserIds.contains(widget.post.postAccountId);
+    if (kDebugMode) {
+      print("isLiked: $isLiked");
+      print("widget.post.postAccountId: ${widget.post.postAccountId}");
+      print("widget.post.likedUserIds: ${widget.post.likedUserIds}");
+    }
   }
 
   void toggleLike() async {
