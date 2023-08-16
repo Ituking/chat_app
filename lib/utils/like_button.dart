@@ -48,7 +48,7 @@ class _LikeButtonState extends State<LikeButton> {
           FirebaseFirestore.instance.collection('posts').doc(widget.post.id);
 
       final updateData = {
-        'liked_count': widget.post.likedCount,
+        'liked_count': FieldValue.increment(isLiked ? -1 : 1),
         'liked_user_ids': widget.post.likedUserIds,
       };
 
