@@ -27,26 +27,26 @@ class _LikeButtonState extends State<LikeButton> {
   }
 
   void toggleLike() async {
-    setState(() {
-      List<String> updatedLikedUserIds = List.from(widget.post.likedUserIds);
-      if (kDebugMode) {
-        print("postAccountId: ${widget.post.postAccountId}");
-        print("likedUserIds: ${widget.post.likedUserIds}");
-      }
-      if (isLiked) {
-        widget.post.likedUserIds.remove(widget.post.postAccountId);
-        widget.post.likedCount--;
-      } else {
-        widget.post.likedUserIds.add(widget.post.postAccountId);
-        widget.post.likedCount++;
-      }
-      widget.post.likedCount = widget.post.likedUserIds.length;
-      if (kDebugMode) {
-        print("updatedLikedUserIds: $updatedLikedUserIds");
-        print("widget.post.likedUserIds: ${widget.post.likedUserIds}");
-      }
-      isLiked = !isLiked;
-    });
+    // setState(() {
+    //   List<String> updatedLikedUserIds = List.from(widget.post.likedUserIds);
+    //   if (kDebugMode) {
+    //     print("postAccountId: ${widget.post.postAccountId}");
+    //     print("likedUserIds: ${widget.post.likedUserIds}");
+    //   }
+    //   if (isLiked) {
+    //     widget.post.likedUserIds.remove(widget.post.postAccountId);
+    //     widget.post.likedCount--;
+    //   } else {
+    //     widget.post.likedUserIds.add(widget.post.postAccountId);
+    //     widget.post.likedCount++;
+    //   }
+    //   widget.post.likedCount = widget.post.likedUserIds.length;
+    //   if (kDebugMode) {
+    //     print("updatedLikedUserIds: $updatedLikedUserIds");
+    //     print("widget.post.likedUserIds: ${widget.post.likedUserIds}");
+    //   }
+    //   isLiked = !isLiked;
+    // });
 
     try {
       final ref =
