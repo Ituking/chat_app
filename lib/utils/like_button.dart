@@ -55,8 +55,8 @@ class _LikeButtonState extends State<LikeButton> {
       final updateData = {
         'liked_count': FieldValue.increment(isLiked ? -1 : 1),
         'liked_user_ids': isLiked
-            ? FieldValue.arrayRemove([widget.post.postAccountId])
-            : FieldValue.arrayUnion([widget.post.postAccountId]),
+            ? FieldValue.arrayRemove([widget.post.likedUserIds])
+            : FieldValue.arrayUnion([widget.post.likedUserIds]),
       };
 
       await ref.update(updateData);
