@@ -2,6 +2,7 @@ import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/image_zoom_page.dart';
 import 'package:chat_app/pages/post_comment_page.dart';
+import 'package:chat_app/utils/authentication.dart';
 import 'package:chat_app/utils/like_button.dart';
 import 'package:chat_app/utils/share_button.dart';
 import 'package:chat_app/utils/widget_utils.dart';
@@ -19,6 +20,8 @@ class PostDetailPage extends StatefulWidget {
 }
 
 class _PostDetailPageState extends State<PostDetailPage> {
+  Account myAccount = Authentication.myAccount!;
+
   @override
   Widget build(BuildContext context) {
     String formattedTime =
