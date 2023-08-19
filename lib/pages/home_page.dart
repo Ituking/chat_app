@@ -65,6 +65,10 @@ class _HomePageState extends State<HomePage> {
                           bool isLiked =
                               post.likedUserIds.contains(myAccount.id);
                           if (kDebugMode) {
+                            print(
+                                "When retrieved from the stream, isLiked => $isLiked");
+                          }
+                          if (kDebugMode) {
                             print(post.postImagePath);
                           }
                           if (kDebugMode) {
