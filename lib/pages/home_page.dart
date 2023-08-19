@@ -218,6 +218,7 @@ class _HomePageState extends State<HomePage> {
                                         children: [
                                           LikeButton(
                                             post: post,
+                                            isLiked: isLiked,
                                           ),
                                           const SizedBox(
                                             width: 8.0,
