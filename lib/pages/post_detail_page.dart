@@ -6,6 +6,7 @@ import 'package:chat_app/utils/authentication.dart';
 import 'package:chat_app/utils/like_button.dart';
 import 'package:chat_app/utils/share_button.dart';
 import 'package:chat_app/utils/widget_utils.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -123,7 +124,9 @@ class _PostDetailPageState extends State<PostDetailPage> {
                       post: widget.post,
                       isLiked:
                           widget.post.likedUserIds.contains(widget.account.id),
-                      onPressed: () {},
+                      onPressed: () {
+                        try {} on FirebaseException catch (e) {}
+                      },
                     ),
                     const SizedBox(
                       width: 8.0,
