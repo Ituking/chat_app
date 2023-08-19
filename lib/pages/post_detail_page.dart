@@ -6,6 +6,7 @@ import 'package:chat_app/utils/authentication.dart';
 import 'package:chat_app/utils/like_button.dart';
 import 'package:chat_app/utils/share_button.dart';
 import 'package:chat_app/utils/widget_utils.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -125,11 +126,21 @@ class _PostDetailPageState extends State<PostDetailPage> {
                       post: widget.post,
                       isLiked:
                           widget.post.likedUserIds.contains(widget.account.id),
-                      onPressed: () {
+                      onPressed: () async {
                         try {
                           if (kDebugMode) {
                             print("onPressed time isLiked => $isLiked");
                           }
+                          await FirebaseFirestore.instance
+                              .collection('posts')
+                              .doc(widget.post.id)
+                              .update({
+                            'liked_count':
+                                FieldValue.increment(isLiked ? -1 : 1),
+                            'liked_user_ids': isLiked
+                                ? FieldValue.arrayRemove([myAccount.id])
+                                : FieldValue.arrayUnion([myAccount.id]),
+                          });
                         } on FirebaseException catch (e) {}
                       },
                     ),
