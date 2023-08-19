@@ -5,7 +5,12 @@ import 'package:flutter/material.dart';
 class LikeButton extends StatelessWidget {
   final Post post;
   final bool isLiked;
-  const LikeButton({super.key, required this.post, required this.isLiked});
+  final VoidCallback onPressed;
+  const LikeButton(
+      {super.key,
+      required this.post,
+      required this.isLiked,
+      required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +21,7 @@ class LikeButton extends StatelessWidget {
             ? const Color.fromRGBO(255, 100, 130, 1)
             : CupertinoColors.systemGrey,
       ),
-      onPressed: toggleLike,
+      onPressed: onPressed,
     );
   }
 }
