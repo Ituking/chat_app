@@ -144,7 +144,11 @@ class _PostDetailPageState extends State<PostDetailPage> {
                           if (kDebugMode) {
                             print("Firestore data updated successfully.");
                           }
-                        } on FirebaseException catch (e) {}
+                        } on FirebaseException catch (e) {
+                          if (kDebugMode) {
+                            print("Firestore update error: $e");
+                          }
+                        }
                       },
                     ),
                     const SizedBox(
