@@ -24,6 +24,11 @@ class _PostDetailPageState extends State<PostDetailPage> {
   bool isLiked = false;
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     String formattedTime =
         DateFormat.yMMMd().format(widget.post.postTime!.toDate());
