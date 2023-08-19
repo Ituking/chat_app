@@ -8,6 +8,7 @@ import 'package:chat_app/utils/share_button.dart';
 import 'package:chat_app/utils/widget_utils.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -125,7 +126,11 @@ class _PostDetailPageState extends State<PostDetailPage> {
                       isLiked:
                           widget.post.likedUserIds.contains(widget.account.id),
                       onPressed: () {
-                        try {} on FirebaseException catch (e) {}
+                        try {
+                          if (kDebugMode) {
+                            print("onPressed time isLiked => $isLiked");
+                          }
+                        } on FirebaseException catch (e) {}
                       },
                     ),
                     const SizedBox(
