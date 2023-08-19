@@ -219,7 +219,9 @@ class _HomePageState extends State<HomePage> {
                                           LikeButton(
                                             post: post,
                                             isLiked: isLiked,
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              try {} on FirebaseException catch (e) {}
+                                            },
                                           ),
                                           const SizedBox(
                                             width: 8.0,
