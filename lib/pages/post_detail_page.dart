@@ -26,6 +26,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
   @override
   void initState() {
     super.initState();
+    isLiked = widget.post.likedUserIds.contains(myAccount.id);
   }
 
   @override
