@@ -62,6 +62,8 @@ class _HomePageState extends State<HomePage> {
                             postTime: data['post_time'],
                             likedCount: data['liked_count'],
                           );
+                          bool isLiked =
+                              post.likedUserIds.contains(myAccount.id);
                           if (kDebugMode) {
                             print(post.postImagePath);
                           }
