@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 
 class LikeButton extends StatelessWidget {
   final Post post;
-  const LikeButton({super.key, required this.post});
+  final bool isLiked;
+  const LikeButton({super.key, required this.post, required this.isLiked});
 
   @override
   Widget build(BuildContext context) {
