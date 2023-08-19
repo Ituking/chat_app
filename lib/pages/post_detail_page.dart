@@ -113,6 +113,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
                       post: widget.post,
                       isLiked:
                           widget.post.likedUserIds.contains(widget.account.id),
+                      onPressed: () {},
                     ),
                     const SizedBox(
                       width: 8.0,
