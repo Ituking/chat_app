@@ -220,7 +220,12 @@ class _HomePageState extends State<HomePage> {
                                             post: post,
                                             isLiked: isLiked,
                                             onPressed: () {
-                                              try {} on FirebaseException catch (e) {}
+                                              try {
+                                                if (kDebugMode) {
+                                                  print(
+                                                      "onPressed time isLiked => $isLiked");
+                                                }
+                                              } on FirebaseException catch (e) {}
                                             },
                                           ),
                                           const SizedBox(
