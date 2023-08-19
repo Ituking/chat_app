@@ -238,6 +238,10 @@ class _HomePageState extends State<HomePage> {
                                                       : FieldValue.arrayUnion(
                                                           [myAccount.id]),
                                                 });
+                                                if (kDebugMode) {
+                                                  print(
+                                                      "Firestore data updated successfully.");
+                                                }
                                               } on FirebaseException catch (e) {}
                                             },
                                           ),
