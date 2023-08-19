@@ -219,12 +219,25 @@ class _HomePageState extends State<HomePage> {
                                           LikeButton(
                                             post: post,
                                             isLiked: isLiked,
-                                            onPressed: () {
+                                            onPressed: () async {
                                               try {
                                                 if (kDebugMode) {
                                                   print(
                                                       "onPressed time isLiked => $isLiked");
                                                 }
+                                                await FirebaseFirestore.instance
+                                                    .collection('posts')
+                                                    .doc(post.id)
+                                                    .update({
+                                                  'liked_count':
+                                                      FieldValue.increment(
+                                                          isLiked ? -1 : 1),
+                                                  'liked_user_ids': isLiked
+                                                      ? FieldValue.arrayRemove(
+                                                          [myAccount.id])
+                                                      : FieldValue.arrayUnion(
+                                                          [myAccount.id]),
+                                                });
                                               } on FirebaseException catch (e) {}
                                             },
                                           ),
