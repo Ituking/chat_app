@@ -141,6 +141,9 @@ class _PostDetailPageState extends State<PostDetailPage> {
                                 ? FieldValue.arrayRemove([myAccount.id])
                                 : FieldValue.arrayUnion([myAccount.id]),
                           });
+                          if (kDebugMode) {
+                            print("Firestore data updated successfully.");
+                          }
                         } on FirebaseException catch (e) {}
                       },
                     ),
