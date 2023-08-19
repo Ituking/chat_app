@@ -21,6 +21,7 @@ class PostDetailPage extends StatefulWidget {
 
 class _PostDetailPageState extends State<PostDetailPage> {
   Account myAccount = Authentication.myAccount!;
+  bool isLiked = false;
 
   @override
   Widget build(BuildContext context) {
