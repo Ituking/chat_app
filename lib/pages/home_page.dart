@@ -242,7 +242,12 @@ class _HomePageState extends State<HomePage> {
                                                   print(
                                                       "Firestore data updated successfully.");
                                                 }
-                                              } on FirebaseException catch (e) {}
+                                              } on FirebaseException catch (e) {
+                                                if (kDebugMode) {
+                                                  print(
+                                                      "Firestore update error: $e");
+                                                }
+                                              }
                                             },
                                           ),
                                           const SizedBox(
