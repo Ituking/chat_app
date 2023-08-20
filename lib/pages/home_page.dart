@@ -62,6 +62,10 @@ class _HomePageState extends State<HomePage> {
                             postTime: data['post_time'],
                             likedCount: data['liked_count'],
                           );
+                          if (kDebugMode) {
+                            print("post.likedUserIds: ${post.likedUserIds}");
+                            print("myAccount.id: ${myAccount.id}");
+                          }
                           bool isLiked =
                               post.likedUserIds.contains(myAccount.id);
                           if (kDebugMode) {
