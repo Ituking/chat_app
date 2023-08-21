@@ -27,6 +27,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
           "https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
       postContent: 'On a sunny day, you can still go to the beach 🌊.',
       postAccount: null,
+      likedUserIds: [],
     ),
     Post(
       id: "0002",
@@ -36,6 +37,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
           "https://images.unsplash.com/photo-1542233637-20456b09d882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
       postContent: 'A day healed by nature 🌳.',
       postAccount: null,
+      likedUserIds: [],
     ),
     Post(
       id: "0003",
@@ -45,6 +47,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
           "https://images.unsplash.com/photo-1542233637-20456b09d882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
       postContent: 'A day healed by nature 🌳.',
       postAccount: null,
+      likedUserIds: [],
     ),
     Post(
       id: "0004",
@@ -54,6 +57,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
           "https://images.unsplash.com/photo-1542233637-20456b09d882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
       postContent: 'A day healed by nature 🌳.',
       postAccount: null,
+      likedUserIds: [],
     ),
     Post(
       id: "0005",
@@ -63,6 +67,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
           "https://images.unsplash.com/photo-1542233637-20456b09d882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
       postContent: 'A day healed by nature 🌳.',
       postAccount: null,
+      likedUserIds: [],
     ),
   ];
 
@@ -123,6 +128,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
           postImagePath: data['postImagePath'],
           postContent: data['postContent'],
           postAccount: Account.fromMap(data['postAccount']),
+          likedUserIds: data['liked_user_ids'],
         );
       }).toList();
 

@@ -61,6 +61,8 @@ class _HomePageState extends State<HomePage> {
                                 userSnapshot.data![data['post_account_id']],
                             postTime: data['post_time'],
                             likedCount: data['liked_count'],
+                            likedUserIds:
+                                List<String>.from(data['liked_user_ids'] ?? []),
                           );
                           if (kDebugMode) {
                             print("post.likedUserIds: ${post.likedUserIds}");

@@ -63,6 +63,7 @@ class PostFirestore {
             postAccount: account,
             postTime: data['post_time'],
             likedCount: data['liked_count'],
+            likedUserIds: List<String>.from(data['liked_user_ids'] ?? []),
           );
           postList.add(post);
         } else {
