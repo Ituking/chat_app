@@ -14,16 +14,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomePage extends StatelessWidget {
+  final double padValue = 0;
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
+  final Account myAccount = Authentication.myAccount!;
 
-class _HomePageState extends State<HomePage> {
-  double padValue = 0;
-  Account myAccount = Authentication.myAccount!;
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
