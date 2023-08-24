@@ -92,6 +92,11 @@ class PostFirestore {
           .collection('posts')
           .doc(post.id)
           .get();
+      if (postSnapshot.exists) {
+        return postSnapshot.data() as Map<String, dynamic>;
+      } else {
+        return null;
+      }
     } on FirebaseException catch (e) {}
   }
 
