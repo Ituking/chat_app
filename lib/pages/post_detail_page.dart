@@ -271,6 +271,12 @@ class _PostDetailPageState extends State<PostDetailPage> {
                               ),
                             ),
                           ),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.0,
+                              vertical: 10.0,
+                            ),
+                          ),
                         ],
                       );
                     }
