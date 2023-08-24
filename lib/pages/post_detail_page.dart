@@ -367,6 +367,22 @@ class _PostDetailPageState extends State<PostDetailPage> {
                                   ],
                                 ),
                               ),
+                              Row(
+                                children: [
+                                  ShareButton(
+                                    content: post.postContent,
+                                  ),
+                                  const SizedBox(
+                                    width: 8.0,
+                                  ),
+                                  const Text(
+                                    "Share",
+                                    style: TextStyle(
+                                      color: CupertinoColors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
                         ],
