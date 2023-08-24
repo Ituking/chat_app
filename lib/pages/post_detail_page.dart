@@ -225,7 +225,11 @@ class _PostDetailPageState extends State<PostDetailPage> {
             } else if (snapshot.hasError) {
               return Text("Error: ${snapshot.error}");
             } else if (snapshot.hasData) {
-              return FutureBuilder<Map<String, dynamic>?>();
+              return FutureBuilder<Map<String, dynamic>?>(
+                  future: PostFirestore.fetchPostData(widget.post),
+                  builder: (context, postSnapshot) {
+                    return const Text("No Data");
+                  });
             }
             return const Text("No Data");
           }),
