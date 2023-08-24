@@ -256,6 +256,13 @@ class _PostDetailPageState extends State<PostDetailPage> {
                                 widget.account.profileImagePath,
                               ),
                             ),
+                            title: Text(
+                              widget.account.name!,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: CupertinoColors.black,
+                              ),
+                            ),
                           ),
                         ],
                       );
