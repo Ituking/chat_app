@@ -289,15 +289,18 @@ class _PostDetailPageState extends State<PostDetailPage> {
                                     ),
                                   );
                                 },
-                                child: Container(
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(24.0),
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                        data['image_path'],
+                                child: Hero(
+                                  tag: "post_${widget.post.id}",
+                                  child: Container(
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(24.0),
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                          data['image_path'],
+                                        ),
+                                        fit: BoxFit.cover,
                                       ),
-                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                 ),
