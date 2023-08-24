@@ -248,6 +248,17 @@ class _PostDetailPageState extends State<PostDetailPage> {
                         ),
                       );
                       bool isLiked = post.likedUserIds.contains(myAccount.id);
+                      return Column(
+                        children: [
+                          ListTile(
+                            leading: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                widget.account.profileImagePath,
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
                     }
                     return const Text("No Data");
                   });
