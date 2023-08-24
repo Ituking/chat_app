@@ -263,6 +263,13 @@ class _PostDetailPageState extends State<PostDetailPage> {
                                 color: CupertinoColors.black,
                               ),
                             ),
+                            subtitle: Text(
+                              formattedTime,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.normal,
+                                color: CupertinoColors.systemGrey,
+                              ),
+                            ),
                           ),
                         ],
                       );
