@@ -339,6 +339,34 @@ class _PostDetailPageState extends State<PostDetailPage> {
                                   color: CupertinoColors.black,
                                 ),
                               ),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const PostCommentPage(),
+                                    ),
+                                  );
+                                },
+                                child: const Row(
+                                  children: [
+                                    Icon(
+                                      Icons.mode_comment_outlined,
+                                      color: CupertinoColors.black,
+                                    ),
+                                    SizedBox(
+                                      width: 13.0,
+                                    ),
+                                    Text(
+                                      "Comments",
+                                      style: TextStyle(
+                                        color: CupertinoColors.black,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ],
                           ),
                         ],
