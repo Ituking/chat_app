@@ -37,185 +37,185 @@ class _PostDetailPageState extends State<PostDetailPage> {
         DateFormat.yMMMd().format(widget.post.postTime!.toDate());
     return Scaffold(
       appBar: WidgetUtils.createAppBar("Post"),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            ListTile(
-              leading: CircleAvatar(
-                backgroundImage: NetworkImage(
-                  widget.account.profileImagePath,
-                ),
-              ),
-              title: Text(
-                widget.account.name!,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: CupertinoColors.black,
-                ),
-              ),
-              subtitle: Text(
-                formattedTime,
-                style: const TextStyle(
-                  fontWeight: FontWeight.normal,
-                  color: CupertinoColors.systemGrey,
-                ),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ImageZoomPage(
-                      imagePath: widget.post.postImagePath,
-                    ),
-                  ),
-                );
-              },
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height * 0.5,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10.0,
-                    vertical: 10.0,
-                  ),
-                  child: Hero(
-                    tag: "post_${widget.post.id}",
-                    child: Container(
-                      height: 200,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(24.0),
-                        image: DecorationImage(
-                          image: NetworkImage(widget.post.postImagePath!),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 8.0,
-                vertical: 10.0,
-              ),
-              child: Container(
-                alignment: Alignment.centerLeft,
-                width: double.infinity,
-                child: Text(
-                  widget.post.postContent,
-                  style: const TextStyle(
-                    fontSize: 16.0,
-                    color: CupertinoColors.black,
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 14.0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Row(
-                  children: [
-                    LikeButton(
-                      post: widget.post,
-                      isLiked:
-                          widget.post.likedUserIds.contains(widget.account.id),
-                      onPressed: () async {
-                        try {
-                          if (kDebugMode) {
-                            print("onPressed time isLiked => $isLiked");
-                          }
-                          await FirebaseFirestore.instance
-                              .collection('posts')
-                              .doc(widget.post.id)
-                              .update({
-                            'liked_count':
-                                FieldValue.increment(isLiked ? -1 : 1),
-                            'liked_user_ids': isLiked
-                                ? FieldValue.arrayRemove([myAccount.id])
-                                : FieldValue.arrayUnion([myAccount.id]),
-                          });
-                          if (kDebugMode) {
-                            print("Firestore data updated successfully.");
-                          }
-                        } on FirebaseException catch (e) {
-                          if (kDebugMode) {
-                            print("Firestore update error: $e");
-                          }
-                        }
-                      },
-                    ),
-                    const SizedBox(
-                      width: 8.0,
-                    ),
-                    Text(
-                      "${widget.post.likedCount}",
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: CupertinoColors.black,
-                      ),
-                    ),
-                  ],
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const PostCommentPage(),
-                      ),
-                    );
-                  },
-                  child: const Row(
-                    children: [
-                      Icon(
-                        Icons.mode_comment_outlined,
-                        color: CupertinoColors.black,
-                      ),
-                      SizedBox(
-                        width: 8.0,
-                      ),
-                      Text(
-                        "Comments",
-                        style: TextStyle(
-                          color: CupertinoColors.black,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Row(
-                  children: [
-                    ShareButton(
-                      content: widget.post.postContent,
-                    ),
-                    const SizedBox(
-                      width: 8.0,
-                    ),
-                    const Text(
-                      "Share",
-                      style: TextStyle(
-                        color: CupertinoColors.black,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            const Divider(
-              height: 1.0,
-              thickness: 0.5,
-              color: Colors.grey,
-            ),
-          ],
-        ),
-      ),
+      // body: SingleChildScrollView(
+      //   scrollDirection: Axis.vertical,
+      //   child: Column(
+      //     children: [
+      //       ListTile(
+      //         leading: CircleAvatar(
+      //           backgroundImage: NetworkImage(
+      //             widget.account.profileImagePath,
+      //           ),
+      //         ),
+      //         title: Text(
+      //           widget.account.name!,
+      //           style: const TextStyle(
+      //             fontWeight: FontWeight.bold,
+      //             color: CupertinoColors.black,
+      //           ),
+      //         ),
+      //         subtitle: Text(
+      //           formattedTime,
+      //           style: const TextStyle(
+      //             fontWeight: FontWeight.normal,
+      //             color: CupertinoColors.systemGrey,
+      //           ),
+      //         ),
+      //       ),
+      //       GestureDetector(
+      //         onTap: () {
+      //           Navigator.push(
+      //             context,
+      //             MaterialPageRoute(
+      //               builder: (context) => ImageZoomPage(
+      //                 imagePath: widget.post.postImagePath,
+      //               ),
+      //             ),
+      //           );
+      //         },
+      //         child: SizedBox(
+      //           height: MediaQuery.of(context).size.height * 0.5,
+      //           child: Padding(
+      //             padding: const EdgeInsets.symmetric(
+      //               horizontal: 10.0,
+      //               vertical: 10.0,
+      //             ),
+      //             child: Hero(
+      //               tag: "post_${widget.post.id}",
+      //               child: Container(
+      //                 height: 200,
+      //                 decoration: BoxDecoration(
+      //                   borderRadius: BorderRadius.circular(24.0),
+      //                   image: DecorationImage(
+      //                     image: NetworkImage(widget.post.postImagePath!),
+      //                     fit: BoxFit.cover,
+      //                   ),
+      //                 ),
+      //               ),
+      //             ),
+      //           ),
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.symmetric(
+      //           horizontal: 8.0,
+      //           vertical: 10.0,
+      //         ),
+      //         child: Container(
+      //           alignment: Alignment.centerLeft,
+      //           width: double.infinity,
+      //           child: Text(
+      //             widget.post.postContent,
+      //             style: const TextStyle(
+      //               fontSize: 16.0,
+      //               color: CupertinoColors.black,
+      //             ),
+      //           ),
+      //         ),
+      //       ),
+      //       const SizedBox(
+      //         height: 14.0,
+      //       ),
+      //       Row(
+      //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //         children: [
+      //           Row(
+      //             children: [
+      //               LikeButton(
+      //                 post: widget.post,
+      //                 isLiked:
+      //                     widget.post.likedUserIds.contains(widget.account.id),
+      //                 onPressed: () async {
+      //                   try {
+      //                     if (kDebugMode) {
+      //                       print("onPressed time isLiked => $isLiked");
+      //                     }
+      //                     await FirebaseFirestore.instance
+      //                         .collection('posts')
+      //                         .doc(widget.post.id)
+      //                         .update({
+      //                       'liked_count':
+      //                           FieldValue.increment(isLiked ? -1 : 1),
+      //                       'liked_user_ids': isLiked
+      //                           ? FieldValue.arrayRemove([myAccount.id])
+      //                           : FieldValue.arrayUnion([myAccount.id]),
+      //                     });
+      //                     if (kDebugMode) {
+      //                       print("Firestore data updated successfully.");
+      //                     }
+      //                   } on FirebaseException catch (e) {
+      //                     if (kDebugMode) {
+      //                       print("Firestore update error: $e");
+      //                     }
+      //                   }
+      //                 },
+      //               ),
+      //               const SizedBox(
+      //                 width: 8.0,
+      //               ),
+      //               Text(
+      //                 "${widget.post.likedCount}",
+      //                 style: const TextStyle(
+      //                   fontSize: 16,
+      //                   fontWeight: FontWeight.normal,
+      //                   color: CupertinoColors.black,
+      //                 ),
+      //               ),
+      //             ],
+      //           ),
+      //           GestureDetector(
+      //             onTap: () {
+      //               Navigator.push(
+      //                 context,
+      //                 MaterialPageRoute(
+      //                   builder: (context) => const PostCommentPage(),
+      //                 ),
+      //               );
+      //             },
+      //             child: const Row(
+      //               children: [
+      //                 Icon(
+      //                   Icons.mode_comment_outlined,
+      //                   color: CupertinoColors.black,
+      //                 ),
+      //                 SizedBox(
+      //                   width: 8.0,
+      //                 ),
+      //                 Text(
+      //                   "Comments",
+      //                   style: TextStyle(
+      //                     color: CupertinoColors.black,
+      //                   ),
+      //                 ),
+      //               ],
+      //             ),
+      //           ),
+      //           Row(
+      //             children: [
+      //               ShareButton(
+      //                 content: widget.post.postContent,
+      //               ),
+      //               const SizedBox(
+      //                 width: 8.0,
+      //               ),
+      //               const Text(
+      //                 "Share",
+      //                 style: TextStyle(
+      //                   color: CupertinoColors.black,
+      //                 ),
+      //               ),
+      //             ],
+      //           ),
+      //         ],
+      //       ),
+      //       const Divider(
+      //         height: 1.0,
+      //         thickness: 0.5,
+      //         color: Colors.grey,
+      //       ),
+      //     ],
+      //   ),
+      // ),
     );
   }
 }
