@@ -325,6 +325,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
                             height: 10.0,
                           ),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               LikeButton(
                                 post: post,
