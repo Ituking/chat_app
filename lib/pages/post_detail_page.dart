@@ -271,10 +271,37 @@ class _PostDetailPageState extends State<PostDetailPage> {
                               ),
                             ),
                           ),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
                               horizontal: 10.0,
                               vertical: 10.0,
+                            ),
+                            child: SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.5,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ImageZoomPage(
+                                        imagePath: data['image_path'],
+                                      ),
+                                    ),
+                                  );
+                                },
+                                child: Container(
+                                  height: 200,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(24.0),
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                        data['image_path'],
+                                      ),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ],
