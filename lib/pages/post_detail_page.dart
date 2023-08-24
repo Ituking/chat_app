@@ -222,6 +222,8 @@ class _PostDetailPageState extends State<PostDetailPage> {
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const CupertinoActivityIndicator();
+            } else if (snapshot.hasError) {
+              return Text("Error: ${snapshot.error}");
             }
           }),
     );
