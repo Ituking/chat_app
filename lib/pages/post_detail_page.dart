@@ -324,6 +324,15 @@ class _PostDetailPageState extends State<PostDetailPage> {
                           const SizedBox(
                             height: 10.0,
                           ),
+                          Row(
+                            children: [
+                              LikeButton(
+                                post: post,
+                                isLiked: isLiked,
+                                onPressed: () {},
+                              ),
+                            ],
+                          ),
                         ],
                       );
                     }
