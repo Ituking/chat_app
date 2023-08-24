@@ -97,7 +97,12 @@ class PostFirestore {
       } else {
         return null;
       }
-    } on FirebaseException catch (e) {}
+    } on FirebaseException catch (e) {
+      if (kDebugMode) {
+        print('Error fetching post: $e');
+      }
+      return null;
+    }
   }
 
   static Future<dynamic> deletePosts(String accountId) async {
