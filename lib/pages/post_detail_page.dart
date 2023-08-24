@@ -234,7 +234,9 @@ class _PostDetailPageState extends State<PostDetailPage> {
                     } else if (postSnapshot.hasError) {
                       return Text("Error: ${snapshot.error}");
                     } else if (postSnapshot.hasData &&
-                        postSnapshot.connectionState == ConnectionState.done) {}
+                        postSnapshot.connectionState == ConnectionState.done) {
+                      Map<String, dynamic> data = postSnapshot.data!;
+                    }
                     return const Text("No Data");
                   });
             }
