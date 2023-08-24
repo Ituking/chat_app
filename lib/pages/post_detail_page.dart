@@ -233,7 +233,8 @@ class _PostDetailPageState extends State<PostDetailPage> {
                       return const CupertinoActivityIndicator();
                     } else if (postSnapshot.hasError) {
                       return Text("Error: ${snapshot.error}");
-                    }
+                    } else if (postSnapshot.hasData &&
+                        postSnapshot.connectionState == ConnectionState.done) {}
                     return const Text("No Data");
                   });
             }
