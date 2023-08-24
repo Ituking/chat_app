@@ -352,7 +352,11 @@ class _PostDetailPageState extends State<PostDetailPage> {
                                       print(
                                           "Firestore data updated successfully.");
                                     }
-                                  } on FirebaseException catch (e) {}
+                                  } on FirebaseException catch (e) {
+                                    if (kDebugMode) {
+                                      print("Firestore update error: $e");
+                                    }
+                                  }
                                 },
                               ),
                               Text(
