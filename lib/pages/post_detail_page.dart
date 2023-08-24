@@ -330,7 +330,9 @@ class _PostDetailPageState extends State<PostDetailPage> {
                               LikeButton(
                                 post: post,
                                 isLiked: isLiked,
-                                onPressed: () {},
+                                onPressed: () {
+                                  try {} on FirebaseException catch (e) {}
+                                },
                               ),
                               Text(
                                 data['liked_count'].toString(),
