@@ -225,6 +225,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
             } else if (snapshot.hasError) {
               return Text("Error: ${snapshot.error}");
             }
+            return const Text("No Data");
           }),
     );
   }
