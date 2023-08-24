@@ -86,7 +86,7 @@ class PostFirestore {
     }
   }
 
-  static Future<Map<String, dynamic>?> fetchPostData() {}
+  static Future<Map<String, dynamic>?> fetchPostData(Post post) {}
 
   static Future<dynamic> deletePosts(String accountId) async {
     final CollectionReference userPosts = _firestoreInstance
