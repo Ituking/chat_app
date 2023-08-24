@@ -228,6 +228,10 @@ class _PostDetailPageState extends State<PostDetailPage> {
               return FutureBuilder<Map<String, dynamic>?>(
                   future: PostFirestore.fetchPostData(widget.post),
                   builder: (context, postSnapshot) {
+                    if (postSnapshot.connectionState ==
+                        ConnectionState.waiting) {
+                      return const CupertinoActivityIndicator();
+                    }
                     return const Text("No Data");
                   });
             }
