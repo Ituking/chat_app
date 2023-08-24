@@ -86,8 +86,13 @@ class PostFirestore {
     }
   }
 
-  static Future<Map<String, dynamic>?> fetchPostData(Post post) {
-    try {} on FirebaseException catch (e) {}
+  static Future<Map<String, dynamic>?> fetchPostData(Post post) async {
+    try {
+      DocumentSnapshot postSnapshot = await FirebaseFirestore.instance
+          .collection('posts')
+          .doc(post.id)
+          .get();
+    } on FirebaseException catch (e) {}
   }
 
   static Future<dynamic> deletePosts(String accountId) async {
