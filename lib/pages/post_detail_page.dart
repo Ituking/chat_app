@@ -1,3 +1,4 @@
+import 'package:chat_app/firestore/post_firestore.dart';
 import 'package:chat_app/model/account.dart';
 import 'package:chat_app/model/post.dart';
 import 'package:chat_app/pages/image_zoom_page.dart';
@@ -216,7 +217,8 @@ class _PostDetailPageState extends State<PostDetailPage> {
       //     ],
       //   ),
       // ),
-      body: StreamBuilder<QuerySnapshot>(builder: (context, snapshot) {}),
+      body: StreamBuilder<QuerySnapshot>(
+          stream: PostFirestore.posts.snapshots(), (context, snapshot) {}),
     );
   }
 }
