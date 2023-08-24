@@ -304,10 +304,21 @@ class _PostDetailPageState extends State<PostDetailPage> {
                               ),
                             ),
                           ),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
                               horizontal: 23.0,
                               vertical: 10.0,
+                            ),
+                            child: Container(
+                              alignment: Alignment.centerLeft,
+                              width: double.infinity,
+                              child: Text(
+                                data['content'],
+                                style: const TextStyle(
+                                  fontSize: 16.0,
+                                  color: CupertinoColors.black,
+                                ),
+                              ),
                             ),
                           ),
                         ],
