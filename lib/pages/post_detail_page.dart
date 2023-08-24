@@ -231,6 +231,8 @@ class _PostDetailPageState extends State<PostDetailPage> {
                     if (postSnapshot.connectionState ==
                         ConnectionState.waiting) {
                       return const CupertinoActivityIndicator();
+                    } else if (postSnapshot.hasError) {
+                      return Text("Error: ${snapshot.error}");
                     }
                     return const Text("No Data");
                   });
