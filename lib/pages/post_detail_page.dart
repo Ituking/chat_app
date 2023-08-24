@@ -224,21 +224,6 @@ class _PostDetailPageState extends State<PostDetailPage> {
               return const CupertinoActivityIndicator();
             } else if (snapshot.hasError) {
               return Text("Error: ${snapshot.error}");
-            } else if (snapshot.hasData &&
-                snapshot.connectionState == ConnectionState.done) {
-              Map<String, dynamic> data = snapshot.data!;
-              Post post = Post(
-                id: widget.post.id,
-                postImagePath: data['image_path'],
-                postContent: data['content'],
-                postAccountId: data['post_account_id'],
-                postAccount: data['post_account'],
-                postTime: data['post_time'],
-                likedUserIds: List<String>.from(
-                  data['liked_user_ids'] ?? [],
-                ),
-              );
-              bool isLiked = post.likedUserIds.contains(myAccount.id);
             }
           }),
     );
