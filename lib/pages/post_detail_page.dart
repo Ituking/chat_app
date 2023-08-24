@@ -331,6 +331,14 @@ class _PostDetailPageState extends State<PostDetailPage> {
                                 isLiked: isLiked,
                                 onPressed: () {},
                               ),
+                              Text(
+                                data['liked_count'].toString(),
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.normal,
+                                  color: CupertinoColors.black,
+                                ),
+                              ),
                             ],
                           ),
                         ],
