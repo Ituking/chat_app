@@ -332,6 +332,10 @@ class _PostDetailPageState extends State<PostDetailPage> {
                                 isLiked: isLiked,
                                 onPressed: () async {
                                   try {
+                                    if (kDebugMode) {
+                                      print(
+                                          "onPressed time isLiked => $isLiked");
+                                    }
                                     await FirebaseFirestore.instance
                                         .collection('posts')
                                         .doc(widget.post.id)
