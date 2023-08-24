@@ -330,8 +330,21 @@ class _PostDetailPageState extends State<PostDetailPage> {
                               LikeButton(
                                 post: post,
                                 isLiked: isLiked,
-                                onPressed: () {
-                                  try {} on FirebaseException catch (e) {}
+                                onPressed: () async {
+                                  try {
+                                    await FirebaseFirestore.instance
+                                        .collection('posts')
+                                        .doc(widget.post.id)
+                                        .update({
+                                      'liked_count': FieldValue.increment(
+                                          isLiked ? -1 : 1),
+                                      'liked_user_ids': isLiked
+                                          ? FieldValue.arrayRemove(
+                                              [myAccount.id])
+                                          : FieldValue.arrayUnion(
+                                              [myAccount.id]),
+                                    });
+                                  } on FirebaseException catch (e) {}
                                 },
                               ),
                               Text(
