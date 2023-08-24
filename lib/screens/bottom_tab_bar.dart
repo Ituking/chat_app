@@ -15,7 +15,7 @@ class BottomTabBar extends StatefulWidget {
 class _BottomTabBarState extends State<BottomTabBar> {
   int selectedIndex = 0;
   List<Widget> pageList = [
-    const HomePage(),
+    HomePage(),
     const TimeLinePage(),
     const TopPage(),
     const MyProfilePage(),

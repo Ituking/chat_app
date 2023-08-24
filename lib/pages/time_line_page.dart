@@ -30,6 +30,7 @@ class _TimeLinePageState extends State<TimeLinePage> {
         userId: '',
       ),
       postTime: Timestamp.now(),
+      likedUserIds: [],
     ),
     Post(
       id: '2',
@@ -45,6 +46,7 @@ class _TimeLinePageState extends State<TimeLinePage> {
         userId: '',
       ),
       postTime: Timestamp.now(),
+      likedUserIds: [],
     ),
   ];
 

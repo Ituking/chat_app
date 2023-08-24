@@ -19,6 +19,8 @@ class PostFirestore {
         'post_account_id': newPost.postAccountId,
         'image_path': newPost.postImagePath,
         'post_time': Timestamp.now(),
+        'liked_count': newPost.likedCount,
+        'liked_user_ids': newPost.likedUserIds,
       });
       userPosts.doc(result.id).set({
         'post_id': result.id,
@@ -60,6 +62,8 @@ class PostFirestore {
             postAccountId: data['post_account_id'],
             postAccount: account,
             postTime: data['post_time'],
+            likedCount: data['liked_count'],
+            likedUserIds: List<String>.from(data['liked_user_ids'] ?? []),
           );
           postList.add(post);
         } else {
@@ -77,6 +81,25 @@ class PostFirestore {
     } on FirebaseException catch (e) {
       if (kDebugMode) {
         print("Failure to retrieve my post. $e");
+      }
+      return null;
+    }
+  }
+
+  static Future<Map<String, dynamic>?> fetchPostData(Post post) async {
+    try {
+      DocumentSnapshot postSnapshot = await FirebaseFirestore.instance
+          .collection('posts')
+          .doc(post.id)
+          .get();
+      if (postSnapshot.exists) {
+        return postSnapshot.data() as Map<String, dynamic>;
+      } else {
+        return null;
+      }
+    } on FirebaseException catch (e) {
+      if (kDebugMode) {
+        print('Error fetching post: $e');
       }
       return null;
     }

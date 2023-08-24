@@ -14,16 +14,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomePage extends StatelessWidget {
+  final double padValue = 0;
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
+  final Account myAccount = Authentication.myAccount!;
 
-class _HomePageState extends State<HomePage> {
-  double padValue = 0;
-  Account myAccount = Authentication.myAccount!;
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +56,20 @@ class _HomePageState extends State<HomePage> {
                             postAccount:
                                 userSnapshot.data![data['post_account_id']],
                             postTime: data['post_time'],
+                            likedCount: data['liked_count'],
+                            likedUserIds:
+                                List<String>.from(data['liked_user_ids'] ?? []),
                           );
+                          if (kDebugMode) {
+                            print("post.likedUserIds: ${post.likedUserIds}");
+                            print("myAccount.id: ${myAccount.id}");
+                          }
+                          bool isLiked =
+                              post.likedUserIds.contains(myAccount.id);
+                          if (kDebugMode) {
+                            print(
+                                "When retrieved from the stream, isLiked => $isLiked");
+                          }
                           if (kDebugMode) {
                             print(post.postImagePath);
                           }
@@ -69,6 +78,9 @@ class _HomePageState extends State<HomePage> {
                           }
                           if (kDebugMode) {
                             print(post.postTime);
+                          }
+                          if (kDebugMode) {
+                            print(post.likedCount);
                           }
                           return Card(
                             child: SizedBox(
@@ -198,21 +210,56 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   const SizedBox(
-                                    height: 14.0,
+                                    height: 3.0,
                                   ),
                                   Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      const Row(
+                                      Row(
                                         children: [
-                                          LikeButton(),
-                                          SizedBox(
+                                          LikeButton(
+                                            post: post,
+                                            isLiked: isLiked,
+                                            onPressed: () async {
+                                              try {
+                                                if (kDebugMode) {
+                                                  print(
+                                                      "onPressed time isLiked => $isLiked");
+                                                }
+                                                await FirebaseFirestore.instance
+                                                    .collection('posts')
+                                                    .doc(post.id)
+                                                    .update({
+                                                  'liked_count':
+                                                      FieldValue.increment(
+                                                          isLiked ? -1 : 1),
+                                                  'liked_user_ids': isLiked
+                                                      ? FieldValue.arrayRemove(
+                                                          [myAccount.id])
+                                                      : FieldValue.arrayUnion(
+                                                          [myAccount.id]),
+                                                });
+                                                if (kDebugMode) {
+                                                  print(
+                                                      "Firestore data updated successfully.");
+                                                }
+                                              } on FirebaseException catch (e) {
+                                                if (kDebugMode) {
+                                                  print(
+                                                      "Firestore update error: $e");
+                                                }
+                                              }
+                                            },
+                                          ),
+                                          const SizedBox(
                                             width: 8.0,
                                           ),
                                           Text(
-                                            "Like",
-                                            style: TextStyle(
+                                            "${post.likedCount}",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.normal,
                                               color: CupertinoColors.black,
                                             ),
                                           ),

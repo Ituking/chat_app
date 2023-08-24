@@ -8,6 +8,8 @@ class Post {
   String postAccountId;
   Account? postAccount;
   Timestamp? postTime;
+  int likedCount;
+  List<String> likedUserIds;
 
   Post({
     required this.id,
@@ -16,5 +18,7 @@ class Post {
     required this.postAccountId,
     required this.postAccount,
     required this.postTime,
+    this.likedCount = 0,
+    required this.likedUserIds,
   });
 }

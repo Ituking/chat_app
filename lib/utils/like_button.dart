@@ -1,31 +1,27 @@
+import 'package:chat_app/model/post.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class LikeButton extends StatefulWidget {
-  const LikeButton({super.key});
+class LikeButton extends StatelessWidget {
+  final Post post;
+  final bool isLiked;
+  final VoidCallback onPressed;
+  const LikeButton(
+      {super.key,
+      required this.post,
+      required this.isLiked,
+      required this.onPressed});
 
-  @override
-  State<LikeButton> createState() => _LikeButtonState();
-}
-
-class _LikeButtonState extends State<LikeButton> {
-  bool isLiked = false;
   @override
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(
-        Icons.thumb_up_outlined,
+        Icons.favorite,
         color: isLiked
             ? const Color.fromRGBO(255, 100, 130, 1)
-            : CupertinoColors.black,
+            : CupertinoColors.systemGrey,
       ),
-      onPressed: () {
-        setState(
-          () {
-            isLiked = !isLiked;
-          },
-        );
-      },
+      onPressed: onPressed,
     );
   }
 }
