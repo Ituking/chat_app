@@ -216,6 +216,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
       //     ],
       //   ),
       // ),
+      body: StreamBuilder<QuerySnapshot>(builder: (context, snapshot) {}),
     );
   }
 }
