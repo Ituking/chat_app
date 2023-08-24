@@ -227,6 +227,17 @@ class _PostDetailPageState extends State<PostDetailPage> {
             } else if (snapshot.hasData &&
                 snapshot.connectionState == ConnectionState.done) {
               Map<String, dynamic> data = snapshot.data!;
+              Post post = Post(
+                id: widget.post.id,
+                postImagePath: data['image_path'],
+                postContent: data['content'],
+                postAccountId: data['post_account_id'],
+                postAccount: data['post_account'],
+                postTime: data['post_time'],
+                likedUserIds: List<String>.from(
+                  data['liked_user_ids'] ?? [],
+                ),
+              );
             }
           }),
     );
