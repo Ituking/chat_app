@@ -247,6 +247,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
                           data['liked_user_ids'] ?? [],
                         ),
                       );
+                      bool isLiked = post.likedUserIds.contains(myAccount.id);
                     }
                     return const Text("No Data");
                   });
