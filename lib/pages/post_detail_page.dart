@@ -218,7 +218,8 @@ class _PostDetailPageState extends State<PostDetailPage> {
       //   ),
       // ),
       body: StreamBuilder<QuerySnapshot>(
-          stream: PostFirestore.posts.snapshots(), (context, snapshot) {}),
+          stream: PostFirestore.posts.snapshots(),
+          builder: (context, snapshot) {}),
     );
   }
 }
