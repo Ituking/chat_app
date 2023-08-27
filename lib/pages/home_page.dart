@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
   final double padValue = 0;
   final Account myAccount = Authentication.myAccount!;
   List<String> postAccountIds = [];
+  late Future<Map<String, Account>?> getPostUserMap;
 
   @override
   Widget build(BuildContext context) {
