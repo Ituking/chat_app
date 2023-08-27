@@ -23,8 +23,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final double padValue = 0;
-
   final Account myAccount = Authentication.myAccount!;
+  List<String> postAccountIds = [];
 
   @override
   Widget build(BuildContext context) {
