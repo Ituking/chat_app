@@ -30,6 +30,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    getPostUserMap = AccountFirestore.getPostUserMap(postAccountIds);
   }
 
   @override
