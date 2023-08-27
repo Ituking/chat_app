@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                 }
               }
               return FutureBuilder<Map<String, Account>?>(
-                  future: AccountFirestore.getPostUserMap(postAccountIds),
+                  future: getPostUserMap,
                   builder: (context, userSnapshot) {
                     if (userSnapshot.hasData &&
                         userSnapshot.connectionState == ConnectionState.done) {
