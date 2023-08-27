@@ -102,7 +102,8 @@ class _HomePageState extends State<HomePage> {
                                   ListTile(
                                     leading: CircleAvatar(
                                       backgroundImage: NetworkImage(
-                                        post.postAccount!.profileImagePath,
+                                        post.postAccount?.profileImagePath ??
+                                            "null",
                                       ),
                                     ),
                                     title: Text(
