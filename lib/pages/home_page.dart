@@ -28,6 +28,11 @@ class _HomePageState extends State<HomePage> {
   late Future<Map<String, Account>?> getPostUserMap;
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: StreamBuilder<QuerySnapshot>(
