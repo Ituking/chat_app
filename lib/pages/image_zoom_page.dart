@@ -33,7 +33,7 @@ class _ImageZoomPageState extends State<ImageZoomPage> {
                 Navigator.pop(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => HomePage(),
+                    builder: (context) => const HomePage(),
                   ),
                 );
               },
