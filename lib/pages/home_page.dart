@@ -81,18 +81,13 @@ class _HomePageState extends State<HomePage> {
                           if (kDebugMode) {
                             print(
                                 "When retrieved from the stream, isLiked => $isLiked");
-                          }
-                          if (kDebugMode) {
                             print(post.postImagePath);
-                          }
-                          if (kDebugMode) {
                             print(post.postContent);
-                          }
-                          if (kDebugMode) {
                             print(post.postTime);
-                          }
-                          if (kDebugMode) {
                             print(post.likedCount);
+                            print("Debug: Checking post and post.likedUserIds");
+                            print("post: $post");
+                            print("post.likedUserIds: ${post.likedUserIds}");
                           }
                           return Card(
                             child: SizedBox(
