@@ -95,6 +95,7 @@ class _HomePageState extends State<HomePage> {
                           if (kDebugMode) {
                             print("post.likedUserIds: ${post.likedUserIds}");
                             print("myAccount.id: ${myAccount.id}");
+                            print("postAccount: ${post.postAccount}");
                           }
                           bool isLiked =
                               post.likedUserIds.contains(myAccount.id);
