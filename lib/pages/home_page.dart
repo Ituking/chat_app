@@ -172,7 +172,9 @@ class _HomePageState extends State<HomePage> {
                                                           24.0),
                                                   image: DecorationImage(
                                                     image: NetworkImage(
-                                                        post.postImagePath!),
+                                                      post.postImagePath ??
+                                                          "null",
+                                                    ),
                                                     fit: BoxFit.cover,
                                                   ),
                                                 ),
