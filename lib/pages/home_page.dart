@@ -141,7 +141,8 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   Expanded(
-                                    child: post.postImagePath != null
+                                    child: post.postImagePath != null &&
+                                            post.postImagePath!.isNotEmpty
                                         ? GestureDetector(
                                             onTap: () {
                                               Navigator.push(
