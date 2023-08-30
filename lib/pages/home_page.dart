@@ -53,6 +53,10 @@ class _HomePageState extends State<HomePage> {
               return FutureBuilder<Map<String, Account>?>(
                   future: getPostUserMap,
                   builder: (context, userSnapshot) {
+                    if (userSnapshot.connectionState ==
+                        ConnectionState.waiting) {
+                      return const CupertinoActivityIndicator();
+                    }
                     if (userSnapshot.hasData &&
                         userSnapshot.connectionState == ConnectionState.done) {
                       return ListView.builder(
