@@ -69,6 +69,11 @@ class _HomePageState extends State<HomePage> {
                     }
                     if (userSnapshot.hasData &&
                         userSnapshot.connectionState == ConnectionState.done) {
+                      if (kDebugMode) {
+                        print("userSnapshot.hasData: ${userSnapshot.hasData}");
+                        print(
+                            "userSnapshot.connectionState: ${userSnapshot.connectionState}");
+                      }
                       return ListView.builder(
                         itemCount: postSnapshot.data!.docs.length,
                         itemBuilder: (context, index) {
