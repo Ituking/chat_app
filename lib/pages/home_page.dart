@@ -61,6 +61,8 @@ class _HomePageState extends State<HomePage> {
                         print("Error: ${userSnapshot.error}");
                       }
                       return Text("Error: ${userSnapshot.error}");
+                    } else if (!userSnapshot.hasData) {
+                      return const Text("No data available.");
                     }
                     if (userSnapshot.hasData &&
                         userSnapshot.connectionState == ConnectionState.done) {
