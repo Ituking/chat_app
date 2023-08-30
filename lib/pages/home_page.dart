@@ -62,6 +62,9 @@ class _HomePageState extends State<HomePage> {
                       }
                       return Text("Error: ${userSnapshot.error}");
                     } else if (!userSnapshot.hasData) {
+                      if (kDebugMode) {
+                        print("No data available.");
+                      }
                       return const Text("No data available.");
                     }
                     if (userSnapshot.hasData &&
