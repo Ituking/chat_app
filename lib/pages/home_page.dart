@@ -56,6 +56,8 @@ class _HomePageState extends State<HomePage> {
                     if (userSnapshot.connectionState ==
                         ConnectionState.waiting) {
                       return const CupertinoActivityIndicator();
+                    } else if (userSnapshot.hasError) {
+                      return Text("Error: ${userSnapshot.error}");
                     }
                     if (userSnapshot.hasData &&
                         userSnapshot.connectionState == ConnectionState.done) {
