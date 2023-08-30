@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
   final Account myAccount = Authentication.myAccount!;
   List<String> postAccountIds = [];
   late Future<Map<String, Account>?> getPostUserMap;
+  late Map<String, dynamic> data;
 
   @override
   void initState() {
