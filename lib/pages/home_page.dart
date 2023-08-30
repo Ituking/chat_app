@@ -106,8 +106,7 @@ class _HomePageState extends State<HomePage> {
                             print(post.postContent);
                             print(post.postTime);
                             print(post.likedCount);
-                            print("Debug: Checking post and post.likedUserIds");
-                            print("post: $post");
+                            print("userSnapshot.data: ${post.postAccount}");
                             print("post.likedUserIds: ${post.likedUserIds}");
                           }
                           return Card(
