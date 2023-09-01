@@ -104,7 +104,8 @@ class _HomePageState extends State<HomePage> {
                             print("likedCount: ${post.likedCount}");
                             print("likedUserIds: ${post.likedUserIds}");
                             print(
-                                "post.postAccount?.profileImagePath: ${post.postAccount?.profileImagePath}");
+                                "profileImagePath: ${post.postAccount?.profileImagePath}");
+                            print("name: ${post.postAccount?.name}");
                           }
                           bool isLiked =
                               post.likedUserIds.contains(myAccount.id);
