@@ -109,14 +109,7 @@ class _HomePageState extends State<HomePage> {
                           bool isLiked =
                               post.likedUserIds.contains(myAccount.id);
                           if (kDebugMode) {
-                            print(
-                                "When retrieved from the stream, isLiked => $isLiked");
-                            print(post.postImagePath);
-                            print(post.postContent);
-                            print(post.postTime);
-                            print(post.likedCount);
-                            print("userSnapshot.data: ${post.postAccount}");
-                            print("post.likedUserIds: ${post.likedUserIds}");
+                            print("isLiked => $isLiked");
                           }
                           return Card(
                             child: SizedBox(
