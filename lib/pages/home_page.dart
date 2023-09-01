@@ -93,9 +93,18 @@ class _HomePageState extends State<HomePage> {
                                 List<String>.from(data['liked_user_ids'] ?? []),
                           );
                           if (kDebugMode) {
+                            print("id: ${post.id}");
+                            print("post.postImagePath: ${post.postImagePath}");
+                            print("postContent: ${post.postContent}");
                             print("post.likedUserIds: ${post.likedUserIds}");
                             print("myAccount.id: ${myAccount.id}");
+                            print("postAccountId: ${post.postAccountId}");
                             print("postAccount: ${post.postAccount}");
+                            print("postTime: ${post.postTime}");
+                            print("likedCount: ${post.likedCount}");
+                            print("likedUserIds: ${post.likedUserIds}");
+                            print(
+                                "post.postAccount?.profileImagePath: ${post.postAccount?.profileImagePath}");
                           }
                           bool isLiked =
                               post.likedUserIds.contains(myAccount.id);
