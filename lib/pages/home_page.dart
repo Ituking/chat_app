@@ -67,6 +67,9 @@ class _HomePageState extends State<HomePage> {
                       }
                       return const Text("No data available.");
                     }
+                    if (kDebugMode) {
+                      print("userSnapshot: ${userSnapshot.data}");
+                    }
                     if (userSnapshot.hasData &&
                         userSnapshot.connectionState == ConnectionState.done) {
                       if (kDebugMode) {
