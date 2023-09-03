@@ -50,6 +50,9 @@ class _HomePageState extends State<HomePage> {
                   postAccountIds.add(data['post_account_id']);
                 }
               }
+              if (kDebugMode) {
+                print("postAccountIds: $postAccountIds");
+              }
               return FutureBuilder<Map<String, Account>?>(
                   future: getPostUserMap,
                   builder: (context, userSnapshot) {
