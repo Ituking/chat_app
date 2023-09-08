@@ -112,10 +112,6 @@ class AccountFirestore {
         );
         map[accountId] = postAccount;
       });
-      if (kDebugMode) {
-        print(
-            "Successful acquisition of information about the user who submitted the article.");
-      }
       return map;
     } on FirebaseException catch (e) {
       if (kDebugMode) {
