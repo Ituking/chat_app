@@ -50,9 +50,6 @@ class _HomePageState extends State<HomePage> {
                   postAccountIds.add(data['post_account_id']);
                 }
               }
-              if (kDebugMode) {
-                print("postAccountIds: $postAccountIds");
-              }
               return FutureBuilder<Map<String, Account>?>(
                   future: AccountFirestore.getPostUserMap(postAccountIds),
                   builder: (context, userSnapshot) {
@@ -70,16 +67,8 @@ class _HomePageState extends State<HomePage> {
                       }
                       return const Text("No data available.");
                     }
-                    if (kDebugMode) {
-                      print("userSnapshot: ${userSnapshot.data}");
-                    }
                     if (userSnapshot.hasData &&
                         userSnapshot.connectionState == ConnectionState.done) {
-                      if (kDebugMode) {
-                        print("userSnapshot.hasData: ${userSnapshot.hasData}");
-                        print(
-                            "userSnapshot.connectionState: ${userSnapshot.connectionState}");
-                      }
                       return ListView.builder(
                         itemCount: postSnapshot.data!.docs.length,
                         itemBuilder: (context, index) {
@@ -98,26 +87,8 @@ class _HomePageState extends State<HomePage> {
                             likedUserIds:
                                 List<String>.from(data['liked_user_ids'] ?? []),
                           );
-                          if (kDebugMode) {
-                            print("id: ${post.id}");
-                            print("post.postImagePath: ${post.postImagePath}");
-                            print("postContent: ${post.postContent}");
-                            print("post.likedUserIds: ${post.likedUserIds}");
-                            print("myAccount.id: ${myAccount.id}");
-                            print("postAccountId: ${post.postAccountId}");
-                            print("postAccount: ${post.postAccount}");
-                            print("postTime: ${post.postTime}");
-                            print("likedCount: ${post.likedCount}");
-                            print("likedUserIds: ${post.likedUserIds}");
-                            print(
-                                "profileImagePath: ${post.postAccount?.profileImagePath}");
-                            print("name: ${post.postAccount?.name}");
-                          }
                           bool isLiked =
                               post.likedUserIds.contains(myAccount.id);
-                          if (kDebugMode) {
-                            print("isLiked => $isLiked");
-                          }
                           return Card(
                             child: SizedBox(
                               height: MediaQuery.of(context).size.height * 0.75,
